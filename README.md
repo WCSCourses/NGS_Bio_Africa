@@ -1,6 +1,6 @@
 # NGS_Bio_Africa
-![](https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png)
-![](https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/WCS_Logo-Primary_Black.jpg)
+<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" width="1000">
+<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/WCS_Logo-Primary_Black.jpg" width="500">
 
 ## Next Generation Sequencing Bioinformatics Africa
 
