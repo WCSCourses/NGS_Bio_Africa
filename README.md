@@ -1,4 +1,7 @@
 # NGS_Bio_Africa
+![](https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png)
+![](https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/WCS_Logo-Primary_Black.jpg)
+
 ## Next Generation Sequencing Bioinformatics Africa
 
 ### This repo serves as a base for course materials and code used for the course
