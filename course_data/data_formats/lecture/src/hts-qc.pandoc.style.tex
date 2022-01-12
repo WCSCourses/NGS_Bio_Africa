@@ -1,0 +1,130 @@
+
+
+\usepackage{ragged2e} % for justify
+
+\usecolortheme{crane}
+
+%   beamer colors
+\usepackage{xcolor}
+\definecolor{sanger dark blue}{HTML}{074987}
+\definecolor{sanger middle blue}{HTML}{6AB9D7}
+\definecolor{sanger light blue}{HTML}{CAE6F1}
+\definecolor{gold}{HTML}{FCBB06}
+\definecolor{darkgold}{HTML}{DDA300}
+\definecolor{darkgreen}{HTML}{009933}
+
+\definecolor{nBlue}{HTML}{2E6DA4}
+\definecolor{nGreen}{HTML}{4CAE4C}
+\definecolor{nLightBlue}{HTML}{46B8DA}
+\definecolor{nOrange}{HTML}{EEA236}
+\definecolor{nRed}{HTML}{D43F3A}
+
+\definecolor{lGreen}{HTML}{DFF0D8}
+\definecolor{lLightBlue}{HTML}{D9EDF7}
+\definecolor{lOrange}{HTML}{FCF8E3}
+\definecolor{lRed}{HTML}{F2DEDE}
+
+
+% for code snippets like "~~~~ {.bash}", see
+%   ~/wtxt/slides/binf/runner/runner.md         .. usage example
+%   https://github.com/jgm/pandoc/issues/2178   .. list of things that can be modified
+\providecommand{\CommentTok}[1]{\textcolor{nRed}{\textit{{#1}}}}
+
+
+%   simple beamer page
+\setbeamercolor{frametitle}{bg=gold}
+\setbeamercolor{frametitle}{fg=black}
+\setbeamertemplate{footline}{   % increment page numbers properly
+    \hfill%
+        \usebeamercolor[fg]{page number in head/foot}%
+        \usebeamerfont{page number in head/foot}%
+        \insertpagenumber\,/\,\insertsectionendpage\kern1em\vskip2pt%
+}
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+
+
+
+% beamer bullets
+% (overriden by enumitem?)
+%   \setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+%   \setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths-}}
+%   \setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths-}}
+%   \setbeamertemplate{enumerate item}{\insertenumlabel.}
+%   \setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+%   \setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+%   \setbeamertemplate{enumerate mini template}{\insertenumlabel}
+
+
+%   no vertical space around lists (plus put the bullets back)
+\usepackage{enumitem}
+% \setlist[itemize,1]{label=\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$},before=\vspace{-0.9em}} % used to work well but does not any more
+\setlist[itemize,1]{label=\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+\setlist[itemize,2]{label=\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths$\bullet$}}
+\setlist[itemize,3]{label=\normalfont\bfseries\raise1.25pt\hbox{\donotcoloroutermaths\textendash}}
+%\setlist{nosep}    % this does not work anymore, before=vspace does
+
+
+% \setitemize{label=\usebeamerfont*{itemize item}%
+%     \usebeamercolor[fg]{itemize item}
+%     \usebeamertemplate{itemize item}}
+
+
+
+% place things anywhere on page
+\usepackage[overlay,absolute]{textpos}
+\TPGrid[10 mm,8 mm]{9}{8}
+
+
+% pbwt
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+
+% do not vertically indent verbatim blocks
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+
+% allow \alert,\only also in verbatim environment
+\usepackage{fancyvrb}
+\let\valert\alert
+\renewcommand{\valert}[2][]{%
+  \if\relax\detokenize{#1}\relax% http://tex.stackexchange.com/q/53068/5764
+    \alert{#2}% Default overlay
+  \else
+    \alert<#1>{#2}% Specific overlay
+  \fi}
+
+\let\vonly\only
+\renewcommand{\vonly}[2][]{%
+  \if\relax\detokenize{#1}\relax% http://tex.stackexchange.com/q/53068/5764
+    \only{#2}% Default overlay
+  \else
+    \only<#1>{#2}% Specific overlay
+  \fi}
+
+
+% colored cells, \columncolor in ~/wtxt/slides/binf/mapping
+\usepackage{colortbl}
+
+% \usepackage{tikz}
+% \newcommand*{\checktikz}[1][]{\tikz[x=1em, y=1em]\fill[#1] (0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+% example usage: \checktikz[rounded corners=1pt, scale=1.5]
+
+% \usepackage{tcolorbox}
+% \newcommand{\mytbox}[1]{\tcbox[left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=0mm,arc=0mm,boxrule=0pt]{#1}}
+
+% indented text
+%   usage   ..  \ibox[text-width][indent-width]{text}
+%   example ..  \ibox[5em]{text} .. text
+%
+\usepackage{xparse}
+\DeclareDocumentCommand{\ibox}{ O{16em} O{2em} m }{\makebox[#1]{\hskip#2#3\hfill}}
+
+\usepackage{rotating}
+
+\setlength{\parskip}{2pt plus 2pt minus 1pt}
+

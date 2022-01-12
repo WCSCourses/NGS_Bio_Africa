@@ -1,0 +1,71 @@
+#!/usr/bin/env python
+#
+#   git clone https://github.com/jgm/pandocfilters.git; setup.py build & install
+#   https://raw.githubusercontent.com/agoldst/tex/master/bin/overlay_filter
+#   http://andrewgoldstone.com/blog/2014/12/24/slides/
+#
+
+"""overlay_filter
+
+Simplistic pandoc filter to include beamer overlay specifications on
+inline tex in markdown
+
+Whereas in normal beamer LaTeX you'd write
+
+    \cmd<overlay>{...}
+
+in markdown write
+
+    \cmd{<overlay>}{...}
+
+then process with
+
+    pandoc --filter overlay_filter
+
+Environments are passed through to LaTeX, so there's no need to filter
+them; write onlyenv as normal, for example.
+
+Requires pandocfilters (pip install pandocfilters).
+"""
+
+from pandocfilters import toJSONFilter, RawInline
+import re,sys
+
+ov_pat = re.compile(r'^(\\\w+)(\{<[0-9-+,]+>})({.*)$',flags=re.DOTALL)
+
+def overlay_filter(key, value, fmt, meta):
+
+    # Multislides with the {<>} notation. This may not be necessary
+    # after discovery of vonly macro
+    #
+    if key == 'RawInline' and value[0] == 'tex':
+        if value[1][0:9] == '\inputtex':
+            lines = open(value[1][10:-1], 'rb').readlines()
+            for i in range(len(lines)-1,0,-1):
+                if lines[i].find('\\end{frame}') > -1: break
+            lines.insert(0,'\\end{frame}')
+            return RawInline("tex", ''.join(lines[0:i]))
+
+        m = ov_pat.match(value[1])
+        if m:
+            c = m.group(1)
+            c += re.sub(r'^\{|}$', "", m.group(2))
+            c += m.group(3)
+            return RawInline("tex", c)
+
+    # this includes code as is
+    #   # Include markdown files, see ~/wtxt/slides/binf/cnv-hmm/hmm.md for an example
+    #   #
+    #   if key == 'CodeBlock':
+    #           [[ident, classes, namevals], code] = value
+    #           for nameval in namevals:
+    #               if nameval[0] == 'include':
+    #                   with open(nameval[1], 'rb') as content_file:
+    #                       content = content_file.read()
+    #                       content.decode('utf-8')
+    #                   #return CodeBlock([ident, classes, namevals], content)
+
+if __name__ == "__main__":
+    toJSONFilter(overlay_filter)
+
+

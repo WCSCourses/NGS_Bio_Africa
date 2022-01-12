@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WTAC Next Generation Sequencing Course</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.10.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="answers.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <script>
+        $(function() {
+            $("#accordion").stage_answers();
+            $("#accordion").accordion({collapsible:true,heightStyle:"content"});
+        });
+    </script>
+</head>
+<body>
+ 
+<div id="container">
+    <h2>WTAC Next Generation Sequencing Course</h2>
+    <b>File Formats and QC Practical Exercises, November 2016</b>
+
+<div id="accordion">
+    <h3>Required data</h3>
+    <div>
+    <p>
+    For this lab, some pre-prepared datasets are installed on the VM.
+    Double-click on the module icon, it will open up a terminal in the directory with 
+    the data for the module.
+    </pre>
+
+    </div>
+
+
+    <h3>Exercise 1: SAM header line</h3>
+    <div>
+    <p>
+    SAM/BAM format is the accepted standard format for storing NGS sequencing
+    reads, base qualities, associated meta-data and alignments of the data to a
+    reference genome. If no reference genome is available, the data can also be
+    stored unaligned.
+
+    <p>
+    Download the SAM/BAM file specification document from <a href="http://samtools.github.io/hts-specs">http://samtools.github.io/hts-specs</a>.
+    <br>(<a href="http://samtools.github.io/hts-specs/SAMv1.pdf">direct link</a>)
+
+    <p>
+    From reading page 4 of the SAM specification, look at the following line
+    from the header of the BAM file:
+    <br><tt>@RG ID:ERR003612 PL:ILLUMINA LB:g1k-sc-NA20538-TOS-1 PI:2000 DS:SRP000540 SM:NA20538 CN:SC</tt>
+
+    <ul>
+    <li class="Q"> What does RG stand for?</li>
+    <li class="A A1"> <b>R</b>ead <b>G</b>roup</li>
+
+    <li class="Q"> What is the sequencing platform?
+    <li class="A A1"> Illumina, see the PL field
+
+    <li class="Q"> What is the sequencing centre?
+    <li class="A A1"> See the CN field
+
+    <li class="Q"> What is the lane ID?
+    <li class="A A1"> ERR003612, see the ID field
+
+    <li class="Q"> What is the expected fragment insert size?
+    <li class="A A1"> 2kbp, see the PI field
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A1','123');">
+    </div>
+
+
+    <h3>Exercise 2: SAM header and samtools</h3>
+    <div>
+    <p>
+    Samtools comprises a set of programs for interacting with SAM/BAM files.
+    Using the <tt>samtools view</tt> command, print the header of the BAM file:
+    <br><tt>samtools view -H NA20538.bam | less</tt>
+
+    <ul>
+    <li class="Q"> What version of the human assembly was used to perform the alignments?
+    <li class="A A2"> NCBI build v37
+     
+    <li class="Q"> How many lanes are in this BAM file?
+    <li class="A A2"> Either count the @RG lines manually or use standard UNIX commands such as
+        <pre>samtools view -H NA20538.bam | grep ^@RG | wc -l</pre>
+        or
+        <pre>samtools view -H NA20538.bam | awk '{if($1=="@RG")n++}END{print n}'</pre>
+
+    <li class="Q"> What programs were used to create this BAM file?
+    <li class="A A2"> See the @PG lines
+
+    <li class="Q"> What version of bwa was used to align the reads?
+    <li class="A A2"> Find the @PG line and the VN field
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A2','abc');">
+    </div>
+
+
+
+    <h3>Exercise 3: Alignment formats conversion</h3>
+    <div>
+    <p>
+    You can use samtools to convert between SAM<->BAM and to view or extract
+    regions of a BAM file. On the command line do:
+    <br><tt>samtools view NA20538.bam | less -S</tt>
+
+    <ul>
+    <li class="Q"> What is the name of the first read?
+    <li class="A A3"> ERR003814.1408899
+
+    <li class="Q"> What position does the alignment of the read start at?
+    <li class="A A3"> Chromosome 1, position 19999970
+
+    <li class="Q"> What is the mapping quality of the first read?
+    <li class="A A3"> Q23
+    </ul>
+
+    <p>
+    We will convert a yeast BAM file to CRAM. In the <tt>data</tt> directory, there is a BAM
+    file called <tt>yeast.bam</tt> that was created from <i>S. cerevisiae</i> Illumina sequencing
+    data.
+
+    <ul>
+    <li class="Q"> Can you convert the BAM file to a CRAM file called <tt>yeast.cram</tt> using the <tt>samtools
+        view</tt> command? Note the reference genome is stored in the file
+        <tt>Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa</tt>
+    <li class="A A3"> Use the command:
+        <br><tt>samtools view -C -T Saccharomyces_cerevisiae.EF4.68.dna.toplevel.fa \</tt>
+        <br><tt class="indent">-o yeast.cram yeast.bam</tt>
+    </ul>
+
+    <p>
+    Since CRAM files use reference based compression, we expect the CRAM file
+    to be smaller than the BAM file.  What is the size of the CRAM file?
+    <ul>
+    <li class="Q"> Is your CRAM file smaller than the original BAM file?
+    <li class="A A3"> Use the command <tt>ls -lh </tt>
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A3','xyz');">
+    </div>
+
+
+    <h3>Exercise 4: VCF/BCF and bcftools</h3>
+    <div>
+    <p>
+    VCF/BCF format is the accepted standard format for storing variant calls with supporting
+    data. The official specification is available from 
+    <a href="http://samtools.github.io/hts-specs">http://samtools.github.io/hts-specs</a>.
+
+    <p>
+    Bcftools comprises a set of programs for interacting with VCF/BCF files.
+    You can use bcftools to convert between VCF<->BCF and to view or extract
+    records from a region.
+    Using the <tt>bcftools view</tt> command, print the header of the BCF file: 
+    <br><tt>bcftools view -h 1kg.bcf | less</tt>
+
+    <ul>
+    <li class="Q"> What version of the human assembly the coordinates refer to?
+    <li class="A A4"> See the <tt>##reference</tt> line.
+
+    <li class="Q"> Can you convert the file called <tt>1kg.bcf</tt> to a compressed 
+        VCF file called <tt>1kg.vcf.gz</tt> using the <tt>bcftools view</tt> command?
+    <li class="A A4"> Use the command <tt>bcftools view -O z -o 1kg.vcf.gz 1kg.bcf</tt>
+    </ul>
+
+
+    <p>
+    Similarly to BAM, VCF/BCF supports random access, that is, fast retrieval
+    from a given region. For this, the file must be indexed.
+
+    <ul>
+    <li class="Q"> Index the BCF and extract all records from the region 20:24042765-24043073
+    <li class="A A4"> Use the following commands:
+        <br><tt>bcftools index 1kg.bcf</tt>
+        <br><tt>bcftools view -H -r 20:24042765-24043073 1kg.bcf | less -S</tt>
+    </ul>
+
+    <p>
+    The versatile <tt>bcftools query</tt> command can be used to extract any
+    VCF field. Combined with standard UNIX commands, this gives a powerful tool
+    for quick querying of VCFs. Try to answer the following questions with the help
+    of the <A href="http://samtools.github.io/bcftools/bcftools.html#query">manual page</a>.
+
+    <ul>
+    <li class="Q"> How many samples are in the BCF?
+        <br> Hint: use the <tt>-l</tt> option.
+    <li class="A A4"> Use <tt>bcftools query -l 1kg.bcf</tt> to get list of samples and <tt>wc -l</tt> to count the lines.
+
+    <li class="Q"> What is the genotype of the sample HG00107 at the position 20:24019472? 
+        <br> Hint: use the combination of <tt>-r</tt>, <tt>-s</tt>, and <tt>-f '[ %TGT]\n'</tt> options.
+    <li class="A A4"> Use the following command:
+        <br><tt>bcftools query -f'%POS [ %TGT]\n' -r 20:24019472 -s HG00107 1kg.bcf</tt>
+
+    <li class="Q"> How many positions there are with more than 10 alternate alleles? (See the INFO/AC tag.)
+        <br> Hint: use the <tt>-i</tt> filtering option.
+    <li class="A A4"> Use the following command:
+        <br><tt>bcftools query -f'%POS\n' -i 'AC[0]>10'  1kg.bcf | wc -l</tt>
+
+    <li class="Q"> List all positions where HG00107 has a non-reference genotype and the read depth is bigger than 10.
+    <li class="A A4"> Use the first command to subset the sample HG00107 and pipe its output
+        to the second command to filter by depth and non-reference genotype. The third command <tt>head</tt>
+        limits the output to first few lines:
+        <br><tt>bcftools view -s HG00107 1kg.bcf | \</tt>
+        <br><tt class="indent">bcftools query -i'FMT/DP>=10 & FMT/GT!="0/0"' -f'%POS[ %GT %DP]\n' | \</tt>
+        <br><tt class="indent">head</tt>
+
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A4','qwe');">
+    </div>
+
+
+    <h3>Exercise 5: Generate QC stats</h3>
+    <div>
+    <p>
+    We will generate QC stats for two lanes of Illumina paired-end sequencing
+    data from yeast. We will use the <tt>bwa</tt> mapper to align the data to the
+    <i>Saccromyces cerevisiae</i> genome
+    (<a href="ftp://ftp.ensembl.org/pub/current_fasta/saccharomyces_cerevisiae/dna">ftp://ftp.ensembl.org/pub/current_fasta/saccharomyces_cerevisiae/dna</a>)
+    and <tt>samtools stats</tt> to generate the stats.
+
+    
+    <ul>
+    <li class="Q"> Read pairs are usually stored in two separate FASTQ files so that <i>n</i>-th read in the first
+        file and the <i>n</i>-th read in the second file constitute a read pair. Can you devise a quick sanity
+        check that reads in these two files indeed form pairs? The files must have the same number of lines
+        and the naming of the reads usually suggests if they form a pair.
+        The location of the files is
+        <br><tt class="indent">60A_Sc_DBVPG6044/lane1/s_7_1.fastq</tt>
+        <br><tt class="indent">60A_Sc_DBVPG6044/lane1/s_7_2.fastq</tt>.
+    <li class="A A5"> First check whether the read names are suggestive of a pair. For example, the
+        reads in the first file usually have the suffix <tt>"/1"</tt> and the reads in the second file
+        should have the suffix <tt>"/2"</tt>.
+        Then check whether there is the same number of reads in both files.
+        <br><tt class="indent">head 60A_Sc_DBVPG6044/lane1/s_7_1.fastq | grep ^@</tt>
+        <br><tt class="indent">head 60A_Sc_DBVPG6044/lane1/s_7_2.fastq | grep ^@</tt>
+        <br><tt class="indent">wc -l 60A_Sc_DBVPG6044/lane1/*.fastq</tt>
+    </ul>
+
+    <p>
+    Run the <tt>./align.sh</tt> script to create the mappings. The script is very short, don't
+    be afraid to take a look inside using the command
+    <br><tt class="indent">less ./align.sh</tt>
+    <br>The script contains several commands, some are combined together using pipes. (UNIX pipes is a very powerful
+    and elegant concept which allows us to feed the output of one command into
+    the next command and avoid writing intermediate files.) 
+
+    <p>
+    The script will produce the BAM file <tt>lane1.sorted.bam</tt>.
+    Generate the stats including only primary alignments using the command
+    <br><tt class="indent">samtools stats -F SECONDARY lane1.sorted.bam > lane1.sorted.bam.bchk</tt>
+
+    <P>
+    Look at the output and answer the following questions:
+
+    <ul>
+    <li class="Q"> What is the total number of reads?
+    <li class="A A5"> Look inside the file and locate the field "raw total sequences". To extract the information
+        quickly from multiple files, commands similar to the following can be used:
+        <br><tt class="indent">grep ^SN lane*.sorted.bam.bchk | awk -F'\t' '$2=="raw total sequences:"'</tt>
+
+    <li class="Q"> What proportion of the reads were mapped?
+    <li class="Q"> How many reads were mapped to a different chromosome?
+    <li class="Q"> What is the insert size mean and standard deviation?
+
+    <li class="Q"> How many reads were paired properly? Challenge: can you verify that only mapped reads have the PROPER_PAIR bit set?
+        (Skip the second part of this question if you don't know how to use <tt>awk</tt> and its bitwise <tt>and()</tt> operation.)
+    <li class="A A5"> This command should print zero:
+        <br><tt class="indent">samtools view lane1.sorted.bam | awk 'and($2,0x2) && and($2,0x4)' | wc -l</tt>
+    </ul>
+
+    Next we will create some QC plots from the output of the <tt>stats</tt> command using the command
+    <tt>plot-bamstats</tt> which is of the samtools package:
+    <br><tt class="indent">plot-bamstats -p lane1-plots/ lane1.sorted.bam.bchk</tt>
+
+    <p> 
+    Now in your web browser open the file <tt>lane1-plots/index.html</tt> to view the QC information.
+
+    <ul>
+    <li class="Q"> How many reads have zero mapping quality?
+    <li class="Q"> Which of the first fragments or second fragments are higher base quality on average?
+    <li class="A A5"> Look at the "Quality per cycle" graphs.
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A5','456');">
+    </div>
+
+
+    <!--
+    <h3>Exercise 6: xx</h3>
+    <div>
+    <p>
+    ..
+    <ul>
+    <li class="Q"> ..
+    <li class="A"> ..
+    </ul>
+    </div>
+    -->
+</div>
+</div>
+ 
+ 
+</body>
+</html>

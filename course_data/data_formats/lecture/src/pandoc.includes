@@ -1,0 +1,311 @@
+#!/usr/bin/env perl
+#
+#
+#   INCLUDE:
+#   STYLE:\setbeamertemplate{footline}[page number]
+#   @BEG, @BEGIN, @START
+#   @END
+#   @MDNOTES
+#   @ - notes
+#   % comment
+#
+
+use strict;
+use warnings;
+use Carp;
+
+my $opts = parse_params();
+if ( $$opts{create_makefile} )
+{
+    create_makefile($opts);
+}
+else
+{
+    for my $file (@{$$opts{files}})
+    {
+        include_file($opts,$file);
+    }
+    print_lines($opts);
+    print_notes($opts);
+}
+
+exit;
+
+#--------------------------------
+
+sub error
+{
+    my (@msg) = @_;
+    if ( scalar @msg ) { confess @msg; }
+    print 
+        "Usage: pandoc.includes [OPTIONS]\n",
+        "Options:\n",
+        "   -d, --dependencies      output dependencies for Makefile\n",
+        "   -m, --make              create Makefile\n",
+        "\n";
+    exit -1;
+}
+
+sub parse_params
+{
+    my $opts = { deps=>[] };
+    while (defined(my $arg=shift(@ARGV)))
+    {
+        if ( $arg eq '-d' || $arg eq '--dependencies' ) { $$opts{print_deps}=1; next }
+        if ( $arg eq '-m' || $arg eq '--make' ) { $$opts{create_makefile}=1; next }
+        if ( -e $arg ) { push @{$$opts{files}},$arg; next }
+        if ( $arg eq '-?' || $arg eq '-h' || $arg eq '--help' ) { error(); }
+        error("Unknown parameter \"$arg\". Run -h for help.\n");
+    }
+    return $opts;
+}
+
+sub expand_path
+{
+    my ($file) = @_;
+    if ( $file =~ /^~/ ) { return (glob($file))[0]; }
+    return $file;
+}
+
+sub include_file
+{
+    my ($opts,$file) = @_;
+    $file = expand_path($file);
+    my $dir = undef;
+    if ( $file=~m{^.+/} )
+    { 
+        $dir = $&; 
+        push @{$$opts{deps}},$file;
+        my @img = grep { chomp } `/bin/ls $dir/img/*pdf $dir/img/*png $dir/img/*jpg $dir/img/*inc 2>/dev/null`;
+        push @{$$opts{deps}},@img;
+    }
+    open(my $fh,'<',$file) or error("$file: $!");
+    while (my $line=<$fh>)
+    {
+        if ( $line=~/^%/ ) { next; }
+        if ( $line=~/^\@MDNOTES/ ) { $$opts{mdnotes} = 1; next; }
+        if ( $line=~/^\@START/ or $line=~/^\@BEGIN/ or $line=~/^\@BEG/ )
+        { 
+            $$opts{start_at} = scalar @{$$opts{lines}}; 
+            $$opts{start_at_notes} = $$opts{notes} ? scalar @{$$opts{notes}} : 0; 
+            next; 
+        }
+        if ( $line=~/^\@END/ ) { last; }
+        if ( $line=~/^\#/ ) { push @{$$opts{notes}},$line; }
+        if ( $line=~/^\@\s+/ ) { push @{$$opts{notes}},$line; next; }
+        if ( $line=~/^STYLE:/ ) { next; }
+        if ( $line=~/^INCLUDE:\s*(\S+)/ )
+        {
+            include_file($opts,$1); 
+            next;
+        }
+        if ( defined $dir && $line=~/includegraphics/ )
+        {
+            $line =~ s{img/}{$dir/img/};
+        }
+        push @{$$opts{lines}}, $line;
+    }
+    close($fh) or error("close failed: $file");
+}
+
+sub print_lines
+{
+    my ($opts) = @_;
+    if ( $$opts{print_deps} ) { print join(' ',@{$$opts{deps}})."\n"; return; }
+    if ( $$opts{start_at} ) { splice(@{$$opts{lines}},0,$$opts{start_at}); }
+    print join('',@{$$opts{lines}});
+}
+
+sub print_notes
+{
+    my ($opts) = @_;
+
+    if ( !exists($$opts{notes}) ) { return; }
+    if ( $$opts{start_at_notes} ) { splice(@{$$opts{notes}},0,$$opts{start_at_notes}); }
+
+    if ( $$opts{mdnotes} ) { print_md_notes($opts); return; }
+    my @notes = ();
+    for my $note (@{$$opts{notes}})
+    {
+        push @notes,$note;
+        if ( @notes==1 ) { next; }
+        if ( $notes[-1]=~/^\#/ && $notes[-2]=~/^\#/ ) { splice(@notes,-2,1); }
+    }
+    if ( $notes[-1]=~/^\#/ ) { splice(@notes,-1,1); }
+    if ( !@notes ) { return; }
+
+    my $fname = $$opts{files}[0];
+    if ( !($fname=~/\.[^.]+$/) ) { error("Could not parse: $fname"); }
+    $fname =~ s/\.[^.]+$/.notes.tex/;
+
+    open(my $fh,'>',$fname) or error("$fname: $!");
+    print $fh '\documentclass[a4paper]{article}
+        \usepackage[latin2]{inputenc}
+        %\pagestyle{empty}
+        \headheight=0pt
+        \headsep=0pt
+        \usepackage[margin=0.6in,footskip=0.25in,top=0.6in,bottom=0.6in]{geometry}
+        \usepackage{enumitem}
+        \usepackage{xcolor}
+        \setlist{nosep}
+        \nonstopmode
+        \begin{document}'."\n\n";
+    my $open = 0;
+    for my $note (@notes)
+    {
+        chomp($note);
+        if ( $note =~ /^\#\s*/ )
+        {
+            if ( $open ) { print $fh "\\end{itemize}\n"; }
+            print $fh "\\vskip1em\\hbox{\\it $'}\n\\begin{itemize}\n"; 
+            $open = 1;
+            next; 
+        }
+        if ( $note =~ /^\@\s*-\s*/ )
+        {
+            if ( !$open ) { print $fh "\\begin{itemize}\n"; $open = 1; }
+            print $fh "\\item $'\n"; 
+            next; 
+        }
+        if ( $note =~ /^\@\s*/ ) { print $fh "$'\n"; next; }
+        error("Could not parse: [$note]\n");
+    }
+    if ( $open ) { print $fh '\end{itemize}'; }
+    print $fh '\end{document}'."\n";
+    close($fh) or error("close failed: $fname");
+    my $cmd = "pdflatex $fname";
+    print STDERR "$cmd\n";
+    `$cmd`;
+    if ( $? ) { error("The command exited with non-zero status: $cmd\n\n"); }
+}
+
+sub print_md_notes
+{
+    my ($opts) = @_;
+
+    if ( !exists($$opts{notes}) ) { return; }
+    my @notes = ();
+    for my $note (@{$$opts{notes}})
+    {
+        push @notes,$note;
+        if ( @notes==1 ) { next; }
+        if ( $notes[-1]=~/^\#/ && $notes[-2]=~/^\#/ ) { splice(@notes,-2,1); }
+    }
+    if ( $notes[-1]=~/^\#/ ) { splice(@notes,-1,1); }
+    if ( !@notes ) { return; }
+
+    my $fname = $$opts{files}[0];
+    if ( !($fname=~/\.[^.]+$/) ) { error("Could not parse: $fname"); }
+    $fname =~ s/\.[^.]+$/.notes.md/;
+
+    open(my $fh,'>',$fname) or error("$fname: $!");
+    my $open = 0;
+    my $prev = undef;
+    for my $note (@notes)
+    {
+        if ( $note =~ /^#/ ) { $note = "\n$note\n"; $prev = $note; }
+        $note =~ s/^\@\s//;
+        if ( $note =~ /^\s*\#\s*$/ ) { $note = $prev; }
+        print $fh $note;
+    }
+    close($fh) or error("close failed: $fname");
+    my $cmd = "pdflatex $fname";
+    print STDERR "$cmd\n";
+    # `$cmd`;
+    # if ( $? ) { error("The command exited with non-zero status: $cmd\n\n"); }
+}
+
+sub create_makefile
+{
+    my ($opts) = @_;
+
+    my %files = ();
+    my %style = ();
+    for my $file (glob("*.md"))
+    {
+        my ($deps,$style) = find_dependencies($opts,$file);
+        $file =~ s/\.md$//;
+        $files{$file} = $deps;
+        $style{$file} = $style;
+    }
+    print "all: ".join('.pdf ',sort keys %files).".pdf rmme\n";
+    print "tex: ".join('.tex ',sort keys %files).".tex\n";
+    print "rmme:\n\trm -f ".join('.rmme ',sort keys %style).".rmme\n";
+    print "clean:\n\trm -f ".join('.tex ',sort keys %files).".tex ".join('.pdf ',sort keys %files).".pdf\n";
+
+    my %printed = ();
+    my $filter  = -e "pandoc.filter" ? "--filter ./pandoc.filter" : '';
+    for my $file (sort keys %files)
+    {
+        my @dep;
+        for my $dep (@{$files{$file}})
+        {
+            if ( $dep=~m{(img/.+)\.pdf$} && -e "$1.svgz" && !$printed{$dep} )
+            {
+                print "\n$dep: $1.svgz\n\tinkscape -A $dep $1.svgz\n";
+                $printed{$dep} = 1;
+            }
+            $dep =~ s/:/\\:/g;
+            push @dep,$dep;
+        }
+
+        my $style = -e "$file.pandoc.style.tex" ? "$file.pandoc.style.tex" : "pandoc.style.tex";
+        if ( scalar @{$style{$file}} )
+        {
+            my $rmme = "$file.rmme";
+            `cat $style > $file.rmme`;
+            open(my $fh,'>>',"$file.rmme"); print $fh @{$style{$file}}; close($fh);
+            $style = $rmme;
+        }
+
+        print "\n$file.pdf: ".join(' ',@dep)."\n";
+        my @cmd = ();
+        push @cmd, "./pandoc.includes $file.md";
+        push @cmd, "iconv -s -f iso-8859-2 -t utf-8";
+        push @cmd, "pandoc -t beamer -V fontsize=8pt -H $style $filter -o \$@";
+        print "\t".join(" | ",@cmd)."\n";
+
+        print "\n$file.tex: ".join(' ',@dep)."\n";
+        @cmd = ();
+        push @cmd, "./pandoc.includes $file.md";
+        push @cmd, "pandoc -t beamer -V fontsize=8pt -H $style $filter -o \$@";
+        print "\t".join(" | ",@cmd)."\n";
+    }
+}
+sub find_dependencies
+{
+    my ($opts,$file) = @_;
+    $file = expand_path($file);
+    my @deps  = ($file);
+    my @style = ();
+    my $dir   = undef;
+    if ( $file=~m{^.+/} ) { $dir = $&; }
+
+    open(my $fh,'<',$file) or error("$file: $!");
+    while (my $line=<$fh>)
+    {
+        if ( $line=~/^%/ ) { next; }
+        if ( $line=~/^STYLE:/ ) { push @style,$'; next; }
+        if ( $line=~/^INCLUDE:\s*(\S+)/ ) 
+        { 
+            my ($dep,$sty) = find_dependencies($opts,$1); 
+            push @deps, @$dep;
+            push @style, @$sty;
+            next; 
+        }
+        if ( $line=~/includegraphics/ )
+        {
+            my $file;
+            if ( $line=~/\{\{img\/[^}]+\}[^}]+\}/ ) { $file = $&; }
+            elsif ( $line=~/\{img\/[^\}]+\}/ ) { $file = $&; }
+            if ( !defined $file ) { error("Could not parse image name: $line"); }
+            $file =~ s/\{//g;
+            $file =~ s/\}//g;
+            if ( defined $dir ) { $file =~ s{img/}{$dir/img/}; }
+            push @deps,$file;
+        }
+    }
+    close($fh) or error("close failed: $file");
+    return (\@deps,\@style);
+}
+
