@@ -2,3 +2,5 @@
 *.bam filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.fastq.gz filter=lfs diff=lfs merge=lfs -text
+*.fa filter=lfs diff=lfs merge=lfs -text
+*.sam filter=lfs diff=lfs merge=lfs -text
