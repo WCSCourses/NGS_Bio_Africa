@@ -1,0 +1,2222 @@
+##gff-version 3
+##sequence-region   tig00000001 1 1217862
+tig00000001	gth	gene	69738	71815	.	-	.	ID=gene1
+tig00000001	gth	mRNA	69738	71815	.	-	.	ID=mRNA1;Parent=gene1;Target=PRG01_0500100-t36_1-p1 1 600 +
+tig00000001	gth	exon	69738	69827	1	-	.	Parent=mRNA1
+tig00000001	gth	CDS	69738	69827	.	-	0	ID=CDS1;Parent=mRNA1
+tig00000001	gth	three_prime_cis_splice_site	69827	69828	0.05	-	.	Parent=mRNA1
+tig00000001	gth	five_prime_cis_splice_site	70011	70012	0.05	-	.	Parent=mRNA1
+tig00000001	gth	exon	70012	71535	0.958	-	.	Parent=mRNA1
+tig00000001	gth	CDS	70012	71535	.	-	0	ID=CDS1;Parent=mRNA1
+tig00000001	gth	three_prime_cis_splice_site	71535	71536	0.05	-	.	Parent=mRNA1
+tig00000001	gth	five_prime_cis_splice_site	71629	71630	0.05	-	.	Parent=mRNA1
+tig00000001	gth	exon	71630	71815	0.968	-	.	Parent=mRNA1
+tig00000001	gth	CDS	71630	71815	.	-	0	ID=CDS1;Parent=mRNA1
+###
+tig00000001	gth	gene	75650	76672	.	+	.	ID=gene2
+tig00000001	gth	mRNA	75650	76672	.	+	.	ID=mRNA2;Parent=gene2;Target=PRG01_0500200-t36_1-p1 1 260 +
+tig00000001	gth	exon	75650	75847	0.973	+	.	Parent=mRNA2
+tig00000001	gth	CDS	75650	75847	.	+	0	ID=CDS2;Parent=mRNA2
+tig00000001	gth	five_prime_cis_splice_site	75848	75849	0.05	+	.	Parent=mRNA2
+tig00000001	gth	three_prime_cis_splice_site	76089	76090	0.05	+	.	Parent=mRNA2
+tig00000001	gth	exon	76091	76672	0.915	+	.	Parent=mRNA2
+tig00000001	gth	CDS	76091	76672	.	+	0	ID=CDS2;Parent=mRNA2
+###
+tig00000001	gth	gene	77850	79548	.	-	.	ID=gene3
+tig00000001	gth	mRNA	77850	79548	.	-	.	ID=mRNA3;Parent=gene3;Target=PRG01_0500300-t36_1-p1 1 402 +
+tig00000001	gth	exon	77850	78418	0.985	-	.	Parent=mRNA3
+tig00000001	gth	CDS	77850	78418	.	-	2	ID=CDS3;Parent=mRNA3
+tig00000001	gth	three_prime_cis_splice_site	78418	78419	0.05	-	.	Parent=mRNA3
+tig00000001	gth	five_prime_cis_splice_site	78555	78556	0.05	-	.	Parent=mRNA3
+tig00000001	gth	exon	78556	78955	0.995	-	.	Parent=mRNA3
+tig00000001	gth	CDS	78556	78955	.	-	0	ID=CDS3;Parent=mRNA3
+tig00000001	gth	three_prime_cis_splice_site	78955	78956	0.05	-	.	Parent=mRNA3
+tig00000001	gth	five_prime_cis_splice_site	79168	79169	0.05	-	.	Parent=mRNA3
+tig00000001	gth	exon	79169	79297	1	-	.	Parent=mRNA3
+tig00000001	gth	CDS	79169	79297	.	-	0	ID=CDS3;Parent=mRNA3
+tig00000001	gth	three_prime_cis_splice_site	79297	79298	0.05	-	.	Parent=mRNA3
+tig00000001	gth	five_prime_cis_splice_site	79440	79441	0.05	-	.	Parent=mRNA3
+tig00000001	gth	exon	79441	79548	0.899	-	.	Parent=mRNA3
+tig00000001	gth	CDS	79441	79548	.	-	0	ID=CDS3;Parent=mRNA3
+###
+tig00000001	gth	gene	101227	102426	.	-	.	ID=gene4
+tig00000001	gth	mRNA	101227	102426	.	-	.	ID=mRNA4;Parent=gene4;Target=PRG01_0500700-t36_1-p1 1 400 +
+tig00000001	gth	exon	101227	102426	0.97	-	.	Parent=mRNA4
+tig00000001	gth	CDS	101227	102426	.	-	0	ID=CDS4;Parent=mRNA4
+###
+tig00000001	gth	gene	106927	109335	.	-	.	ID=gene5
+tig00000001	gth	mRNA	106927	109335	.	-	.	ID=mRNA5;Parent=gene5;Target=PRG01_0500900-t36_1-p1 1 794 +
+tig00000001	gth	exon	106927	108420	0.962	-	.	Parent=mRNA5
+tig00000001	gth	CDS	106927	108420	.	-	0	ID=CDS5;Parent=mRNA5
+tig00000001	gth	three_prime_cis_splice_site	108420	108421	0.0001	-	.	Parent=mRNA5
+tig00000001	gth	five_prime_cis_splice_site	108470	108471	0.05	-	.	Parent=mRNA5
+tig00000001	gth	CDS	108471	108527	.	-	0	ID=CDS5;Parent=mRNA5
+tig00000001	gth	exon	108471	109335	0.885	-	.	Parent=mRNA5
+###
+tig00000001	gth	gene	111486	114689	.	+	.	ID=gene6
+tig00000001	gth	mRNA	111486	114689	.	+	.	ID=mRNA6;Parent=gene6;Target=PRG01_0501000-t36_1-p1 1 1025 +
+tig00000001	gth	exon	111486	113922	0.953	+	.	Parent=mRNA6
+tig00000001	gth	CDS	111486	113922	.	+	0	ID=CDS6;Parent=mRNA6
+tig00000001	gth	five_prime_cis_splice_site	113923	113924	0.05	+	.	Parent=mRNA6
+tig00000001	gth	three_prime_cis_splice_site	114052	114053	0.05	+	.	Parent=mRNA6
+tig00000001	gth	CDS	114054	114058	.	+	2	ID=CDS6;Parent=mRNA6
+tig00000001	gth	exon	114054	114689	0.973	+	.	Parent=mRNA6
+###
+tig00000001	gth	gene	115229	116684	.	-	.	ID=gene7
+tig00000001	gth	mRNA	115229	116684	.	-	.	ID=mRNA7;Parent=gene7;Target=PRG01_0501100-t36_1-p1 1 381 +
+tig00000001	gth	exon	115229	115979	0.985	-	.	Parent=mRNA7
+tig00000001	gth	CDS	115229	115979	.	-	1	ID=CDS7;Parent=mRNA7
+tig00000001	gth	three_prime_cis_splice_site	115979	115980	0.05	-	.	Parent=mRNA7
+tig00000001	gth	five_prime_cis_splice_site	116292	116293	0.05	-	.	Parent=mRNA7
+tig00000001	gth	exon	116293	116684	0.994	-	.	Parent=mRNA7
+tig00000001	gth	CDS	116293	116684	.	-	0	ID=CDS7;Parent=mRNA7
+###
+tig00000001	gth	gene	117683	121926	.	+	.	ID=gene8
+tig00000001	gth	mRNA	117683	121926	.	+	.	ID=mRNA8;Parent=gene8;Target=PRG01_0501200-t36_1-p1 1 1251 +
+tig00000001	gth	exon	117683	117737	1	+	.	Parent=mRNA8
+tig00000001	gth	CDS	117683	117737	.	+	0	ID=CDS8;Parent=mRNA8
+tig00000001	gth	five_prime_cis_splice_site	117738	117739	0.05	+	.	Parent=mRNA8
+tig00000001	gth	three_prime_cis_splice_site	117940	117941	0.05	+	.	Parent=mRNA8
+tig00000001	gth	exon	117942	118131	0.978	+	.	Parent=mRNA8
+tig00000001	gth	CDS	117942	118131	.	+	2	ID=CDS8;Parent=mRNA8
+tig00000001	gth	five_prime_cis_splice_site	118132	118133	0.05	+	.	Parent=mRNA8
+tig00000001	gth	three_prime_cis_splice_site	118357	118358	0.05	+	.	Parent=mRNA8
+tig00000001	gth	exon	118359	120862	0.93	+	.	Parent=mRNA8
+tig00000001	gth	CDS	118359	120862	.	+	1	ID=CDS8;Parent=mRNA8
+tig00000001	gth	five_prime_cis_splice_site	120863	120864	0.0001	+	.	Parent=mRNA8
+tig00000001	gth	three_prime_cis_splice_site	120957	120958	0.002	+	.	Parent=mRNA8
+tig00000001	gth	exon	120959	121926	0.873	+	.	Parent=mRNA8
+tig00000001	gth	CDS	120959	121926	.	+	2	ID=CDS8;Parent=mRNA8
+###
+tig00000001	gth	gene	124304	125782	.	+	.	ID=gene9
+tig00000001	gth	mRNA	124304	125782	.	+	.	ID=mRNA9;Parent=gene9;Target=PRG01_0501400-t36_1-p1 1 443 +
+tig00000001	gth	exon	124304	124382	0.882	+	.	Parent=mRNA9
+tig00000001	gth	CDS	124304	124382	.	+	0	ID=CDS9;Parent=mRNA9
+tig00000001	gth	five_prime_cis_splice_site	124383	124384	0.05	+	.	Parent=mRNA9
+tig00000001	gth	three_prime_cis_splice_site	124531	124532	0.05	+	.	Parent=mRNA9
+tig00000001	gth	exon	124533	125782	0.95	+	.	Parent=mRNA9
+tig00000001	gth	CDS	124533	125782	.	+	2	ID=CDS9;Parent=mRNA9
+###
+tig00000001	gth	gene	129939	131738	.	-	.	ID=gene10
+tig00000001	gth	mRNA	129939	131738	.	-	.	ID=mRNA10;Parent=gene10;Target=PRG01_0501600-t36_1-p1 1 588 +
+tig00000001	gth	exon	129939	131155	0.973	-	.	Parent=mRNA10
+tig00000001	gth	CDS	129939	131155	.	-	2	ID=CDS10;Parent=mRNA10
+tig00000001	gth	three_prime_cis_splice_site	131155	131156	0.0001	-	.	Parent=mRNA10
+tig00000001	gth	five_prime_cis_splice_site	131206	131207	0.0001	-	.	Parent=mRNA10
+tig00000001	gth	exon	131207	131738	0.8	-	.	Parent=mRNA10
+tig00000001	gth	CDS	131207	131738	.	-	0	ID=CDS10;Parent=mRNA10
+###
+tig00000001	gth	gene	134166	135950	.	+	.	ID=gene11
+tig00000001	gth	mRNA	134166	135950	.	+	.	ID=mRNA11;Parent=gene11;Target=PRG01_0501700-t36_1-p1 1 585 +
+tig00000001	gth	exon	134166	135950	0.918	+	.	Parent=mRNA11
+tig00000001	gth	CDS	134166	135950	.	+	0	ID=CDS11;Parent=mRNA11
+###
+tig00000001	gth	gene	136488	139986	.	-	.	ID=gene12
+tig00000001	gth	mRNA	136488	139986	.	-	.	ID=mRNA12;Parent=gene12;Target=PRG01_0501800-t36_1-p1 1 866 +
+tig00000001	gth	exon	136488	136517	1	-	.	Parent=mRNA12
+tig00000001	gth	CDS	136488	136517	.	-	0	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	136517	136518	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	136632	136633	0.05	-	.	Parent=mRNA12
+tig00000001	gth	exon	136633	136749	1	-	.	Parent=mRNA12
+tig00000001	gth	CDS	136633	136749	.	-	0	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	136749	136750	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	136851	136852	0.05	-	.	Parent=mRNA12
+tig00000001	gth	exon	136852	136953	0.869	-	.	Parent=mRNA12
+tig00000001	gth	CDS	136852	136953	.	-	0	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	136953	136954	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	137050	137051	0.05	-	.	Parent=mRNA12
+tig00000001	gth	exon	137051	137125	1	-	.	Parent=mRNA12
+tig00000001	gth	CDS	137051	137125	.	-	0	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	137125	137126	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	137277	137278	0.05	-	.	Parent=mRNA12
+tig00000001	gth	exon	137278	137730	0.963	-	.	Parent=mRNA12
+tig00000001	gth	CDS	137278	137730	.	-	0	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	137730	137731	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	137799	137800	0.0001	-	.	Parent=mRNA12
+tig00000001	gth	exon	137800	138884	0.946	-	.	Parent=mRNA12
+tig00000001	gth	CDS	137800	138884	.	-	2	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	138884	138885	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	139059	139060	0.05	-	.	Parent=mRNA12
+tig00000001	gth	exon	139060	139275	0.905	-	.	Parent=mRNA12
+tig00000001	gth	CDS	139060	139275	.	-	2	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	139275	139276	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	139384	139385	0.05	-	.	Parent=mRNA12
+tig00000001	gth	exon	139385	139456	1	-	.	Parent=mRNA12
+tig00000001	gth	CDS	139385	139456	.	-	2	ID=CDS12;Parent=mRNA12
+tig00000001	gth	three_prime_cis_splice_site	139456	139457	0.05	-	.	Parent=mRNA12
+tig00000001	gth	five_prime_cis_splice_site	139538	139539	0.05	-	.	Parent=mRNA12
+tig00000001	gth	exon	139539	139986	0.97	-	.	Parent=mRNA12
+tig00000001	gth	CDS	139539	139986	.	-	0	ID=CDS12;Parent=mRNA12
+###
+tig00000001	gth	gene	140127	141470	.	-	.	ID=gene13
+tig00000001	gth	mRNA	140127	141470	.	-	.	ID=mRNA13;Parent=gene13;Target=PRG01_0501900-t36_1-p1 1 414 +
+tig00000001	gth	exon	140127	140674	0.99	-	.	Parent=mRNA13
+tig00000001	gth	CDS	140127	140674	.	-	2	ID=CDS13;Parent=mRNA13
+tig00000001	gth	three_prime_cis_splice_site	140674	140675	0.05	-	.	Parent=mRNA13
+tig00000001	gth	five_prime_cis_splice_site	140833	140834	0.05	-	.	Parent=mRNA13
+tig00000001	gth	exon	140834	141470	0.69	-	.	Parent=mRNA13
+tig00000001	gth	CDS	140834	141470	.	-	0	ID=CDS13;Parent=mRNA13
+###
+tig00000001	gth	gene	142455	142865	.	+	.	ID=gene14
+tig00000001	gth	mRNA	142455	142865	.	+	.	ID=mRNA14;Parent=gene14;Target=PRG01_0502000-t36_1-p1 1 137 +
+tig00000001	gth	exon	142455	142865	0.993	+	.	Parent=mRNA14
+tig00000001	gth	CDS	142455	142865	.	+	0	ID=CDS14;Parent=mRNA14
+###
+tig00000001	gth	gene	143339	143906	.	-	.	ID=gene15
+tig00000001	gth	mRNA	143339	143906	.	-	.	ID=mRNA15;Parent=gene15;Target=PRG01_0502100-t36_1-p1 1 82 +
+tig00000001	gth	exon	143339	143411	1	-	.	Parent=mRNA15
+tig00000001	gth	CDS	143339	143411	.	-	1	ID=CDS15;Parent=mRNA15
+tig00000001	gth	three_prime_cis_splice_site	143411	143412	0.05	-	.	Parent=mRNA15
+tig00000001	gth	five_prime_cis_splice_site	143591	143592	0.05	-	.	Parent=mRNA15
+tig00000001	gth	exon	143592	143692	1	-	.	Parent=mRNA15
+tig00000001	gth	CDS	143592	143692	.	-	0	ID=CDS15;Parent=mRNA15
+tig00000001	gth	three_prime_cis_splice_site	143692	143693	0.05	-	.	Parent=mRNA15
+tig00000001	gth	five_prime_cis_splice_site	143834	143835	0.05	-	.	Parent=mRNA15
+tig00000001	gth	exon	143835	143906	1	-	.	Parent=mRNA15
+tig00000001	gth	CDS	143835	143906	.	-	0	ID=CDS15;Parent=mRNA15
+###
+tig00000001	gth	gene	145096	146511	.	+	.	ID=gene16
+tig00000001	gth	mRNA	145096	146511	.	+	.	ID=mRNA16;Parent=gene16;Target=PRG01_0502200-t36_1-p1 1 262 +
+tig00000001	gth	exon	145096	145197	1	+	.	Parent=mRNA16
+tig00000001	gth	CDS	145096	145197	.	+	0	ID=CDS16;Parent=mRNA16
+tig00000001	gth	five_prime_cis_splice_site	145198	145199	0.05	+	.	Parent=mRNA16
+tig00000001	gth	three_prime_cis_splice_site	145392	145393	0.05	+	.	Parent=mRNA16
+tig00000001	gth	exon	145394	145445	1	+	.	Parent=mRNA16
+tig00000001	gth	CDS	145394	145445	.	+	0	ID=CDS16;Parent=mRNA16
+tig00000001	gth	five_prime_cis_splice_site	145446	145447	0.05	+	.	Parent=mRNA16
+tig00000001	gth	three_prime_cis_splice_site	145600	145601	0.05	+	.	Parent=mRNA16
+tig00000001	gth	exon	145602	145711	0.975	+	.	Parent=mRNA16
+tig00000001	gth	CDS	145602	145711	.	+	2	ID=CDS16;Parent=mRNA16
+tig00000001	gth	five_prime_cis_splice_site	145712	145713	0.05	+	.	Parent=mRNA16
+tig00000001	gth	three_prime_cis_splice_site	145828	145829	0.05	+	.	Parent=mRNA16
+tig00000001	gth	exon	145830	145951	1	+	.	Parent=mRNA16
+tig00000001	gth	CDS	145830	145951	.	+	0	ID=CDS16;Parent=mRNA16
+tig00000001	gth	five_prime_cis_splice_site	145952	145953	0.05	+	.	Parent=mRNA16
+tig00000001	gth	three_prime_cis_splice_site	146110	146111	0.05	+	.	Parent=mRNA16
+tig00000001	gth	exon	146112	146511	0.977	+	.	Parent=mRNA16
+tig00000001	gth	CDS	146112	146511	.	+	1	ID=CDS16;Parent=mRNA16
+###
+tig00000001	gth	gene	147053	148663	.	-	.	ID=gene17
+tig00000001	gth	mRNA	147053	148663	.	-	.	ID=mRNA17;Parent=gene17;Target=PRG01_0502300-t36_1-p1 1 537 +
+tig00000001	gth	exon	147053	148663	0.954	-	.	Parent=mRNA17
+tig00000001	gth	CDS	147053	148663	.	-	0	ID=CDS17;Parent=mRNA17
+###
+tig00000001	gth	gene	150344	153292	.	+	.	ID=gene18
+tig00000001	gth	mRNA	150344	153292	.	+	.	ID=mRNA18;Parent=gene18;Target=PRG01_0502400-t36_1-p1 1 986 +
+tig00000001	gth	exon	150344	153292	0.927	+	.	Parent=mRNA18
+tig00000001	gth	CDS	150344	153292	.	+	0	ID=CDS18;Parent=mRNA18
+###
+tig00000001	gth	gene	154931	155854	.	-	.	ID=gene19
+tig00000001	gth	mRNA	154931	155854	.	-	.	ID=mRNA19;Parent=gene19;Target=PRG01_0502500-t36_1-p1 1 308 +
+tig00000001	gth	exon	154931	155854	0.988	-	.	Parent=mRNA19
+tig00000001	gth	CDS	154931	155854	.	-	0	ID=CDS19;Parent=mRNA19
+###
+tig00000001	gth	gene	160632	161359	.	+	.	ID=gene20
+tig00000001	gth	mRNA	160632	161359	.	+	.	ID=mRNA20;Parent=gene20;Target=PRG01_0502600-t36_1-p1 1 122 +
+tig00000001	gth	exon	160632	160839	1	+	.	Parent=mRNA20
+tig00000001	gth	CDS	160632	160839	.	+	0	ID=CDS20;Parent=mRNA20
+tig00000001	gth	five_prime_cis_splice_site	160840	160841	0.05	+	.	Parent=mRNA20
+tig00000001	gth	three_prime_cis_splice_site	161200	161201	0.05	+	.	Parent=mRNA20
+tig00000001	gth	exon	161202	161359	1	+	.	Parent=mRNA20
+tig00000001	gth	CDS	161202	161359	.	+	2	ID=CDS20;Parent=mRNA20
+###
+tig00000001	gth	gene	166492	170007	.	-	.	ID=gene21
+tig00000001	gth	mRNA	166492	170007	.	-	.	ID=mRNA21;Parent=gene21;Target=PRG01_0502800-t36_1-p1 1 801 +
+tig00000001	gth	exon	166492	166704	1	-	.	Parent=mRNA21
+tig00000001	gth	CDS	166492	166704	.	-	0	ID=CDS21;Parent=mRNA21
+tig00000001	gth	three_prime_cis_splice_site	166704	166705	0.05	-	.	Parent=mRNA21
+tig00000001	gth	five_prime_cis_splice_site	166949	166950	0.05	-	.	Parent=mRNA21
+tig00000001	gth	exon	166950	167348	0.991	-	.	Parent=mRNA21
+tig00000001	gth	CDS	166950	167348	.	-	0	ID=CDS21;Parent=mRNA21
+tig00000001	gth	three_prime_cis_splice_site	167348	167349	0.05	-	.	Parent=mRNA21
+tig00000001	gth	five_prime_cis_splice_site	167537	167538	0.05	-	.	Parent=mRNA21
+tig00000001	gth	exon	167538	167717	1	-	.	Parent=mRNA21
+tig00000001	gth	CDS	167538	167717	.	-	0	ID=CDS21;Parent=mRNA21
+tig00000001	gth	three_prime_cis_splice_site	167717	167718	0.05	-	.	Parent=mRNA21
+tig00000001	gth	five_prime_cis_splice_site	167930	167931	0.05	-	.	Parent=mRNA21
+tig00000001	gth	exon	167931	168517	1	-	.	Parent=mRNA21
+tig00000001	gth	CDS	167931	168517	.	-	2	ID=CDS21;Parent=mRNA21
+tig00000001	gth	three_prime_cis_splice_site	168517	168518	0.05	-	.	Parent=mRNA21
+tig00000001	gth	five_prime_cis_splice_site	168624	168625	0.05	-	.	Parent=mRNA21
+tig00000001	gth	exon	168625	168720	0.966	-	.	Parent=mRNA21
+tig00000001	gth	CDS	168625	168720	.	-	2	ID=CDS21;Parent=mRNA21
+tig00000001	gth	three_prime_cis_splice_site	168720	168721	0.05	-	.	Parent=mRNA21
+tig00000001	gth	five_prime_cis_splice_site	168823	168824	0.05	-	.	Parent=mRNA21
+tig00000001	gth	exon	168824	168956	1	-	.	Parent=mRNA21
+tig00000001	gth	CDS	168824	168956	.	-	0	ID=CDS21;Parent=mRNA21
+tig00000001	gth	three_prime_cis_splice_site	168956	168957	0.05	-	.	Parent=mRNA21
+tig00000001	gth	five_prime_cis_splice_site	169066	169067	0.05	-	.	Parent=mRNA21
+tig00000001	gth	exon	169067	169210	1	-	.	Parent=mRNA21
+tig00000001	gth	CDS	169067	169210	.	-	0	ID=CDS21;Parent=mRNA21
+tig00000001	gth	three_prime_cis_splice_site	169210	169211	0.05	-	.	Parent=mRNA21
+tig00000001	gth	five_prime_cis_splice_site	169356	169357	0.05	-	.	Parent=mRNA21
+tig00000001	gth	exon	169357	170007	0.996	-	.	Parent=mRNA21
+tig00000001	gth	CDS	169357	170007	.	-	0	ID=CDS21;Parent=mRNA21
+###
+tig00000001	gth	gene	171315	171877	.	-	.	ID=gene22
+tig00000001	gth	mRNA	171315	171877	.	-	.	ID=mRNA22;Parent=gene22;Target=PRG01_0502900-t36_1-p1 1 120 +
+tig00000001	gth	exon	171315	171509	1	-	.	Parent=mRNA22
+tig00000001	gth	CDS	171315	171509	.	-	0	ID=CDS22;Parent=mRNA22
+tig00000001	gth	three_prime_cis_splice_site	171509	171510	0.05	-	.	Parent=mRNA22
+tig00000001	gth	five_prime_cis_splice_site	171710	171711	0.05	-	.	Parent=mRNA22
+tig00000001	gth	CDS	171711	171875	.	-	0	ID=CDS22;Parent=mRNA22
+tig00000001	gth	exon	171711	171877	0.929	-	.	Parent=mRNA22
+###
+tig00000001	gth	gene	173787	175909	.	-	.	ID=gene23
+tig00000001	gth	mRNA	173787	175909	.	-	.	ID=mRNA23;Parent=gene23;Target=PRG01_0503000-t36_1-p1 1 632 +
+tig00000001	gth	exon	173787	175178	0.948	-	.	Parent=mRNA23
+tig00000001	gth	CDS	173787	175178	.	-	0	ID=CDS23;Parent=mRNA23
+tig00000001	gth	three_prime_cis_splice_site	175178	175179	0.002	-	.	Parent=mRNA23
+tig00000001	gth	five_prime_cis_splice_site	175241	175242	2e-05	-	.	Parent=mRNA23
+tig00000001	gth	exon	175242	175648	0.903	-	.	Parent=mRNA23
+tig00000001	gth	CDS	175242	175648	.	-	2	ID=CDS23;Parent=mRNA23
+tig00000001	gth	three_prime_cis_splice_site	175648	175649	0.05	-	.	Parent=mRNA23
+tig00000001	gth	five_prime_cis_splice_site	175824	175825	0.05	-	.	Parent=mRNA23
+tig00000001	gth	exon	175825	175909	1	-	.	Parent=mRNA23
+tig00000001	gth	CDS	175825	175909	.	-	0	ID=CDS23;Parent=mRNA23
+###
+tig00000001	gth	gene	187460	189309	.	+	.	ID=gene24
+tig00000001	gth	mRNA	187460	189309	.	+	.	ID=mRNA24;Parent=gene24;Target=PRG01_0503300-t36_1-p1 1 502 +
+tig00000001	gth	exon	187460	188054	0.954	+	.	Parent=mRNA24
+tig00000001	gth	CDS	187549	188054	.	+	0	ID=CDS24;Parent=mRNA24
+tig00000001	gth	five_prime_cis_splice_site	188055	188056	0.05	+	.	Parent=mRNA24
+tig00000001	gth	three_prime_cis_splice_site	188254	188255	0.05	+	.	Parent=mRNA24
+tig00000001	gth	exon	188256	188981	0.968	+	.	Parent=mRNA24
+tig00000001	gth	CDS	188256	188981	.	+	1	ID=CDS24;Parent=mRNA24
+tig00000001	gth	five_prime_cis_splice_site	188982	188983	0.05	+	.	Parent=mRNA24
+tig00000001	gth	three_prime_cis_splice_site	189124	189125	0.05	+	.	Parent=mRNA24
+tig00000001	gth	exon	189126	189309	1	+	.	Parent=mRNA24
+tig00000001	gth	CDS	189126	189309	.	+	1	ID=CDS24;Parent=mRNA24
+###
+tig00000001	gth	gene	189362	190423	.	-	.	ID=gene25
+tig00000001	gth	mRNA	189362	190423	.	-	.	ID=mRNA25;Parent=gene25;Target=PRG01_0503400-t36_1-p1 1 224 +
+tig00000001	gth	exon	189362	189451	0.972	-	.	Parent=mRNA25
+tig00000001	gth	CDS	189362	189451	.	-	0	ID=CDS25;Parent=mRNA25
+tig00000001	gth	three_prime_cis_splice_site	189451	189452	0.05	-	.	Parent=mRNA25
+tig00000001	gth	five_prime_cis_splice_site	189537	189538	0.05	-	.	Parent=mRNA25
+tig00000001	gth	exon	189538	189600	0.948	-	.	Parent=mRNA25
+tig00000001	gth	CDS	189538	189600	.	-	0	ID=CDS25;Parent=mRNA25
+tig00000001	gth	three_prime_cis_splice_site	189600	189601	0.05	-	.	Parent=mRNA25
+tig00000001	gth	five_prime_cis_splice_site	189740	189741	0.05	-	.	Parent=mRNA25
+tig00000001	gth	exon	189741	189939	0.978	-	.	Parent=mRNA25
+tig00000001	gth	CDS	189741	189939	.	-	1	ID=CDS25;Parent=mRNA25
+tig00000001	gth	three_prime_cis_splice_site	189939	189940	0.05	-	.	Parent=mRNA25
+tig00000001	gth	five_prime_cis_splice_site	190103	190104	0.05	-	.	Parent=mRNA25
+tig00000001	gth	exon	190104	190423	0.983	-	.	Parent=mRNA25
+tig00000001	gth	CDS	190104	190423	.	-	0	ID=CDS25;Parent=mRNA25
+###
+tig00000001	gth	gene	191978	194242	.	+	.	ID=gene26
+tig00000001	gth	mRNA	191978	194242	.	+	.	ID=mRNA26;Parent=gene26;Target=PRG01_0503500-t36_1-p1 1 768 +
+tig00000001	gth	exon	191978	194242	0.917	+	.	Parent=mRNA26
+tig00000001	gth	CDS	191978	194242	.	+	0	ID=CDS26;Parent=mRNA26
+###
+tig00000001	gth	gene	194818	196256	.	+	.	ID=gene27
+tig00000001	gth	mRNA	194818	196256	.	+	.	ID=mRNA27;Parent=gene27;Target=PRG01_0503600-t36_1-p1 1 275 +
+tig00000001	gth	exon	194818	194942	0.98	+	.	Parent=mRNA27
+tig00000001	gth	CDS	194818	194942	.	+	0	ID=CDS27;Parent=mRNA27
+tig00000001	gth	five_prime_cis_splice_site	194943	194944	0.05	+	.	Parent=mRNA27
+tig00000001	gth	three_prime_cis_splice_site	195083	195084	0.05	+	.	Parent=mRNA27
+tig00000001	gth	exon	195085	195141	1	+	.	Parent=mRNA27
+tig00000001	gth	CDS	195085	195141	.	+	1	ID=CDS27;Parent=mRNA27
+tig00000001	gth	five_prime_cis_splice_site	195142	195143	0.05	+	.	Parent=mRNA27
+tig00000001	gth	three_prime_cis_splice_site	195237	195238	0.05	+	.	Parent=mRNA27
+tig00000001	gth	exon	195239	195325	0.973	+	.	Parent=mRNA27
+tig00000001	gth	CDS	195239	195325	.	+	1	ID=CDS27;Parent=mRNA27
+tig00000001	gth	five_prime_cis_splice_site	195326	195327	0.05	+	.	Parent=mRNA27
+tig00000001	gth	three_prime_cis_splice_site	195399	195400	0.05	+	.	Parent=mRNA27
+tig00000001	gth	exon	195401	195536	0.983	+	.	Parent=mRNA27
+tig00000001	gth	CDS	195401	195536	.	+	1	ID=CDS27;Parent=mRNA27
+tig00000001	gth	five_prime_cis_splice_site	195537	195538	0.05	+	.	Parent=mRNA27
+tig00000001	gth	three_prime_cis_splice_site	195683	195684	0.05	+	.	Parent=mRNA27
+tig00000001	gth	exon	195685	196003	1	+	.	Parent=mRNA27
+tig00000001	gth	CDS	195685	196003	.	+	0	ID=CDS27;Parent=mRNA27
+tig00000001	gth	five_prime_cis_splice_site	196004	196005	0.05	+	.	Parent=mRNA27
+tig00000001	gth	three_prime_cis_splice_site	196154	196155	0.05	+	.	Parent=mRNA27
+tig00000001	gth	exon	196156	196256	1	+	.	Parent=mRNA27
+tig00000001	gth	CDS	196156	196256	.	+	2	ID=CDS27;Parent=mRNA27
+###
+tig00000001	gth	gene	197243	198385	.	+	.	ID=gene28
+tig00000001	gth	mRNA	197243	198385	.	+	.	ID=mRNA28;Parent=gene28;Target=PRG01_0503700-t36_1-p1 1 381 +
+tig00000001	gth	exon	197243	198385	0.99	+	.	Parent=mRNA28
+tig00000001	gth	CDS	197243	198385	.	+	0	ID=CDS28;Parent=mRNA28
+###
+tig00000001	gth	gene	251161	252870	.	+	.	ID=gene29
+tig00000001	gth	mRNA	251161	252870	.	+	.	ID=mRNA29;Parent=gene29;Target=PRG01_0504300-t36_1-p1 1 559 +
+tig00000001	gth	exon	251161	252870	0.954	+	.	Parent=mRNA29
+tig00000001	gth	CDS	251161	252870	.	+	0	ID=CDS29;Parent=mRNA29
+###
+tig00000001	gth	gene	254295	256145	.	+	.	ID=gene30
+tig00000001	gth	mRNA	254295	256145	.	+	.	ID=mRNA30;Parent=gene30;Target=PRG01_0504400-t36_1-p1 1 612 +
+tig00000001	gth	exon	254295	256145	0.923	+	.	Parent=mRNA30
+tig00000001	gth	CDS	254295	256145	.	+	0	ID=CDS30;Parent=mRNA30
+###
+tig00000001	gth	gene	256641	258860	.	-	.	ID=gene31
+tig00000001	gth	mRNA	256641	258860	.	-	.	ID=mRNA31;Parent=gene31;Target=PRG01_0504500-t36_1-p1 1 760 +
+tig00000001	gth	exon	256641	258860	0.881	-	.	Parent=mRNA31
+tig00000001	gth	CDS	256641	258860	.	-	0	ID=CDS31;Parent=mRNA31
+###
+tig00000001	gth	gene	259944	264343	.	-	.	ID=gene32
+tig00000001	gth	mRNA	259944	264343	.	-	.	ID=mRNA32;Parent=gene32;Target=PRG01_0504600-t36_1-p1 1 1305 +
+tig00000001	gth	exon	259944	260756	0.991	-	.	Parent=mRNA32
+tig00000001	gth	CDS	259944	260756	.	-	0	ID=CDS32;Parent=mRNA32
+tig00000001	gth	three_prime_cis_splice_site	260756	260757	0.05	-	.	Parent=mRNA32
+tig00000001	gth	five_prime_cis_splice_site	261106	261107	0.05	-	.	Parent=mRNA32
+tig00000001	gth	exon	261107	262626	0.977	-	.	Parent=mRNA32
+tig00000001	gth	CDS	261107	262626	.	-	2	ID=CDS32;Parent=mRNA32
+tig00000001	gth	three_prime_cis_splice_site	262626	262627	0.05	-	.	Parent=mRNA32
+tig00000001	gth	five_prime_cis_splice_site	262692	262693	0.0001	-	.	Parent=mRNA32
+tig00000001	gth	exon	262693	264208	0.888	-	.	Parent=mRNA32
+tig00000001	gth	CDS	262693	264208	.	-	0	ID=CDS32;Parent=mRNA32
+tig00000001	gth	three_prime_cis_splice_site	264208	264209	0.05	-	.	Parent=mRNA32
+tig00000001	gth	five_prime_cis_splice_site	264258	264259	0.0001	-	.	Parent=mRNA32
+tig00000001	gth	exon	264259	264343	0.965	-	.	Parent=mRNA32
+###
+tig00000001	gth	gene	266371	267375	.	+	.	ID=gene33
+tig00000001	gth	mRNA	266371	267375	.	+	.	ID=mRNA33;Parent=gene33;Target=PRG01_0504700-t36_1-p1 1 316 +
+tig00000001	gth	exon	266371	266517	0.795	+	.	Parent=mRNA33
+tig00000001	gth	CDS	266371	266517	.	+	0	ID=CDS33;Parent=mRNA33
+tig00000001	gth	five_prime_cis_splice_site	266518	266519	0.0001	+	.	Parent=mRNA33
+tig00000001	gth	three_prime_cis_splice_site	266576	266577	0.002	+	.	Parent=mRNA33
+tig00000001	gth	exon	266578	267375	0.919	+	.	Parent=mRNA33
+tig00000001	gth	CDS	266578	267375	.	+	0	ID=CDS33;Parent=mRNA33
+###
+tig00000001	gth	gene	272375	272920	.	-	.	ID=gene34
+tig00000001	gth	mRNA	272375	272920	.	-	.	ID=mRNA34;Parent=gene34;Target=PRG01_0504900-t36_1-p1 1 100 +
+tig00000001	gth	exon	272375	272487	1	-	.	Parent=mRNA34
+tig00000001	gth	CDS	272375	272487	.	-	2	ID=CDS34;Parent=mRNA34
+tig00000001	gth	three_prime_cis_splice_site	272487	272488	0.05	-	.	Parent=mRNA34
+tig00000001	gth	five_prime_cis_splice_site	272733	272734	0.05	-	.	Parent=mRNA34
+tig00000001	gth	exon	272734	272920	0.984	-	.	Parent=mRNA34
+tig00000001	gth	CDS	272734	272920	.	-	0	ID=CDS34;Parent=mRNA34
+###
+tig00000001	gth	gene	276532	277687	.	+	.	ID=gene35
+tig00000001	gth	mRNA	276532	277687	.	+	.	ID=mRNA35;Parent=gene35;Target=PRG01_0505100-t36_1-p1 1 246 +
+tig00000001	gth	exon	276532	277023	0.972	+	.	Parent=mRNA35
+tig00000001	gth	CDS	276532	277023	.	+	0	ID=CDS35;Parent=mRNA35
+tig00000001	gth	five_prime_cis_splice_site	277024	277025	0.05	+	.	Parent=mRNA35
+tig00000001	gth	three_prime_cis_splice_site	277162	277163	0.05	+	.	Parent=mRNA35
+tig00000001	gth	exon	277164	277278	1	+	.	Parent=mRNA35
+tig00000001	gth	CDS	277164	277278	.	+	0	ID=CDS35;Parent=mRNA35
+tig00000001	gth	five_prime_cis_splice_site	277279	277280	0.05	+	.	Parent=mRNA35
+tig00000001	gth	three_prime_cis_splice_site	277555	277556	0.05	+	.	Parent=mRNA35
+tig00000001	gth	exon	277557	277687	0.978	+	.	Parent=mRNA35
+tig00000001	gth	CDS	277557	277687	.	+	2	ID=CDS35;Parent=mRNA35
+###
+tig00000001	gth	gene	278490	279282	.	-	.	ID=gene36
+tig00000001	gth	mRNA	278490	279282	.	-	.	ID=mRNA36;Parent=gene36;Target=PRG01_0505200-t36_1-p1 1 204 +
+tig00000001	gth	exon	278490	279057	0.924	-	.	Parent=mRNA36
+tig00000001	gth	CDS	278495	279057	.	-	2	ID=CDS36;Parent=mRNA36
+tig00000001	gth	three_prime_cis_splice_site	279057	279058	0.05	-	.	Parent=mRNA36
+tig00000001	gth	five_prime_cis_splice_site	279236	279237	0.05	-	.	Parent=mRNA36
+tig00000001	gth	exon	279237	279282	1	-	.	Parent=mRNA36
+tig00000001	gth	CDS	279237	279282	.	-	0	ID=CDS36;Parent=mRNA36
+###
+tig00000001	gth	gene	280202	281182	.	+	.	ID=gene37
+tig00000001	gth	mRNA	280202	281182	.	+	.	ID=mRNA37;Parent=gene37;Target=PRG01_0505300-t36_1-p1 1 325 +
+tig00000001	gth	exon	280202	281182	0.936	+	.	Parent=mRNA37
+tig00000001	gth	CDS	280202	281182	.	+	0	ID=CDS37;Parent=mRNA37
+###
+tig00000001	gth	gene	308982	311252	.	-	.	ID=gene38
+tig00000001	gth	mRNA	308982	311252	.	-	.	ID=mRNA38;Parent=gene38;Target=PRG01_0506000-t36_1-p1 1 743 +
+tig00000001	gth	exon	308982	310768	0.958	-	.	Parent=mRNA38
+tig00000001	gth	CDS	308982	310768	.	-	2	ID=CDS38;Parent=mRNA38
+tig00000001	gth	three_prime_cis_splice_site	310768	310769	0.05	-	.	Parent=mRNA38
+tig00000001	gth	five_prime_cis_splice_site	310831	310832	0.0001	-	.	Parent=mRNA38
+tig00000001	gth	exon	310832	311252	0.802	-	.	Parent=mRNA38
+tig00000001	gth	CDS	310832	311252	.	-	0	ID=CDS38;Parent=mRNA38
+###
+tig00000001	gth	gene	312960	313733	.	-	.	ID=gene39
+tig00000001	gth	mRNA	312960	313733	.	-	.	ID=mRNA39;Parent=gene39;Target=PRG01_0506100-t36_1-p1 1 105 +
+tig00000001	gth	exon	312960	313060	1	-	.	Parent=mRNA39
+tig00000001	gth	CDS	312960	313060	.	-	2	ID=CDS39;Parent=mRNA39
+tig00000001	gth	three_prime_cis_splice_site	313060	313061	0.05	-	.	Parent=mRNA39
+tig00000001	gth	five_prime_cis_splice_site	313369	313370	0.05	-	.	Parent=mRNA39
+tig00000001	gth	exon	313370	313479	1	-	.	Parent=mRNA39
+tig00000001	gth	CDS	313370	313479	.	-	1	ID=CDS39;Parent=mRNA39
+tig00000001	gth	three_prime_cis_splice_site	313479	313480	0.05	-	.	Parent=mRNA39
+tig00000001	gth	five_prime_cis_splice_site	313629	313630	0.05	-	.	Parent=mRNA39
+tig00000001	gth	exon	313630	313733	1	-	.	Parent=mRNA39
+tig00000001	gth	CDS	313630	313733	.	-	0	ID=CDS39;Parent=mRNA39
+###
+tig00000001	gth	gene	314916	316148	.	-	.	ID=gene40
+tig00000001	gth	mRNA	314916	316148	.	-	.	ID=mRNA40;Parent=gene40;Target=PRG01_0506200-t36_1-p1 1 411 +
+tig00000001	gth	exon	314916	316148	0.988	-	.	Parent=mRNA40
+tig00000001	gth	CDS	314916	316148	.	-	0	ID=CDS40;Parent=mRNA40
+###
+tig00000001	gth	gene	336749	338341	.	-	.	ID=gene41
+tig00000001	gth	mRNA	336749	338341	.	-	.	ID=mRNA41;Parent=gene41;Target=PRG01_0506800-t36_1-p1 1 535 +
+tig00000001	gth	exon	336749	338341	0.951	-	.	Parent=mRNA41
+tig00000001	gth	CDS	336749	338341	.	-	0	ID=CDS41;Parent=mRNA41
+###
+tig00000001	gth	gene	347669	348322	.	+	.	ID=gene42
+tig00000001	gth	mRNA	347669	348322	.	+	.	ID=mRNA42;Parent=gene42;Target=PRG01_0507000-t36_1-p1 1 117 +
+tig00000001	gth	exon	347669	347721	1	+	.	Parent=mRNA42
+tig00000001	gth	CDS	347669	347721	.	+	0	ID=CDS42;Parent=mRNA42
+tig00000001	gth	five_prime_cis_splice_site	347722	347723	0.05	+	.	Parent=mRNA42
+tig00000001	gth	three_prime_cis_splice_site	347861	347862	0.05	+	.	Parent=mRNA42
+tig00000001	gth	exon	347863	348021	0.991	+	.	Parent=mRNA42
+tig00000001	gth	CDS	347863	348021	.	+	1	ID=CDS42;Parent=mRNA42
+tig00000001	gth	five_prime_cis_splice_site	348022	348023	0.05	+	.	Parent=mRNA42
+tig00000001	gth	three_prime_cis_splice_site	348182	348183	0.05	+	.	Parent=mRNA42
+tig00000001	gth	exon	348184	348322	1	+	.	Parent=mRNA42
+tig00000001	gth	CDS	348184	348322	.	+	1	ID=CDS42;Parent=mRNA42
+###
+tig00000001	gth	gene	348655	349701	.	-	.	ID=gene43
+tig00000001	gth	mRNA	348655	349701	.	-	.	ID=mRNA43;Parent=gene43;Target=PRG01_0507100-t36_1-p1 1 351 +
+tig00000001	gth	exon	348655	349701	0.937	-	.	Parent=mRNA43
+tig00000001	gth	CDS	348655	349701	.	-	0	ID=CDS43;Parent=mRNA43
+###
+tig00000001	gth	gene	357774	359405	.	-	.	ID=gene44
+tig00000001	gth	mRNA	357774	359405	.	-	.	ID=mRNA44;Parent=gene44;Target=PRG01_0507300-t36_1-p1 1 355 +
+tig00000001	gth	exon	357774	358104	0.992	-	.	Parent=mRNA44
+tig00000001	gth	CDS	357774	358104	.	-	1	ID=CDS44;Parent=mRNA44
+tig00000001	gth	three_prime_cis_splice_site	358104	358105	0.05	-	.	Parent=mRNA44
+tig00000001	gth	five_prime_cis_splice_site	358270	358271	0.05	-	.	Parent=mRNA44
+tig00000001	gth	exon	358271	358508	0.992	-	.	Parent=mRNA44
+tig00000001	gth	CDS	358271	358508	.	-	2	ID=CDS44;Parent=mRNA44
+tig00000001	gth	three_prime_cis_splice_site	358508	358509	0.05	-	.	Parent=mRNA44
+tig00000001	gth	five_prime_cis_splice_site	358715	358716	0.05	-	.	Parent=mRNA44
+tig00000001	gth	exon	358716	358885	0.964	-	.	Parent=mRNA44
+tig00000001	gth	CDS	358716	358885	.	-	1	ID=CDS44;Parent=mRNA44
+tig00000001	gth	three_prime_cis_splice_site	358885	358886	0.05	-	.	Parent=mRNA44
+tig00000001	gth	five_prime_cis_splice_site	359079	359080	0.05	-	.	Parent=mRNA44
+tig00000001	gth	exon	359080	359405	0.933	-	.	Parent=mRNA44
+tig00000001	gth	CDS	359080	359405	.	-	0	ID=CDS44;Parent=mRNA44
+###
+tig00000001	gth	gene	362576	363601	.	+	.	ID=gene45
+tig00000001	gth	mRNA	362576	363601	.	+	.	ID=mRNA45;Parent=gene45;Target=PRG01_0507400-t36_1-p1 1 342 +
+tig00000001	gth	exon	362576	363601	0.996	+	.	Parent=mRNA45
+tig00000001	gth	CDS	362576	363601	.	+	0	ID=CDS45;Parent=mRNA45
+###
+tig00000001	gth	gene	365290	367057	.	+	.	ID=gene46
+tig00000001	gth	mRNA	365290	367057	.	+	.	ID=mRNA46;Parent=gene46;Target=PRG01_0507500-t36_1-p1 1 354 +
+tig00000001	gth	exon	365290	365342	1	+	.	Parent=mRNA46
+tig00000001	gth	CDS	365290	365342	.	+	0	ID=CDS46;Parent=mRNA46
+tig00000001	gth	five_prime_cis_splice_site	365343	365344	0.05	+	.	Parent=mRNA46
+tig00000001	gth	three_prime_cis_splice_site	365539	365540	0.05	+	.	Parent=mRNA46
+tig00000001	gth	exon	365541	365733	1	+	.	Parent=mRNA46
+tig00000001	gth	CDS	365541	365733	.	+	1	ID=CDS46;Parent=mRNA46
+tig00000001	gth	five_prime_cis_splice_site	365734	365735	0.05	+	.	Parent=mRNA46
+tig00000001	gth	three_prime_cis_splice_site	365875	365876	0.05	+	.	Parent=mRNA46
+tig00000001	gth	exon	365877	365957	1	+	.	Parent=mRNA46
+tig00000001	gth	CDS	365877	365957	.	+	0	ID=CDS46;Parent=mRNA46
+tig00000001	gth	five_prime_cis_splice_site	365958	365959	0.05	+	.	Parent=mRNA46
+tig00000001	gth	three_prime_cis_splice_site	366285	366286	0.05	+	.	Parent=mRNA46
+tig00000001	gth	exon	366287	366650	0.992	+	.	Parent=mRNA46
+tig00000001	gth	CDS	366287	366650	.	+	0	ID=CDS46;Parent=mRNA46
+tig00000001	gth	five_prime_cis_splice_site	366651	366652	0.0001	+	.	Parent=mRNA46
+tig00000001	gth	three_prime_cis_splice_site	366703	366704	0.05	+	.	Parent=mRNA46
+tig00000001	gth	exon	366705	367057	0.832	+	.	Parent=mRNA46
+tig00000001	gth	CDS	366705	367057	.	+	2	ID=CDS46;Parent=mRNA46
+###
+tig00000001	gth	gene	376565	377345	.	+	.	ID=gene47
+tig00000001	gth	mRNA	376565	377345	.	+	.	ID=mRNA47;Parent=gene47;Target=PRG01_0507700-t36_1-p1 1 281 +
+tig00000001	gth	CDS	376565	377299	.	+	0	ID=CDS47;Parent=mRNA47
+tig00000001	gth	exon	376565	377345	0.676	+	.	Parent=mRNA47
+###
+tig00000001	gth	gene	383792	384643	.	-	.	ID=gene48
+tig00000001	gth	mRNA	383792	384643	.	-	.	ID=mRNA48;Parent=gene48;Target=PRG01_0507900-t36_1-p1 1 290 +
+tig00000001	gth	exon	383792	384643	0.896	-	.	Parent=mRNA48
+tig00000001	gth	CDS	383792	384643	.	-	0	ID=CDS48;Parent=mRNA48
+###
+tig00000001	gth	gene	397010	398603	.	-	.	ID=gene49
+tig00000001	gth	mRNA	397010	398603	.	-	.	ID=mRNA49;Parent=gene49;Target=PRG01_0508100-t36_1-p1 1 298 +
+tig00000001	gth	exon	397010	397375	0.993	-	.	Parent=mRNA49
+tig00000001	gth	CDS	397010	397375	.	-	0	ID=CDS49;Parent=mRNA49
+tig00000001	gth	three_prime_cis_splice_site	397375	397376	0.05	-	.	Parent=mRNA49
+tig00000001	gth	five_prime_cis_splice_site	397523	397524	0.05	-	.	Parent=mRNA49
+tig00000001	gth	exon	397524	397602	1	-	.	Parent=mRNA49
+tig00000001	gth	CDS	397524	397602	.	-	1	ID=CDS49;Parent=mRNA49
+tig00000001	gth	three_prime_cis_splice_site	397602	397603	0.05	-	.	Parent=mRNA49
+tig00000001	gth	five_prime_cis_splice_site	397714	397715	0.05	-	.	Parent=mRNA49
+tig00000001	gth	exon	397715	397892	1	-	.	Parent=mRNA49
+tig00000001	gth	CDS	397715	397892	.	-	2	ID=CDS49;Parent=mRNA49
+tig00000001	gth	three_prime_cis_splice_site	397892	397893	0.05	-	.	Parent=mRNA49
+tig00000001	gth	five_prime_cis_splice_site	397995	397996	0.05	-	.	Parent=mRNA49
+tig00000001	gth	exon	397996	398118	1	-	.	Parent=mRNA49
+tig00000001	gth	CDS	397996	398118	.	-	2	ID=CDS49;Parent=mRNA49
+tig00000001	gth	three_prime_cis_splice_site	398118	398119	0.05	-	.	Parent=mRNA49
+tig00000001	gth	five_prime_cis_splice_site	398455	398456	0.05	-	.	Parent=mRNA49
+tig00000001	gth	exon	398456	398603	1	-	.	Parent=mRNA49
+tig00000001	gth	CDS	398456	398603	.	-	0	ID=CDS49;Parent=mRNA49
+###
+tig00000001	gth	gene	401240	406426	.	+	.	ID=gene50
+tig00000001	gth	mRNA	401240	406426	.	+	.	ID=mRNA50;Parent=gene50;Target=PRG01_0508200-t36_1-p1 1 1693 +
+tig00000001	gth	exon	401240	401771	0.981	+	.	Parent=mRNA50
+tig00000001	gth	CDS	401240	401771	.	+	0	ID=CDS50;Parent=mRNA50
+tig00000001	gth	five_prime_cis_splice_site	401772	401773	0.05	+	.	Parent=mRNA50
+tig00000001	gth	three_prime_cis_splice_site	401827	401828	0.0001	+	.	Parent=mRNA50
+tig00000001	gth	exon	401829	405089	0.953	+	.	Parent=mRNA50
+tig00000001	gth	CDS	401829	405089	.	+	2	ID=CDS50;Parent=mRNA50
+tig00000001	gth	five_prime_cis_splice_site	405090	405091	0.05	+	.	Parent=mRNA50
+tig00000001	gth	three_prime_cis_splice_site	405139	405140	0.05	+	.	Parent=mRNA50
+tig00000001	gth	exon	405141	406426	0.918	+	.	Parent=mRNA50
+tig00000001	gth	CDS	405141	406426	.	+	2	ID=CDS50;Parent=mRNA50
+###
+tig00000001	gth	gene	407153	408680	.	+	.	ID=gene51
+tig00000001	gth	mRNA	407153	408680	.	+	.	ID=mRNA51;Parent=gene51;Target=PRG01_0508300-t36_1-p1 1 338 +
+tig00000001	gth	exon	407153	407210	1	+	.	Parent=mRNA51
+tig00000001	gth	CDS	407153	407210	.	+	0	ID=CDS51;Parent=mRNA51
+tig00000001	gth	five_prime_cis_splice_site	407211	407212	0.05	+	.	Parent=mRNA51
+tig00000001	gth	three_prime_cis_splice_site	407325	407326	0.05	+	.	Parent=mRNA51
+tig00000001	gth	exon	407327	407498	1	+	.	Parent=mRNA51
+tig00000001	gth	CDS	407327	407498	.	+	2	ID=CDS51;Parent=mRNA51
+tig00000001	gth	five_prime_cis_splice_site	407499	407500	0.05	+	.	Parent=mRNA51
+tig00000001	gth	three_prime_cis_splice_site	407643	407644	0.05	+	.	Parent=mRNA51
+tig00000001	gth	exon	407645	407807	1	+	.	Parent=mRNA51
+tig00000001	gth	CDS	407645	407807	.	+	1	ID=CDS51;Parent=mRNA51
+tig00000001	gth	five_prime_cis_splice_site	407808	407809	0.05	+	.	Parent=mRNA51
+tig00000001	gth	three_prime_cis_splice_site	407961	407962	0.05	+	.	Parent=mRNA51
+tig00000001	gth	exon	407963	408395	0.978	+	.	Parent=mRNA51
+tig00000001	gth	CDS	407963	408395	.	+	0	ID=CDS51;Parent=mRNA51
+tig00000001	gth	five_prime_cis_splice_site	408396	408397	0.05	+	.	Parent=mRNA51
+tig00000001	gth	three_prime_cis_splice_site	408491	408492	0.05	+	.	Parent=mRNA51
+tig00000001	gth	exon	408493	408680	1	+	.	Parent=mRNA51
+tig00000001	gth	CDS	408493	408680	.	+	2	ID=CDS51;Parent=mRNA51
+###
+tig00000001	gth	gene	408877	409357	.	-	.	ID=gene52
+tig00000001	gth	mRNA	408877	409357	.	-	.	ID=mRNA52;Parent=gene52;Target=PRG01_0508400-t36_1-p1 1 116 +
+tig00000001	gth	exon	408877	409125	0.953	-	.	Parent=mRNA52
+tig00000001	gth	CDS	408877	409125	.	-	0	ID=CDS52;Parent=mRNA52
+tig00000001	gth	three_prime_cis_splice_site	409125	409126	0.05	-	.	Parent=mRNA52
+tig00000001	gth	five_prime_cis_splice_site	409261	409262	0.05	-	.	Parent=mRNA52
+tig00000001	gth	exon	409262	409357	0.849	-	.	Parent=mRNA52
+tig00000001	gth	CDS	409262	409357	.	-	0	ID=CDS52;Parent=mRNA52
+###
+tig00000001	gth	gene	410069	419123	.	-	.	ID=gene53
+tig00000001	gth	mRNA	410069	419123	.	-	.	ID=mRNA53;Parent=gene53;Target=PRG01_0508500-t36_1-p1 1 2920 +
+tig00000001	gth	exon	410069	410160	1	-	.	Parent=mRNA53
+tig00000001	gth	CDS	410069	410160	.	-	2	ID=CDS53;Parent=mRNA53
+tig00000001	gth	three_prime_cis_splice_site	410160	410161	0.05	-	.	Parent=mRNA53
+tig00000001	gth	five_prime_cis_splice_site	410335	410336	0.05	-	.	Parent=mRNA53
+tig00000001	gth	exon	410336	410452	1	-	.	Parent=mRNA53
+tig00000001	gth	CDS	410336	410452	.	-	2	ID=CDS53;Parent=mRNA53
+tig00000001	gth	three_prime_cis_splice_site	410452	410453	0.05	-	.	Parent=mRNA53
+tig00000001	gth	five_prime_cis_splice_site	410605	410606	0.05	-	.	Parent=mRNA53
+tig00000001	gth	exon	410606	411651	0.965	-	.	Parent=mRNA53
+tig00000001	gth	CDS	410606	411651	.	-	1	ID=CDS53;Parent=mRNA53
+tig00000001	gth	three_prime_cis_splice_site	411651	411652	0.05	-	.	Parent=mRNA53
+tig00000001	gth	five_prime_cis_splice_site	411702	411703	0.0001	-	.	Parent=mRNA53
+tig00000001	gth	exon	411703	419123	0.908	-	.	Parent=mRNA53
+tig00000001	gth	CDS	411703	419123	.	-	0	ID=CDS53;Parent=mRNA53
+###
+tig00000001	gth	gene	421535	422866	.	+	.	ID=gene54
+tig00000001	gth	mRNA	421535	422866	.	+	.	ID=mRNA54;Parent=gene54;Target=PRG01_0508600-t36_1-p1 1 426 +
+tig00000001	gth	exon	421535	421841	0.918	+	.	Parent=mRNA54
+tig00000001	gth	CDS	421831	421841	.	+	0	ID=CDS54;Parent=mRNA54
+tig00000001	gth	five_prime_cis_splice_site	421842	421843	0.05	+	.	Parent=mRNA54
+tig00000001	gth	three_prime_cis_splice_site	421895	421896	0.05	+	.	Parent=mRNA54
+tig00000001	gth	exon	421897	422866	0.975	+	.	Parent=mRNA54
+tig00000001	gth	CDS	421897	422866	.	+	1	ID=CDS54;Parent=mRNA54
+###
+tig00000001	gth	gene	423435	425714	.	+	.	ID=gene55
+tig00000001	gth	mRNA	423435	425714	.	+	.	ID=mRNA55;Parent=gene55;Target=PRG01_0508700-t36_1-p1 1 783 +
+tig00000001	gth	exon	423435	423735	0.961	+	.	Parent=mRNA55
+tig00000001	gth	CDS	423435	423735	.	+	0	ID=CDS55;Parent=mRNA55
+tig00000001	gth	five_prime_cis_splice_site	423736	423737	0.05	+	.	Parent=mRNA55
+tig00000001	gth	three_prime_cis_splice_site	423857	423858	0.05	+	.	Parent=mRNA55
+tig00000001	gth	exon	423859	425714	0.641	+	.	Parent=mRNA55
+tig00000001	gth	CDS	423859	425714	.	+	2	ID=CDS55;Parent=mRNA55
+###
+tig00000001	gth	gene	426047	427939	.	-	.	ID=gene56
+tig00000001	gth	mRNA	426047	427939	.	-	.	ID=mRNA56;Parent=gene56;Target=PRG01_0508800-t36_1-p1 1 389 +
+tig00000001	gth	exon	426047	426181	0.978	-	.	Parent=mRNA56
+tig00000001	gth	CDS	426047	426181	.	-	0	ID=CDS56;Parent=mRNA56
+tig00000001	gth	three_prime_cis_splice_site	426181	426182	0.05	-	.	Parent=mRNA56
+tig00000001	gth	five_prime_cis_splice_site	426272	426273	0.05	-	.	Parent=mRNA56
+tig00000001	gth	exon	426273	426547	0.959	-	.	Parent=mRNA56
+tig00000001	gth	CDS	426273	426547	.	-	2	ID=CDS56;Parent=mRNA56
+tig00000001	gth	three_prime_cis_splice_site	426547	426548	0.05	-	.	Parent=mRNA56
+tig00000001	gth	five_prime_cis_splice_site	426665	426666	0.05	-	.	Parent=mRNA56
+tig00000001	gth	exon	426666	426742	0.962	-	.	Parent=mRNA56
+tig00000001	gth	CDS	426666	426742	.	-	1	ID=CDS56;Parent=mRNA56
+tig00000001	gth	three_prime_cis_splice_site	426742	426743	0.05	-	.	Parent=mRNA56
+tig00000001	gth	five_prime_cis_splice_site	426854	426855	0.05	-	.	Parent=mRNA56
+tig00000001	gth	CDS	426855	427126	.	-	0	ID=CDS56;Parent=mRNA56
+tig00000001	gth	exon	426855	427201	0.922	-	.	Parent=mRNA56
+tig00000001	gth	three_prime_cis_splice_site	427201	427202	0.05	-	.	Parent=mRNA56
+tig00000001	gth	five_prime_cis_splice_site	427292	427293	0.05	-	.	Parent=mRNA56
+tig00000001	gth	exon	427293	427361	1	-	.	Parent=mRNA56
+tig00000001	gth	three_prime_cis_splice_site	427361	427362	0.05	-	.	Parent=mRNA56
+tig00000001	gth	five_prime_cis_splice_site	427490	427491	0.05	-	.	Parent=mRNA56
+tig00000001	gth	exon	427491	427682	0.983	-	.	Parent=mRNA56
+tig00000001	gth	three_prime_cis_splice_site	427682	427683	0.05	-	.	Parent=mRNA56
+tig00000001	gth	five_prime_cis_splice_site	427850	427851	0.05	-	.	Parent=mRNA56
+tig00000001	gth	exon	427851	427939	1	-	.	Parent=mRNA56
+###
+tig00000001	gth	gene	430306	435384	.	+	.	ID=gene57
+tig00000001	gth	mRNA	430306	435384	.	+	.	ID=mRNA57;Parent=gene57;Target=PRG01_0508900-t36_1-p1 1 1545 +
+tig00000001	gth	exon	430306	434532	0.917	+	.	Parent=mRNA57
+tig00000001	gth	CDS	430306	434532	.	+	0	ID=CDS57;Parent=mRNA57
+tig00000001	gth	five_prime_cis_splice_site	434533	434534	0.05	+	.	Parent=mRNA57
+tig00000001	gth	three_prime_cis_splice_site	434627	434628	0.05	+	.	Parent=mRNA57
+tig00000001	gth	exon	434629	434944	1	+	.	Parent=mRNA57
+tig00000001	gth	CDS	434629	434944	.	+	0	ID=CDS57;Parent=mRNA57
+tig00000001	gth	five_prime_cis_splice_site	434945	434946	0.05	+	.	Parent=mRNA57
+tig00000001	gth	three_prime_cis_splice_site	435077	435078	0.05	+	.	Parent=mRNA57
+tig00000001	gth	exon	435079	435167	1	+	.	Parent=mRNA57
+tig00000001	gth	CDS	435079	435167	.	+	2	ID=CDS57;Parent=mRNA57
+tig00000001	gth	five_prime_cis_splice_site	435168	435169	0.05	+	.	Parent=mRNA57
+tig00000001	gth	three_prime_cis_splice_site	435287	435288	0.05	+	.	Parent=mRNA57
+tig00000001	gth	exon	435289	435384	1	+	.	Parent=mRNA57
+tig00000001	gth	CDS	435289	435384	.	+	0	ID=CDS57;Parent=mRNA57
+###
+tig00000001	gth	gene	436466	437407	.	+	.	ID=gene58
+tig00000001	gth	mRNA	436466	437407	.	+	.	ID=mRNA58;Parent=gene58;Target=PRG01_0509000-t36_1-p1 1 314 +
+tig00000001	gth	exon	436466	437407	0.964	+	.	Parent=mRNA58
+tig00000001	gth	CDS	436466	437407	.	+	0	ID=CDS58;Parent=mRNA58
+###
+tig00000001	gth	gene	438222	441507	.	+	.	ID=gene59
+tig00000001	gth	mRNA	438222	441507	.	+	.	ID=mRNA59;Parent=gene59;Target=PRG01_0509100-t36_1-p1 1 771 +
+tig00000001	gth	exon	438222	438333	1	+	.	Parent=mRNA59
+tig00000001	gth	CDS	438222	438333	.	+	0	ID=CDS59;Parent=mRNA59
+tig00000001	gth	five_prime_cis_splice_site	438334	438335	0.05	+	.	Parent=mRNA59
+tig00000001	gth	three_prime_cis_splice_site	438603	438604	0.05	+	.	Parent=mRNA59
+tig00000001	gth	exon	438605	439930	0.945	+	.	Parent=mRNA59
+tig00000001	gth	CDS	438605	439930	.	+	2	ID=CDS59;Parent=mRNA59
+tig00000001	gth	five_prime_cis_splice_site	439931	439932	0.05	+	.	Parent=mRNA59
+tig00000001	gth	three_prime_cis_splice_site	440092	440093	0.05	+	.	Parent=mRNA59
+tig00000001	gth	exon	440094	440383	0.99	+	.	Parent=mRNA59
+tig00000001	gth	CDS	440094	440383	.	+	2	ID=CDS59;Parent=mRNA59
+tig00000001	gth	five_prime_cis_splice_site	440384	440385	0.05	+	.	Parent=mRNA59
+tig00000001	gth	three_prime_cis_splice_site	440466	440467	0.05	+	.	Parent=mRNA59
+tig00000001	gth	exon	440468	440693	0.97	+	.	Parent=mRNA59
+tig00000001	gth	CDS	440468	440693	.	+	0	ID=CDS59;Parent=mRNA59
+tig00000001	gth	five_prime_cis_splice_site	440694	440695	0.05	+	.	Parent=mRNA59
+tig00000001	gth	three_prime_cis_splice_site	440801	440802	0.05	+	.	Parent=mRNA59
+tig00000001	gth	exon	440803	440997	0.989	+	.	Parent=mRNA59
+tig00000001	gth	CDS	440803	440997	.	+	2	ID=CDS59;Parent=mRNA59
+tig00000001	gth	five_prime_cis_splice_site	440998	440999	0.05	+	.	Parent=mRNA59
+tig00000001	gth	three_prime_cis_splice_site	441164	441165	0.05	+	.	Parent=mRNA59
+tig00000001	gth	exon	441166	441299	1	+	.	Parent=mRNA59
+tig00000001	gth	CDS	441166	441299	.	+	2	ID=CDS59;Parent=mRNA59
+tig00000001	gth	five_prime_cis_splice_site	441300	441301	0.05	+	.	Parent=mRNA59
+tig00000001	gth	three_prime_cis_splice_site	441446	441447	0.05	+	.	Parent=mRNA59
+tig00000001	gth	exon	441448	441507	1	+	.	Parent=mRNA59
+tig00000001	gth	CDS	441448	441507	.	+	0	ID=CDS59;Parent=mRNA59
+###
+tig00000001	gth	gene	457551	459794	.	+	.	ID=gene60
+tig00000001	gth	mRNA	457551	459794	.	+	.	ID=mRNA60;Parent=gene60;Target=PRG01_0509300-t36_1-p1 1 761 +
+tig00000001	gth	exon	457551	459794	0.913	+	.	Parent=mRNA60
+tig00000001	gth	CDS	457551	459794	.	+	0	ID=CDS60;Parent=mRNA60
+###
+tig00000001	gth	gene	460838	461934	.	-	.	ID=gene61
+tig00000001	gth	mRNA	460838	461934	.	-	.	ID=mRNA61;Parent=gene61;Target=PRG01_0509400-t36_1-p1 1 246 +
+tig00000001	gth	exon	460838	461289	0.996	-	.	Parent=mRNA61
+tig00000001	gth	CDS	460838	461289	.	-	2	ID=CDS61;Parent=mRNA61
+tig00000001	gth	three_prime_cis_splice_site	461289	461290	0.05	-	.	Parent=mRNA61
+tig00000001	gth	five_prime_cis_splice_site	461435	461436	0.05	-	.	Parent=mRNA61
+tig00000001	gth	exon	461436	461541	1	-	.	Parent=mRNA61
+tig00000001	gth	CDS	461436	461541	.	-	0	ID=CDS61;Parent=mRNA61
+tig00000001	gth	three_prime_cis_splice_site	461541	461542	0.05	-	.	Parent=mRNA61
+tig00000001	gth	five_prime_cis_splice_site	461754	461755	0.05	-	.	Parent=mRNA61
+tig00000001	gth	exon	461755	461934	1	-	.	Parent=mRNA61
+tig00000001	gth	CDS	461755	461934	.	-	0	ID=CDS61;Parent=mRNA61
+###
+tig00000001	gth	gene	464300	465616	.	+	.	ID=gene62
+tig00000001	gth	mRNA	464300	465616	.	+	.	ID=mRNA62;Parent=gene62;Target=PRG01_0509500-t36_1-p1 1 439 +
+tig00000001	gth	exon	464300	465616	0.977	+	.	Parent=mRNA62
+tig00000001	gth	CDS	464300	465616	.	+	0	ID=CDS62;Parent=mRNA62
+###
+tig00000001	gth	gene	466018	468534	.	-	.	ID=gene63
+tig00000001	gth	mRNA	466018	468534	.	-	.	ID=mRNA63;Parent=gene63;Target=PRG01_0509600-t36_1-p1 1 839 +
+tig00000001	gth	exon	466018	468534	0.989	-	.	Parent=mRNA63
+tig00000001	gth	CDS	466018	468534	.	-	0	ID=CDS63;Parent=mRNA63
+###
+tig00000001	gth	gene	479516	480556	.	+	.	ID=gene64
+tig00000001	gth	mRNA	479516	480556	.	+	.	ID=mRNA64;Parent=gene64;Target=PRG01_0509900-t36_1-p1 1 347 +
+tig00000001	gth	exon	479516	480556	0.969	+	.	Parent=mRNA64
+tig00000001	gth	CDS	479516	480556	.	+	0	ID=CDS64;Parent=mRNA64
+###
+tig00000001	gth	gene	481232	484629	.	+	.	ID=gene65
+tig00000001	gth	mRNA	481232	484629	.	+	.	ID=mRNA65;Parent=gene65;Target=PRG01_0510000-t36_1-p1 1 611 +
+tig00000001	gth	exon	481232	481445	1	+	.	Parent=mRNA65
+tig00000001	gth	CDS	481232	481445	.	+	0	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	481446	481447	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	481757	481758	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	481759	481874	1	+	.	Parent=mRNA65
+tig00000001	gth	CDS	481759	481874	.	+	2	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	481875	481876	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	482037	482038	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	482039	482190	1	+	.	Parent=mRNA65
+tig00000001	gth	CDS	482039	482190	.	+	0	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	482191	482192	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	482345	482346	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	482347	482432	1	+	.	Parent=mRNA65
+tig00000001	gth	CDS	482347	482432	.	+	1	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	482433	482434	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	482554	482555	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	482556	482629	0.938	+	.	Parent=mRNA65
+tig00000001	gth	CDS	482556	482629	.	+	2	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	482630	482631	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	482772	482773	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	482774	483413	0.98	+	.	Parent=mRNA65
+tig00000001	gth	CDS	482774	483413	.	+	0	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	483414	483415	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	483567	483568	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	483569	483729	0.982	+	.	Parent=mRNA65
+tig00000001	gth	CDS	483569	483729	.	+	2	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	483730	483731	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	483823	483824	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	483825	483914	1	+	.	Parent=mRNA65
+tig00000001	gth	CDS	483825	483914	.	+	0	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	483915	483916	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	484020	484021	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	484022	484109	1	+	.	Parent=mRNA65
+tig00000001	gth	CDS	484022	484109	.	+	0	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	484110	484111	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	484248	484249	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	484250	484331	1	+	.	Parent=mRNA65
+tig00000001	gth	CDS	484250	484331	.	+	2	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	484332	484333	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	484406	484407	0.05	+	.	Parent=mRNA65
+tig00000001	gth	exon	484408	484465	0.961	+	.	Parent=mRNA65
+tig00000001	gth	CDS	484408	484465	.	+	1	ID=CDS65;Parent=mRNA65
+tig00000001	gth	five_prime_cis_splice_site	484466	484467	0.05	+	.	Parent=mRNA65
+tig00000001	gth	three_prime_cis_splice_site	484558	484559	0.05	+	.	Parent=mRNA65
+tig00000001	gth	CDS	484560	484628	.	+	0	ID=CDS65;Parent=mRNA65
+tig00000001	gth	exon	484560	484629	0.84	+	.	Parent=mRNA65
+###
+tig00000001	gth	gene	487817	488329	.	-	.	ID=gene66
+tig00000001	gth	mRNA	487817	488329	.	-	.	ID=mRNA66;Parent=gene66;Target=PRG01_0510200-t36_1-p1 1 171 +
+tig00000001	gth	exon	487817	488329	0.991	-	.	Parent=mRNA66
+tig00000001	gth	CDS	487817	488329	.	-	0	ID=CDS66;Parent=mRNA66
+###
+tig00000001	gth	gene	489511	490074	.	+	.	ID=gene67
+tig00000001	gth	mRNA	489511	490074	.	+	.	ID=mRNA67;Parent=gene67;Target=PRG01_0510300-t36_1-p1 1 119 +
+tig00000001	gth	exon	489511	489592	1	+	.	Parent=mRNA67
+tig00000001	gth	CDS	489511	489592	.	+	0	ID=CDS67;Parent=mRNA67
+tig00000001	gth	five_prime_cis_splice_site	489593	489594	0.05	+	.	Parent=mRNA67
+tig00000001	gth	three_prime_cis_splice_site	489798	489799	0.05	+	.	Parent=mRNA67
+tig00000001	gth	exon	489800	490074	0.979	+	.	Parent=mRNA67
+tig00000001	gth	CDS	489800	490074	.	+	2	ID=CDS67;Parent=mRNA67
+###
+tig00000001	gth	gene	491310	494312	.	+	.	ID=gene68
+tig00000001	gth	mRNA	491310	494312	.	+	.	ID=mRNA68;Parent=gene68;Target=PRG01_0510400-t36_1-p1 1 949 +
+tig00000001	gth	exon	491310	492401	0.988	+	.	Parent=mRNA68
+tig00000001	gth	CDS	491310	492401	.	+	0	ID=CDS68;Parent=mRNA68
+tig00000001	gth	five_prime_cis_splice_site	492402	492403	0.05	+	.	Parent=mRNA68
+tig00000001	gth	three_prime_cis_splice_site	492556	492557	0.05	+	.	Parent=mRNA68
+tig00000001	gth	exon	492558	494312	0.993	+	.	Parent=mRNA68
+tig00000001	gth	CDS	492558	494312	.	+	0	ID=CDS68;Parent=mRNA68
+###
+tig00000001	gth	gene	494741	499144	.	-	.	ID=gene69
+tig00000001	gth	mRNA	494741	499144	.	-	.	ID=mRNA69;Parent=gene69;Target=PRG01_0510500-t36_1-p1 1 1386 +
+tig00000001	gth	exon	494741	497420	0.936	-	.	Parent=mRNA69
+tig00000001	gth	CDS	494741	497420	.	-	1	ID=CDS69;Parent=mRNA69
+tig00000001	gth	three_prime_cis_splice_site	497420	497421	0.0001	-	.	Parent=mRNA69
+tig00000001	gth	five_prime_cis_splice_site	497495	497496	0.0001	-	.	Parent=mRNA69
+tig00000001	gth	exon	497496	498956	0.975	-	.	Parent=mRNA69
+tig00000001	gth	CDS	497496	498956	.	-	1	ID=CDS69;Parent=mRNA69
+tig00000001	gth	three_prime_cis_splice_site	498956	498957	0.05	-	.	Parent=mRNA69
+tig00000001	gth	five_prime_cis_splice_site	499094	499095	0.05	-	.	Parent=mRNA69
+tig00000001	gth	exon	499095	499144	1	-	.	Parent=mRNA69
+tig00000001	gth	CDS	499095	499144	.	-	0	ID=CDS69;Parent=mRNA69
+###
+tig00000001	gth	gene	537432	538085	.	-	.	ID=gene70
+tig00000001	gth	mRNA	537432	538085	.	-	.	ID=mRNA70;Parent=gene70;Target=PRG01_0510800-t36_1-p1 1 212 +
+tig00000001	gth	exon	537432	538085	0.914	-	.	Parent=mRNA70
+tig00000001	gth	CDS	537432	538085	.	-	0	ID=CDS70;Parent=mRNA70
+###
+tig00000001	gth	gene	539306	540258	.	+	.	ID=gene71
+tig00000001	gth	mRNA	539306	540258	.	+	.	ID=mRNA71;Parent=gene71;Target=PRG01_0510900-t36_1-p1 1 179 +
+tig00000001	gth	exon	539306	539470	1	+	.	Parent=mRNA71
+tig00000001	gth	CDS	539306	539470	.	+	0	ID=CDS71;Parent=mRNA71
+tig00000001	gth	five_prime_cis_splice_site	539471	539472	0.05	+	.	Parent=mRNA71
+tig00000001	gth	three_prime_cis_splice_site	539653	539654	0.05	+	.	Parent=mRNA71
+tig00000001	gth	exon	539655	539777	1	+	.	Parent=mRNA71
+tig00000001	gth	CDS	539655	539777	.	+	0	ID=CDS71;Parent=mRNA71
+tig00000001	gth	five_prime_cis_splice_site	539778	539779	0.05	+	.	Parent=mRNA71
+tig00000001	gth	three_prime_cis_splice_site	539901	539902	0.05	+	.	Parent=mRNA71
+tig00000001	gth	exon	539903	539986	0.956	+	.	Parent=mRNA71
+tig00000001	gth	CDS	539903	539986	.	+	0	ID=CDS71;Parent=mRNA71
+tig00000001	gth	five_prime_cis_splice_site	539987	539988	0.05	+	.	Parent=mRNA71
+tig00000001	gth	three_prime_cis_splice_site	540092	540093	0.05	+	.	Parent=mRNA71
+tig00000001	gth	exon	540094	540258	1	+	.	Parent=mRNA71
+tig00000001	gth	CDS	540094	540258	.	+	0	ID=CDS71;Parent=mRNA71
+###
+tig00000001	gth	gene	540931	542918	.	-	.	ID=gene72
+tig00000001	gth	mRNA	540931	542918	.	-	.	ID=mRNA72;Parent=gene72;Target=PRG01_0511000-t36_1-p1 1 604 +
+tig00000001	gth	exon	540931	541703	0.985	-	.	Parent=mRNA72
+tig00000001	gth	CDS	540931	541703	.	-	2	ID=CDS72;Parent=mRNA72
+tig00000001	gth	three_prime_cis_splice_site	541703	541704	0.05	-	.	Parent=mRNA72
+tig00000001	gth	five_prime_cis_splice_site	541879	541880	0.05	-	.	Parent=mRNA72
+tig00000001	gth	exon	541880	542918	0.99	-	.	Parent=mRNA72
+tig00000001	gth	CDS	541880	542918	.	-	0	ID=CDS72;Parent=mRNA72
+###
+tig00000001	gth	gene	549038	549598	.	-	.	ID=gene73
+tig00000001	gth	mRNA	549038	549598	.	-	.	ID=mRNA73;Parent=gene73;Target=PRG01_0511300-t36_1-p1 1 128 +
+tig00000001	gth	exon	549038	549110	1	-	.	Parent=mRNA73
+tig00000001	gth	CDS	549038	549110	.	-	1	ID=CDS73;Parent=mRNA73
+tig00000001	gth	three_prime_cis_splice_site	549110	549111	0.05	-	.	Parent=mRNA73
+tig00000001	gth	five_prime_cis_splice_site	549287	549288	0.05	-	.	Parent=mRNA73
+tig00000001	gth	exon	549288	549598	0.965	-	.	Parent=mRNA73
+tig00000001	gth	CDS	549288	549598	.	-	0	ID=CDS73;Parent=mRNA73
+###
+tig00000001	gth	gene	550100	552064	.	-	.	ID=gene74
+tig00000001	gth	mRNA	550100	552064	.	-	.	ID=mRNA74;Parent=gene74;Target=PRG01_0511400-t36_1-p1 1 655 +
+tig00000001	gth	exon	550100	552064	0.92	-	.	Parent=mRNA74
+tig00000001	gth	CDS	550100	552064	.	-	0	ID=CDS74;Parent=mRNA74
+###
+tig00000001	gth	gene	553688	554467	.	-	.	ID=gene75
+tig00000001	gth	mRNA	553688	554467	.	-	.	ID=mRNA75;Parent=gene75;Target=PRG01_0511500-t36_1-p1 1 260 +
+tig00000001	gth	exon	553688	554467	0.996	-	.	Parent=mRNA75
+tig00000001	gth	CDS	553688	554467	.	-	0	ID=CDS75;Parent=mRNA75
+###
+tig00000001	gth	gene	556415	557116	.	+	.	ID=gene76
+tig00000001	gth	mRNA	556415	557116	.	+	.	ID=mRNA76;Parent=gene76;Target=PRG01_0511600-t36_1-p1 1 234 +
+tig00000001	gth	exon	556415	557116	0.97	+	.	Parent=mRNA76
+tig00000001	gth	CDS	556415	557116	.	+	0	ID=CDS76;Parent=mRNA76
+###
+tig00000001	gth	gene	559882	562707	.	-	.	ID=gene77
+tig00000001	gth	mRNA	559882	562707	.	-	.	ID=mRNA77;Parent=gene77;Target=PRG01_0511800-t36_1-p1 1 824 +
+tig00000001	gth	exon	559882	559959	1	-	.	Parent=mRNA77
+tig00000001	gth	CDS	559882	559959	.	-	0	ID=CDS77;Parent=mRNA77
+tig00000001	gth	three_prime_cis_splice_site	559959	559960	0.05	-	.	Parent=mRNA77
+tig00000001	gth	five_prime_cis_splice_site	560052	560053	0.05	-	.	Parent=mRNA77
+tig00000001	gth	exon	560053	560229	0.972	-	.	Parent=mRNA77
+tig00000001	gth	CDS	560053	560229	.	-	0	ID=CDS77;Parent=mRNA77
+tig00000001	gth	three_prime_cis_splice_site	560229	560230	0.05	-	.	Parent=mRNA77
+tig00000001	gth	five_prime_cis_splice_site	560401	560402	0.05	-	.	Parent=mRNA77
+tig00000001	gth	exon	560402	560536	0.978	-	.	Parent=mRNA77
+tig00000001	gth	CDS	560402	560536	.	-	0	ID=CDS77;Parent=mRNA77
+tig00000001	gth	three_prime_cis_splice_site	560536	560537	0.05	-	.	Parent=mRNA77
+tig00000001	gth	five_prime_cis_splice_site	560646	560647	0.05	-	.	Parent=mRNA77
+tig00000001	gth	exon	560647	562707	0.892	-	.	Parent=mRNA77
+tig00000001	gth	CDS	560647	562707	.	-	0	ID=CDS77;Parent=mRNA77
+###
+tig00000001	gth	gene	564662	566107	.	+	.	ID=gene78
+tig00000001	gth	mRNA	564662	566107	.	+	.	ID=mRNA78;Parent=gene78;Target=PRG01_0511900-t36_1-p1 1 200 +
+tig00000001	gth	exon	564662	564675	1	+	.	Parent=mRNA78
+tig00000001	gth	CDS	564662	564675	.	+	0	ID=CDS78;Parent=mRNA78
+tig00000001	gth	five_prime_cis_splice_site	564676	564677	0.05	+	.	Parent=mRNA78
+tig00000001	gth	three_prime_cis_splice_site	564910	564911	0.05	+	.	Parent=mRNA78
+tig00000001	gth	exon	564912	564984	1	+	.	Parent=mRNA78
+tig00000001	gth	CDS	564912	564984	.	+	1	ID=CDS78;Parent=mRNA78
+tig00000001	gth	five_prime_cis_splice_site	564985	564986	0.05	+	.	Parent=mRNA78
+tig00000001	gth	three_prime_cis_splice_site	565245	565246	0.05	+	.	Parent=mRNA78
+tig00000001	gth	exon	565247	565342	1	+	.	Parent=mRNA78
+tig00000001	gth	CDS	565247	565342	.	+	0	ID=CDS78;Parent=mRNA78
+tig00000001	gth	five_prime_cis_splice_site	565343	565344	0.05	+	.	Parent=mRNA78
+tig00000001	gth	three_prime_cis_splice_site	565431	565432	0.05	+	.	Parent=mRNA78
+tig00000001	gth	exon	565433	565496	1	+	.	Parent=mRNA78
+tig00000001	gth	CDS	565433	565496	.	+	0	ID=CDS78;Parent=mRNA78
+tig00000001	gth	five_prime_cis_splice_site	565497	565498	0.05	+	.	Parent=mRNA78
+tig00000001	gth	three_prime_cis_splice_site	565626	565627	0.05	+	.	Parent=mRNA78
+tig00000001	gth	exon	565628	565703	1	+	.	Parent=mRNA78
+tig00000001	gth	CDS	565628	565703	.	+	2	ID=CDS78;Parent=mRNA78
+tig00000001	gth	five_prime_cis_splice_site	565704	565705	0.05	+	.	Parent=mRNA78
+tig00000001	gth	three_prime_cis_splice_site	565829	565830	0.05	+	.	Parent=mRNA78
+tig00000001	gth	exon	565831	566107	1	+	.	Parent=mRNA78
+tig00000001	gth	CDS	565831	566107	.	+	1	ID=CDS78;Parent=mRNA78
+###
+tig00000001	gth	gene	573989	574783	.	+	.	ID=gene79
+tig00000001	gth	mRNA	573989	574783	.	+	.	ID=mRNA79;Parent=gene79;Target=PRG01_0512200-t36_1-p1 1 265 +
+tig00000001	gth	exon	573989	574783	0.984	+	.	Parent=mRNA79
+tig00000001	gth	CDS	573989	574783	.	+	0	ID=CDS79;Parent=mRNA79
+###
+tig00000001	gth	gene	575291	576097	.	+	.	ID=gene80
+tig00000001	gth	mRNA	575291	576097	.	+	.	ID=mRNA80;Parent=gene80;Target=PRG01_0512300-t36_1-p1 1 269 +
+tig00000001	gth	exon	575291	576097	0.983	+	.	Parent=mRNA80
+tig00000001	gth	CDS	575291	576097	.	+	0	ID=CDS80;Parent=mRNA80
+###
+tig00000001	gth	gene	577062	578032	.	-	.	ID=gene81
+tig00000001	gth	mRNA	577062	578032	.	-	.	ID=mRNA81;Parent=gene81;Target=PRG01_0512400-t36_1-p1 1 251 +
+tig00000001	gth	exon	577062	577123	1	-	.	Parent=mRNA81
+tig00000001	gth	CDS	577062	577123	.	-	2	ID=CDS81;Parent=mRNA81
+tig00000001	gth	three_prime_cis_splice_site	577123	577124	0.05	-	.	Parent=mRNA81
+tig00000001	gth	five_prime_cis_splice_site	577199	577200	0.05	-	.	Parent=mRNA81
+tig00000001	gth	exon	577200	577766	0.988	-	.	Parent=mRNA81
+tig00000001	gth	CDS	577200	577766	.	-	2	ID=CDS81;Parent=mRNA81
+tig00000001	gth	three_prime_cis_splice_site	577766	577767	0.05	-	.	Parent=mRNA81
+tig00000001	gth	five_prime_cis_splice_site	577908	577909	0.05	-	.	Parent=mRNA81
+tig00000001	gth	exon	577909	578032	1	-	.	Parent=mRNA81
+tig00000001	gth	CDS	577909	578032	.	-	0	ID=CDS81;Parent=mRNA81
+###
+tig00000001	gth	gene	589224	589958	.	-	.	ID=gene82
+tig00000001	gth	mRNA	589224	589958	.	-	.	ID=mRNA82;Parent=gene82;Target=PRG01_0512600-t36_1-p1 1 245 +
+tig00000001	gth	exon	589224	589958	0.996	-	.	Parent=mRNA82
+tig00000001	gth	CDS	589224	589958	.	-	0	ID=CDS82;Parent=mRNA82
+###
+tig00000001	gth	gene	591129	592735	.	-	.	ID=gene83
+tig00000001	gth	mRNA	591129	592735	.	-	.	ID=mRNA83;Parent=gene83;Target=PRG01_0512700-t36_1-p1 1 286 +
+tig00000001	gth	exon	591129	591383	0.986	-	.	Parent=mRNA83
+tig00000001	gth	CDS	591129	591383	.	-	0	ID=CDS83;Parent=mRNA83
+tig00000001	gth	three_prime_cis_splice_site	591383	591384	0.05	-	.	Parent=mRNA83
+tig00000001	gth	five_prime_cis_splice_site	591615	591616	0.05	-	.	Parent=mRNA83
+tig00000001	gth	exon	591616	591891	1	-	.	Parent=mRNA83
+tig00000001	gth	CDS	591616	591891	.	-	0	ID=CDS83;Parent=mRNA83
+tig00000001	gth	three_prime_cis_splice_site	591891	591892	0.05	-	.	Parent=mRNA83
+tig00000001	gth	five_prime_cis_splice_site	592006	592007	0.05	-	.	Parent=mRNA83
+tig00000001	gth	exon	592007	592099	1	-	.	Parent=mRNA83
+tig00000001	gth	CDS	592007	592099	.	-	0	ID=CDS83;Parent=mRNA83
+tig00000001	gth	three_prime_cis_splice_site	592099	592100	0.05	-	.	Parent=mRNA83
+tig00000001	gth	five_prime_cis_splice_site	592249	592250	0.05	-	.	Parent=mRNA83
+tig00000001	gth	exon	592250	592348	0.971	-	.	Parent=mRNA83
+tig00000001	gth	CDS	592250	592348	.	-	0	ID=CDS83;Parent=mRNA83
+tig00000001	gth	three_prime_cis_splice_site	592348	592349	0.05	-	.	Parent=mRNA83
+tig00000001	gth	five_prime_cis_splice_site	592495	592496	0.05	-	.	Parent=mRNA83
+tig00000001	gth	exon	592496	592578	1	-	.	Parent=mRNA83
+tig00000001	gth	CDS	592496	592578	.	-	2	ID=CDS83;Parent=mRNA83
+tig00000001	gth	three_prime_cis_splice_site	592578	592579	0.05	-	.	Parent=mRNA83
+tig00000001	gth	five_prime_cis_splice_site	592683	592684	0.05	-	.	Parent=mRNA83
+tig00000001	gth	exon	592684	592735	1	-	.	Parent=mRNA83
+tig00000001	gth	CDS	592684	592735	.	-	0	ID=CDS83;Parent=mRNA83
+###
+tig00000001	gth	gene	593663	594320	.	+	.	ID=gene84
+tig00000001	gth	mRNA	593663	594320	.	+	.	ID=mRNA84;Parent=gene84;Target=PRG01_0512800-t36_1-p1 1 124 +
+tig00000001	gth	exon	593663	593746	1	+	.	Parent=mRNA84
+tig00000001	gth	CDS	593663	593746	.	+	0	ID=CDS84;Parent=mRNA84
+tig00000001	gth	five_prime_cis_splice_site	593747	593748	0.05	+	.	Parent=mRNA84
+tig00000001	gth	three_prime_cis_splice_site	594031	594032	0.05	+	.	Parent=mRNA84
+tig00000001	gth	exon	594033	594320	1	+	.	Parent=mRNA84
+tig00000001	gth	CDS	594033	594320	.	+	0	ID=CDS84;Parent=mRNA84
+###
+tig00000001	gth	gene	605227	605847	.	-	.	ID=gene85
+tig00000001	gth	mRNA	605227	605847	.	-	.	ID=mRNA85;Parent=gene85;Target=PRG01_0513100-t36_1-p1 1 207 +
+tig00000001	gth	exon	605227	605847	0.99	-	.	Parent=mRNA85
+tig00000001	gth	CDS	605227	605847	.	-	0	ID=CDS85;Parent=mRNA85
+###
+tig00000001	gth	gene	607540	608439	.	+	.	ID=gene86
+tig00000001	gth	mRNA	607540	608439	.	+	.	ID=mRNA86;Parent=gene86;Target=PRG01_0513200-t36_1-p1 1 247 +
+tig00000001	gth	exon	607540	608142	0.974	+	.	Parent=mRNA86
+tig00000001	gth	CDS	607540	608142	.	+	0	ID=CDS86;Parent=mRNA86
+tig00000001	gth	five_prime_cis_splice_site	608143	608144	0.05	+	.	Parent=mRNA86
+tig00000001	gth	three_prime_cis_splice_site	608297	608298	0.05	+	.	Parent=mRNA86
+tig00000001	gth	exon	608299	608439	0.942	+	.	Parent=mRNA86
+tig00000001	gth	CDS	608299	608439	.	+	0	ID=CDS86;Parent=mRNA86
+###
+tig00000001	gth	gene	608683	610527	.	-	.	ID=gene87
+tig00000001	gth	mRNA	608683	610527	.	-	.	ID=mRNA87;Parent=gene87;Target=PRG01_0513300-t36_1-p1 1 420 +
+tig00000001	gth	exon	608683	608750	1	-	.	Parent=mRNA87
+tig00000001	gth	CDS	608683	608750	.	-	2	ID=CDS87;Parent=mRNA87
+tig00000001	gth	three_prime_cis_splice_site	608750	608751	0.05	-	.	Parent=mRNA87
+tig00000001	gth	five_prime_cis_splice_site	608937	608938	0.05	-	.	Parent=mRNA87
+tig00000001	gth	exon	608938	609901	0.993	-	.	Parent=mRNA87
+tig00000001	gth	CDS	608938	609901	.	-	0	ID=CDS87;Parent=mRNA87
+tig00000001	gth	three_prime_cis_splice_site	609901	609902	0.05	-	.	Parent=mRNA87
+tig00000001	gth	five_prime_cis_splice_site	610060	610061	0.05	-	.	Parent=mRNA87
+tig00000001	gth	exon	610061	610172	0.98	-	.	Parent=mRNA87
+tig00000001	gth	CDS	610061	610172	.	-	1	ID=CDS87;Parent=mRNA87
+tig00000001	gth	three_prime_cis_splice_site	610172	610173	0.05	-	.	Parent=mRNA87
+tig00000001	gth	five_prime_cis_splice_site	610266	610267	0.05	-	.	Parent=mRNA87
+tig00000001	gth	exon	610267	610344	1	-	.	Parent=mRNA87
+tig00000001	gth	CDS	610267	610344	.	-	1	ID=CDS87;Parent=mRNA87
+tig00000001	gth	three_prime_cis_splice_site	610344	610345	0.05	-	.	Parent=mRNA87
+tig00000001	gth	five_prime_cis_splice_site	610489	610490	0.05	-	.	Parent=mRNA87
+tig00000001	gth	exon	610490	610527	1	-	.	Parent=mRNA87
+tig00000001	gth	CDS	610490	610527	.	-	0	ID=CDS87;Parent=mRNA87
+###
+tig00000001	gth	gene	624868	626159	.	-	.	ID=gene88
+tig00000001	gth	mRNA	624868	626159	.	-	.	ID=mRNA88;Parent=gene88;Target=PRG01_0513800-t36_1-p1 1 215 +
+tig00000001	gth	exon	624868	624937	0.965	-	.	Parent=mRNA88
+tig00000001	gth	CDS	624868	624937	.	-	1	ID=CDS88;Parent=mRNA88
+tig00000001	gth	three_prime_cis_splice_site	624937	624938	0.05	-	.	Parent=mRNA88
+tig00000001	gth	five_prime_cis_splice_site	625062	625063	0.05	-	.	Parent=mRNA88
+tig00000001	gth	exon	625063	625156	1	-	.	Parent=mRNA88
+tig00000001	gth	CDS	625063	625156	.	-	2	ID=CDS88;Parent=mRNA88
+tig00000001	gth	three_prime_cis_splice_site	625156	625157	0.05	-	.	Parent=mRNA88
+tig00000001	gth	five_prime_cis_splice_site	625319	625320	0.05	-	.	Parent=mRNA88
+tig00000001	gth	exon	625320	625388	1	-	.	Parent=mRNA88
+tig00000001	gth	CDS	625320	625388	.	-	2	ID=CDS88;Parent=mRNA88
+tig00000001	gth	three_prime_cis_splice_site	625388	625389	0.05	-	.	Parent=mRNA88
+tig00000001	gth	five_prime_cis_splice_site	625513	625514	0.05	-	.	Parent=mRNA88
+tig00000001	gth	exon	625514	625556	1	-	.	Parent=mRNA88
+tig00000001	gth	CDS	625514	625556	.	-	0	ID=CDS88;Parent=mRNA88
+tig00000001	gth	three_prime_cis_splice_site	625556	625557	0.05	-	.	Parent=mRNA88
+tig00000001	gth	five_prime_cis_splice_site	625663	625664	0.05	-	.	Parent=mRNA88
+tig00000001	gth	exon	625664	625848	0.985	-	.	Parent=mRNA88
+tig00000001	gth	CDS	625664	625848	.	-	2	ID=CDS88;Parent=mRNA88
+tig00000001	gth	three_prime_cis_splice_site	625848	625849	0.05	-	.	Parent=mRNA88
+tig00000001	gth	five_prime_cis_splice_site	625975	625976	0.05	-	.	Parent=mRNA88
+tig00000001	gth	exon	625976	626159	1	-	.	Parent=mRNA88
+tig00000001	gth	CDS	625976	626159	.	-	0	ID=CDS88;Parent=mRNA88
+###
+tig00000001	gth	gene	626930	628289	.	-	.	ID=gene89
+tig00000001	gth	mRNA	626930	628289	.	-	.	ID=mRNA89;Parent=gene89;Target=PRG01_0513900-t36_1-p1 1 236 +
+tig00000001	gth	exon	626930	627031	1	-	.	Parent=mRNA89
+tig00000001	gth	CDS	626930	627031	.	-	0	ID=CDS89;Parent=mRNA89
+tig00000001	gth	three_prime_cis_splice_site	627031	627032	0.05	-	.	Parent=mRNA89
+tig00000001	gth	five_prime_cis_splice_site	627217	627218	0.05	-	.	Parent=mRNA89
+tig00000001	gth	exon	627218	627469	1	-	.	Parent=mRNA89
+tig00000001	gth	CDS	627218	627469	.	-	0	ID=CDS89;Parent=mRNA89
+tig00000001	gth	three_prime_cis_splice_site	627469	627470	0.05	-	.	Parent=mRNA89
+tig00000001	gth	five_prime_cis_splice_site	627569	627570	0.05	-	.	Parent=mRNA89
+tig00000001	gth	exon	627570	627737	1	-	.	Parent=mRNA89
+tig00000001	gth	CDS	627570	627737	.	-	0	ID=CDS89;Parent=mRNA89
+tig00000001	gth	three_prime_cis_splice_site	627737	627738	0.05	-	.	Parent=mRNA89
+tig00000001	gth	five_prime_cis_splice_site	627841	627842	0.05	-	.	Parent=mRNA89
+tig00000001	gth	exon	627842	628003	1	-	.	Parent=mRNA89
+tig00000001	gth	CDS	627842	628003	.	-	0	ID=CDS89;Parent=mRNA89
+tig00000001	gth	three_prime_cis_splice_site	628003	628004	0.05	-	.	Parent=mRNA89
+tig00000001	gth	five_prime_cis_splice_site	628265	628266	0.05	-	.	Parent=mRNA89
+tig00000001	gth	exon	628266	628289	1	-	.	Parent=mRNA89
+tig00000001	gth	CDS	628266	628289	.	-	0	ID=CDS89;Parent=mRNA89
+###
+tig00000001	gth	gene	657137	660148	.	+	.	ID=gene90
+tig00000001	gth	mRNA	657137	660148	.	+	.	ID=mRNA90;Parent=gene90;Target=PRG01_0514700-t36_1-p1 1 754 +
+tig00000001	gth	exon	657137	657150	1	+	.	Parent=mRNA90
+tig00000001	gth	CDS	657137	657150	.	+	0	ID=CDS90;Parent=mRNA90
+tig00000001	gth	five_prime_cis_splice_site	657151	657152	0.05	+	.	Parent=mRNA90
+tig00000001	gth	three_prime_cis_splice_site	657255	657256	0.05	+	.	Parent=mRNA90
+tig00000001	gth	exon	657257	657299	1	+	.	Parent=mRNA90
+tig00000001	gth	CDS	657257	657299	.	+	1	ID=CDS90;Parent=mRNA90
+tig00000001	gth	five_prime_cis_splice_site	657300	657301	0.05	+	.	Parent=mRNA90
+tig00000001	gth	three_prime_cis_splice_site	657413	657414	0.05	+	.	Parent=mRNA90
+tig00000001	gth	exon	657415	657479	1	+	.	Parent=mRNA90
+tig00000001	gth	CDS	657415	657479	.	+	0	ID=CDS90;Parent=mRNA90
+tig00000001	gth	five_prime_cis_splice_site	657480	657481	0.05	+	.	Parent=mRNA90
+tig00000001	gth	three_prime_cis_splice_site	657601	657602	0.05	+	.	Parent=mRNA90
+tig00000001	gth	exon	657603	657733	1	+	.	Parent=mRNA90
+tig00000001	gth	CDS	657603	657733	.	+	1	ID=CDS90;Parent=mRNA90
+tig00000001	gth	five_prime_cis_splice_site	657734	657735	0.05	+	.	Parent=mRNA90
+tig00000001	gth	three_prime_cis_splice_site	657914	657915	0.05	+	.	Parent=mRNA90
+tig00000001	gth	exon	657916	657977	1	+	.	Parent=mRNA90
+tig00000001	gth	CDS	657916	657977	.	+	2	ID=CDS90;Parent=mRNA90
+tig00000001	gth	five_prime_cis_splice_site	657978	657979	0.05	+	.	Parent=mRNA90
+tig00000001	gth	three_prime_cis_splice_site	658167	658168	0.05	+	.	Parent=mRNA90
+tig00000001	gth	exon	658169	659325	0.898	+	.	Parent=mRNA90
+tig00000001	gth	CDS	658169	659325	.	+	0	ID=CDS90;Parent=mRNA90
+tig00000001	gth	five_prime_cis_splice_site	659326	659327	0.05	+	.	Parent=mRNA90
+tig00000001	gth	three_prime_cis_splice_site	659396	659397	0.0001	+	.	Parent=mRNA90
+tig00000001	gth	exon	659398	660148	0.931	+	.	Parent=mRNA90
+tig00000001	gth	CDS	659398	660148	.	+	1	ID=CDS90;Parent=mRNA90
+###
+tig00000001	gth	gene	660929	664422	.	-	.	ID=gene91
+tig00000001	gth	mRNA	660929	664422	.	-	.	ID=mRNA91;Parent=gene91;Target=PRG01_0514800-t36_1-p1 1 960 +
+tig00000001	gth	exon	660929	661345	0.98	-	.	Parent=mRNA91
+tig00000001	gth	CDS	660929	661345	.	-	0	ID=CDS91;Parent=mRNA91
+tig00000001	gth	three_prime_cis_splice_site	661345	661346	0.05	-	.	Parent=mRNA91
+tig00000001	gth	five_prime_cis_splice_site	661548	661549	0.05	-	.	Parent=mRNA91
+tig00000001	gth	exon	661549	662284	0.944	-	.	Parent=mRNA91
+tig00000001	gth	CDS	661549	662284	.	-	1	ID=CDS91;Parent=mRNA91
+tig00000001	gth	three_prime_cis_splice_site	662284	662285	0.05	-	.	Parent=mRNA91
+tig00000001	gth	five_prime_cis_splice_site	662532	662533	0.05	-	.	Parent=mRNA91
+tig00000001	gth	exon	662533	662891	0.98	-	.	Parent=mRNA91
+tig00000001	gth	CDS	662533	662891	.	-	0	ID=CDS91;Parent=mRNA91
+tig00000001	gth	three_prime_cis_splice_site	662891	662892	0.05	-	.	Parent=mRNA91
+tig00000001	gth	five_prime_cis_splice_site	663054	663055	0.05	-	.	Parent=mRNA91
+tig00000001	gth	exon	663055	664422	0.935	-	.	Parent=mRNA91
+tig00000001	gth	CDS	663055	664422	.	-	0	ID=CDS91;Parent=mRNA91
+###
+tig00000001	gth	gene	666354	671759	.	+	.	ID=gene92
+tig00000001	gth	mRNA	666354	671759	.	+	.	ID=mRNA92;Parent=gene92;Target=PRG01_0514900-t36_1-p1 1 1283 +
+tig00000001	gth	exon	666354	666631	0.979	+	.	Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	666632	666633	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	666758	666759	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	666760	666811	0.944	+	.	Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	666812	666813	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	666928	666929	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	666930	667023	0.968	+	.	Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	667024	667025	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	667224	667225	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	667226	667316	1	+	.	Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	667317	667318	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	667463	667464	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	667465	667617	0.492	+	.	Parent=mRNA92
+tig00000001	gth	CDS	667498	667617	.	+	0	ID=CDS92;Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	667618	667619	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	667689	667690	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	667691	669233	0.789	+	.	Parent=mRNA92
+tig00000001	gth	CDS	667691	669233	.	+	0	ID=CDS92;Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	669234	669235	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	669532	669533	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	669534	670159	0.979	+	.	Parent=mRNA92
+tig00000001	gth	CDS	669534	670159	.	+	2	ID=CDS92;Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	670160	670161	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	670547	670548	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	670549	671256	0.974	+	.	Parent=mRNA92
+tig00000001	gth	CDS	670549	671256	.	+	0	ID=CDS92;Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	671257	671258	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	671339	671340	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	671341	671395	0.962	+	.	Parent=mRNA92
+tig00000001	gth	CDS	671341	671395	.	+	0	ID=CDS92;Parent=mRNA92
+tig00000001	gth	five_prime_cis_splice_site	671396	671397	0.05	+	.	Parent=mRNA92
+tig00000001	gth	three_prime_cis_splice_site	671501	671502	0.05	+	.	Parent=mRNA92
+tig00000001	gth	exon	671503	671759	0.971	+	.	Parent=mRNA92
+tig00000001	gth	CDS	671503	671759	.	+	2	ID=CDS92;Parent=mRNA92
+###
+tig00000001	gth	gene	673672	675039	.	-	.	ID=gene93
+tig00000001	gth	mRNA	673672	675039	.	-	.	ID=mRNA93;Parent=gene93;Target=PRG01_0515000-t36_1-p1 1 456 +
+tig00000001	gth	exon	673672	675039	0.996	-	.	Parent=mRNA93
+tig00000001	gth	CDS	673672	675039	.	-	0	ID=CDS93;Parent=mRNA93
+###
+tig00000001	gth	gene	678132	678383	.	-	.	ID=gene94
+tig00000001	gth	mRNA	678132	678383	.	-	.	ID=mRNA94;Parent=gene94;Target=PRG01_0515100-t36_1-p1 1 84 +
+tig00000001	gth	exon	678132	678383	1	-	.	Parent=mRNA94
+tig00000001	gth	CDS	678132	678383	.	-	0	ID=CDS94;Parent=mRNA94
+###
+tig00000001	gth	gene	679854	680837	.	-	.	ID=gene95
+tig00000001	gth	mRNA	679854	680837	.	-	.	ID=mRNA95;Parent=gene95;Target=PRG01_0515200-t36_1-p1 1 328 +
+tig00000001	gth	exon	679854	680837	0.985	-	.	Parent=mRNA95
+tig00000001	gth	CDS	679854	680837	.	-	0	ID=CDS95;Parent=mRNA95
+###
+tig00000001	gth	gene	695672	696450	.	-	.	ID=gene96
+tig00000001	gth	mRNA	695672	696450	.	-	.	ID=mRNA96;Parent=gene96;Target=PRG01_0515500-t36_1-p1 1 151 +
+tig00000001	gth	exon	695672	695774	1	-	.	Parent=mRNA96
+tig00000001	gth	CDS	695672	695774	.	-	1	ID=CDS96;Parent=mRNA96
+tig00000001	gth	three_prime_cis_splice_site	695774	695775	0.05	-	.	Parent=mRNA96
+tig00000001	gth	five_prime_cis_splice_site	695872	695873	0.05	-	.	Parent=mRNA96
+tig00000001	gth	exon	695873	696050	1	-	.	Parent=mRNA96
+tig00000001	gth	CDS	695873	696050	.	-	2	ID=CDS96;Parent=mRNA96
+tig00000001	gth	three_prime_cis_splice_site	696050	696051	0.05	-	.	Parent=mRNA96
+tig00000001	gth	five_prime_cis_splice_site	696278	696279	0.05	-	.	Parent=mRNA96
+tig00000001	gth	exon	696279	696450	1	-	.	Parent=mRNA96
+tig00000001	gth	CDS	696279	696450	.	-	0	ID=CDS96;Parent=mRNA96
+###
+tig00000001	gth	gene	701212	702216	.	-	.	ID=gene97
+tig00000001	gth	mRNA	701212	702216	.	-	.	ID=mRNA97;Parent=gene97;Target=PRG01_0515700-t36_1-p1 1 345 +
+tig00000001	gth	exon	701212	702216	0.862	-	.	Parent=mRNA97
+tig00000001	gth	CDS	701212	702216	.	-	0	ID=CDS97;Parent=mRNA97
+###
+tig00000001	gth	gene	703460	705612	.	+	.	ID=gene98
+tig00000001	gth	mRNA	703460	705612	.	+	.	ID=mRNA98;Parent=gene98;Target=PRG01_0515800-t36_1-p1 1 442 +
+tig00000001	gth	exon	703460	703559	1	+	.	Parent=mRNA98
+tig00000001	gth	CDS	703460	703559	.	+	0	ID=CDS98;Parent=mRNA98
+tig00000001	gth	five_prime_cis_splice_site	703560	703561	0.05	+	.	Parent=mRNA98
+tig00000001	gth	three_prime_cis_splice_site	703760	703761	0.05	+	.	Parent=mRNA98
+tig00000001	gth	exon	703762	703832	1	+	.	Parent=mRNA98
+tig00000001	gth	CDS	703762	703832	.	+	2	ID=CDS98;Parent=mRNA98
+tig00000001	gth	five_prime_cis_splice_site	703833	703834	0.05	+	.	Parent=mRNA98
+tig00000001	gth	three_prime_cis_splice_site	704008	704009	0.05	+	.	Parent=mRNA98
+tig00000001	gth	exon	704010	704113	1	+	.	Parent=mRNA98
+tig00000001	gth	CDS	704010	704113	.	+	0	ID=CDS98;Parent=mRNA98
+tig00000001	gth	five_prime_cis_splice_site	704114	704115	0.05	+	.	Parent=mRNA98
+tig00000001	gth	three_prime_cis_splice_site	704212	704213	0.05	+	.	Parent=mRNA98
+tig00000001	gth	exon	704214	704274	1	+	.	Parent=mRNA98
+tig00000001	gth	CDS	704214	704274	.	+	1	ID=CDS98;Parent=mRNA98
+tig00000001	gth	five_prime_cis_splice_site	704275	704276	0.05	+	.	Parent=mRNA98
+tig00000001	gth	three_prime_cis_splice_site	704429	704430	0.05	+	.	Parent=mRNA98
+tig00000001	gth	exon	704431	705290	1	+	.	Parent=mRNA98
+tig00000001	gth	CDS	704431	705290	.	+	0	ID=CDS98;Parent=mRNA98
+tig00000001	gth	five_prime_cis_splice_site	705291	705292	0.05	+	.	Parent=mRNA98
+tig00000001	gth	three_prime_cis_splice_site	705481	705482	0.05	+	.	Parent=mRNA98
+tig00000001	gth	exon	705483	705612	1	+	.	Parent=mRNA98
+tig00000001	gth	CDS	705483	705612	.	+	1	ID=CDS98;Parent=mRNA98
+###
+tig00000001	gth	gene	714100	718366	.	+	.	ID=gene99
+tig00000001	gth	mRNA	714100	718366	.	+	.	ID=mRNA99;Parent=gene99;Target=PRG01_0516000-t36_1-p1 1 1326 +
+tig00000001	gth	exon	714100	714224	1	+	.	Parent=mRNA99
+tig00000001	gth	CDS	714100	714224	.	+	0	ID=CDS99;Parent=mRNA99
+tig00000001	gth	five_prime_cis_splice_site	714225	714226	0.05	+	.	Parent=mRNA99
+tig00000001	gth	three_prime_cis_splice_site	714369	714370	0.05	+	.	Parent=mRNA99
+tig00000001	gth	exon	714371	714776	0.989	+	.	Parent=mRNA99
+tig00000001	gth	CDS	714371	714776	.	+	1	ID=CDS99;Parent=mRNA99
+tig00000001	gth	five_prime_cis_splice_site	714777	714778	0.05	+	.	Parent=mRNA99
+tig00000001	gth	three_prime_cis_splice_site	714900	714901	0.05	+	.	Parent=mRNA99
+tig00000001	gth	exon	714902	718366	0.956	+	.	Parent=mRNA99
+tig00000001	gth	CDS	714902	718366	.	+	0	ID=CDS99;Parent=mRNA99
+###
+tig00000001	gth	gene	732489	733476	.	-	.	ID=gene100
+tig00000001	gth	mRNA	732489	733476	.	-	.	ID=mRNA100;Parent=gene100;Target=PRG01_0516200-t36_1-p1 1 260 +
+tig00000001	gth	exon	732489	733249	1	-	.	Parent=mRNA100
+tig00000001	gth	CDS	732489	733249	.	-	2	ID=CDS100;Parent=mRNA100
+tig00000001	gth	three_prime_cis_splice_site	733249	733250	0.05	-	.	Parent=mRNA100
+tig00000001	gth	five_prime_cis_splice_site	733457	733458	0.05	-	.	Parent=mRNA100
+tig00000001	gth	exon	733458	733476	1	-	.	Parent=mRNA100
+tig00000001	gth	CDS	733458	733476	.	-	0	ID=CDS100;Parent=mRNA100
+###
+tig00000001	gth	gene	735452	736049	.	-	.	ID=gene101
+tig00000001	gth	mRNA	735452	736049	.	-	.	ID=mRNA101;Parent=gene101;Target=PRG01_0516300-t36_1-p1 1 165 +
+tig00000001	gth	exon	735452	735909	0.996	-	.	Parent=mRNA101
+tig00000001	gth	CDS	735452	735909	.	-	2	ID=CDS101;Parent=mRNA101
+tig00000001	gth	three_prime_cis_splice_site	735909	735910	0.05	-	.	Parent=mRNA101
+tig00000001	gth	five_prime_cis_splice_site	736012	736013	0.0001	-	.	Parent=mRNA101
+tig00000001	gth	exon	736013	736049	0.449	-	.	Parent=mRNA101
+tig00000001	gth	CDS	736013	736049	.	-	0	ID=CDS101;Parent=mRNA101
+###
+tig00000001	gth	gene	744327	745384	.	-	.	ID=gene102
+tig00000001	gth	mRNA	744327	745384	.	-	.	ID=mRNA102;Parent=gene102;Target=PRG01_0516600-t36_1-p1 1 298 +
+tig00000001	gth	exon	744327	744697	1	-	.	Parent=mRNA102
+tig00000001	gth	CDS	744327	744697	.	-	2	ID=CDS102;Parent=mRNA102
+tig00000001	gth	three_prime_cis_splice_site	744697	744698	0.05	-	.	Parent=mRNA102
+tig00000001	gth	five_prime_cis_splice_site	744861	744862	0.05	-	.	Parent=mRNA102
+tig00000001	gth	exon	744862	745384	1	-	.	Parent=mRNA102
+tig00000001	gth	CDS	744862	745384	.	-	0	ID=CDS102;Parent=mRNA102
+###
+tig00000001	gth	gene	751032	754792	.	+	.	ID=gene103
+tig00000001	gth	mRNA	751032	754792	.	+	.	ID=mRNA103;Parent=gene103;Target=PRG01_0516700-t36_1-p1 1 1141 +
+tig00000001	gth	exon	751032	754232	0.95	+	.	Parent=mRNA103
+tig00000001	gth	CDS	751032	754232	.	+	0	ID=CDS103;Parent=mRNA103
+tig00000001	gth	five_prime_cis_splice_site	754233	754234	0.05	+	.	Parent=mRNA103
+tig00000001	gth	three_prime_cis_splice_site	754457	754458	0.05	+	.	Parent=mRNA103
+tig00000001	gth	exon	754459	754597	1	+	.	Parent=mRNA103
+tig00000001	gth	CDS	754459	754597	.	+	0	ID=CDS103;Parent=mRNA103
+tig00000001	gth	five_prime_cis_splice_site	754598	754599	0.05	+	.	Parent=mRNA103
+tig00000001	gth	three_prime_cis_splice_site	754714	754715	0.05	+	.	Parent=mRNA103
+tig00000001	gth	exon	754716	754792	1	+	.	Parent=mRNA103
+tig00000001	gth	CDS	754716	754792	.	+	2	ID=CDS103;Parent=mRNA103
+###
+tig00000001	gth	gene	762692	764839	.	+	.	ID=gene104
+tig00000001	gth	mRNA	762692	764839	.	+	.	ID=mRNA104;Parent=gene104;Target=PRG01_0517000-t36_1-p1 1 716 +
+tig00000001	gth	exon	762692	764839	0.996	+	.	Parent=mRNA104
+tig00000001	gth	CDS	762692	764839	.	+	0	ID=CDS104;Parent=mRNA104
+###
+tig00000001	gth	gene	765314	766147	.	-	.	ID=gene105
+tig00000001	gth	mRNA	765314	766147	.	-	.	ID=mRNA105;Parent=gene105;Target=PRG01_0517100-t36_1-p1 1 238 +
+tig00000001	gth	exon	765314	765958	0.98	-	.	Parent=mRNA105
+tig00000001	gth	CDS	765314	765958	.	-	0	ID=CDS105;Parent=mRNA105
+tig00000001	gth	three_prime_cis_splice_site	765958	765959	0.05	-	.	Parent=mRNA105
+tig00000001	gth	five_prime_cis_splice_site	766078	766079	0.05	-	.	Parent=mRNA105
+tig00000001	gth	exon	766079	766147	1	-	.	Parent=mRNA105
+tig00000001	gth	CDS	766079	766147	.	-	0	ID=CDS105;Parent=mRNA105
+###
+tig00000001	gth	gene	767319	769199	.	-	.	ID=gene106
+tig00000001	gth	mRNA	767319	769199	.	-	.	ID=mRNA106;Parent=gene106;Target=PRG01_0517200-t36_1-p1 1 560 +
+tig00000001	gth	exon	767319	768678	0.974	-	.	Parent=mRNA106
+tig00000001	gth	CDS	767319	768678	.	-	1	ID=CDS106;Parent=mRNA106
+tig00000001	gth	three_prime_cis_splice_site	768678	768679	0.05	-	.	Parent=mRNA106
+tig00000001	gth	five_prime_cis_splice_site	768879	768880	0.05	-	.	Parent=mRNA106
+tig00000001	gth	exon	768880	769199	0.992	-	.	Parent=mRNA106
+tig00000001	gth	CDS	768880	769199	.	-	0	ID=CDS106;Parent=mRNA106
+###
+tig00000001	gth	gene	770169	771895	.	+	.	ID=gene107
+tig00000001	gth	mRNA	770169	771895	.	+	.	ID=mRNA107;Parent=gene107;Target=PRG01_0517300-t36_1-p1 1 270 +
+tig00000001	gth	exon	770169	770238	1	+	.	Parent=mRNA107
+tig00000001	gth	CDS	770169	770238	.	+	0	ID=CDS107;Parent=mRNA107
+tig00000001	gth	five_prime_cis_splice_site	770239	770240	0.05	+	.	Parent=mRNA107
+tig00000001	gth	three_prime_cis_splice_site	770536	770537	0.05	+	.	Parent=mRNA107
+tig00000001	gth	exon	770538	770839	0.985	+	.	Parent=mRNA107
+tig00000001	gth	CDS	770538	770839	.	+	2	ID=CDS107;Parent=mRNA107
+tig00000001	gth	five_prime_cis_splice_site	770840	770841	0.05	+	.	Parent=mRNA107
+tig00000001	gth	three_prime_cis_splice_site	770989	770990	0.05	+	.	Parent=mRNA107
+tig00000001	gth	exon	770991	771199	0.983	+	.	Parent=mRNA107
+tig00000001	gth	CDS	770991	771199	.	+	0	ID=CDS107;Parent=mRNA107
+tig00000001	gth	five_prime_cis_splice_site	771200	771201	0.05	+	.	Parent=mRNA107
+tig00000001	gth	three_prime_cis_splice_site	771350	771351	0.05	+	.	Parent=mRNA107
+tig00000001	gth	exon	771352	771433	1	+	.	Parent=mRNA107
+tig00000001	gth	CDS	771352	771433	.	+	1	ID=CDS107;Parent=mRNA107
+tig00000001	gth	five_prime_cis_splice_site	771434	771435	0.05	+	.	Parent=mRNA107
+tig00000001	gth	three_prime_cis_splice_site	771540	771541	0.05	+	.	Parent=mRNA107
+tig00000001	gth	exon	771542	771635	1	+	.	Parent=mRNA107
+tig00000001	gth	CDS	771542	771635	.	+	0	ID=CDS107;Parent=mRNA107
+tig00000001	gth	five_prime_cis_splice_site	771636	771637	0.05	+	.	Parent=mRNA107
+tig00000001	gth	three_prime_cis_splice_site	771841	771842	0.05	+	.	Parent=mRNA107
+tig00000001	gth	exon	771843	771895	1	+	.	Parent=mRNA107
+tig00000001	gth	CDS	771843	771895	.	+	2	ID=CDS107;Parent=mRNA107
+###
+tig00000001	gth	gene	772724	776892	.	+	.	ID=gene108
+tig00000001	gth	mRNA	772724	776892	.	+	.	ID=mRNA108;Parent=gene108;Target=PRG01_0517400-t36_1-p1 1 1353 +
+tig00000001	gth	exon	772724	775166	0.803	+	.	Parent=mRNA108
+tig00000001	gth	CDS	772724	775166	.	+	0	ID=CDS108;Parent=mRNA108
+tig00000001	gth	five_prime_cis_splice_site	775167	775168	0.05	+	.	Parent=mRNA108
+tig00000001	gth	three_prime_cis_splice_site	775267	775268	0.0001	+	.	Parent=mRNA108
+tig00000001	gth	exon	775269	776578	0.92	+	.	Parent=mRNA108
+tig00000001	gth	CDS	775269	776578	.	+	2	ID=CDS108;Parent=mRNA108
+tig00000001	gth	five_prime_cis_splice_site	776579	776580	0.05	+	.	Parent=mRNA108
+tig00000001	gth	three_prime_cis_splice_site	776675	776676	0.05	+	.	Parent=mRNA108
+tig00000001	gth	exon	776677	776892	0.973	+	.	Parent=mRNA108
+tig00000001	gth	CDS	776677	776892	.	+	0	ID=CDS108;Parent=mRNA108
+###
+tig00000001	gth	gene	777851	778243	.	-	.	ID=gene109
+tig00000001	gth	mRNA	777851	778243	.	-	.	ID=mRNA109;Parent=gene109;Target=PRG01_0517500-t36_1-p1 1 131 +
+tig00000001	gth	exon	777851	778243	0.983	-	.	Parent=mRNA109
+tig00000001	gth	CDS	777851	778243	.	-	0	ID=CDS109;Parent=mRNA109
+###
+tig00000001	gth	gene	779173	780331	.	-	.	ID=gene110
+tig00000001	gth	mRNA	779173	780331	.	-	.	ID=mRNA110;Parent=gene110;Target=PRG01_0517600-t36_1-p1 1 240 +
+tig00000001	gth	exon	779173	779601	1	-	.	Parent=mRNA110
+tig00000001	gth	CDS	779173	779601	.	-	0	ID=CDS110;Parent=mRNA110
+tig00000001	gth	three_prime_cis_splice_site	779601	779602	0.05	-	.	Parent=mRNA110
+tig00000001	gth	five_prime_cis_splice_site	779731	779732	0.05	-	.	Parent=mRNA110
+tig00000001	gth	exon	779732	779801	1	-	.	Parent=mRNA110
+tig00000001	gth	CDS	779732	779801	.	-	1	ID=CDS110;Parent=mRNA110
+tig00000001	gth	three_prime_cis_splice_site	779801	779802	0.05	-	.	Parent=mRNA110
+tig00000001	gth	five_prime_cis_splice_site	779915	779916	0.05	-	.	Parent=mRNA110
+tig00000001	gth	exon	779916	780023	1	-	.	Parent=mRNA110
+tig00000001	gth	CDS	779916	780023	.	-	1	ID=CDS110;Parent=mRNA110
+tig00000001	gth	three_prime_cis_splice_site	780023	780024	0.05	-	.	Parent=mRNA110
+tig00000001	gth	five_prime_cis_splice_site	780218	780219	0.05	-	.	Parent=mRNA110
+tig00000001	gth	exon	780219	780331	1	-	.	Parent=mRNA110
+tig00000001	gth	CDS	780219	780331	.	-	0	ID=CDS110;Parent=mRNA110
+###
+tig00000001	gth	gene	793412	799842	.	-	.	ID=gene111
+tig00000001	gth	mRNA	793412	799842	.	-	.	ID=mRNA111;Parent=gene111;Target=PRG01_0518000-t36_1-p1 1 1867 +
+tig00000001	gth	exon	793412	795184	0.944	-	.	Parent=mRNA111
+tig00000001	gth	CDS	793412	795184	.	-	0	ID=CDS111;Parent=mRNA111
+tig00000001	gth	three_prime_cis_splice_site	795184	795185	0.002	-	.	Parent=mRNA111
+tig00000001	gth	five_prime_cis_splice_site	795256	795257	0.05	-	.	Parent=mRNA111
+tig00000001	gth	exon	795257	796099	0.947	-	.	Parent=mRNA111
+tig00000001	gth	CDS	795257	796099	.	-	0	ID=CDS111;Parent=mRNA111
+tig00000001	gth	three_prime_cis_splice_site	796099	796100	0.05	-	.	Parent=mRNA111
+tig00000001	gth	five_prime_cis_splice_site	796302	796303	0.05	-	.	Parent=mRNA111
+tig00000001	gth	exon	796303	796539	1	-	.	Parent=mRNA111
+tig00000001	gth	CDS	796303	796539	.	-	0	ID=CDS111;Parent=mRNA111
+tig00000001	gth	three_prime_cis_splice_site	796539	796540	0.05	-	.	Parent=mRNA111
+tig00000001	gth	five_prime_cis_splice_site	796719	796720	0.05	-	.	Parent=mRNA111
+tig00000001	gth	exon	796720	796977	1	-	.	Parent=mRNA111
+tig00000001	gth	CDS	796720	796977	.	-	0	ID=CDS111;Parent=mRNA111
+tig00000001	gth	three_prime_cis_splice_site	796977	796978	0.05	-	.	Parent=mRNA111
+tig00000001	gth	five_prime_cis_splice_site	797124	797125	0.05	-	.	Parent=mRNA111
+tig00000001	gth	exon	797125	797294	0.963	-	.	Parent=mRNA111
+tig00000001	gth	CDS	797125	797294	.	-	2	ID=CDS111;Parent=mRNA111
+tig00000001	gth	three_prime_cis_splice_site	797294	797295	0.05	-	.	Parent=mRNA111
+tig00000001	gth	five_prime_cis_splice_site	797423	797424	0.05	-	.	Parent=mRNA111
+tig00000001	gth	exon	797424	798190	0.934	-	.	Parent=mRNA111
+tig00000001	gth	CDS	797424	798190	.	-	1	ID=CDS111;Parent=mRNA111
+tig00000001	gth	three_prime_cis_splice_site	798190	798191	0.05	-	.	Parent=mRNA111
+tig00000001	gth	five_prime_cis_splice_site	798244	798245	0.0001	-	.	Parent=mRNA111
+tig00000001	gth	exon	798245	799842	0.852	-	.	Parent=mRNA111
+tig00000001	gth	CDS	798245	799842	.	-	0	ID=CDS111;Parent=mRNA111
+###
+tig00000001	gth	gene	805064	805956	.	-	.	ID=gene112
+tig00000001	gth	mRNA	805064	805956	.	-	.	ID=mRNA112;Parent=gene112;Target=PRG01_0518200-t36_1-p1 1 194 +
+tig00000001	gth	exon	805064	805337	1	-	.	Parent=mRNA112
+tig00000001	gth	CDS	805064	805337	.	-	1	ID=CDS112;Parent=mRNA112
+tig00000001	gth	three_prime_cis_splice_site	805337	805338	0.05	-	.	Parent=mRNA112
+tig00000001	gth	five_prime_cis_splice_site	805461	805462	0.05	-	.	Parent=mRNA112
+tig00000001	gth	exon	805462	805515	1	-	.	Parent=mRNA112
+tig00000001	gth	CDS	805462	805515	.	-	1	ID=CDS112;Parent=mRNA112
+tig00000001	gth	three_prime_cis_splice_site	805515	805516	0.05	-	.	Parent=mRNA112
+tig00000001	gth	five_prime_cis_splice_site	805702	805703	0.05	-	.	Parent=mRNA112
+tig00000001	gth	exon	805703	805956	0.939	-	.	Parent=mRNA112
+tig00000001	gth	CDS	805703	805956	.	-	0	ID=CDS112;Parent=mRNA112
+###
+tig00000001	gth	gene	807964	808842	.	+	.	ID=gene113
+tig00000001	gth	mRNA	807964	808842	.	+	.	ID=mRNA113;Parent=gene113;Target=PRG01_0518300-t36_1-p1 1 293 +
+tig00000001	gth	exon	807964	808842	0.981	+	.	Parent=mRNA113
+tig00000001	gth	CDS	807964	808842	.	+	0	ID=CDS113;Parent=mRNA113
+###
+tig00000001	gth	gene	809758	810129	.	+	.	ID=gene114
+tig00000001	gth	mRNA	809758	810129	.	+	.	ID=mRNA114;Parent=gene114;Target=PRG01_0518400-t36_1-p1 1 124 +
+tig00000001	gth	exon	809758	810129	1	+	.	Parent=mRNA114
+tig00000001	gth	CDS	809758	810129	.	+	0	ID=CDS114;Parent=mRNA114
+###
+tig00000001	gth	gene	811055	812277	.	-	.	ID=gene115
+tig00000001	gth	mRNA	811055	812277	.	-	.	ID=mRNA115;Parent=gene115;Target=PRG01_0518500-t36_1-p1 1 165 +
+tig00000001	gth	exon	811055	811119	0.951	-	.	Parent=mRNA115
+tig00000001	gth	CDS	811055	811119	.	-	2	ID=CDS115;Parent=mRNA115
+tig00000001	gth	three_prime_cis_splice_site	811119	811120	0.05	-	.	Parent=mRNA115
+tig00000001	gth	five_prime_cis_splice_site	811248	811249	0.05	-	.	Parent=mRNA115
+tig00000001	gth	exon	811249	811369	1	-	.	Parent=mRNA115
+tig00000001	gth	CDS	811249	811369	.	-	0	ID=CDS115;Parent=mRNA115
+tig00000001	gth	three_prime_cis_splice_site	811369	811370	0.05	-	.	Parent=mRNA115
+tig00000001	gth	five_prime_cis_splice_site	811557	811558	0.05	-	.	Parent=mRNA115
+tig00000001	gth	exon	811558	811637	0.968	-	.	Parent=mRNA115
+tig00000001	gth	CDS	811558	811637	.	-	2	ID=CDS115;Parent=mRNA115
+tig00000001	gth	three_prime_cis_splice_site	811637	811638	0.05	-	.	Parent=mRNA115
+tig00000001	gth	five_prime_cis_splice_site	811760	811761	0.05	-	.	Parent=mRNA115
+tig00000001	gth	exon	811761	811919	1	-	.	Parent=mRNA115
+tig00000001	gth	CDS	811761	811919	.	-	2	ID=CDS115;Parent=mRNA115
+tig00000001	gth	three_prime_cis_splice_site	811919	811920	0.05	-	.	Parent=mRNA115
+tig00000001	gth	five_prime_cis_splice_site	812207	812208	0.05	-	.	Parent=mRNA115
+tig00000001	gth	exon	812208	812277	1	-	.	Parent=mRNA115
+tig00000001	gth	CDS	812208	812277	.	-	0	ID=CDS115;Parent=mRNA115
+###
+tig00000001	gth	gene	817759	818157	.	-	.	ID=gene116
+tig00000001	gth	mRNA	817759	818157	.	-	.	ID=mRNA116;Parent=gene116;Target=PRG01_0518700-t36_1-p1 1 133 +
+tig00000001	gth	exon	817759	818157	0.893	-	.	Parent=mRNA116
+tig00000001	gth	CDS	817759	818157	.	-	0	ID=CDS116;Parent=mRNA116
+###
+tig00000001	gth	gene	836416	838449	.	+	.	ID=gene117
+tig00000001	gth	mRNA	836416	838449	.	+	.	ID=mRNA117;Parent=gene117;Target=PRG01_0519000-t36_1-p1 1 192 +
+tig00000001	gth	exon	836416	836521	1	+	.	Parent=mRNA117
+tig00000001	gth	CDS	836416	836521	.	+	0	ID=CDS117;Parent=mRNA117
+tig00000001	gth	five_prime_cis_splice_site	836522	836523	0.05	+	.	Parent=mRNA117
+tig00000001	gth	three_prime_cis_splice_site	837853	837854	0.05	+	.	Parent=mRNA117
+tig00000001	gth	exon	837855	838192	1	+	.	Parent=mRNA117
+tig00000001	gth	CDS	837855	838192	.	+	2	ID=CDS117;Parent=mRNA117
+tig00000001	gth	five_prime_cis_splice_site	838193	838194	0.05	+	.	Parent=mRNA117
+tig00000001	gth	three_prime_cis_splice_site	838316	838317	0.05	+	.	Parent=mRNA117
+tig00000001	gth	exon	838318	838449	1	+	.	Parent=mRNA117
+tig00000001	gth	CDS	838318	838449	.	+	0	ID=CDS117;Parent=mRNA117
+###
+tig00000001	gth	gene	840033	842254	.	-	.	ID=gene118
+tig00000001	gth	mRNA	840033	842254	.	-	.	ID=mRNA118;Parent=gene118;Target=PRG01_0519100-t36_1-p1 1 655 +
+tig00000001	gth	exon	840033	840652	1	-	.	Parent=mRNA118
+tig00000001	gth	CDS	840033	840652	.	-	2	ID=CDS118;Parent=mRNA118
+tig00000001	gth	three_prime_cis_splice_site	840652	840653	0.05	-	.	Parent=mRNA118
+tig00000001	gth	five_prime_cis_splice_site	840834	840835	0.05	-	.	Parent=mRNA118
+tig00000001	gth	exon	840835	842103	0.955	-	.	Parent=mRNA118
+tig00000001	gth	CDS	840835	842103	.	-	2	ID=CDS118;Parent=mRNA118
+tig00000001	gth	three_prime_cis_splice_site	842103	842104	0.05	-	.	Parent=mRNA118
+tig00000001	gth	five_prime_cis_splice_site	842175	842176	0.0001	-	.	Parent=mRNA118
+tig00000001	gth	exon	842176	842254	0.893	-	.	Parent=mRNA118
+tig00000001	gth	CDS	842176	842254	.	-	0	ID=CDS118;Parent=mRNA118
+###
+tig00000001	gth	gene	845351	846925	.	-	.	ID=gene119
+tig00000001	gth	mRNA	845351	846925	.	-	.	ID=mRNA119;Parent=gene119;Target=PRG01_0519200-t36_1-p1 1 550 +
+tig00000001	gth	exon	845351	846925	0.849	-	.	Parent=mRNA119
+tig00000001	gth	CDS	845351	846925	.	-	0	ID=CDS119;Parent=mRNA119
+###
+tig00000001	gth	gene	848467	849398	.	+	.	ID=gene120
+tig00000001	gth	mRNA	848467	849398	.	+	.	ID=mRNA120;Parent=gene120;Target=PRG01_0519300-t36_1-p1 1 189 +
+tig00000001	gth	exon	848467	848529	1	+	.	Parent=mRNA120
+tig00000001	gth	CDS	848467	848529	.	+	0	ID=CDS120;Parent=mRNA120
+tig00000001	gth	five_prime_cis_splice_site	848530	848531	0.05	+	.	Parent=mRNA120
+tig00000001	gth	three_prime_cis_splice_site	848748	848749	0.05	+	.	Parent=mRNA120
+tig00000001	gth	exon	848750	848817	1	+	.	Parent=mRNA120
+tig00000001	gth	CDS	848750	848817	.	+	0	ID=CDS120;Parent=mRNA120
+tig00000001	gth	five_prime_cis_splice_site	848818	848819	0.05	+	.	Parent=mRNA120
+tig00000001	gth	three_prime_cis_splice_site	848961	848962	0.05	+	.	Parent=mRNA120
+tig00000001	gth	exon	848963	849398	1	+	.	Parent=mRNA120
+tig00000001	gth	CDS	848963	849398	.	+	1	ID=CDS120;Parent=mRNA120
+###
+tig00000001	gth	gene	854865	856955	.	-	.	ID=gene121
+tig00000001	gth	mRNA	854865	856955	.	-	.	ID=mRNA121;Parent=gene121;Target=PRG01_0519500-t36_1-p1 1 697 +
+tig00000001	gth	exon	854865	856955	0.955	-	.	Parent=mRNA121
+tig00000001	gth	CDS	854865	856955	.	-	0	ID=CDS121;Parent=mRNA121
+###
+tig00000001	gth	gene	858063	858599	.	+	.	ID=gene122
+tig00000001	gth	mRNA	858063	858599	.	+	.	ID=mRNA122;Parent=gene122;Target=PRG01_0519600-t36_1-p1 1 103 +
+tig00000001	gth	exon	858063	858233	0.902	+	.	Parent=mRNA122
+tig00000001	gth	CDS	858069	858233	.	+	0	ID=CDS122;Parent=mRNA122
+tig00000001	gth	five_prime_cis_splice_site	858234	858235	0.05	+	.	Parent=mRNA122
+tig00000001	gth	three_prime_cis_splice_site	858457	858458	0.05	+	.	Parent=mRNA122
+tig00000001	gth	exon	858459	858599	1	+	.	Parent=mRNA122
+tig00000001	gth	CDS	858459	858599	.	+	0	ID=CDS122;Parent=mRNA122
+###
+tig00000001	gth	gene	859202	860104	.	-	.	ID=gene123
+tig00000001	gth	mRNA	859202	860104	.	-	.	ID=mRNA123;Parent=gene123;Target=PRG01_0519700-t36_1-p1 1 301 +
+tig00000001	gth	exon	859202	860104	0.998	-	.	Parent=mRNA123
+tig00000001	gth	CDS	859202	860104	.	-	0	ID=CDS123;Parent=mRNA123
+###
+tig00000001	gth	gene	861266	862195	.	-	.	ID=gene124
+tig00000001	gth	mRNA	861266	862195	.	-	.	ID=mRNA124;Parent=gene124;Target=PRG01_0519800-t36_1-p1 1 310 +
+tig00000001	gth	exon	861266	862195	0.971	-	.	Parent=mRNA124
+tig00000001	gth	CDS	861266	862195	.	-	0	ID=CDS124;Parent=mRNA124
+###
+tig00000001	gth	gene	863161	864103	.	-	.	ID=gene125
+tig00000001	gth	mRNA	863161	864103	.	-	.	ID=mRNA125;Parent=gene125;Target=PRG01_0519900-t36_1-p1 1 152 +
+tig00000001	gth	exon	863161	863257	0.982	-	.	Parent=mRNA125
+tig00000001	gth	CDS	863161	863257	.	-	1	ID=CDS125;Parent=mRNA125
+tig00000001	gth	three_prime_cis_splice_site	863257	863258	0.05	-	.	Parent=mRNA125
+tig00000001	gth	five_prime_cis_splice_site	863441	863442	0.05	-	.	Parent=mRNA125
+tig00000001	gth	exon	863442	863551	1	-	.	Parent=mRNA125
+tig00000001	gth	CDS	863442	863551	.	-	0	ID=CDS125;Parent=mRNA125
+tig00000001	gth	three_prime_cis_splice_site	863551	863552	0.05	-	.	Parent=mRNA125
+tig00000001	gth	five_prime_cis_splice_site	863699	863700	0.05	-	.	Parent=mRNA125
+tig00000001	gth	exon	863700	863803	1	-	.	Parent=mRNA125
+tig00000001	gth	CDS	863700	863803	.	-	2	ID=CDS125;Parent=mRNA125
+tig00000001	gth	three_prime_cis_splice_site	863803	863804	0.05	-	.	Parent=mRNA125
+tig00000001	gth	five_prime_cis_splice_site	863958	863959	0.05	-	.	Parent=mRNA125
+tig00000001	gth	exon	863959	864103	0.871	-	.	Parent=mRNA125
+tig00000001	gth	CDS	863959	864103	.	-	0	ID=CDS125;Parent=mRNA125
+###
+tig00000001	gth	gene	865411	868337	.	-	.	ID=gene126
+tig00000001	gth	mRNA	865411	868337	.	-	.	ID=mRNA126;Parent=gene126;Target=PRG01_0520000-t36_1-p1 1 983 +
+tig00000001	gth	exon	865411	868337	0.935	-	.	Parent=mRNA126
+tig00000001	gth	CDS	865413	868337	.	-	0	ID=CDS126;Parent=mRNA126
+###
+tig00000001	gth	gene	869447	875623	.	-	.	ID=gene127
+tig00000001	gth	mRNA	869447	875623	.	-	.	ID=mRNA127;Parent=gene127;Target=PRG01_0520100-t36_1-p1 1 2042 +
+tig00000001	gth	exon	869447	875210	0.942	-	.	Parent=mRNA127
+tig00000001	gth	CDS	869447	875210	.	-	1	ID=CDS127;Parent=mRNA127
+tig00000001	gth	three_prime_cis_splice_site	875210	875211	0.0001	-	.	Parent=mRNA127
+tig00000001	gth	five_prime_cis_splice_site	875282	875283	0.0001	-	.	Parent=mRNA127
+tig00000001	gth	exon	875283	875623	0.989	-	.	Parent=mRNA127
+tig00000001	gth	CDS	875283	875623	.	-	0	ID=CDS127;Parent=mRNA127
+###
+tig00000001	gth	gene	876655	878091	.	+	.	ID=gene128
+tig00000001	gth	mRNA	876655	878091	.	+	.	ID=mRNA128;Parent=gene128;Target=PRG01_0520200-t36_1-p1 1 479 +
+tig00000001	gth	exon	876655	878091	0.998	+	.	Parent=mRNA128
+tig00000001	gth	CDS	876655	878091	.	+	0	ID=CDS128;Parent=mRNA128
+###
+tig00000001	gth	gene	878982	880669	.	-	.	ID=gene129
+tig00000001	gth	mRNA	878982	880669	.	-	.	ID=mRNA129;Parent=gene129;Target=PRG01_0520300-t36_1-p1 1 512 +
+tig00000001	gth	exon	878982	880362	0.936	-	.	Parent=mRNA129
+tig00000001	gth	CDS	878982	880362	.	-	1	ID=CDS129;Parent=mRNA129
+tig00000001	gth	three_prime_cis_splice_site	880362	880363	0.05	-	.	Parent=mRNA129
+tig00000001	gth	five_prime_cis_splice_site	880496	880497	0.05	-	.	Parent=mRNA129
+tig00000001	gth	exon	880497	880669	1	-	.	Parent=mRNA129
+tig00000001	gth	CDS	880497	880669	.	-	0	ID=CDS129;Parent=mRNA129
+###
+tig00000001	gth	gene	881540	887266	.	-	.	ID=gene130
+tig00000001	gth	mRNA	881540	887266	.	-	.	ID=mRNA130;Parent=gene130;Target=PRG01_0520400-t36_1-p1 1 1526 +
+tig00000001	gth	exon	881540	881628	1	-	.	Parent=mRNA130
+tig00000001	gth	CDS	881540	881628	.	-	2	ID=CDS130;Parent=mRNA130
+tig00000001	gth	three_prime_cis_splice_site	881628	881629	0.05	-	.	Parent=mRNA130
+tig00000001	gth	five_prime_cis_splice_site	881745	881746	0.05	-	.	Parent=mRNA130
+tig00000001	gth	exon	881746	881823	0.84	-	.	Parent=mRNA130
+tig00000001	gth	CDS	881746	881823	.	-	2	ID=CDS130;Parent=mRNA130
+tig00000001	gth	three_prime_cis_splice_site	881823	881824	0.05	-	.	Parent=mRNA130
+tig00000001	gth	five_prime_cis_splice_site	881939	881940	0.05	-	.	Parent=mRNA130
+tig00000001	gth	exon	881940	882072	0.909	-	.	Parent=mRNA130
+tig00000001	gth	CDS	881940	882072	.	-	0	ID=CDS130;Parent=mRNA130
+tig00000001	gth	three_prime_cis_splice_site	882072	882073	0.05	-	.	Parent=mRNA130
+tig00000001	gth	five_prime_cis_splice_site	882167	882168	0.05	-	.	Parent=mRNA130
+tig00000001	gth	exon	882168	883287	0.98	-	.	Parent=mRNA130
+tig00000001	gth	CDS	882168	883287	.	-	1	ID=CDS130;Parent=mRNA130
+tig00000001	gth	three_prime_cis_splice_site	883287	883288	0.05	-	.	Parent=mRNA130
+tig00000001	gth	five_prime_cis_splice_site	883434	883435	0.05	-	.	Parent=mRNA130
+tig00000001	gth	exon	883435	883980	0.976	-	.	Parent=mRNA130
+tig00000001	gth	CDS	883435	883980	.	-	1	ID=CDS130;Parent=mRNA130
+tig00000001	gth	three_prime_cis_splice_site	883980	883981	0.05	-	.	Parent=mRNA130
+tig00000001	gth	five_prime_cis_splice_site	884241	884242	0.05	-	.	Parent=mRNA130
+tig00000001	gth	exon	884242	884447	0.96	-	.	Parent=mRNA130
+tig00000001	gth	CDS	884242	884447	.	-	0	ID=CDS130;Parent=mRNA130
+tig00000001	gth	three_prime_cis_splice_site	884447	884448	0.05	-	.	Parent=mRNA130
+tig00000001	gth	five_prime_cis_splice_site	884537	884538	0.05	-	.	Parent=mRNA130
+tig00000001	gth	exon	884538	886112	0.972	-	.	Parent=mRNA130
+tig00000001	gth	CDS	884538	886112	.	-	0	ID=CDS130;Parent=mRNA130
+tig00000001	gth	three_prime_cis_splice_site	886112	886113	0.05	-	.	Parent=mRNA130
+tig00000001	gth	five_prime_cis_splice_site	886435	886436	0.05	-	.	Parent=mRNA130
+tig00000001	gth	exon	886436	887266	0.962	-	.	Parent=mRNA130
+tig00000001	gth	CDS	886436	887266	.	-	0	ID=CDS130;Parent=mRNA130
+###
+tig00000001	gth	gene	888557	889540	.	+	.	ID=gene131
+tig00000001	gth	mRNA	888557	889540	.	+	.	ID=mRNA131;Parent=gene131;Target=PRG01_0520500-t36_1-p1 1 328 +
+tig00000001	gth	exon	888557	889540	0.975	+	.	Parent=mRNA131
+tig00000001	gth	CDS	888557	889540	.	+	0	ID=CDS131;Parent=mRNA131
+###
+tig00000001	gth	gene	895519	897201	.	-	.	ID=gene132
+tig00000001	gth	mRNA	895519	897201	.	-	.	ID=mRNA132;Parent=gene132;Target=PRG01_0520700-t36_1-p1 1 561 +
+tig00000001	gth	exon	895519	897201	0.982	-	.	Parent=mRNA132
+tig00000001	gth	CDS	895519	897201	.	-	0	ID=CDS132;Parent=mRNA132
+###
+tig00000001	gth	gene	897708	899383	.	+	.	ID=gene133
+tig00000001	gth	mRNA	897708	899383	.	+	.	ID=mRNA133;Parent=gene133;Target=PRG01_0520800-t36_1-p1 1 486 +
+tig00000001	gth	exon	897708	898036	0.966	+	.	Parent=mRNA133
+tig00000001	gth	CDS	897708	898036	.	+	0	ID=CDS133;Parent=mRNA133
+tig00000001	gth	five_prime_cis_splice_site	898037	898038	0.05	+	.	Parent=mRNA133
+tig00000001	gth	three_prime_cis_splice_site	898250	898251	0.05	+	.	Parent=mRNA133
+tig00000001	gth	exon	898252	899383	0.97	+	.	Parent=mRNA133
+tig00000001	gth	CDS	898252	899383	.	+	1	ID=CDS133;Parent=mRNA133
+###
+tig00000001	gth	gene	899703	899990	.	-	.	ID=gene134
+tig00000001	gth	mRNA	899703	899990	.	-	.	ID=mRNA134;Parent=gene134;Target=PRG01_0520900-t36_1-p1 1 96 +
+tig00000001	gth	exon	899703	899990	0.993	-	.	Parent=mRNA134
+tig00000001	gth	CDS	899703	899990	.	-	0	ID=CDS134;Parent=mRNA134
+###
+tig00000001	gth	gene	901992	904514	.	+	.	ID=gene135
+tig00000001	gth	mRNA	901992	904514	.	+	.	ID=mRNA135;Parent=gene135;Target=PRG01_0521000-t36_1-p1 1 844 +
+tig00000001	gth	exon	901992	904514	0.976	+	.	Parent=mRNA135
+tig00000001	gth	CDS	901992	904514	.	+	0	ID=CDS135;Parent=mRNA135
+###
+tig00000001	gth	gene	908282	914226	.	+	.	ID=gene136
+tig00000001	gth	mRNA	908282	914226	.	+	.	ID=mRNA136;Parent=gene136;Target=PRG01_0521200-t36_1-p1 3 1737 +
+tig00000001	gth	exon	908282	908302	1	+	.	Parent=mRNA136
+tig00000001	gth	CDS	908282	908302	.	+	0	ID=CDS136;Parent=mRNA136
+tig00000001	gth	five_prime_cis_splice_site	908303	908304	0.05	+	.	Parent=mRNA136
+tig00000001	gth	three_prime_cis_splice_site	908578	908579	0.05	+	.	Parent=mRNA136
+tig00000001	gth	exon	908580	913280	0.955	+	.	Parent=mRNA136
+tig00000001	gth	CDS	908580	913280	.	+	0	ID=CDS136;Parent=mRNA136
+tig00000001	gth	five_prime_cis_splice_site	913281	913282	0.05	+	.	Parent=mRNA136
+tig00000001	gth	three_prime_cis_splice_site	913409	913410	0.05	+	.	Parent=mRNA136
+tig00000001	gth	exon	913411	913571	0.981	+	.	Parent=mRNA136
+tig00000001	gth	CDS	913411	913571	.	+	0	ID=CDS136;Parent=mRNA136
+tig00000001	gth	five_prime_cis_splice_site	913572	913573	0.05	+	.	Parent=mRNA136
+tig00000001	gth	three_prime_cis_splice_site	913672	913673	0.05	+	.	Parent=mRNA136
+tig00000001	gth	exon	913674	913784	0.961	+	.	Parent=mRNA136
+tig00000001	gth	CDS	913674	913784	.	+	1	ID=CDS136;Parent=mRNA136
+tig00000001	gth	five_prime_cis_splice_site	913785	913786	0.05	+	.	Parent=mRNA136
+tig00000001	gth	three_prime_cis_splice_site	914024	914025	0.05	+	.	Parent=mRNA136
+tig00000001	gth	CDS	914026	914224	.	+	1	ID=CDS136;Parent=mRNA136
+tig00000001	gth	exon	914026	914226	0.879	+	.	Parent=mRNA136
+###
+tig00000001	gth	gene	915520	916447	.	+	.	ID=gene137
+tig00000001	gth	mRNA	915520	916447	.	+	.	ID=mRNA137;Parent=gene137;Target=PRG01_0521300-t36_1-p1 1 107 +
+tig00000001	gth	exon	915520	915600	1	+	.	Parent=mRNA137
+tig00000001	gth	CDS	915520	915600	.	+	0	ID=CDS137;Parent=mRNA137
+tig00000001	gth	five_prime_cis_splice_site	915601	915602	0.05	+	.	Parent=mRNA137
+tig00000001	gth	three_prime_cis_splice_site	915785	915786	0.05	+	.	Parent=mRNA137
+tig00000001	gth	exon	915787	915849	1	+	.	Parent=mRNA137
+tig00000001	gth	CDS	915787	915849	.	+	0	ID=CDS137;Parent=mRNA137
+tig00000001	gth	five_prime_cis_splice_site	915850	915851	0.05	+	.	Parent=mRNA137
+tig00000001	gth	three_prime_cis_splice_site	916051	916052	0.05	+	.	Parent=mRNA137
+tig00000001	gth	exon	916053	916166	1	+	.	Parent=mRNA137
+tig00000001	gth	CDS	916053	916166	.	+	0	ID=CDS137;Parent=mRNA137
+tig00000001	gth	five_prime_cis_splice_site	916167	916168	0.05	+	.	Parent=mRNA137
+tig00000001	gth	three_prime_cis_splice_site	916383	916384	0.05	+	.	Parent=mRNA137
+tig00000001	gth	exon	916385	916447	1	+	.	Parent=mRNA137
+tig00000001	gth	CDS	916385	916447	.	+	0	ID=CDS137;Parent=mRNA137
+###
+tig00000001	gth	gene	916983	919262	.	-	.	ID=gene138
+tig00000001	gth	mRNA	916983	919262	.	-	.	ID=mRNA138;Parent=gene138;Target=PRG01_0521400-t36_1-p1 1 760 +
+tig00000001	gth	exon	916983	919262	0.93	-	.	Parent=mRNA138
+tig00000001	gth	CDS	916983	919262	.	-	0	ID=CDS138;Parent=mRNA138
+###
+tig00000001	gth	gene	922121	924388	.	-	.	ID=gene139
+tig00000001	gth	mRNA	922121	924388	.	-	.	ID=mRNA139;Parent=gene139;Target=PRG01_0521600-t36_1-p1 1 274 +
+tig00000001	gth	exon	922121	922177	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	922121	922177	.	-	0	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	922177	922178	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	922309	922310	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	922310	922388	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	922310	922388	.	-	1	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	922388	922389	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	922612	922613	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	922613	922711	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	922613	922711	.	-	1	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	922711	922712	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	922828	922829	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	922829	922947	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	922829	922947	.	-	0	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	922947	922948	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	923161	923162	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	923162	923276	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	923162	923276	.	-	1	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	923276	923277	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	923389	923390	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	923390	923429	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	923390	923429	.	-	2	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	923429	923430	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	923601	923602	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	923602	923664	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	923602	923664	.	-	2	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	923664	923665	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	923836	923837	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	923837	923945	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	923837	923945	.	-	0	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	923945	923946	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	924091	924092	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	924092	924196	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	924092	924196	.	-	0	ID=CDS139;Parent=mRNA139
+tig00000001	gth	three_prime_cis_splice_site	924196	924197	0.05	-	.	Parent=mRNA139
+tig00000001	gth	five_prime_cis_splice_site	924352	924353	0.05	-	.	Parent=mRNA139
+tig00000001	gth	exon	924353	924388	1	-	.	Parent=mRNA139
+tig00000001	gth	CDS	924353	924388	.	-	0	ID=CDS139;Parent=mRNA139
+###
+tig00000001	gth	gene	927381	955839	.	+	.	ID=gene140
+tig00000001	gth	mRNA	927381	955839	.	+	.	ID=mRNA140;Parent=gene140;Target=PRG01_0521700-t36_1-p1 1 9307 +
+tig00000001	gth	exon	927381	927488	1	+	.	Parent=mRNA140
+tig00000001	gth	five_prime_cis_splice_site	927489	927490	0.05	+	.	Parent=mRNA140
+tig00000001	gth	three_prime_cis_splice_site	927700	927701	0.05	+	.	Parent=mRNA140
+tig00000001	gth	exon	927702	928371	0.987	+	.	Parent=mRNA140
+tig00000001	gth	five_prime_cis_splice_site	928372	928373	0.05	+	.	Parent=mRNA140
+tig00000001	gth	three_prime_cis_splice_site	928537	928538	0.05	+	.	Parent=mRNA140
+tig00000001	gth	exon	928539	930641	0.966	+	.	Parent=mRNA140
+tig00000001	gth	CDS	930594	930641	.	+	0	ID=CDS140;Parent=mRNA140
+tig00000001	gth	five_prime_cis_splice_site	930642	930643	0.05	+	.	Parent=mRNA140
+tig00000001	gth	three_prime_cis_splice_site	930690	930691	0.0001	+	.	Parent=mRNA140
+tig00000001	gth	CDS	930692	946303	.	+	0	ID=CDS140;Parent=mRNA140
+tig00000001	gth	exon	930692	947802	0.924	+	.	Parent=mRNA140
+tig00000001	gth	five_prime_cis_splice_site	947803	947804	0.05	+	.	Parent=mRNA140
+tig00000001	gth	three_prime_cis_splice_site	947951	947952	0.05	+	.	Parent=mRNA140
+tig00000001	gth	exon	947953	955839	0.963	+	.	Parent=mRNA140
+###
+tig00000001	gth	gene	956757	957561	.	+	.	ID=gene141
+tig00000001	gth	mRNA	956757	957561	.	+	.	ID=mRNA141;Parent=gene141;Target=PRG01_0521800-t36_1-p1 1 166 +
+tig00000001	gth	exon	956757	956975	0.988	+	.	Parent=mRNA141
+tig00000001	gth	CDS	956757	956975	.	+	0	ID=CDS141;Parent=mRNA141
+tig00000001	gth	five_prime_cis_splice_site	956976	956977	0.05	+	.	Parent=mRNA141
+tig00000001	gth	three_prime_cis_splice_site	957103	957104	0.05	+	.	Parent=mRNA141
+tig00000001	gth	exon	957105	957278	1	+	.	Parent=mRNA141
+tig00000001	gth	CDS	957105	957278	.	+	0	ID=CDS141;Parent=mRNA141
+tig00000001	gth	five_prime_cis_splice_site	957279	957280	0.05	+	.	Parent=mRNA141
+tig00000001	gth	three_prime_cis_splice_site	957455	957456	0.05	+	.	Parent=mRNA141
+tig00000001	gth	exon	957457	957561	1	+	.	Parent=mRNA141
+tig00000001	gth	CDS	957457	957561	.	+	0	ID=CDS141;Parent=mRNA141
+###
+tig00000001	gth	gene	959785	961233	.	+	.	ID=gene142
+tig00000001	gth	mRNA	959785	961233	.	+	.	ID=mRNA142;Parent=gene142;Target=PRG01_0521900-t36_1-p1 1 483 +
+tig00000001	gth	exon	959785	961233	0.995	+	.	Parent=mRNA142
+tig00000001	gth	CDS	959785	961233	.	+	0	ID=CDS142;Parent=mRNA142
+###
+tig00000001	gth	gene	963735	964475	.	-	.	ID=gene143
+tig00000001	gth	mRNA	963735	964475	.	-	.	ID=mRNA143;Parent=gene143;Target=PRG01_0522100-t36_1-p1 1 147 +
+tig00000001	gth	exon	963735	963785	1	-	.	Parent=mRNA143
+tig00000001	gth	CDS	963735	963785	.	-	0	ID=CDS143;Parent=mRNA143
+tig00000001	gth	three_prime_cis_splice_site	963785	963786	0.05	-	.	Parent=mRNA143
+tig00000001	gth	five_prime_cis_splice_site	963946	963947	0.05	-	.	Parent=mRNA143
+tig00000001	gth	exon	963947	964119	1	-	.	Parent=mRNA143
+tig00000001	gth	CDS	963947	964119	.	-	2	ID=CDS143;Parent=mRNA143
+tig00000001	gth	three_prime_cis_splice_site	964119	964120	0.05	-	.	Parent=mRNA143
+tig00000001	gth	five_prime_cis_splice_site	964258	964259	0.05	-	.	Parent=mRNA143
+tig00000001	gth	exon	964259	964475	1	-	.	Parent=mRNA143
+tig00000001	gth	CDS	964259	964475	.	-	0	ID=CDS143;Parent=mRNA143
+###
+tig00000001	gth	gene	968483	973159	.	+	.	ID=gene144
+tig00000001	gth	mRNA	968483	973159	.	+	.	ID=mRNA144;Parent=gene144;Target=PRG01_0522200-t36_1-p1 1 1566 +
+tig00000001	gth	exon	968483	972465	0.903	+	.	Parent=mRNA144
+tig00000001	gth	CDS	968483	972465	.	+	0	ID=CDS144;Parent=mRNA144
+tig00000001	gth	five_prime_cis_splice_site	972466	972467	0.0001	+	.	Parent=mRNA144
+tig00000001	gth	three_prime_cis_splice_site	972514	972515	0.05	+	.	Parent=mRNA144
+tig00000001	gth	CDS	972516	972531	.	+	1	ID=CDS144;Parent=mRNA144
+tig00000001	gth	exon	972516	973159	0.903	+	.	Parent=mRNA144
+###
+tig00000001	gth	gene	977435	981682	.	+	.	ID=gene145
+tig00000001	gth	mRNA	977435	981682	.	+	.	ID=mRNA145;Parent=gene145;Target=PRG01_0522300-t36_1-p1 1 1432 +
+tig00000001	gth	exon	977435	981682	0.944	+	.	Parent=mRNA145
+tig00000001	gth	CDS	977435	981682	.	+	0	ID=CDS145;Parent=mRNA145
+###
+tig00000001	gth	gene	982801	984626	.	-	.	ID=gene146
+tig00000001	gth	mRNA	982801	984626	.	-	.	ID=mRNA146;Parent=gene146;Target=PRG01_0522400-t36_1-p1 1 534 +
+tig00000001	gth	exon	982801	984029	0.993	-	.	Parent=mRNA146
+tig00000001	gth	CDS	982801	984029	.	-	2	ID=CDS146;Parent=mRNA146
+tig00000001	gth	three_prime_cis_splice_site	984029	984030	0.05	-	.	Parent=mRNA146
+tig00000001	gth	five_prime_cis_splice_site	984253	984254	0.05	-	.	Parent=mRNA146
+tig00000001	gth	exon	984254	984626	0.985	-	.	Parent=mRNA146
+tig00000001	gth	CDS	984254	984626	.	-	0	ID=CDS146;Parent=mRNA146
+###
+tig00000001	gth	gene	989854	990543	.	-	.	ID=gene147
+tig00000001	gth	mRNA	989854	990543	.	-	.	ID=mRNA147;Parent=gene147;Target=PRG01_0522600-t36_1-p1 1 130 +
+tig00000001	gth	exon	989854	990081	1	-	.	Parent=mRNA147
+tig00000001	gth	CDS	989854	990081	.	-	0	ID=CDS147;Parent=mRNA147
+tig00000001	gth	three_prime_cis_splice_site	990081	990082	0.05	-	.	Parent=mRNA147
+tig00000001	gth	five_prime_cis_splice_site	990208	990209	0.05	-	.	Parent=mRNA147
+tig00000001	gth	exon	990209	990248	1	-	.	Parent=mRNA147
+tig00000001	gth	CDS	990209	990248	.	-	1	ID=CDS147;Parent=mRNA147
+tig00000001	gth	three_prime_cis_splice_site	990248	990249	0.05	-	.	Parent=mRNA147
+tig00000001	gth	five_prime_cis_splice_site	990421	990422	0.05	-	.	Parent=mRNA147
+tig00000001	gth	exon	990422	990543	0.95	-	.	Parent=mRNA147
+tig00000001	gth	CDS	990422	990543	.	-	0	ID=CDS147;Parent=mRNA147
+###
+tig00000001	gth	gene	993550	995481	.	+	.	ID=gene148
+tig00000001	gth	mRNA	993550	995481	.	+	.	ID=mRNA148;Parent=gene148;Target=PRG01_0522700-t36_1-p1 1 533 +
+tig00000001	gth	exon	993550	993606	0.836	+	.	Parent=mRNA148
+tig00000001	gth	CDS	993558	993606	.	+	0	ID=CDS148;Parent=mRNA148
+tig00000001	gth	five_prime_cis_splice_site	993607	993608	0.05	+	.	Parent=mRNA148
+tig00000001	gth	three_prime_cis_splice_site	993733	993734	0.05	+	.	Parent=mRNA148
+tig00000001	gth	exon	993735	995244	0.995	+	.	Parent=mRNA148
+tig00000001	gth	CDS	993735	995244	.	+	2	ID=CDS148;Parent=mRNA148
+tig00000001	gth	five_prime_cis_splice_site	995245	995246	0.05	+	.	Parent=mRNA148
+tig00000001	gth	three_prime_cis_splice_site	995449	995450	0.05	+	.	Parent=mRNA148
+tig00000001	gth	exon	995451	995481	1	+	.	Parent=mRNA148
+tig00000001	gth	CDS	995451	995481	.	+	1	ID=CDS148;Parent=mRNA148
+###
+tig00000001	gth	gene	998263	999479	.	+	.	ID=gene149
+tig00000001	gth	mRNA	998263	999479	.	+	.	ID=mRNA149;Parent=gene149;Target=PRG01_0522900-t36_1-p1 1 207 +
+tig00000001	gth	exon	998263	998414	1	+	.	Parent=mRNA149
+tig00000001	gth	CDS	998263	998414	.	+	0	ID=CDS149;Parent=mRNA149
+tig00000001	gth	five_prime_cis_splice_site	998415	998416	0.05	+	.	Parent=mRNA149
+tig00000001	gth	three_prime_cis_splice_site	998622	998623	0.05	+	.	Parent=mRNA149
+tig00000001	gth	exon	998624	998752	1	+	.	Parent=mRNA149
+tig00000001	gth	CDS	998624	998752	.	+	1	ID=CDS149;Parent=mRNA149
+tig00000001	gth	five_prime_cis_splice_site	998753	998754	0.05	+	.	Parent=mRNA149
+tig00000001	gth	three_prime_cis_splice_site	998931	998932	0.05	+	.	Parent=mRNA149
+tig00000001	gth	exon	998933	999059	1	+	.	Parent=mRNA149
+tig00000001	gth	CDS	998933	999059	.	+	1	ID=CDS149;Parent=mRNA149
+tig00000001	gth	five_prime_cis_splice_site	999060	999061	0.05	+	.	Parent=mRNA149
+tig00000001	gth	three_prime_cis_splice_site	999170	999171	0.05	+	.	Parent=mRNA149
+tig00000001	gth	exon	999172	999210	1	+	.	Parent=mRNA149
+tig00000001	gth	CDS	999172	999210	.	+	0	ID=CDS149;Parent=mRNA149
+tig00000001	gth	five_prime_cis_splice_site	999211	999212	0.05	+	.	Parent=mRNA149
+tig00000001	gth	three_prime_cis_splice_site	999304	999305	0.05	+	.	Parent=mRNA149
+tig00000001	gth	exon	999306	999479	0.979	+	.	Parent=mRNA149
+tig00000001	gth	CDS	999306	999479	.	+	0	ID=CDS149;Parent=mRNA149
+###
+tig00000001	gth	gene	1009631	1011673	.	+	.	ID=gene150
+tig00000001	gth	mRNA	1009631	1011673	.	+	.	ID=mRNA150;Parent=gene150;Target=PRG01_0523100-t36_1-p1 1 688 +
+tig00000001	gth	exon	1009631	1011673	0.931	+	.	Parent=mRNA150
+tig00000001	gth	CDS	1009631	1011673	.	+	0	ID=CDS150;Parent=mRNA150
+###
+tig00000001	gth	gene	1013047	1013822	.	-	.	ID=gene151
+tig00000001	gth	mRNA	1013047	1013822	.	-	.	ID=mRNA151;Parent=gene151;Target=PRG01_0523200-t36_1-p1 1 203 +
+tig00000001	gth	exon	1013047	1013496	0.975	-	.	Parent=mRNA151
+tig00000001	gth	CDS	1013047	1013496	.	-	0	ID=CDS151;Parent=mRNA151
+tig00000001	gth	three_prime_cis_splice_site	1013496	1013497	0.05	-	.	Parent=mRNA151
+tig00000001	gth	five_prime_cis_splice_site	1013663	1013664	0.05	-	.	Parent=mRNA151
+tig00000001	gth	exon	1013664	1013822	0.858	-	.	Parent=mRNA151
+tig00000001	gth	CDS	1013664	1013822	.	-	0	ID=CDS151;Parent=mRNA151
+###
+tig00000001	gth	gene	1018370	1021738	.	+	.	ID=gene152
+tig00000001	gth	mRNA	1018370	1021738	.	+	.	ID=mRNA152;Parent=gene152;Target=PRG01_0523300-t36_1-p1 1 1123 +
+tig00000001	gth	exon	1018370	1021738	0.998	+	.	Parent=mRNA152
+tig00000001	gth	CDS	1018370	1021738	.	+	0	ID=CDS152;Parent=mRNA152
+###
+tig00000001	gth	gene	1028206	1028962	.	-	.	ID=gene153
+tig00000001	gth	mRNA	1028206	1028962	.	-	.	ID=mRNA153;Parent=gene153;Target=PRG01_0523500-t36_1-p1 1 154 +
+tig00000001	gth	exon	1028206	1028366	0.982	-	.	Parent=mRNA153
+tig00000001	gth	CDS	1028206	1028366	.	-	2	ID=CDS153;Parent=mRNA153
+tig00000001	gth	three_prime_cis_splice_site	1028366	1028367	0.05	-	.	Parent=mRNA153
+tig00000001	gth	five_prime_cis_splice_site	1028511	1028512	0.05	-	.	Parent=mRNA153
+tig00000001	gth	exon	1028512	1028580	1	-	.	Parent=mRNA153
+tig00000001	gth	CDS	1028512	1028580	.	-	2	ID=CDS153;Parent=mRNA153
+tig00000001	gth	three_prime_cis_splice_site	1028580	1028581	0.05	-	.	Parent=mRNA153
+tig00000001	gth	five_prime_cis_splice_site	1028730	1028731	0.05	-	.	Parent=mRNA153
+tig00000001	gth	exon	1028731	1028962	1	-	.	Parent=mRNA153
+tig00000001	gth	CDS	1028731	1028962	.	-	0	ID=CDS153;Parent=mRNA153
+###
+tig00000001	gth	gene	1033071	1034165	.	-	.	ID=gene154
+tig00000001	gth	mRNA	1033071	1034165	.	-	.	ID=mRNA154;Parent=gene154;Target=PRG01_0523700-t36_1-p1 1 365 +
+tig00000001	gth	exon	1033071	1034165	1	-	.	Parent=mRNA154
+tig00000001	gth	CDS	1033071	1034165	.	-	0	ID=CDS154;Parent=mRNA154
+###
+tig00000001	gth	gene	1035892	1036260	.	+	.	ID=gene155
+tig00000001	gth	mRNA	1035892	1036260	.	+	.	ID=mRNA155;Parent=gene155;Target=PRG01_0523800-t36_1-p1 1 123 +
+tig00000001	gth	exon	1035892	1036260	0.97	+	.	Parent=mRNA155
+tig00000001	gth	CDS	1035892	1036260	.	+	0	ID=CDS155;Parent=mRNA155
+###
+tig00000001	gth	gene	1037483	1038253	.	+	.	ID=gene156
+tig00000001	gth	mRNA	1037483	1038253	.	+	.	ID=mRNA156;Parent=gene156;Target=PRG01_0523900-t36_1-p1 1 257 +
+tig00000001	gth	exon	1037483	1038253	0.96	+	.	Parent=mRNA156
+tig00000001	gth	CDS	1037483	1038253	.	+	0	ID=CDS156;Parent=mRNA156
+###
+tig00000001	gth	gene	1039276	1039590	.	-	.	ID=gene157
+tig00000001	gth	mRNA	1039276	1039590	.	-	.	ID=mRNA157;Parent=gene157;Target=PRG01_0524000-t36_1-p1 1 105 +
+tig00000001	gth	exon	1039276	1039590	0.985	-	.	Parent=mRNA157
+tig00000001	gth	CDS	1039276	1039590	.	-	0	ID=CDS157;Parent=mRNA157
+###
+tig00000001	gth	gene	1041082	1043995	.	-	.	ID=gene158
+tig00000001	gth	mRNA	1041082	1043995	.	-	.	ID=mRNA158;Parent=gene158;Target=PRG01_0524100-t36_1-p1 1 711 +
+tig00000001	gth	exon	1041082	1042938	0.919	-	.	Parent=mRNA158
+tig00000001	gth	CDS	1041097	1042938	.	-	0	ID=CDS158;Parent=mRNA158
+tig00000001	gth	three_prime_cis_splice_site	1042938	1042939	0.05	-	.	Parent=mRNA158
+tig00000001	gth	five_prime_cis_splice_site	1043734	1043735	0.05	-	.	Parent=mRNA158
+tig00000001	gth	exon	1043735	1043995	0.975	-	.	Parent=mRNA158
+tig00000001	gth	CDS	1043735	1043995	.	-	0	ID=CDS158;Parent=mRNA158
+###
+tig00000001	gth	gene	1055911	1058022	.	+	.	ID=gene159
+tig00000001	gth	mRNA	1055911	1058022	.	+	.	ID=mRNA159;Parent=gene159;Target=PRG01_0524300-t36_1-p1 1 712 +
+tig00000001	gth	exon	1055911	1058022	0.906	+	.	Parent=mRNA159
+tig00000001	gth	CDS	1055911	1058022	.	+	0	ID=CDS159;Parent=mRNA159
+###
+tig00000001	gth	gene	1061417	1063435	.	+	.	ID=gene160
+tig00000001	gth	mRNA	1061417	1063435	.	+	.	ID=mRNA160;Parent=gene160;Target=PRG01_0524400-t36_1-p1 1 673 +
+tig00000001	gth	exon	1061417	1063435	0.959	+	.	Parent=mRNA160
+tig00000001	gth	CDS	1061417	1063435	.	+	0	ID=CDS160;Parent=mRNA160
+###
+tig00000001	gth	gene	1072209	1073672	.	-	.	ID=gene161
+tig00000001	gth	mRNA	1072209	1073672	.	-	.	ID=mRNA161;Parent=gene161;Target=PRG01_0524600-t36_1-p1 1 485 +
+tig00000001	gth	exon	1072209	1073672	0.947	-	.	Parent=mRNA161
+tig00000001	gth	CDS	1072209	1073672	.	-	0	ID=CDS161;Parent=mRNA161
+###
+tig00000001	gth	gene	1077383	1078783	.	+	.	ID=gene162
+tig00000001	gth	mRNA	1077383	1078783	.	+	.	ID=mRNA162;Parent=gene162;Target=PRG01_0524700-t36_1-p1 1 480 +
+tig00000001	gth	exon	1077383	1078783	0.857	+	.	Parent=mRNA162
+tig00000001	gth	CDS	1077383	1078783	.	+	0	ID=CDS162;Parent=mRNA162
+###
+tig00000001	gth	gene	1086211	1087386	.	-	.	ID=gene163
+tig00000001	gth	mRNA	1086211	1087386	.	-	.	ID=mRNA163;Parent=gene163;Target=PRG01_0524900-t36_1-p1 1 351 +
+tig00000001	gth	exon	1086211	1086301	0.961	-	.	Parent=mRNA163
+tig00000001	gth	CDS	1086211	1086301	.	-	1	ID=CDS163;Parent=mRNA163
+tig00000001	gth	three_prime_cis_splice_site	1086301	1086302	0.05	-	.	Parent=mRNA163
+tig00000001	gth	five_prime_cis_splice_site	1086424	1086425	0.05	-	.	Parent=mRNA163
+tig00000001	gth	exon	1086425	1087386	0.961	-	.	Parent=mRNA163
+tig00000001	gth	CDS	1086425	1087386	.	-	0	ID=CDS163;Parent=mRNA163
+###
+tig00000001	gth	gene	1088194	1088966	.	+	.	ID=gene164
+tig00000001	gth	mRNA	1088194	1088966	.	+	.	ID=mRNA164;Parent=gene164;Target=PRG01_0525000-t36_1-p1 1 131 +
+tig00000001	gth	exon	1088194	1088445	0.987	+	.	Parent=mRNA164
+tig00000001	gth	CDS	1088194	1088445	.	+	0	ID=CDS164;Parent=mRNA164
+tig00000001	gth	five_prime_cis_splice_site	1088446	1088447	0.05	+	.	Parent=mRNA164
+tig00000001	gth	three_prime_cis_splice_site	1088824	1088825	0.05	+	.	Parent=mRNA164
+tig00000001	gth	exon	1088826	1088966	0.983	+	.	Parent=mRNA164
+tig00000001	gth	CDS	1088826	1088966	.	+	0	ID=CDS164;Parent=mRNA164
+###
+tig00000001	gth	gene	1090926	1091825	.	+	.	ID=gene165
+tig00000001	gth	mRNA	1090926	1091825	.	+	.	ID=mRNA165;Parent=gene165;Target=PRG01_0525100-t36_1-p1 1 300 +
+tig00000001	gth	exon	1090926	1091825	0.992	+	.	Parent=mRNA165
+tig00000001	gth	CDS	1090926	1091825	.	+	0	ID=CDS165;Parent=mRNA165
+###
+tig00000001	gth	gene	1093358	1095293	.	+	.	ID=gene166
+tig00000001	gth	mRNA	1093358	1095293	.	+	.	ID=mRNA166;Parent=gene166;Target=PRG01_0525200-t36_1-p1 1 286 +
+tig00000001	gth	exon	1093358	1093458	1	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1093358	1093458	.	+	0	ID=CDS166;Parent=mRNA166
+tig00000001	gth	five_prime_cis_splice_site	1093459	1093460	0.05	+	.	Parent=mRNA166
+tig00000001	gth	three_prime_cis_splice_site	1093676	1093677	0.05	+	.	Parent=mRNA166
+tig00000001	gth	exon	1093678	1093750	0.926	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1093678	1093750	.	+	1	ID=CDS166;Parent=mRNA166
+tig00000001	gth	five_prime_cis_splice_site	1093751	1093752	0.05	+	.	Parent=mRNA166
+tig00000001	gth	three_prime_cis_splice_site	1093981	1093982	0.05	+	.	Parent=mRNA166
+tig00000001	gth	exon	1093983	1094079	1	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1093983	1094079	.	+	0	ID=CDS166;Parent=mRNA166
+tig00000001	gth	five_prime_cis_splice_site	1094080	1094081	0.05	+	.	Parent=mRNA166
+tig00000001	gth	three_prime_cis_splice_site	1094217	1094218	0.05	+	.	Parent=mRNA166
+tig00000001	gth	exon	1094219	1094353	1	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1094219	1094353	.	+	2	ID=CDS166;Parent=mRNA166
+tig00000001	gth	five_prime_cis_splice_site	1094354	1094355	0.05	+	.	Parent=mRNA166
+tig00000001	gth	three_prime_cis_splice_site	1094470	1094471	0.05	+	.	Parent=mRNA166
+tig00000001	gth	exon	1094472	1094614	1	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1094472	1094614	.	+	2	ID=CDS166;Parent=mRNA166
+tig00000001	gth	five_prime_cis_splice_site	1094615	1094616	0.05	+	.	Parent=mRNA166
+tig00000001	gth	three_prime_cis_splice_site	1094740	1094741	0.05	+	.	Parent=mRNA166
+tig00000001	gth	exon	1094742	1094876	1	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1094742	1094876	.	+	0	ID=CDS166;Parent=mRNA166
+tig00000001	gth	five_prime_cis_splice_site	1094877	1094878	0.05	+	.	Parent=mRNA166
+tig00000001	gth	three_prime_cis_splice_site	1095000	1095001	0.05	+	.	Parent=mRNA166
+tig00000001	gth	exon	1095002	1095121	1	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1095002	1095121	.	+	0	ID=CDS166;Parent=mRNA166
+tig00000001	gth	five_prime_cis_splice_site	1095122	1095123	0.05	+	.	Parent=mRNA166
+tig00000001	gth	three_prime_cis_splice_site	1095238	1095239	0.05	+	.	Parent=mRNA166
+tig00000001	gth	exon	1095240	1095293	0.907	+	.	Parent=mRNA166
+tig00000001	gth	CDS	1095240	1095293	.	+	0	ID=CDS166;Parent=mRNA166
+###
+tig00000001	gth	gene	1099410	1100636	.	+	.	ID=gene167
+tig00000001	gth	mRNA	1099410	1100636	.	+	.	ID=mRNA167;Parent=gene167;Target=PRG01_0525400-t36_1-p1 1 414 +
+tig00000001	gth	exon	1099410	1100636	0.885	+	.	Parent=mRNA167
+tig00000001	gth	CDS	1099410	1100636	.	+	0	ID=CDS167;Parent=mRNA167
+###
+tig00000001	gth	gene	1101221	1103422	.	-	.	ID=gene168
+tig00000001	gth	mRNA	1101221	1103422	.	-	.	ID=mRNA168;Parent=gene168;Target=PRG01_0525500-t36_1-p1 1 512 +
+tig00000001	gth	exon	1101221	1102220	0.85	-	.	Parent=mRNA168
+tig00000001	gth	CDS	1101221	1102220	.	-	1	ID=CDS168;Parent=mRNA168
+tig00000001	gth	three_prime_cis_splice_site	1102220	1102221	0.05	-	.	Parent=mRNA168
+tig00000001	gth	five_prime_cis_splice_site	1102386	1102387	0.05	-	.	Parent=mRNA168
+tig00000001	gth	exon	1102387	1102452	0.956	-	.	Parent=mRNA168
+tig00000001	gth	CDS	1102387	1102452	.	-	1	ID=CDS168;Parent=mRNA168
+tig00000001	gth	three_prime_cis_splice_site	1102452	1102453	0.05	-	.	Parent=mRNA168
+tig00000001	gth	five_prime_cis_splice_site	1102545	1102546	0.05	-	.	Parent=mRNA168
+tig00000001	gth	exon	1102546	1102579	1	-	.	Parent=mRNA168
+tig00000001	gth	CDS	1102546	1102579	.	-	2	ID=CDS168;Parent=mRNA168
+tig00000001	gth	three_prime_cis_splice_site	1102579	1102580	0.05	-	.	Parent=mRNA168
+tig00000001	gth	five_prime_cis_splice_site	1102701	1102702	0.05	-	.	Parent=mRNA168
+tig00000001	gth	exon	1102702	1102790	1	-	.	Parent=mRNA168
+tig00000001	gth	CDS	1102702	1102790	.	-	1	ID=CDS168;Parent=mRNA168
+tig00000001	gth	three_prime_cis_splice_site	1102790	1102791	0.05	-	.	Parent=mRNA168
+tig00000001	gth	five_prime_cis_splice_site	1103015	1103016	0.05	-	.	Parent=mRNA168
+tig00000001	gth	exon	1103016	1103110	1	-	.	Parent=mRNA168
+tig00000001	gth	CDS	1103016	1103110	.	-	0	ID=CDS168;Parent=mRNA168
+tig00000001	gth	three_prime_cis_splice_site	1103110	1103111	0.05	-	.	Parent=mRNA168
+tig00000001	gth	five_prime_cis_splice_site	1103188	1103189	0.05	-	.	Parent=mRNA168
+tig00000001	gth	exon	1103189	1103422	0.982	-	.	Parent=mRNA168
+tig00000001	gth	CDS	1103189	1103422	.	-	0	ID=CDS168;Parent=mRNA168
+###
+tig00000001	gth	gene	1105114	1106081	.	-	.	ID=gene169
+tig00000001	gth	mRNA	1105114	1106081	.	-	.	ID=mRNA169;Parent=gene169;Target=PRG01_0525600-t36_1-p1 1 323 +
+tig00000001	gth	exon	1105114	1106081	0.956	-	.	Parent=mRNA169
+tig00000001	gth	CDS	1105116	1106081	.	-	0	ID=CDS169;Parent=mRNA169
+###
+tig00000001	gth	gene	1107832	1108914	.	+	.	ID=gene170
+tig00000001	gth	mRNA	1107832	1108914	.	+	.	ID=mRNA170;Parent=gene170;Target=PRG01_0525700-t36_1-p1 1 367 +
+tig00000001	gth	exon	1107832	1108914	0.915	+	.	Parent=mRNA170
+tig00000001	gth	CDS	1107832	1108914	.	+	0	ID=CDS170;Parent=mRNA170
+###
+tig00000001	gth	gene	1110329	1114450	.	+	.	ID=gene171
+tig00000001	gth	mRNA	1110329	1114450	.	+	.	ID=mRNA171;Parent=gene171;Target=PRG01_0525800-t36_1-p1 1 1305 +
+tig00000001	gth	exon	1110329	1112381	0.935	+	.	Parent=mRNA171
+tig00000001	gth	CDS	1110329	1112381	.	+	0	ID=CDS171;Parent=mRNA171
+tig00000001	gth	five_prime_cis_splice_site	1112382	1112383	0.05	+	.	Parent=mRNA171
+tig00000001	gth	three_prime_cis_splice_site	1112557	1112558	0.05	+	.	Parent=mRNA171
+tig00000001	gth	exon	1112559	1114450	0.969	+	.	Parent=mRNA171
+tig00000001	gth	CDS	1112559	1114450	.	+	2	ID=CDS171;Parent=mRNA171
+###
+tig00000001	gth	gene	1140536	1141816	.	-	.	ID=gene172
+tig00000001	gth	mRNA	1140536	1141816	.	-	.	ID=mRNA172;Parent=gene172;Target=PRG01_0526100-t36_1-p1 33 404 +
+tig00000001	gth	exon	1140536	1141634	0.934	-	.	Parent=mRNA172
+tig00000001	gth	CDS	1140536	1141634	.	-	1	ID=CDS172;Parent=mRNA172
+tig00000001	gth	three_prime_cis_splice_site	1141634	1141635	0.05	-	.	Parent=mRNA172
+tig00000001	gth	five_prime_cis_splice_site	1141796	1141797	0.05	-	.	Parent=mRNA172
+tig00000001	gth	exon	1141797	1141816	0.167	-	.	Parent=mRNA172
+tig00000001	gth	CDS	1141797	1141816	.	-	0	ID=CDS172;Parent=mRNA172
+###
+tig00000001	gth	gene	1143401	1144366	.	+	.	ID=gene173
+tig00000001	gth	mRNA	1143401	1144366	.	+	.	ID=mRNA173;Parent=gene173;Target=PRG01_0526200-t36_1-p1 1 214 +
+tig00000001	gth	exon	1143401	1143581	0.98	+	.	Parent=mRNA173
+tig00000001	gth	CDS	1143401	1143581	.	+	0	ID=CDS173;Parent=mRNA173
+tig00000001	gth	five_prime_cis_splice_site	1143582	1143583	0.05	+	.	Parent=mRNA173
+tig00000001	gth	three_prime_cis_splice_site	1143681	1143682	0.05	+	.	Parent=mRNA173
+tig00000001	gth	exon	1143683	1143760	0.968	+	.	Parent=mRNA173
+tig00000001	gth	CDS	1143683	1143760	.	+	2	ID=CDS173;Parent=mRNA173
+tig00000001	gth	five_prime_cis_splice_site	1143761	1143762	0.05	+	.	Parent=mRNA173
+tig00000001	gth	three_prime_cis_splice_site	1143866	1143867	0.05	+	.	Parent=mRNA173
+tig00000001	gth	exon	1143868	1144109	0.988	+	.	Parent=mRNA173
+tig00000001	gth	CDS	1143868	1144109	.	+	2	ID=CDS173;Parent=mRNA173
+tig00000001	gth	five_prime_cis_splice_site	1144110	1144111	0.05	+	.	Parent=mRNA173
+tig00000001	gth	three_prime_cis_splice_site	1144224	1144225	0.05	+	.	Parent=mRNA173
+tig00000001	gth	exon	1144226	1144366	1	+	.	Parent=mRNA173
+tig00000001	gth	CDS	1144226	1144366	.	+	0	ID=CDS173;Parent=mRNA173
+###
+tig00000001	gth	gene	1144885	1147901	.	-	.	ID=gene174
+tig00000001	gth	mRNA	1144885	1147901	.	-	.	ID=mRNA174;Parent=gene174;Target=PRG01_0526300-t36_1-p1 1 954 +
+tig00000001	gth	exon	1144885	1145025	1	-	.	Parent=mRNA174
+tig00000001	gth	CDS	1144885	1145025	.	-	0	ID=CDS174;Parent=mRNA174
+tig00000001	gth	three_prime_cis_splice_site	1145025	1145026	0.05	-	.	Parent=mRNA174
+tig00000001	gth	five_prime_cis_splice_site	1145174	1145175	0.05	-	.	Parent=mRNA174
+tig00000001	gth	exon	1145175	1147901	0.984	-	.	Parent=mRNA174
+tig00000001	gth	CDS	1145175	1147901	.	-	0	ID=CDS174;Parent=mRNA174
+###
+tig00000001	gth	gene	1149737	1150527	.	-	.	ID=gene175
+tig00000001	gth	mRNA	1149737	1150527	.	-	.	ID=mRNA175;Parent=gene175;Target=PRG01_0526400-t36_1-p1 1 152 +
+tig00000001	gth	exon	1149737	1149955	1	-	.	Parent=mRNA175
+tig00000001	gth	CDS	1149737	1149955	.	-	0	ID=CDS175;Parent=mRNA175
+tig00000001	gth	three_prime_cis_splice_site	1149955	1149956	0.05	-	.	Parent=mRNA175
+tig00000001	gth	five_prime_cis_splice_site	1150051	1150052	0.05	-	.	Parent=mRNA175
+tig00000001	gth	exon	1150052	1150146	1	-	.	Parent=mRNA175
+tig00000001	gth	CDS	1150052	1150146	.	-	2	ID=CDS175;Parent=mRNA175
+tig00000001	gth	three_prime_cis_splice_site	1150146	1150147	0.05	-	.	Parent=mRNA175
+tig00000001	gth	five_prime_cis_splice_site	1150260	1150261	0.05	-	.	Parent=mRNA175
+tig00000001	gth	exon	1150261	1150347	1	-	.	Parent=mRNA175
+tig00000001	gth	CDS	1150261	1150347	.	-	2	ID=CDS175;Parent=mRNA175
+tig00000001	gth	three_prime_cis_splice_site	1150347	1150348	0.05	-	.	Parent=mRNA175
+tig00000001	gth	five_prime_cis_splice_site	1150472	1150473	0.05	-	.	Parent=mRNA175
+tig00000001	gth	exon	1150473	1150527	1	-	.	Parent=mRNA175
+tig00000001	gth	CDS	1150473	1150527	.	-	0	ID=CDS175;Parent=mRNA175
+###
+tig00000001	gth	gene	1155731	1157650	.	-	.	ID=gene176
+tig00000001	gth	mRNA	1155731	1157650	.	-	.	ID=mRNA176;Parent=gene176;Target=PRG01_0526600-t36_1-p1 1 327 +
+tig00000001	gth	exon	1155731	1156251	0.949	-	.	Parent=mRNA176
+tig00000001	gth	CDS	1155731	1156251	.	-	2	ID=CDS176;Parent=mRNA176
+tig00000001	gth	three_prime_cis_splice_site	1156251	1156252	0.05	-	.	Parent=mRNA176
+tig00000001	gth	five_prime_cis_splice_site	1156453	1156454	0.05	-	.	Parent=mRNA176
+tig00000001	gth	exon	1156454	1156765	0.98	-	.	Parent=mRNA176
+tig00000001	gth	CDS	1156454	1156765	.	-	2	ID=CDS176;Parent=mRNA176
+tig00000001	gth	three_prime_cis_splice_site	1156765	1156766	0.05	-	.	Parent=mRNA176
+tig00000001	gth	five_prime_cis_splice_site	1157502	1157503	0.05	-	.	Parent=mRNA176
+tig00000001	gth	exon	1157503	1157650	0.959	-	.	Parent=mRNA176
+tig00000001	gth	CDS	1157503	1157650	.	-	0	ID=CDS176;Parent=mRNA176
+###
+tig00000001	gth	gene	1160347	1160871	.	+	.	ID=gene177
+tig00000001	gth	mRNA	1160347	1160871	.	+	.	ID=mRNA177;Parent=gene177;Target=PRG01_0526700-t36_1-p1 1 175 +
+tig00000001	gth	exon	1160347	1160871	0.95	+	.	Parent=mRNA177
+tig00000001	gth	CDS	1160347	1160871	.	+	0	ID=CDS177;Parent=mRNA177
+###
+tig00000001	gth	gene	1163551	1165069	.	+	.	ID=gene178
+tig00000001	gth	mRNA	1163551	1165069	.	+	.	ID=mRNA178;Parent=gene178;Target=PRG01_0526800-t36_1-p1 1 455 +
+tig00000001	gth	exon	1163551	1163570	0.467	+	.	Parent=mRNA178
+tig00000001	gth	CDS	1163558	1163570	.	+	0	ID=CDS178;Parent=mRNA178
+tig00000001	gth	five_prime_cis_splice_site	1163571	1163572	0.05	+	.	Parent=mRNA178
+tig00000001	gth	three_prime_cis_splice_site	1163704	1163705	0.05	+	.	Parent=mRNA178
+tig00000001	gth	exon	1163706	1165069	0.95	+	.	Parent=mRNA178
+tig00000001	gth	CDS	1163706	1165069	.	+	2	ID=CDS178;Parent=mRNA178
+###
+tig00000001	gth	gene	1173299	1175275	.	+	.	ID=gene179
+tig00000001	gth	mRNA	1173299	1175275	.	+	.	ID=mRNA179;Parent=gene179;Target=PRG01_0527200-t36_1-p1 1 655 +
+tig00000001	gth	exon	1173299	1175275	0.978	+	.	Parent=mRNA179
+tig00000001	gth	CDS	1173299	1175275	.	+	0	ID=CDS179;Parent=mRNA179
+###
+tig00000001	gth	gene	1175802	1176173	.	-	.	ID=gene180
+tig00000001	gth	mRNA	1175802	1176173	.	-	.	ID=mRNA180;Parent=gene180;Target=PRG01_0527300-t36_1-p1 1 124 +
+tig00000001	gth	exon	1175802	1176173	0.974	-	.	Parent=mRNA180
+tig00000001	gth	CDS	1175802	1176173	.	-	0	ID=CDS180;Parent=mRNA180
+###
+tig00000001	gth	gene	1177436	1181146	.	-	.	ID=gene181
+tig00000001	gth	mRNA	1177436	1181146	.	-	.	ID=mRNA181;Parent=gene181;Target=PRG01_0527400-t36_1-p1 1 930 +
+tig00000001	gth	exon	1177436	1177492	1	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1177436	1177492	.	-	0	ID=CDS181;Parent=mRNA181
+tig00000001	gth	three_prime_cis_splice_site	1177492	1177493	0.05	-	.	Parent=mRNA181
+tig00000001	gth	five_prime_cis_splice_site	1177634	1177635	0.05	-	.	Parent=mRNA181
+tig00000001	gth	exon	1177635	1177751	1	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1177635	1177751	.	-	0	ID=CDS181;Parent=mRNA181
+tig00000001	gth	three_prime_cis_splice_site	1177751	1177752	0.05	-	.	Parent=mRNA181
+tig00000001	gth	five_prime_cis_splice_site	1177866	1177867	0.05	-	.	Parent=mRNA181
+tig00000001	gth	exon	1177867	1177974	0.966	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1177867	1177974	.	-	0	ID=CDS181;Parent=mRNA181
+tig00000001	gth	three_prime_cis_splice_site	1177974	1177975	0.05	-	.	Parent=mRNA181
+tig00000001	gth	five_prime_cis_splice_site	1178060	1178061	0.05	-	.	Parent=mRNA181
+tig00000001	gth	exon	1178061	1178195	1	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1178061	1178195	.	-	0	ID=CDS181;Parent=mRNA181
+tig00000001	gth	three_prime_cis_splice_site	1178195	1178196	0.05	-	.	Parent=mRNA181
+tig00000001	gth	five_prime_cis_splice_site	1178326	1178327	0.05	-	.	Parent=mRNA181
+tig00000001	gth	exon	1178327	1178397	1	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1178327	1178397	.	-	2	ID=CDS181;Parent=mRNA181
+tig00000001	gth	three_prime_cis_splice_site	1178397	1178398	0.05	-	.	Parent=mRNA181
+tig00000001	gth	five_prime_cis_splice_site	1178583	1178584	0.05	-	.	Parent=mRNA181
+tig00000001	gth	exon	1178584	1178645	1	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1178584	1178645	.	-	1	ID=CDS181;Parent=mRNA181
+tig00000001	gth	three_prime_cis_splice_site	1178645	1178646	0.05	-	.	Parent=mRNA181
+tig00000001	gth	five_prime_cis_splice_site	1178786	1178787	0.05	-	.	Parent=mRNA181
+tig00000001	gth	exon	1178787	1178868	1	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1178787	1178868	.	-	2	ID=CDS181;Parent=mRNA181
+tig00000001	gth	three_prime_cis_splice_site	1178868	1178869	0.05	-	.	Parent=mRNA181
+tig00000001	gth	five_prime_cis_splice_site	1178991	1178992	0.05	-	.	Parent=mRNA181
+tig00000001	gth	exon	1178992	1181146	0.98	-	.	Parent=mRNA181
+tig00000001	gth	CDS	1178992	1181146	.	-	0	ID=CDS181;Parent=mRNA181
+###
+tig00000001	gth	gene	1182948	1184617	.	-	.	ID=gene182
+tig00000001	gth	mRNA	1182948	1184617	.	-	.	ID=mRNA182;Parent=gene182;Target=PRG01_0527500-t36_1-p1 1 518 +
+tig00000001	gth	exon	1182948	1184399	0.969	-	.	Parent=mRNA182
+tig00000001	gth	CDS	1182948	1184399	.	-	0	ID=CDS182;Parent=mRNA182
+tig00000001	gth	three_prime_cis_splice_site	1184399	1184400	0.05	-	.	Parent=mRNA182
+tig00000001	gth	five_prime_cis_splice_site	1184518	1184519	0.05	-	.	Parent=mRNA182
+tig00000001	gth	exon	1184519	1184617	1	-	.	Parent=mRNA182
+tig00000001	gth	CDS	1184519	1184617	.	-	0	ID=CDS182;Parent=mRNA182
+###
+tig00000001	gth	gene	1186060	1187547	.	-	.	ID=gene183
+tig00000001	gth	mRNA	1186060	1187547	.	-	.	ID=mRNA183;Parent=gene183;Target=PRG01_0527600-t36_1-p1 1 520 +
+tig00000001	gth	exon	1186060	1187547	0.795	-	.	Parent=mRNA183
+tig00000001	gth	CDS	1186060	1187547	.	-	0	ID=CDS183;Parent=mRNA183
+###
+tig00000001	gth	gene	1191203	1193404	.	+	.	ID=gene184
+tig00000001	gth	mRNA	1191203	1193404	.	+	.	ID=mRNA184;Parent=gene184;Target=PRG01_0527700-t36_1-p1 1 406 +
+tig00000001	gth	exon	1191203	1191319	0.914	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1191203	1191319	.	+	0	ID=CDS184;Parent=mRNA184
+tig00000001	gth	five_prime_cis_splice_site	1191320	1191321	0.05	+	.	Parent=mRNA184
+tig00000001	gth	three_prime_cis_splice_site	1191500	1191501	0.05	+	.	Parent=mRNA184
+tig00000001	gth	exon	1191502	1191777	0.98	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1191502	1191777	.	+	0	ID=CDS184;Parent=mRNA184
+tig00000001	gth	five_prime_cis_splice_site	1191778	1191779	0.05	+	.	Parent=mRNA184
+tig00000001	gth	three_prime_cis_splice_site	1191901	1191902	0.05	+	.	Parent=mRNA184
+tig00000001	gth	exon	1191903	1191967	1	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1191903	1191967	.	+	0	ID=CDS184;Parent=mRNA184
+tig00000001	gth	five_prime_cis_splice_site	1191968	1191969	0.05	+	.	Parent=mRNA184
+tig00000001	gth	three_prime_cis_splice_site	1192142	1192143	0.05	+	.	Parent=mRNA184
+tig00000001	gth	exon	1192144	1192558	0.958	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1192144	1192558	.	+	1	ID=CDS184;Parent=mRNA184
+tig00000001	gth	five_prime_cis_splice_site	1192559	1192560	0.05	+	.	Parent=mRNA184
+tig00000001	gth	three_prime_cis_splice_site	1192725	1192726	0.05	+	.	Parent=mRNA184
+tig00000001	gth	exon	1192727	1192821	1	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1192727	1192821	.	+	0	ID=CDS184;Parent=mRNA184
+tig00000001	gth	five_prime_cis_splice_site	1192822	1192823	0.05	+	.	Parent=mRNA184
+tig00000001	gth	three_prime_cis_splice_site	1192925	1192926	0.05	+	.	Parent=mRNA184
+tig00000001	gth	exon	1192927	1192999	1	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1192927	1192999	.	+	1	ID=CDS184;Parent=mRNA184
+tig00000001	gth	five_prime_cis_splice_site	1193000	1193001	0.05	+	.	Parent=mRNA184
+tig00000001	gth	three_prime_cis_splice_site	1193123	1193124	0.05	+	.	Parent=mRNA184
+tig00000001	gth	exon	1193125	1193203	1	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1193125	1193203	.	+	0	ID=CDS184;Parent=mRNA184
+tig00000001	gth	five_prime_cis_splice_site	1193204	1193205	0.05	+	.	Parent=mRNA184
+tig00000001	gth	three_prime_cis_splice_site	1193305	1193306	0.05	+	.	Parent=mRNA184
+tig00000001	gth	exon	1193307	1193404	1	+	.	Parent=mRNA184
+tig00000001	gth	CDS	1193307	1193404	.	+	2	ID=CDS184;Parent=mRNA184
+###
+tig00000001	gth	gene	1194410	1196548	.	+	.	ID=gene185
+tig00000001	gth	mRNA	1194410	1196548	.	+	.	ID=mRNA185;Parent=gene185;Target=PRG01_0527900-t36_1-p1 1 307 +
+tig00000001	gth	exon	1194410	1194497	0.953	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1194410	1194497	.	+	0	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1194498	1194499	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1194607	1194608	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1194609	1194721	1	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1194609	1194721	.	+	2	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1194722	1194723	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1194816	1194817	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1194818	1194904	1	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1194818	1194904	.	+	0	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1194905	1194906	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1195033	1195034	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1195035	1195096	0.92	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1195035	1195096	.	+	0	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1195097	1195098	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1195197	1195198	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1195199	1195411	0.972	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1195199	1195411	.	+	1	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1195412	1195413	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1195544	1195545	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1195546	1195612	1	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1195546	1195612	.	+	1	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1195613	1195614	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1195807	1195808	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1195809	1195901	0.923	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1195809	1195901	.	+	0	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1195902	1195903	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1195979	1195980	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1195981	1196074	0.972	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1195981	1196074	.	+	0	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1196075	1196076	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1196204	1196205	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1196206	1196302	1	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1196206	1196302	.	+	2	ID=CDS185;Parent=mRNA185
+tig00000001	gth	five_prime_cis_splice_site	1196303	1196304	0.05	+	.	Parent=mRNA185
+tig00000001	gth	three_prime_cis_splice_site	1196540	1196541	0.05	+	.	Parent=mRNA185
+tig00000001	gth	exon	1196542	1196548	1	+	.	Parent=mRNA185
+tig00000001	gth	CDS	1196542	1196548	.	+	1	ID=CDS185;Parent=mRNA185
+###
+tig00000001	gth	gene	1196456	1196770	.	-	.	ID=gene186
+tig00000001	gth	mRNA	1196456	1196770	.	-	.	ID=mRNA186;Parent=gene186;Target=PRG01_0527800-t36_1-p1 1 105 +
+tig00000001	gth	exon	1196456	1196770	0.99	-	.	Parent=mRNA186
+tig00000001	gth	CDS	1196456	1196770	.	-	0	ID=CDS186;Parent=mRNA186
+###
+tig00000001	gth	gene	1197726	1198337	.	-	.	ID=gene187
+tig00000001	gth	mRNA	1197726	1198337	.	-	.	ID=mRNA187;Parent=gene187;Target=PRG01_0528000-t36_1-p1 1 204 +
+tig00000001	gth	exon	1197726	1198337	0.989	-	.	Parent=mRNA187
+tig00000001	gth	CDS	1197726	1198337	.	-	0	ID=CDS187;Parent=mRNA187
+###
+tig00000001	gth	gene	1199893	1201503	.	-	.	ID=gene188
+tig00000001	gth	mRNA	1199893	1201503	.	-	.	ID=mRNA188;Parent=gene188;Target=PRG01_0528100-t36_1-p1 1 536 +
+tig00000001	gth	exon	1199893	1201503	0.937	-	.	Parent=mRNA188
+tig00000001	gth	CDS	1199893	1201503	.	-	0	ID=CDS188;Parent=mRNA188
+###
+tig00000001	gth	gene	1206224	1208380	.	-	.	ID=gene189
+tig00000001	gth	mRNA	1206224	1208380	.	-	.	ID=mRNA189;Parent=gene189;Target=PRG01_0528300-t36_1-p1 1 719 +
+tig00000001	gth	exon	1206224	1208380	0.99	-	.	Parent=mRNA189
+tig00000001	gth	CDS	1206224	1208380	.	-	0	ID=CDS189;Parent=mRNA189
+###
+tig00000001	gth	gene	1210455	1211108	.	-	.	ID=gene190
+tig00000001	gth	mRNA	1210455	1211108	.	-	.	ID=mRNA190;Parent=gene190;Target=PRG01_0528400-t36_1-p1 1 181 +
+tig00000001	gth	exon	1210455	1210482	1	-	.	Parent=mRNA190
+tig00000001	gth	CDS	1210455	1210482	.	-	1	ID=CDS190;Parent=mRNA190
+tig00000001	gth	three_prime_cis_splice_site	1210482	1210483	0.05	-	.	Parent=mRNA190
+tig00000001	gth	five_prime_cis_splice_site	1210587	1210588	0.05	-	.	Parent=mRNA190
+tig00000001	gth	exon	1210588	1211108	0.932	-	.	Parent=mRNA190
+tig00000001	gth	CDS	1210588	1211108	.	-	0	ID=CDS190;Parent=mRNA190
+###
+tig00000001	gth	gene	1215598	1216599	.	+	.	ID=gene191
+tig00000001	gth	mRNA	1215598	1216599	.	+	.	ID=mRNA191;Parent=gene191;Target=PRG01_0528600-t36_1-p1 1 255 +
+tig00000001	gth	exon	1215598	1216344	0.973	+	.	Parent=mRNA191
+tig00000001	gth	CDS	1215598	1216344	.	+	0	ID=CDS191;Parent=mRNA191
+tig00000001	gth	five_prime_cis_splice_site	1216345	1216346	0.05	+	.	Parent=mRNA191
+tig00000001	gth	three_prime_cis_splice_site	1216580	1216581	0.05	+	.	Parent=mRNA191
+tig00000001	gth	exon	1216582	1216599	1	+	.	Parent=mRNA191
+tig00000001	gth	CDS	1216582	1216599	.	+	0	ID=CDS191;Parent=mRNA191
+###
