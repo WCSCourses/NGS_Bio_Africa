@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+
+
+k  = []
+b1 = []
+b2 = []
+
+err = 0.01
+eta = 0.83
+
+for i in range(30):
+    a = 0.97*(eta**i)+0.03
+    xb1 = err**a
+    k.append(i)
+    b1.append(xb1)
+    b2.append(err)
+
+fig = plt.figure(figsize=(3,2.5))
+ax1 = fig.add_subplot(111)
+ax1.plot(k,b1, lw=2,color='#d9534f',label=r'$\beta^{f_k}_{nk}$')
+ax1.plot(k,b2, lw=2,color='#337ab7',label=r'$\beta_{nk}$')
+ax1.set_xlabel(r'$k$')
+
+
+ax1.set_yticks([0,0.2,0.4,0.6,0.8])
+ax1.set_ylim(-0.05,1)
+plt.legend(frameon=False,bbox_to_anchor=(1.0,0.6))
+
+plt.subplots_adjust(left=0.1,right=0.96,bottom=0.17,top=0.95)
+
+plt.savefig('img/mpileup-err-dependency.pdf')
+plt.close()
+
+
+
+#ax1.ticklabel_format(style='sci', scilimits=(0,0), axis='y')
+#ax1.set_xlim(-0.5,n+0.5)
+#plt.xticks([row[0] for row in dat],[row[1] for row in dat],rotation=45,fontsize=9)
+#plt.title('Random')
+

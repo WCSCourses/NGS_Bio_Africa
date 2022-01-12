@@ -1,0 +1,100 @@
+#!/usr/bin/python
+#
+#   zcat ~/sandbox/mouse-pileups/C57BL.pileup.bgz | awk '$1==2' | cut -f2,8 | gzip -c > rmme.gz
+#   zcat rmme.gz | awk '{s+=$2;n++; if(n>1000){print $1,s*1.0/n; s=0;n=0;}}' | gzip -c > artefact-depth.dat.gz
+#   python artefact-depth.py
+#
+
+
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
+import itertools
+import csv
+import gzip
+csv.register_dialect('tab', delimiter='\t', quoting=csv.QUOTE_NONE)
+
+def bignum(num):
+    s = str(num); out = ''; slen = len(s)
+    for i in range(slen):
+        out += s[i]
+        if i+1<slen and (slen-i-1)%3==0: out += ','
+    return out
+
+files  = []
+files = ['artefact-depth.dat.gz']
+
+xdat = []
+ydat = []
+for i in range(len(files)):
+    xdat.append([])
+    ydat.append([])
+    fname = files[i]
+    with gzip.open(fname, 'rb') as f:
+        reader = csv.reader(f, 'tab')
+        for row in reader:
+            (x,y) = row[0].split(' ')
+            xdat[i].append(float(x))
+            ydat[i].append(float(y))
+
+norm = None
+# norm: norm
+if norm!=None:
+    for i in range(len(files)):
+        max = ydat[i][0]
+        for y in ydat[i]:
+            if float(max)<float(y): max = float(y)
+        for j in range(len(ydat[i])):
+            ydat[i][j] = float(ydat[i][j])/max
+
+
+wh = (8,4)
+# wh: wh
+fig, ax1 = plt.subplots(1, 1, figsize=wh)
+
+lb = []
+# lb: ['lb']
+lt = []
+# lt: ['lt']
+for i in range(len(files)):
+    line = '-'
+    if i < len(lt): line = lt[i]
+    label = ''
+    if i <len(lb): label = lb[i]
+    ax1.plot(xdat[i],ydat[i],line,label=label,color='#2E6DA4',lw=2)
+
+xsci = None
+ysci = None
+# xsci: (xsci)
+# ysci: (ysci)
+if xsci!=None: ax1.ticklabel_format(style='sci', scilimits=xsci, axis='x')        # +xsci -2,2
+if ysci!=None: ax1.ticklabel_format(style='sci', scilimits=ysci, axis='y')
+
+grid = None
+# gr: grid
+if grid!=None: ax1.grid(color='gray', linewidth=1)
+
+xlim = None
+# xr: xlim
+if xlim!=None: ax1.set_xlim(xlim)
+
+ax1.set_xlim(0,1.8e8)
+
+ax1.set_ylabel('Coverage [log]')
+ax1.set_xlabel('Genomic coordinate')
+
+ax1.set_yscale('log')
+
+title = None
+# title: 'title'
+if title!=None: ax1.set_title(title)
+
+if len(lb)>0: plt.legend(numpoints=1,markerscale=1,loc='best',prop={'size':10},frameon=False)
+
+plt.subplots_adjust(bottom=0.15,left=0.1,right=0.96,top=0.95)
+
+# dpi: dpi
+
+plt.savefig('artefact-depth.pdf')
+plt.close()
+

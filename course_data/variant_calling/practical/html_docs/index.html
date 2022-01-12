@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WTAC Next Generation Sequencing Course</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-1.10.2.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="answers.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+    <script>
+        $(function() {
+            $("#accordion").stage_answers();
+            $("#accordion").accordion({collapsible:true,heightStyle:"content"});
+        });
+    </script>
+</head>
+<body>
+ 
+<div id="container">
+    <h2>WTAC Next Generation Sequencing Course</h2>
+    <b>Variant Calling Practical Exercises, October 2016</b>
+
+<div id="accordion">
+    <h3>Required data</h3>
+    <div>
+    <p>
+    For this lab, some pre-prepared datasets are installed on the VM.
+    Double-click on the module icon, it will open up a terminal in the directory with 
+    the data for the module.
+
+    </div>
+
+
+
+    <h3>Exercise 1: Making sense of the input data</h3>
+    <div>
+    <p>
+    We will need the aligned sequences in SAM, BAM or CRAM format and
+    the reference genome in fasta format. To list the files in
+    the current directory, type
+    <br><pre>ls -lh</pre>
+
+    <p>
+    The listing shows two mouse data fragments, strains A/J and NZO, and
+    the chromosome 19 of the mouse reference genome.
+
+    <p>
+    Before variant callling, it is important to check the data we'll be working
+    with. Using the command below, get some statistics from the bams
+        <pre>
+            samtools stats -r GRCm38_68.19.fa A_J.bam > A_J.stats
+            samtools stats -r GRCm38_68.19.fa NZO.bam > NZO.stats
+            plot-bamstats -r GRCm38_68.19.fa.gc -p A_J.graphs/ A_J.stats
+            plot-bamstats -r GRCm38_68.19.fa.gc -p NZO.graphs/ NZO.stats
+        </pre>
+
+    <ul>
+    <li class="Q"> Open the plots <tt>A_J.graphs/index.html</tt> and <tt>NZO.graphs/index.html</tt>
+        in your browser. What is the percentage of mapped reads in both strains? Check the insert size,
+        GC content, per-base sequence content and quality per cycle graphs. Do all look reasonable?
+    <li class="A A1"> There seems to be a consistent GC bias. However, this is OK because the stats was produced
+        from a small BAM fragment with locally different GC content. 
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A1','123');">
+    </div>
+
+
+
+    <h3>Exercise 2: Generating pileup</h3>
+    <div>
+    <p>
+    The command <tt>samtools mpileup</tt> prints the read bases that align to
+    each position in the reference genome. On the command line, try this:
+    <br><pre>samtools mpileup -f GRCm38_68.19.fa A_J.bam | less -S</pre>
+    <p>
+    Each line corresponds to a position on the genome. The columns are:
+    chromosome, position, reference base, read depth, read bases ("." or ","
+    indicates match) and the final column is the base qualities encoded into
+    characters. A symbol "$" marks the end of a read segment.
+
+    <ul>
+    <li class="Q">  What is the read depth at position 10001994?</li>
+    <li class="A A2"> 66
+
+    <li class="Q">  What is the reference base? Are there any non-reference bases?</li>
+    <li class="A A2"> REF=A, ALT=G. The upper/lower case letters indicate forward/reverse orientation of the read.
+    </li>
+
+    <p>
+    This output can be used for a simple consensus calling. For a more sophisticated variant calling method,
+    go to the next section.
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A2','xyz');">
+    </div>
+
+
+
+
+    <h3>Exercise 3: Generating genotype likelihoods and variant calling</h3>
+    <div>
+    <p>
+    The <tt>mpileup</tt> command (traditionally in <tt>samtools</tt>, now moved to <tt>bcftools</tt>)
+    can be used to generate genotype likelihoods.
+    Try to run the following command (press "<tt>q</tt>" to quit the viewing mode)
+    <br><pre>
+        bcftools mpileup -f GRCm38_68.19.fa A_J.bam | less -S</pre>
+
+    <p> This generates an intermediate output which contains genotype likelihoods and other raw information necessary for calling.
+    This output is usually streamed directly to the caller like this
+    <br><pre>
+        bcftools mpileup -f GRCm38_68.19.fa A_J.bam | \
+            bcftools call -m | less -S</pre>
+
+    <p>
+    Note that the backslash character "<tt>\</tt>" in the command allows us to split the long expression across multiple lines for readability.
+
+    <ul>
+    <li class="Q"> What option should be changed to <b>only</b> print out variant sites? 
+        Hint: check the program usage by running <tt>bcftools call</tt> without any parameters.
+    <li class="A A3"> Add the <tt>-v</tt> option to the command:
+        <pre>bcftools mpileup -f GRCm38_68.19.fa A_J.bam | \
+                bcftools call -mv | less -S</pre>
+    </ul>
+    <p>
+    The INFO and FORMAT fields of each entry tells us something about the data at the
+    position in the genome. It consists of a set of key-value pairs with the
+    tags being explained in the header of the VCF file (see the ##INFO and
+    ##FORMAT lines in the header).
+
+    <p>
+    Let <tt>mpileup</tt> output more information. For example we can ask it to add the FORMAT/AD tag
+    which informs about the number of high-quality reads that support alleles listed in REF and ALT
+    columns. The list of all available tags can be printed with "<tt>bcftools mpileup -a?</tt>".
+
+    <p>Now let's run the variant calling again, this time adding the <tt>-a AD</tt> option. We will also add the <tt>-Ou</tt> option
+    to <tt>mpileup</tt> so that it streams a binary uncompressed BCF into <tt>call</tt>. This is to avoid the unnecessary CPU overhead
+    of formatting the internal binary format into plain text VCF only to be immediately formatted back to the
+    internal binary format again:
+        <pre> bcftools mpileup -a AD -f GRCm38_68.19.fa A_J.bam -Ou | \
+            bcftools call -mv -o out.vcf
+        </pre>
+
+
+    <p>Examine the VCF file output using the unix command <tt>less</tt>:
+        <pre>less -S out.vcf</pre>
+
+    <ul>
+    <li class="Q"> What is the reference and SNP base at position 10001994?
+    <li class="A A3"> The reference base is A, the SNP is G, see the REF and ALT columns
+
+    <li class="Q"> What is the total read depth at position 10001994?
+    <li class="A A3"> There are 69 reads at the site, see INFO/DP=69
+
+    <li class="Q"> What is the number of high-quality reads supporting the SNP call at position 10001994? How many reads support the reference allele?
+    <li class="A A3"> There are 66 non-reference reads and zero reference reads, see FORMAT/AD=0,66
+
+    <li class="Q"> What sort of event is happening at position 10003649?
+    <li class="A A3"> Five bases TGTGG were inserted after the T at position 10003649
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A3','abc');">
+    </div>
+
+
+
+
+    <h3>Exercise 4: Variant filtering</h3>
+    <div>
+    <p>
+    In the series of commands we will learn how to filter and extract information from VCFs.
+    Most of the bcftools commands accept the <tt>-i, --include</tt> and <tt>-e,
+    --exclude</tt> options (<A
+    href="http://samtools.github.io/bcftools/bcftools.html#expressions">documentation</a>)
+    which will come handy when filtering using fixed thresholds.  We will
+    estimate the quality of the callset by calculating the
+        <a href="http://en.wikipedia.org/wiki/Transversion">transition/transversion</a> ratio.
+
+    <p>
+    In order to verify that the filtering expression has the desired effect, it is useful
+    to first run a few small tests. Let's start with printing a
+    simple list of positions from the VCF using the <tt>query</tt> command 
+    (<a href="http://samtools.github.io/bcftools/bcftools.html#query">manual</a>) 
+    and pipe through the <tt>head</tt>
+    command to trim the output after first few lines:
+        <pre>bcftools query -f'%POS\n' out.vcf | head</pre>
+
+    <p>
+    Add REF and ALT allele to the output, separated by a comma
+        <pre>bcftools query -f'%POS %REF,%ALT\n' out.vcf | head</pre>
+
+    <p>
+    Add also the quality, genotype and depth to the output. Note that FORMAT fields
+    must be enclosed in square brackets "<tt>[]</tt>" to iterate over all samples in the VCF
+        <pre>bcftools query -f'%POS %QUAL [%GT %AD] %REF %ALT\n' out.vcf | head</pre>
+
+    <p> 
+    Now filter rows with quality smaller than 30 and exclude indels. Check the
+    record at position 10000143, is it still present in the output?
+        <pre>bcftools query -f'%POS %QUAL [%GT %AD] %REF\t%ALT\n' \
+            -i'QUAL>=30 && type="snp"' out.vcf | head</pre>
+
+
+
+    <ul>
+    <li class="Q"> Can you print rows with QUAL bigger than 30 and with at least 25 supporting reads?
+        Use the second value in the AD tag. Note that the indexes are zero based, 
+        so the second value can be queried as <tt>AD[1]</tt>
+    <li class="A A4"> The command is
+        <pre>bcftools query -f'%POS %QUAL [%GT %AD] %REF %ALT\n' \
+            -i'QUAL>=30 && type="snp" && AD[1]>=25' out.vcf | head
+        </pre>
+    </ul>
+
+    <p>
+    Finally, use the following command to obtain the ts/tv of unfiltered callset. 
+        <pre>bcftools stats out.vcf | grep TSTV | cut -f5</pre>
+
+    <ul>
+    <li class="Q"> How the ts/tv changes if you apply the filters above?
+        There are several ways of doing this. It is possible to use one
+        of the <tt>view</tt> or <tt>filter</tt> commands to first remove the unwanted
+        sites and then stream the output into <tt>stats</tt>. Alternatively,
+        the filtering can be done directly by <tt>stats</tt> - can you check if
+        the <tt>stats -i</tt> option is available?
+    <li class="A A4"> The ts/tv increased from 2.37 to 2.5
+        <pre>bcftools stats -i'QUAL>=30 && AD[1]>=25' out.vcf | grep TSTV | cut -f5</pre>
+
+    <li class="Q"> What is the ts/tv of removed sites?
+    <li class="A A4"> The ts/tv of removed sites is 1.75, which indicates that the set of low quality
+        sites is enriched for artefacts.
+        <pre>bcftools stats -e'QUAL>=30 && AD[1]>=25' out.vcf | grep TSTV | cut -f5</pre>
+
+    <li class="Q"> The test data come from inbred homozygous mouse, therefore any heterozygous
+        genotypes are most likely mapping and alignment artefacts. Can you find out what is the ts/tv
+        of heterozyous SNPs? Use <tt>bcftools view -g het</tt> to select or
+        <tt>bcftools view -g ^het</tt> to exclude sites with heterozygous
+        genotypes.
+    <li class="A A4"> The ts/tv of removed sites is 1.42, which indicates that the heterozygous genotypes
+        are enriched for artefacts.
+        <pre>bcftools view -g het out.vcf | bcftools stats | grep TSTV | cut -f5</pre>
+    </ul>
+
+    <p>
+    Another useful command is <tt>filter</tt> which allows to annotate the VCF
+    file soft filters based on the given expression, rather than removing the
+    sites completely. Can you apply the above filters to produce a final callset
+    and apply the <tt>-g</tt> and <tt>-G</tt> options to soft filter variants around
+    indels?
+        <br><tt>bcftools filter -sLowQual -m+ -i'QUAL>=30 && AD[1]>=25' -g8 -G10 out.vcf -o out.flt.vcf</tt>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A4','789');">
+    </div>
+
+
+
+
+
+    <h3>Exercise 5: Variant normalization</h3>
+    <div>
+    <p>
+    The same indel variant can be represented in different ways. For example, consider the following 2bp deletion. Although
+    the resulting sequence does not change, the deletion can be placed at two different positions within the short repeat
+<pre>       12345
+       TTCTC
+POS=1  T--TC
+POS=3  TTC--
+</pre>
+    
+    <p>
+    The usual approach is to left-align the variants.
+    
+    <ul>
+    <li class="Q"> Use the <tt>bcftools norm</tt> command to normalize the filtered callset. How many indels were realigned?
+    <li class="A A5"> 669 indels
+        <pre>bcftools norm -f GRCm38_68.19.fa out.flt.vcf -o out.flt.norm.vcf</pre>
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A5','456');">
+    </div>
+
+
+
+
+    <h3>Exercise 6: Multi-sample variant calling</h3>
+    <div>
+    <p>
+    Many experiments involve sequencing multiple samples to compare the genetic
+    variation between the samples. Therefore, we need to have a genotype for
+    each sample at all variant sites. Typically this is achieved by carrying
+    out multi-sample variant calling where all of the sequencing data is given
+    to the variant caller simultaneously. 
+
+    <ul>
+    <li class="Q"> There are two BAM files in the directory. Can you modify the command
+        from section 3 to use both BAM files and only write out variant sites?
+        Write the output to a BCF file called <tt>multi.bcf</tt> and index the file afterwards.
+    <li class="A A6"> 264 indels
+        <pre> bcftools mpileup -a AD -f GRCm38_68.19.fa A_J.bam NZO.bam -Ou | \
+            bcftools call -mv -Ob -o multi.bcf
+ bcftools index multi.bcf
+        </pre>
+
+    <li class="Q"> Can you apply the same filters as before? How many sites pass the filters?
+        Write the output to a BCF file called <tt>multi.filt.bcf</tt> and index the file.
+    <li class="A A6"> 2199 sites pass the filters
+        <pre>bcftools filter -sLowQual -m+ -i'QUAL>=30 && AD[1]>=25' -g8 -G10 multi.bcf -Ob -o multi.filt.bcf
+ bcftools index multi.filt.bcf
+        </pre>
+
+    <li class="Q"> What is the ts/tv of the raw calls and of the filtered set?
+    <li class="A A6"> Raw calls 2.35 and the filtered set 2.50
+        <pre>bcftools stats multi.filt.bcf | grep TSTV | cut -f5
+ bcftools stats -i 'FILTER="PASS"' multi.filt.bcf | grep TSTV | cut -f5
+</pre>
+
+    <li class="Q"> Can you work out how to get the ts/tv of removed calls?
+        Hint: the <tt>-e</tt> option does the opposite of <tt>-i</tt>.
+    <li class="A A6"> The ts/tv of removed calls is 1.71
+        <pre>bcftools stats -e 'FILTER="PASS"' multi.filt.bcf | grep TSTV | cut -f5</pre>
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A6','asd');">
+    </div>
+
+
+
+    <h3>Exercise 7: Functional annotation</h3>
+    <div>
+    <p>
+    To predict functional consequences we will use the <tt>bcftools csq</tt> command.
+    It is haplotype-aware and can correctly predict consequences for
+    frame-restoring and other compound variants, e.g. MNPs.
+    On input it requires a VCF, fasta reference file and GFF file. Because our data
+    is not phased, also the <tt>-p</tt> option must be provided:
+    <pre> bcftools csq -i 'FILTER="PASS"' -p m -f GRCm38_68.19.fa -g Mus_musculus.part.gff3.gz \
+        multi.filt.bcf -o multi.filt.annot.vcf</pre>
+    
+    <ul>
+    <li class="Q"> On the terminal, use the <tt>less -S</tt> command and go to the position 10088937. 
+        What is the functional annotation at this site? What is the amino acid change?
+    <li class="A A7"> The C>T mutation changes the amino acid at position 163 in the protein sequence, from valin to isoleucin.
+    </ul>
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A7','xyz');">
+    </div>
+
+
+
+
+
+    <h3>Exercise 8: Data visualization</h3>
+    <div>
+    <p>
+    It is often useful to visually inspect a SNP or indel of interest in order
+    to assess the quality of the SNP call and interpret the genomic context of
+    the SNP. We can use the IGV tool to view some of the SNPs positions from
+    the VCF file. On the command line, type:
+        <pre>sh bin/IGV_2.3.32/igv.sh</pre>
+
+    <p>
+    Set the reference genomes to be mouse (mm10/GRCm38) by clicking on the
+    'Genomes' then 'Load Genomes from Server' buttons and select 'mm10'. On the
+    file menu down the left, select Load from File and select the BAM file:
+    A_J.bam
+
+    <p>
+    In the top bar, enter the position 'chr19:10,001,874-10,002,017' to view
+    the SNP bases at position 10001946.
+    
+
+    <ul>
+    <li class="Q"> How many forward aligned reads support the SNP call? How
+        many forward aligned reads support the SNP? How many reverse reads support
+        the SNP? Note: Mouse over the coverage bar at the top to get this
+        information.
+    <li class="A A8"> 75 reads total, 39 on the forward and 36 on the reverse strand.
+
+    <li class="Q"> Was this SNP also called by bcftools? Did it pass the filters?
+    <li class="A A8"> Take advantage of the indexed files to list the positions of interest
+        <pre>bcftools view -H -r 19:10001946 multi.filt.bcf</pre>
+
+    <li class="Q"> In the top bar, enter the position 'chr19:10072443' to view the SNP at position 10072443.
+        Was the SNP also called by bcftools? Did it pass the filters? Does this look like a real SNP? Why?
+    <li class="A A8"> It is an alignment artefact, the aligner prefered two SNPs instead of
+        a long deletion. The call was removed by filtering only because we
+        excluded calls in close proximity from indels.
+        <pre>bcftools view -H -r 19:10072443 multi.filt.bcf</pre>
+    </ul>
+
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A8','123');">
+    </div>
+
+
+
+    <!--
+    <h3>Exercise 6: xx</h3>
+    <div>
+    <p>
+    ..
+    <ul>
+    <li class="Q"> ..
+    <li class="A A6"> ..
+    </ul>
+    <p>
+    <input type="text" name="unlock" value="" placeholder="(enter key to view answers)" onchange="unlock_answers(this,'A99','xyz');">
+    </div>
+    -->
+</div>
+</div>
+ 
+ 
+</body>
+</html>
