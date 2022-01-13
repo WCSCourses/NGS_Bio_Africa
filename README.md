@@ -5,7 +5,6 @@
 ## Next Generation Sequencing Bioinformatics Africa
 
 ### This repo serves as a base for course materials and code used for the course
-Info on course
 Welcome to the WGC WCS/H3ABioNet NGS_2022 course!
 
 Next generation sequencing (NGS) has become an essential tool in genetic and genomic analysis. It is increasingly important for experimental scientists to gain the bioinformatics skills required to analyse the large volumes of data produced by next generation sequencers. This course will equip participants with the essential informatics skills required to begin analysing NGS data and apply some of the most commonly used tools and resources for sequence data analysis.
