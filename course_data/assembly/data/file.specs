@@ -1,0 +1,7 @@
+corMaxEvidenceErate=0.15
+cnsMemory=12g
+maxMemory=12g
+maxThreads=4
+corMemory=12g
+genomeSize=1400000
+useGrid=0
