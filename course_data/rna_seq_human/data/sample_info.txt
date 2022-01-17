@@ -1,0 +1,13 @@
+sample	sample_type	ethnicity	patientID	sampleID	sampleID_full
+PT2	tumor	EA	376	8	Sample_376_8
+NP2	normal	EA	376	9	Sample_376_9
+NP4	normal	AA	487	31	Sample_487_31
+PT4	tumor	AA	487	33	Sample_487_33
+PT5	tumor	EA	647	A7	Sample_647_A7
+NP5	normal	EA	647	A20	Sample_647_A20
+PT6	tumor	AA	881	819	Sample_881_819
+NP6	normal	AA	881	826	Sample_881_826
+PT10	tumor	AA	2249	14	Sample_2249_14
+NP10	normal	AA	2249	25	Sample_2249_25
+PT13	tumor	EA	3365	B5	Sample_3365_B5
+NP13	normal	EA	3365	B17	Sample_3365_B17
