@@ -1,0 +1,95 @@
+
+        <html>
+        <head>
+            <style>
+                .thumbnail
+                {
+                    text-decoration:none;
+                    color:black;
+                    font-weight:bold;
+                }
+                .thumbnail span  /*CSS for enlarged image*/
+                {
+                    visibility: hidden;
+                    position: absolute;
+                    padding: 5px;
+                    border: 1px solid #000;
+                    background-color: #e5e5e5;
+                }
+                .thumbnail:hover span  /*CSS for enlarged image on hover*/
+                {
+                    visibility: visible;
+                    left: 550px;
+                    top: 10px;
+                }
+                .imgs td
+                {
+                    vertical-align:middle;
+                    padding: 0.5em;
+                    border: 1px solid black;
+                }
+                table.imgs
+                {
+                    border-collapse:collapse;
+                    margin-left:20px;
+                }
+                .nums th
+                {
+                    text-align: left;
+                }
+                table.nums
+                {
+                    margin-top: 1em;
+                    margin-left:20px;
+                    border: 1px dotted #83A4C3;
+                    background-color: #F5F5F5;
+                    padding: 0.5em;
+                }
+                .pad { padding-left:1em; vertical-align:top; }
+                .right { text-align:right; padding-left:1em; }
+            </style>
+        </head>
+        <body>
+            <table class="imgs">
+    <tr><td><a class="thumbnail" href="insert-size.png"><img src="insert-size.png" width="150px"><span>Insert size<br><img src="insert-size.png"></span></a>
+<td><a class="thumbnail" href="gc-content.png"><img src="gc-content.png" width="150px"><span>GC content<br><img src="gc-content.png"></span></a>
+<td><a class="thumbnail" href="acgt-cycles.png"><img src="acgt-cycles.png" width="150px"><span>Per-base sequence content<br><img src="acgt-cycles.png"></span></a>
+</tr>
+<tr><td>
+<td><a class="thumbnail" href="quals.png"><img src="quals.png" width="150px"><span>Quality per cycle<br><img src="quals.png"></span></a>
+<td><a class="thumbnail" href="quals2.png"><img src="quals2.png" width="150px"><span>Quality per cycle<br><img src="quals2.png"></span></a>
+</tr>
+<tr><td><a class="thumbnail" href="quals3.png"><img src="quals3.png" width="150px"><span>Quality per cycle<br><img src="quals3.png"></span></a>
+<td><a class="thumbnail" href="quals-hm.png"><img src="quals-hm.png" width="150px"><span>Quality per cycle<br><img src="quals-hm.png"></span></a>
+<td><a class="thumbnail" href="indel-cycles.png"><img src="indel-cycles.png" width="150px"><span>Indels per cycle<br><img src="indel-cycles.png"></span></a>
+</tr>
+<tr><td><a class="thumbnail" href="indel-dist.png"><img src="indel-dist.png" width="150px"><span>Indel lengths<br><img src="indel-dist.png"></span></a>
+<td><a class="thumbnail" href="gc-depth.png"><img src="gc-depth.png" width="150px"><span>Mapped depth vs GC<br><img src="gc-depth.png"></span></a>
+
+        </table>
+
+        <table class="nums">
+            <tr><th>Reads</tr>
+            <tr>
+                <td class="pad"><table>
+                <tr><td>total:       <td class="right"> 397,506    <td class="right"></tr>
+                <tr><td>filtered:    <td class="right"> 0 <td class="right"> (0.0%)</tr>
+                <tr><td>non-primary: <td class="right"> 2,744  <td class="right"> </tr>
+                <tr><td>duplicated:  <td class="right"> 0      <td class="right"> (0.0%)</tr>
+                <tr><td>mapped:      <td class="right"> 303,036   <td class="right"> (76.2%)</tr>
+                <tr><td>zero MQ:     <td class="right"> 23,798      <td class="right"> (7.9%)</tr>
+                <tr><td>avg read length: <td class="right"> 108    <td class="right"></tr>
+                </table></tr>
+
+            <tr><th>Bases</tr>
+            <tr>
+                <td class="pad"><table>
+                <tr><td>total:       <td class="right"> 42,930,648    <td class="right"></tr>
+                <tr><td>mapped:      <td class="right"> 31,886,170   <td class="right"> (74.3%)</tr>
+                <tr><td>error rate:      <td class="right"> 1.16%  <td class="right"></tr>
+                </table></tr>
+        </table>
+
+        </body>
+        </html>
+    
