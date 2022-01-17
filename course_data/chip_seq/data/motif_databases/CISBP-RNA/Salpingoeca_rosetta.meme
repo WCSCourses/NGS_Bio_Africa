@@ -1,0 +1,47 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M195_0.6 (PTSG_00878)_(Danio_rerio)_(RBD_0.81)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.237426	  0.199676	  0.252356	  0.310542	
+  0.003477	  0.940044	  0.003477	  0.053002	
+  0.989570	  0.003477	  0.003477	  0.003477	
+  0.989570	  0.003477	  0.003477	  0.003477	
+  0.989570	  0.003477	  0.003477	  0.003477	
+  0.989570	  0.003477	  0.003477	  0.003477	
+  0.026856	  0.026856	  0.919431	  0.026856	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T30256_0.6
+
+MOTIF M231_0.6 (PTSG_05806)_(Drosophila_melanogaster)_(RBD_0.82)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.412365	  0.106883	  0.106883	  0.373868	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.014525	  0.956424	  0.014525	  0.014525	
+  0.956424	  0.014525	  0.014525	  0.014525	
+  0.014525	  0.014525	  0.014525	  0.956424	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.249671	  0.425963	  0.163664	  0.160702	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T59983_0.6
+
+MOTIF M237_0.6 (PTSG_04228)_(Xenopus_tropicalis)_(RBD_0.70)
+
+letter-probability matrix: alength= 4 w= 8 nsites= 1 E= 0
+  0.129454	  0.425942	  0.315150	  0.129454	
+  0.656154	  0.084413	  0.084413	  0.175020	
+  0.950384	  0.016539	  0.016539	  0.016539	
+  0.016539	  0.950384	  0.016539	  0.016539	
+  0.016539	  0.016539	  0.016539	  0.950384	
+  0.950384	  0.016539	  0.016539	  0.016539	
+  0.063718	  0.808845	  0.063718	  0.063718	
+  0.305151	  0.137316	  0.336410	  0.221122	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T30279_0.6
+

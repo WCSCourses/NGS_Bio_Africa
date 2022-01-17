@@ -1,0 +1,33 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M206_0.6 (VDBG_09698)_(Neurospora_crassa)_(RBD_0.87)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.015135	  0.015135	  0.954595	  0.015135	
+  0.015135	  0.015135	  0.954595	  0.015135	
+  0.676624	  0.015135	  0.015135	  0.293106	
+  0.015135	  0.015135	  0.954595	  0.015135	
+  0.015135	  0.015135	  0.954595	  0.015135	
+  0.796931	  0.038753	  0.038753	  0.125562	
+  0.405229	  0.109818	  0.288197	  0.196757	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T31485_0.6
+
+MOTIF M231_0.6 (VDBG_01622)_(Drosophila_melanogaster)_(RBD_0.82)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.412365	  0.106883	  0.106883	  0.373868	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.014525	  0.956424	  0.014525	  0.014525	
+  0.956424	  0.014525	  0.014525	  0.014525	
+  0.014525	  0.014525	  0.014525	  0.956424	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.249671	  0.425963	  0.163664	  0.160702	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T60064_0.6
+

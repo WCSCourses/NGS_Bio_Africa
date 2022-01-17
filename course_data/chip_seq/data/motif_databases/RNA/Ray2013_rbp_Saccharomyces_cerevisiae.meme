@@ -1,0 +1,61 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF RNCMPT00031 Hrp1p
+
+letter-probability matrix: alength= 4 w= 7 nsites= 20 E= 0
+  0.004206	  0.004206	  0.004206	  0.987382	
+  0.987382	  0.004206	  0.004206	  0.004206	
+  0.004206	  0.273317	  0.004206	  0.718271	
+  0.484072	  0.004206	  0.507516	  0.004206	
+  0.004206	  0.004206	  0.004206	  0.987382	
+  0.987382	  0.004206	  0.004206	  0.004206	
+  0.292304	  0.173180	  0.435984	  0.098532	
+
+URL http://hugheslab.ccbr.utoronto.ca/supplementary-data/RNAcompete_eukarya
+
+MOTIF RNCMPT00042 Nab2p
+
+letter-probability matrix: alength= 4 w= 7 nsites= 20 E= 0
+  0.797255	  0.038517	  0.125711	  0.038517	
+  0.857683	  0.015392	  0.111534	  0.015392	
+  0.953824	  0.015392	  0.015392	  0.015392	
+  0.872481	  0.015392	  0.096735	  0.015392	
+  0.953824	  0.015392	  0.015392	  0.015392	
+  0.784841	  0.015392	  0.102402	  0.097365	
+  0.252999	  0.135400	  0.571218	  0.040382	
+
+URL http://hugheslab.ccbr.utoronto.ca/supplementary-data/RNAcompete_eukarya
+
+MOTIF RNCMPT00111 Vts1p
+
+letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 0
+  0.139838	  0.307525	  0.223066	  0.329571	
+  0.004050	  0.004050	  0.987851	  0.004050	
+  0.004050	  0.987851	  0.004050	  0.004050	
+  0.102754	  0.004050	  0.163924	  0.729272	
+  0.004050	  0.004050	  0.987851	  0.004050	
+  0.004050	  0.004050	  0.987851	  0.004050	
+  0.138946	  0.736293	  0.004050	  0.120710	
+  0.116363	  0.578939	  0.188335	  0.116363	
+
+URL http://hugheslab.ccbr.utoronto.ca/supplementary-data/RNAcompete_eukarya
+
+MOTIF RNCMPT00082 Vts1p
+
+letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 0
+  0.143282	  0.239833	  0.228688	  0.388197	
+  0.004311	  0.004311	  0.987067	  0.004311	
+  0.004311	  0.987067	  0.004311	  0.004311	
+  0.176483	  0.004311	  0.004311	  0.814895	
+  0.004311	  0.004311	  0.987067	  0.004311	
+  0.004311	  0.004311	  0.987067	  0.004311	
+  0.144333	  0.661955	  0.027973	  0.165738	
+  0.114292	  0.586361	  0.185055	  0.114292	
+
+URL http://hugheslab.ccbr.utoronto.ca/supplementary-data/RNAcompete_eukarya
+

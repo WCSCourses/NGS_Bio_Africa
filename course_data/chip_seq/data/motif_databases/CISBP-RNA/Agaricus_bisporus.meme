@@ -1,0 +1,46 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M054_0.6 (estExt_fgenesh2_kg.C_60460)_(Homo_sapiens)_(RBD_0.70)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.194887	  0.112873	  0.579367	  0.112873	
+  0.020971	  0.669653	  0.020971	  0.288404	
+  0.020971	  0.098901	  0.859157	  0.020971	
+  0.020971	  0.859157	  0.098901	  0.020971	
+  0.020971	  0.098901	  0.859157	  0.020971	
+  0.020971	  0.846311	  0.111747	  0.020971	
+  0.066638	  0.157225	  0.614434	  0.161702	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T56296_0.6
+
+MOTIF M226_0.6 (estExt_fgenesh2_pm.C_10587)_(Aspergillus_nidulans)_(RBD_0.80)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.294806	  0.178205	  0.263590	  0.263398	
+  0.844908	  0.108810	  0.023141	  0.023141	
+  0.023141	  0.930576	  0.023141	  0.023141	
+  0.206956	  0.746761	  0.023141	  0.023141	
+  0.045411	  0.307831	  0.045411	  0.601348	
+  0.653789	  0.168133	  0.089039	  0.089039	
+  0.669576	  0.110141	  0.110141	  0.110141	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T21675_0.6
+
+MOTIF M231_0.6 (estExt_Genewise1Plus.C_80350)_(Drosophila_melanogaster)_(RBD_0.78)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.412365	  0.106883	  0.106883	  0.373868	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.014525	  0.956424	  0.014525	  0.014525	
+  0.956424	  0.014525	  0.014525	  0.014525	
+  0.014525	  0.014525	  0.014525	  0.956424	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.249671	  0.425963	  0.163664	  0.160702	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T61534_0.6
+

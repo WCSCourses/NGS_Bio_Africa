@@ -1,0 +1,24 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M1369_1.02 (PHATRDRAFT_49525)_(Thalassiosira_pseudonana)_(DBD_0.98)
+
+letter-probability matrix: alength= 4 w= 9 nsites= 1 E= 0
+  0.228356	  0.249861	  0.240064	  0.281718	
+  0.263420	  0.229006	  0.213524	  0.294050	
+  0.339244	  0.231996	  0.118714	  0.310046	
+  0.347213	  0.119097	  0.357787	  0.175904	
+  0.136270	  0.082652	  0.674951	  0.106127	
+  0.641759	  0.144635	  0.150538	  0.063068	
+  0.015815	  0.016625	  0.003710	  0.963850	
+  0.366729	  0.271679	  0.152113	  0.209479	
+  0.155506	  0.374910	  0.191844	  0.277740	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T120012_1.02
+

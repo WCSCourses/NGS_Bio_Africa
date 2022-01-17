@@ -1,0 +1,22 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M0142_1.02 (TvY486_0702230)_(Saccharomyces_cerevisiae)_(DBD_0.50)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.282959	  0.248465	  0.245993	  0.222583	
+  0.316659	  0.184532	  0.236944	  0.261864	
+  0.377778	  0.112652	  0.209413	  0.300157	
+  0.616393	  0.068985	  0.111484	  0.203138	
+  0.675764	  0.042770	  0.063171	  0.218294	
+  0.326032	  0.133887	  0.082023	  0.458058	
+  0.321153	  0.137266	  0.112384	  0.429198	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T008773_1.02
+

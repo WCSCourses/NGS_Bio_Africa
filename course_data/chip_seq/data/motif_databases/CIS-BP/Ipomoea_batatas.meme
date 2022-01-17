@@ -1,0 +1,25 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M1687_1.02 (Q40090_IPOBA)_(Arabidopsis_thaliana)_(DBD_0.92)
+
+letter-probability matrix: alength= 4 w= 10 nsites= 1 E= 0
+  0.266970	  0.241564	  0.229783	  0.261683	
+  0.226827	  0.268859	  0.201177	  0.303137	
+  0.371088	  0.127286	  0.410116	  0.091509	
+  0.031426	  0.000398	  0.794426	  0.173750	
+  0.012810	  0.000153	  0.004394	  0.982643	
+  0.100520	  0.889228	  0.000473	  0.009780	
+  0.612748	  0.157268	  0.078882	  0.151102	
+  0.530385	  0.082566	  0.205122	  0.181927	
+  0.310579	  0.360841	  0.151175	  0.177405	
+  0.243377	  0.229204	  0.309393	  0.218026	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T154702_1.02
+

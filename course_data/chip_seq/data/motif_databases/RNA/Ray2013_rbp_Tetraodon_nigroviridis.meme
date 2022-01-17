@@ -1,0 +1,34 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF RNCMPT00245 HNRNPAB
+
+letter-probability matrix: alength= 4 w= 7 nsites= 20 E= 0
+  0.265393	  0.085782	  0.085782	  0.563044	
+  0.645599	  0.059721	  0.234959	  0.059721	
+  0.011707	  0.011707	  0.877865	  0.098720	
+  0.686838	  0.011707	  0.108972	  0.192482	
+  0.101069	  0.011707	  0.011707	  0.875516	
+  0.875516	  0.011707	  0.011707	  0.101069	
+  0.123901	  0.035253	  0.805593	  0.035253	
+
+URL http://hugheslab.ccbr.utoronto.ca/supplementary-data/RNAcompete_eukarya
+
+MOTIF RNCMPT00285 Rbm24
+
+letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 0
+  0.128696	  0.128696	  0.613911	  0.128696	
+  0.512984	  0.033437	  0.033437	  0.420143	
+  0.009450	  0.009450	  0.971650	  0.009450	
+  0.009450	  0.009450	  0.009450	  0.971650	
+  0.009450	  0.009450	  0.971650	  0.009450	
+  0.101977	  0.009450	  0.009450	  0.879123	
+  0.125821	  0.033449	  0.715632	  0.125098	
+  0.319373	  0.130770	  0.326058	  0.223799	
+
+URL http://hugheslab.ccbr.utoronto.ca/supplementary-data/RNAcompete_eukarya
+

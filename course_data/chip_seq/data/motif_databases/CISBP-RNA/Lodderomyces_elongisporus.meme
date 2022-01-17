@@ -1,0 +1,20 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M231_0.6 (LELG_00811)_(Drosophila_melanogaster)_(RBD_0.83)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.412365	  0.106883	  0.106883	  0.373868	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.014525	  0.956424	  0.014525	  0.014525	
+  0.956424	  0.014525	  0.014525	  0.014525	
+  0.014525	  0.014525	  0.014525	  0.956424	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.249671	  0.425963	  0.163664	  0.160702	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T59927_0.6
+

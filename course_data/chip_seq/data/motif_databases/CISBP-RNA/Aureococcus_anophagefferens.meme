@@ -1,0 +1,34 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M205_0.6 (59062)_(Physcomitrella_patens)_(RBD_0.71)
+
+letter-probability matrix: alength= 4 w= 8 nsites= 1 E= 0
+  0.134018	  0.134018	  0.515270	  0.216694	
+  0.576066	  0.082001	  0.082001	  0.259931	
+  0.010356	  0.010356	  0.010356	  0.968932	
+  0.010356	  0.010356	  0.968932	  0.010356	
+  0.010356	  0.010356	  0.968932	  0.010356	
+  0.968932	  0.010356	  0.010356	  0.010356	
+  0.132790	  0.034893	  0.721999	  0.110318	
+  0.126552	  0.126552	  0.126552	  0.620345	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T48805_0.6
+
+MOTIF M231_0.6 (69770)_(Drosophila_melanogaster)_(RBD_0.83)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.412365	  0.106883	  0.106883	  0.373868	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.014525	  0.956424	  0.014525	  0.014525	
+  0.956424	  0.014525	  0.014525	  0.014525	
+  0.014525	  0.014525	  0.014525	  0.956424	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.249671	  0.425963	  0.163664	  0.160702	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T60964_0.6
+

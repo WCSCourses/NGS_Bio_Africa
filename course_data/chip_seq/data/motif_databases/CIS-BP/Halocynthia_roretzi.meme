@@ -1,0 +1,24 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M1939_1.02 Macho-1
+
+letter-probability matrix: alength= 4 w= 9 nsites= 1 E= 0
+  0.119048	  0.357143	  0.142857	  0.380952	
+  0.214286	  0.047619	  0.547619	  0.190476	
+  0.000000	  0.000000	  1.000000	  0.000000	
+  0.000000	  0.000000	  1.000000	  0.000000	
+  0.071429	  0.095238	  0.547619	  0.285714	
+  0.000000	  0.000000	  1.000000	  0.000000	
+  0.119048	  0.166667	  0.357143	  0.357143	
+  0.119048	  0.333333	  0.095238	  0.452381	
+  0.309524	  0.333333	  0.238095	  0.119048	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T061897_1.02
+

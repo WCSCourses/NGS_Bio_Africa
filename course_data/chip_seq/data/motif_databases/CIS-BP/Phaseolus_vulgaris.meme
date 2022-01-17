@@ -1,0 +1,25 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M0264_1.02 (Q41109_PHAVU)_(Arabidopsis_thaliana)_(DBD_0.78)
+
+letter-probability matrix: alength= 4 w= 10 nsites= 1 E= 0
+  0.199909	  0.319853	  0.108621	  0.371617	
+  0.102298	  0.269858	  0.329605	  0.298239	
+  0.727684	  0.087345	  0.103531	  0.081440	
+  0.042557	  0.652527	  0.169161	  0.135755	
+  0.074387	  0.175789	  0.658053	  0.091770	
+  0.047848	  0.043294	  0.012782	  0.896076	
+  0.072855	  0.000402	  0.887552	  0.039192	
+  0.001078	  0.059454	  0.541965	  0.397503	
+  0.330076	  0.407207	  0.142497	  0.120220	
+  0.325537	  0.283008	  0.185949	  0.205506	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T028336_1.02
+

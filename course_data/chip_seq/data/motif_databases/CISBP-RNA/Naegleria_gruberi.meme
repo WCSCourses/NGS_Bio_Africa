@@ -1,0 +1,20 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M223_0.6 estExt_fgeneshHS_pg.C_730016
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.600068	  0.099595	  0.200742	  0.099595	
+  0.608460	  0.005056	  0.198060	  0.188423	
+  0.005056	  0.005056	  0.005056	  0.984832	
+  0.005056	  0.005056	  0.005056	  0.984832	
+  0.005056	  0.005056	  0.005056	  0.984832	
+  0.005056	  0.005056	  0.005056	  0.984832	
+  0.054112	  0.054112	  0.837664	  0.054112	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T51074_0.6
+

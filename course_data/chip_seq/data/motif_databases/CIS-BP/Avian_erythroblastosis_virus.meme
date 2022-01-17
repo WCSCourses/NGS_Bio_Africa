@@ -1,0 +1,25 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M6521_1.02 (GAG_AVIER)_(Homo_sapiens)_(DBD_0.94)
+
+letter-probability matrix: alength= 4 w= 10 nsites= 1 E= 0
+  0.144578	  0.415663	  0.293675	  0.146084	
+  0.000000	  0.010542	  0.052711	  0.936747	
+  0.000000	  0.070783	  0.929217	  0.000000	
+  0.923193	  0.009036	  0.000000	  0.067771	
+  0.067771	  0.932229	  0.000000	  0.000000	
+  0.078313	  0.914157	  0.007530	  0.000000	
+  0.000000	  0.165663	  0.046687	  0.787651	
+  0.084337	  0.281627	  0.503012	  0.131024	
+  0.688253	  0.078313	  0.146084	  0.087349	
+  0.356928	  0.195783	  0.356928	  0.090361	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T134801_1.02
+

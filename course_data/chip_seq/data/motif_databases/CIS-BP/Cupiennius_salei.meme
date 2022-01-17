@@ -1,0 +1,23 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M1164_1.02 labial
+
+letter-probability matrix: alength= 4 w= 8 nsites= 1 E= 0
+  0.154141	  0.460890	  0.307515	  0.077454	
+  0.000554	  0.000554	  0.000554	  0.998337	
+  0.998424	  0.000525	  0.000525	  0.000525	
+  0.998424	  0.000525	  0.000525	  0.000525	
+  0.000525	  0.000525	  0.000525	  0.998424	
+  0.000525	  0.000525	  0.000525	  0.998424	
+  0.998337	  0.000554	  0.000554	  0.000554	
+  0.690951	  0.154141	  0.077454	  0.077454	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T100356_1.02
+

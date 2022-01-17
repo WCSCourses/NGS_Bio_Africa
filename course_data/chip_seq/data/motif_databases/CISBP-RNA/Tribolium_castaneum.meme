@@ -1,0 +1,47 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M070_0.6 (amel4_ncbi_hmm3241)_(Homo_sapiens)_(RBD_0.82)
+
+letter-probability matrix: alength= 4 w= 8 nsites= 1 E= 0
+  0.607398	  0.130867	  0.130867	  0.130867	
+  0.016420	  0.016420	  0.950741	  0.016420	
+  0.016420	  0.016420	  0.950741	  0.016420	
+  0.859715	  0.016420	  0.016420	  0.107446	
+  0.016420	  0.016420	  0.950741	  0.016420	
+  0.582607	  0.016420	  0.105193	  0.295780	
+  0.304848	  0.016420	  0.389710	  0.289023	
+  0.320766	  0.135638	  0.407959	  0.135638	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T31906_0.6
+
+MOTIF M081_0.6 (amel4_ncbi_hmm3751)_(Homo_sapiens)_(RBD_0.86)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.979863	  0.006712	  0.006712	  0.006712	
+  0.829912	  0.156663	  0.006712	  0.006712	
+  0.006712	  0.979863	  0.006712	  0.006712	
+  0.979863	  0.006712	  0.006712	  0.006712	
+  0.077264	  0.133263	  0.006712	  0.782761	
+  0.006712	  0.979863	  0.006712	  0.006712	
+  0.492456	  0.153980	  0.171615	  0.181949	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T16692_0.6
+
+MOTIF M147_0.6 (amel4_ncbi_hmm16010)_(Homo_sapiens)_(RBD_0.83)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.028926	  0.168883	  0.773265	  0.028926	
+  0.984561	  0.005146	  0.005146	  0.005146	
+  0.005146	  0.914510	  0.075197	  0.005146	
+  0.984561	  0.005146	  0.005146	  0.005146	
+  0.005146	  0.184168	  0.805540	  0.005146	
+  0.984561	  0.005146	  0.005146	  0.005146	
+  0.301008	  0.184127	  0.209704	  0.305161	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T31860_0.6
+

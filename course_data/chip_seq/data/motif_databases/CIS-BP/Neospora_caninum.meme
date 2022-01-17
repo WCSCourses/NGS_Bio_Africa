@@ -1,0 +1,37 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 T 0.25000 
+
+MOTIF M0052_1.02 (NCLIV_059950)_(Plasmodium_falciparum)_(DBD_0.88)
+
+letter-probability matrix: alength= 4 w= 8 nsites= 1 E= 0
+  1.000000	  0.000000	  0.000000	  0.000000	
+  0.000000	  0.000000	  1.000000	  0.000000	
+  0.000000	  1.000000	  0.000000	  0.000000	
+  0.000000	  0.000000	  0.000000	  1.000000	
+  1.000000	  0.000000	  0.000000	  0.000000	
+  0.000000	  0.000000	  1.000000	  0.000000	
+  0.000000	  1.000000	  0.000000	  0.000000	
+  0.000000	  0.000000	  0.000000	  1.000000	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T001862_1.02
+
+MOTIF M0061_1.02 (NCLIV_058430)_(Plasmodium_falciparum)_(DBD_0.70)
+
+letter-probability matrix: alength= 4 w= 8 nsites= 1 E= 0
+  0.727273	  0.090909	  0.000000	  0.181818	
+  0.000000	  0.750000	  0.000000	  0.250000	
+  1.000000	  0.000000	  0.000000	  0.000000	
+  0.062500	  0.937500	  0.000000	  0.000000	
+  0.937500	  0.000000	  0.000000	  0.062500	
+  0.000000	  0.937500	  0.000000	  0.062500	
+  0.937500	  0.062500	  0.000000	  0.000000	
+  0.071429	  0.714286	  0.000000	  0.214286	
+
+URL http://cisbp.ccbr.utoronto.ca/TFreport.php?searchTF=T001861_1.02
+

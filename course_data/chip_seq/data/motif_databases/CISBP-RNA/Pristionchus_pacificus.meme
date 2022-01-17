@@ -1,0 +1,85 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M111_0.6 (Ppa-cey-1)_(Homo_sapiens)_(RBD_0.80)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.906349	  0.031217	  0.031217	  0.031217	
+  0.753417	  0.231326	  0.007629	  0.007629	
+  0.007629	  0.977113	  0.007629	  0.007629	
+  0.977113	  0.007629	  0.007629	  0.007629	
+  0.007629	  0.192342	  0.007629	  0.792400	
+  0.007629	  0.977113	  0.007629	  0.007629	
+  0.546033	  0.058173	  0.230546	  0.165248	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T17144_0.6
+
+MOTIF M113_0.6 (Ppa-asd-2)_(Drosophila_melanogaster)_(RBD_0.78)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.790791	  0.069736	  0.069736	  0.069736	
+  0.003881	  0.988357	  0.003881	  0.003881	
+  0.003881	  0.003881	  0.003881	  0.988357	
+  0.988357	  0.003881	  0.003881	  0.003881	
+  0.988357	  0.003881	  0.003881	  0.003881	
+  0.003881	  0.988357	  0.003881	  0.003881	
+  0.432037	  0.294946	  0.169993	  0.103025	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T20238_0.6
+
+MOTIF M142_0.6 (Ppa-tag-262)_(Homo_sapiens)_(RBD_0.70)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.762510	  0.079163	  0.079163	  0.079163	
+  0.974052	  0.008649	  0.008649	  0.008649	
+  0.008649	  0.974052	  0.008649	  0.008649	
+  0.008649	  0.008649	  0.008649	  0.974052	
+  0.974052	  0.008649	  0.008649	  0.008649	
+  0.521992	  0.317983	  0.032597	  0.127428	
+  0.104219	  0.104219	  0.687343	  0.104219	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T45787_0.6
+
+MOTIF M148_0.6 (PPA11675)_(Homo_sapiens)_(RBD_0.70)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.974659	  0.008447	  0.008447	  0.008447	
+  0.283086	  0.008447	  0.700020	  0.008447	
+  0.974659	  0.008447	  0.008447	  0.008447	
+  0.974659	  0.008447	  0.008447	  0.008447	
+  0.193759	  0.095576	  0.702217	  0.008447	
+  0.974659	  0.008447	  0.008447	  0.008447	
+  0.224876	  0.312170	  0.225891	  0.237063	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T45775_0.6
+
+MOTIF M229_0.6 (Ppa-etr-1)_(RNAcompete_CONSTRUCTS)_(RBD_0.77)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.052017	  0.052017	  0.052017	  0.843950	
+  0.102806	  0.006559	  0.588242	  0.302393	
+  0.006559	  0.006559	  0.006559	  0.980323	
+  0.153198	  0.006559	  0.697364	  0.142878	
+  0.006559	  0.006559	  0.006559	  0.980323	
+  0.006559	  0.006559	  0.895835	  0.091047	
+  0.030707	  0.030707	  0.030707	  0.907879	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T45855_0.6
+
+MOTIF M231_0.6 (PPA05168)_(Drosophila_melanogaster)_(RBD_0.78)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.412365	  0.106883	  0.106883	  0.373868	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.014525	  0.956424	  0.014525	  0.014525	
+  0.956424	  0.014525	  0.014525	  0.014525	
+  0.014525	  0.014525	  0.014525	  0.956424	
+  0.014525	  0.014525	  0.956424	  0.014525	
+  0.249671	  0.425963	  0.163664	  0.160702	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T60754_0.6
+

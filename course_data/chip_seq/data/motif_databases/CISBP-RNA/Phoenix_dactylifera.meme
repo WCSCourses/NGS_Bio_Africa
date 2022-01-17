@@ -1,0 +1,47 @@
+MEME version 4
+
+ALPHABET= ACGU
+
+Background letter frequencies (from uniform background):
+A 0.25000 C 0.25000 G 0.25000 U 0.25000 
+
+MOTIF M142_0.6 (PDK_20s1301681g005)_(Homo_sapiens)_(RBD_0.75)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.762510	  0.079163	  0.079163	  0.079163	
+  0.974052	  0.008649	  0.008649	  0.008649	
+  0.008649	  0.974052	  0.008649	  0.008649	
+  0.008649	  0.008649	  0.008649	  0.974052	
+  0.974052	  0.008649	  0.008649	  0.008649	
+  0.521992	  0.317983	  0.032597	  0.127428	
+  0.104219	  0.104219	  0.687343	  0.104219	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T58031_0.6
+
+MOTIF M185_0.6 (PDK_20s1513061g004)_(Physcomitrella_patens)_(RBD_0.83)
+
+letter-probability matrix: alength= 4 w= 8 nsites= 1 E= 0
+  0.395326	  0.344508	  0.130083	  0.130083	
+  0.603989	  0.060632	  0.199406	  0.135973	
+  0.955809	  0.014730	  0.014730	  0.014730	
+  0.091504	  0.879035	  0.014730	  0.014730	
+  0.156143	  0.732896	  0.014730	  0.096230	
+  0.040157	  0.040157	  0.040157	  0.879529	
+  0.225030	  0.063803	  0.063803	  0.647364	
+  0.214963	  0.134729	  0.235955	  0.414353	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T58174_0.6
+
+MOTIF M239_0.6 (PDK_20s1420851g001)_(Arabidopsis_thaliana)_(RBD_0.72)
+
+letter-probability matrix: alength= 4 w= 7 nsites= 1 E= 0
+  0.403290	  0.106741	  0.293280	  0.196690	
+  0.011755	  0.011755	  0.964736	  0.011755	
+  0.284508	  0.011755	  0.011755	  0.691982	
+  0.011755	  0.011755	  0.782023	  0.194467	
+  0.011755	  0.011755	  0.011755	  0.964736	
+  0.011755	  0.011755	  0.964736	  0.011755	
+  0.538808	  0.059916	  0.250543	  0.150733	
+
+URL http://cisbp-rna.ccbr.utoronto.ca/TFreport.php?searchTF=T58137_0.6
+
