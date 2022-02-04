@@ -1,0 +1,7 @@
+run	unique_id	phenotype	repeat
+N2	sample1	Resistant	1
+N6	sample2	Resistant	2
+N10	sample3	Resistant	3
+N14	sample4	Sensitive	1
+N18	sample5	Sensitive	2
+N22	sample6	Sensitive	3
