@@ -1,4 +1,4 @@
-# 1. RNA-Seq Expression Analysis
+# 1. RNA-Seq EAxpression Analysis
 
 ## 1.1. Introduction
 
@@ -231,6 +231,7 @@ The objectives of this part of the tutorial are to:
 </ul>
 
 ### 3.1.1 Mapping RNA-Seq reads to a genome
+
 By this stage, you should have already performed a standard NGS quality control check on your reads to see whether there were any issues with the sample preparation or sequencing. In the interest of time, we won’t be doing that as part of this tutorial, but feel free to use the tools from earlier modules to give that a go later if you have time.
 
 Next, we map our RNA-Seq reads to a reference genome to get context. This allows you to visually inspect your RNA-Seq data, identify contamination, novel exons and splice sites as well as giving you an overall feel for your transcriptome.
@@ -301,16 +302,19 @@ But, that we also need to give hisat2-build two pieces of information:
 ```
 hisat2-build data/hsapien_grch38_chr21.fa outputs/hsapien_grch38_chr21_hisat2.idx
 ```
+
 You can see the generated index files using:
 
 ```
 ls outputs/hsapien_grch38_chr21_hisat2.idx*
 ```
+
 Look at the usage for `hisat2`
 
 ```
 hisat2 -h
 ```
+
 Here we can see that `HISAT2` needs several parameters so that it can do the mapping:
 >```
 >hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r>} [-S <sam>]
@@ -378,6 +382,7 @@ The alignments generated here can be used for transcriptome quantification using
 # 4. Visualising transcriptomes with `IGV`
 
 ## 4.1. Introduction
+
 The <a href="https://software.broadinstitute.org/software/igv">Integrative Genome Viewer (IGV)</a> allows us to visualise genomic datasets.
 
 The objectives of this part of the tutorial are:
@@ -397,6 +402,7 @@ igv &
 This will open the `IGV` main window. Now, we need to tell IGV which genome we want to use. `IGV` has many pre-loaded genomes available so load Human (`hg38`).
 
 ### 4.1.2 Load custom gene annotation file
+
 We not only want to see where our reads have mapped, but what genes they have mapped to. For this, we have an annotation file in GFF/GTF format. This contains a list of features, their co-ordinates and orientations which correspond to our reference genome.
 
 <p align="center">
@@ -498,6 +504,7 @@ Kallisto uses a process called pseudoalignment to make it efficient. Rather than
 </p>
 
 #### _Step 1: building a Kallisto index_
+
 As with alignment-based methods, Kallisto needs an index. To generate the index, Kallisto first builds a transcriptome de Bruijn Graph (TBDG) from all of the k-mers (short sequences of k nu- cleotides) that it finds in the transcriptome. Each node in the graph corresponds to a k-mer and each transcript is represented by its path through the graph. Using these paths, each k-mer is as- signed a k-compatibility class. Some k-mers will be redundant i.e. shared by the same transcripts. These are skipped to make the index compact and quicker to search. A great worked example of this process can be found <a href="https://bioinfo.iric.ca/understanding-how-kallisto-works">here</a>.
 
 The command `kallisto index` can be used to build a Kallisto index from transcript sequences:
@@ -579,6 +586,7 @@ If we wanted to get the TPM value for a particular transcript, we can use `awk`:
 ```
 awk -F"\t" '$1=="ENST00000399975.7" {print $5}' outputs/PT6/abundance.tsv
 ```
+
 Use `kallisto` to quantify the expression of the remaining samples. You can either use the command shown above for each individual sample. Alternatively, you can create a `bash` script to iterate through all the samples and quantify transcriptome expression using `Kallisto` (See commands below):
 
 ```
@@ -594,7 +602,8 @@ do
 done
 ```
 
-## Questions
+## 5.3. Questions
+
 **Q1: What k-mer length was used to build the Kallisto index?** _Hint: look at the terminal output from `kallisto index`._
 
 **Q2: How many transcript sequences are there in hsapien_grch38_transcripts.fa?** _Hint: you can use grep or look at the terminal output from `kallisto quant` or in the `run_info.json` files._
@@ -637,8 +646,9 @@ For DEA, sleuth essentially tests two models, one which assumes that the abundan
 
 We want to use sleuth to investigate transcript differential expresssion between high grade prostate cancer and matched noncancer adjacent tissue samples in the context of ethnicity differences between African American (AA) and European American (EA) individuals.
 
-**Before you begin**
+**Before you begin**__
 Configure the option for a web browser for R at the command line:
+
 ```
 export R_BROWSER='firefox'
 ```
@@ -1061,3 +1071,65 @@ There are two things to notice in our dataset:
 	<li> Gene B has twice number reads mapped than gene A, possibly as it’s twice the length
 	<li> Replicate 3 has more reads mapped than any of the other replicates, regardless of which gene we look at.
 <ul>
+
+### 8.3.1. Calculating RPKM
+
+#### Step 1: get your per million scaling factor
+
+In the table below is the total number of reads which mapped for each of the replicates. To get our per million scaling factor, we divide each of these values by 1,000,000 (1 million).
+
+#### Step 2: normalise for sequencing depth
+
+We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
+
+Before:
+
+After:
+
+#### Step 3: get your per kilobase scaling factor
+Here we have our gene length in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
+
+#### Step 4: normalise for length
+Finally, we divide our RPM values from step 2 by our per kilobase scaling factor from step 3 to get our reads per kilobase per million (RPKM).
+
+Before:
+
+After:
+
+Notice that even though replicate 3 had more reads assigned than the other samples and a greater sequencing depth, its RPKM is quite similar. And, that although gene B had twice the number of reads assigned than gene A, its RPKM is the same. This is because we have normalised by both length and sequencing depth.
+
+### 8.3.2. Calculating TPM
+Now we’re going to calculate the TPM values for the same example data. As a reminder, here are our three genes (A-C) and three biological replicates (1-3).
+
+#### Step 1: get your per kilobase scaling factor
+Again, our gene lengths are in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
+
+#### Step 2: normalise for length
+Now we divide the number of reads which have been assigned to each gene by the per kilobase scaling factor we just calculated. This will give us our reads per kilobase (RPK).
+
+Before:
+
+After:
+
+#### Step 3: get the sum of all RPK values in your sample
+Next, we sum the RPK values for each of our replices. This will give use our total RPK value for each replicate. To make this example scalable, we assume there are other genes so the total RPK is made up.
+
+#### Step 4: get your per million scaling factor
+Here, instead of dividing our total mapped reads by 1,000,000 (1 million) to get our per million scaling factor, we divide our total RPK values by 1,000,000 (1 million).
+
+#### Step 5: normalise for sequencing depth
+Finally, we divide our individual RPK values from step 2 by the per million scaling factor in step 4 to give us our TPM values. 
+
+Before:
+
+After:
+
+## 8.4. Which normalisation unit should I use?
+
+Well, there’s a lot of debate around this, so let’s look at our total normalised values for each replicate.
+
+### 8.4.1. RPKM
+
+### 8.4.2. TPM
+
+Notice that that total TPM value for each of the replicates is the same. This is not true for RPKM and FPKM where the total values differ. With TPM, having the same total value for each replicate makes it easier to compare the proportion of reads mapping to each gene across replicates (although you shouldn’t really compare across experiments). With RPKM and FPKM, the differing total values make it much harder to compare replicates.
