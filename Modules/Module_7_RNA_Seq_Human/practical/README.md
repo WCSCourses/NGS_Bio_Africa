@@ -776,15 +776,15 @@ so <- sleuth_lrt(so, 'reduced', 'full')
 sleuth_table_tx <- sleuth_results(obj = so,
     test = 'reduced:full',
     test_type ='lrt',
-	show_all = FALSE,
-	pval_aggregate = FALSE)
+    show_all = FALSE,
+    pval_aggregate = FALSE)
 head(sleuth_table_tx, 5)
 ```
 
 **What do the results mean?**
 Here we see a table with the top 5 transcripts in the differential expression analysis results table. The key columns are:
 <ul>
-	<li> <b>pval</b> - _p_-value of the chosen model 
+	<li> <b>pval</b> - <i>p</i>-value of the chosen model 
 	<li> <b>qval</b> - false discovery rate adjusted p-value
 </ul>
 
