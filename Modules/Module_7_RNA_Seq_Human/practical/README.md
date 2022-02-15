@@ -214,7 +214,7 @@ Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FAST
 
 <h2 style="color:red"> 2.3 Questions </h2>
 
-<font color="blue"">**Q1: Why is there more than one FASTQ file per sample?**</font> *Hint: think about why there is a PT6_1.fastq.gz and a PT6_2.fastq.gz*
+<font color="blue">**Q1: Why is there more than one FASTQ file per sample?**</font> *Hint: think about why there is a PT6_1.fastq.gz and a PT6_2.fastq.gz*
 
 Now let’s move on to mapping these RNA-Seq reads to the genome using `HISAT2`.
 
