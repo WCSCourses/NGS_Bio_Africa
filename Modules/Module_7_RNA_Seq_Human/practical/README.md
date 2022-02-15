@@ -244,10 +244,10 @@ For more information, and to find the original version of _**Figure 2**_, please
 `HISAT2` is a splice-aware aligner which means it takes into account that when a read is mapped it may be split across multiple exons with (sometimes large) intronic gaps between aligned regions. As you can see in Figure 2, `HISAT2` splits read alignments into five classes based on the number of exons the read alignment is split across and the length of the anchor (longest continuously mapped portion of a split read):
 <ul>
 	<li> Aligns to a single exon (M) 
-	<li> Alignment split across 2 exons with long anchors over 15bp (2M\_gt_15) 
-	<li> Alignment split across 2 exons with intermediate anchors between 8bp and 15bp (2M\_8\_15) 
-	<li> Alignment split across 2 exons with short anchors less than 7bp (2M\_1\_7) 
-	<li> Alignment split across more than 2 exons (gt\_2M).
+	<li> Alignment split across 2 exons with long anchors over 15bp (2M_gt_15) 
+	<li> Alignment split across 2 exons with intermediate anchors between 8bp and 15bp (2M_8_15) 
+	<li> Alignment split across 2 exons with short anchors less than 7bp (2M_1_7) 
+	<li> Alignment split across more than 2 exons (gt_2M).
 </ul>
 
 `HISAT2` used the global index to place the longest continuously mapped portion of a read (anchor). This information is then used to identify the relevant local index. In most cases, `HISAT2` will only need to use a single local index to place the remaining portion of the read without having to search the rest of the genome.
@@ -257,10 +257,10 @@ For the human genome, `HISAT2` will build a single global index and 48,000 local
 There are five `HISAT2` RNA-seq read mapping categories:
 <ol type="i">
 	<li> M, exonic read; 
-	<li> 2M\_gt\_15, junction reads with long, >15-bp anchors in both exons; 
-	<li> 2M\_8\_15, junction reads with intermediate, 8- to 15-bp anchors; 
-	<li> 2M\_1\_7, junction reads with short, 1- to 7-bp, anchors; and 
-	<li> gt\_2M, junction reads spanning more than two exons (Figure 2A). 
+	<li> 2M_gt_15, junction reads with long, >15-bp anchors in both exons; 
+	<li> 2M_8_15, junction reads with intermediate, 8- to 15-bp anchors; 
+	<li> 2M_1_7, junction reads with short, 1- to 7-bp, anchors; and 
+	<li> gt_2M, junction reads spanning more than two exons (Figure 2A). 
 </ol>
 Exoninc reads span only a single exon and represent over 60% of the read mappings in the 20 million 100-bp simulated read dataset.
 
