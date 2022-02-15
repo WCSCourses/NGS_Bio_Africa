@@ -560,11 +560,11 @@ In `PT6/abundance.tsv` there are five columns which give us information about th
 
 <ul>
 	<li> <b>target_id</b> - Unique transcript identifier.
-	<li> <b>length</b> - Number of bases found in exons. 
+	<li> <b>length</b> - Number of bases found in exons.
 	<li> <b>eff_length</b> - Effective length. Uses fragment length distribution to determine the effective number of positions that can be sampled on each transcript.
 	<li> <b>est_counts</b> - Estimated counts. This may not always be an integer as reads which map to multiple transcripts are fractionally assigned to each of the corresponding transcripts. 
 	<li> <b>tpm</b> - Transcripts per million. Normalised value accounting for length and sequence depth bias.
-</li>
+</ul>
 
 In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.  
 
