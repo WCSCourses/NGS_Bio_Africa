@@ -287,8 +287,8 @@ But, that we also need to give hisat2-build two pieces of information:
 >```
 >These are:
 ><ul>
->	<li> <`reference_in`> location of our reference sequence file (PccAS_v3_genome.fa)
->	<li> <`ht2_index_base`> what we want to call our `HISAT2` index files (PccAS_v3_hisat2.idx)
+>	<li> <reference_in> location of our reference sequence file (PccAS_v3_genome.fa)
+>	<li> <ht2_index_base> what we want to call our HISAT2 index files (PccAS_v3_hisat2.idx)
 ></ul>
 
 **Build a `HISAT2` index for chromosome 21 of the human reference genome using `hisat2-build`:**
@@ -311,9 +311,9 @@ Here we can see that `HISAT2` needs several parameters so that it can do the map
 >hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r>} [-S <sam>]
 >```
 ><ul>
->	<li> `-x <ht2-idx>` the prefix that we chose for our index files with hisat2-build (Pc- cAS_v3_hisat2.idx)
->	<li> `{-1 <m1> -2 <m2> | -U <r>}` the left (-1) and right (-2) read files for the sample (MT1_1.fastq and MT1_2.fastq respectively
->	<li> `[-S <sam>]` the name of the file we want to write the output alignment to (MT1.sam) as, by default, hisat2 will print the results to the terminal (stdout)
+>	<li> -x <ht2-idx> the prefix that we chose for our index files with hisat2-build (Pc- cAS_v3_hisat2.idx)
+>	<li> {-1 <m1> -2 <m2> | -U <r>} the left (-1) and right (-2) read files for the sample (MT1_1.fastq and MT1_2.fastq respectively
+>	<li> [-S <sam>] the name of the file we want to write the output alignment to (MT1.sam) as, by default, hisat2 will print the results to the terminal (stdout)
 
 We will also be adding one more piece of information, the maximum intron length (default 500,000 bases). For this analysis, we want to set the maximum intron length to 10,000. We can do this by adding the option `--max-intronlen 10000`.
 
