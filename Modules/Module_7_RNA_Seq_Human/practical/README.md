@@ -543,7 +543,7 @@ ls outputs/PT6
 
 Running `kallisto quant` generated three output files in our **PT6** folder:
 <ul> 
-	<li> <b>abundance.h5</b>> - HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length in- formation length.
+	<li> <b>abundance.h5</b> - HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length information length.
 	<li> <b>abundance.tsv</b> - Plain text file containing abundance estimates (doesn’t contain bootstrap estimates).
 	<li> <b>run_info.json</b> - JSON file containing information about the run.
 </ul>
@@ -556,15 +556,15 @@ The file `PT6/abundance.tsv` will have the abundance estimates for each gene for
 head outputs/PT6/abundance.tsv
 ```
 
-In `PT6/abundance.tsv` there are five columns which give us information about the transcript abun- dances for our PT6 sample. 
+In `PT6/abundance.tsv` there are five columns which give us information about the transcript abundances for our PT6 sample. 
 <ul>
-	<li> target_id - Unique transcript identifier.
-	<li> length - Number of bases found in exons. 
-	<li> eff_length - Effective length. Uses fragment length distribution to determine the effective number of positions that can be sampled on each transcript.
-	<li> est_counts - Estimated counts. This may not always be an integer as reads which map to multiple transcripts are fractionally assigned to each of the corresponding transcripts. 
-	<li> tpm - Transcripts per million. Normalised value accounting for length and sequence depth bias.
+	<li> <b>target_id</b> - Unique transcript identifier.
+	<li> <b>length</b> - Number of bases found in exons. 
+	<li> <b>eff_length</b> - Effective length. Uses fragment length distribution to determine the effective number of positions that can be sampled on each transcript.
+	<li> <b>est_counts</b> - Estimated counts. This may not always be an integer as reads which map to multiple transcripts are fractionally assigned to each of the corresponding transcripts. 
+	<li> <b>tpm</b> - Transcripts per million. Normalised value accounting for length and sequence depth bias.
 </li>
-In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.
+In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.  
 
 To get the result for a specific transcript, we can use `grep`:
 
