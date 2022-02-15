@@ -273,13 +273,12 @@ Be patient, each of the following steps will take a couple of minutes!
 ```
 hisat2-build -h
 ```
-
 This not only tells us the version of `HISAT2` we’re using (essential for publication methods):
-
 
 But, that we also need to give hisat2-build two pieces of information:
 
->```
+>
+```
 Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
 ```
 These are:
