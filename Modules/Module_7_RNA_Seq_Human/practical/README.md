@@ -214,9 +214,8 @@ Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FAST
 
 <h2 style="color:red"> 2.3 Questions </h2>
 
-### 2.3.1 Q1: Why is there more than one FASTQ file per sample?
+<font color="blue"">**Q1: Why is there more than one FASTQ file per sample?**</font> *Hint: think about why there is a PT6_1.fastq.gz and a PT6_2.fastq.gz*
 
-_Hint: think about why there is a PT6_1.fastq.gz and a PT6_2.fastq.gz_
 Now let’s move on to mapping these RNA-Seq reads to the genome using `HISAT2`.
 
 # 3. Mapping RNA-Seq Reads to the Genome using `HISAT2`
@@ -354,11 +353,17 @@ Now, repeat this process of mapping, converting (SAM to BAM), sorting and indexi
 ```
 hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx \
 	-1 data/NP2_1.fastq.gz -2 data/NP2_2.fastq.gz | \
-   samtools view -S -b - | \
-   samtools sort -o outputs/NP2_sorted.bam - &&
-   samtools index outputs/NP2_sorted.bam
+	samtools view -S -b - | \
+	samtools sort -o outputs/NP2_sorted.bam - &&
+	samtools index outputs/NP2_sorted.bam
 ```
 
+<h2 style="color:red;"> 3.3. Questions </h2>
+<font color="blue">**Q1: How many index files were generated when you ran hisat2-build?**</font> *Hint: look for the files with the .ht2 extension*
+
+<font color="blue">**Q2: What was the overall alignment rate for the PT2 sample to the reference genome?**</font> *Hint: look at the the output from the HISAT2 commands*
+
+<font color="blue">**Q3: How does the alignment rate compare with that of the NP2 sample?**</font> *Hint: look at the the output from the hisat2 commands*
 
 
 
