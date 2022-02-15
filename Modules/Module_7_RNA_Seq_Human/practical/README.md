@@ -564,6 +564,7 @@ In `PT6/abundance.tsv` there are five columns which give us information about th
 	<li> <b>est_counts</b> - Estimated counts. This may not always be an integer as reads which map to multiple transcripts are fractionally assigned to each of the corresponding transcripts. 
 	<li> <b>tpm</b> - Transcripts per million. Normalised value accounting for length and sequence depth bias.
 </li>
+
 In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.  
 
 To get the result for a specific transcript, we can use `grep`:
