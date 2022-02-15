@@ -1,5 +1,4 @@
-<h1 align="center"> NGS Bioinformatics 2022 </h1>
-<h2 align="center"> Module 7: RNA-Seq Human </h2>
+<h1 align="center"> NGS Bioinformatics 2022 <br> Module 7: RNA-Seq Human </h2>
 
 <h3> Trainers: </h3>
 
@@ -7,10 +6,11 @@
 **Jon Ambler**, _University of Cape Town, South Africa_  
 **Phelelani Mpangase**, _University of the Witwatersrand, South Africa_  
 
---
+---
 
 <h3> Schedule: </h3>
 
+<div align="center">
 <table>
 	<tr>
 		<td width="16%"> <b>10:30 CAT</b> </td>
@@ -56,5 +56,6 @@
   		<td <b>END</b> </td>
  	</tr>
 </table>
+</div>
 
---
+---
