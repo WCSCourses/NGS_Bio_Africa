@@ -1023,7 +1023,7 @@ To calculate RPKM, you first normalise by sequencing depth and then by gene/tran
 This can be simplified into the following equation:
 
 <p align="center">
-	<img src="https://render.githubusercontent.com/render/math?math=RPKM = \frac{C}{LN}" style="width:5%">
+	<img src="https://render.githubusercontent.com/render/math?math=RPKM = \frac{C}{LN}" style="width:25%">
 </p>
 
 Where:
