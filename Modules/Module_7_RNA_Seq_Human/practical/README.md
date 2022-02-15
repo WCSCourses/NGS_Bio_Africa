@@ -285,7 +285,8 @@ Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
 These are:
 <ul>
 	<li> `<reference_in>` location of our reference sequence file (PccAS_v3_genome.fa)
-	<li> `<ht2_index_base>` what we want to call our HISAT2 index files (PccAS_v3_hisat2.idx)
+	<li> `<ht2_index_base>` what we want to call our `HISAT2` index files (PccAS_v3_hisat2.idx)
+<ul>
 
 Build a `HISAT2` index for chromosome 21 of the human reference genome using `hisat2-build`:
 
