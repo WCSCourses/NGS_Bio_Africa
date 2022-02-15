@@ -646,7 +646,8 @@ For DEA, sleuth essentially tests two models, one which assumes that the abundan
 
 We want to use sleuth to investigate transcript differential expresssion between high grade prostate cancer and matched noncancer adjacent tissue samples in the context of ethnicity differences between African American (AA) and European American (EA) individuals.
 
-**Before you begin**   
+**Before you begin**
+
 Configure the option for a web browser for R at the command line:
 
 ```
