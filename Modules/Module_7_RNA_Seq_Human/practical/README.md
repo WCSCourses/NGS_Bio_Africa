@@ -39,12 +39,12 @@ This tutorial was developed by Victoria Offord and Adam Reid and adapted for use
 
 This tutorial assumes that you have the following software or packages and their dependencies installed on your computer. The software or packages used in this tutorial may be updated from time to time, so we have given you the version which was used when writing the tutorial.
 
-<div alignment="center">
+<div align="center">
 	<table>
 		<tr>
-			<th> Package </th>
-			<th> Link for download/installation instructions </th>
-			<th> Version tested</th>
+			<th width="20%"> Package </th>
+			<th width="60%"> Link for download/installation instructions </th>
+			<th width="20%"> Version tested</th>
 		</tr>
 		<tr>
 			<td> HISAT2 </td>
