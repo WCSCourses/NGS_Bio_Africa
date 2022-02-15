@@ -910,7 +910,7 @@ In the Shiny App that has been launched, click on **“maps -> PCA”**.
 
 Here we do not see clear condition-related clusters as we might expect. Indeed samples PT4 and NP6 look like potential outliers. There is perhaps an unaccounted for technical batch effect in these data or those samples represent unmeasured biological signal. Further investigation will be needed included conversations with data generators where appropriate.
 
-####Using sleuth to look at differentially expressed transcripts
+#### Using sleuth to look at differentially expressed transcripts
 
 We used the output from `Kallisto` to identify DE transcripts using `sleuth`. Let’s take a look and see if we found any.
 
@@ -990,8 +990,8 @@ There are many useful websites, publications and blog posts which go into much m
 
 Raw reads counts are the number of reads originating from each transcript which can be affected by several factors:
 <ul>
-	<li> **Sequencing depth (total number of reads)**<br>The more we sequence a sample, the more reads we expect to be assigned.
-	<li >**Gene/transcript length**<br>The longer the gene or transcript, the more reads we expect to be assigned to it.
+	<li> <b>Sequencing depth (total number of reads)</b><br>The more we sequence a sample, the more reads we expect to be assigned.
+	<li> <b>Gene/transcript length</b><br>The longer the gene or transcript, the more reads we expect to be assigned to it.
 </ul>
 
 <p align="center">
@@ -1014,10 +1014,10 @@ Reads per kilobase (of exon) per million (reads mapped) or RPKM is a within samp
 
 To calculate RPKM, you first normalise by sequencing depth and then by gene/transcript length.
 <ol>
-    <li> **Get your per million scaling factor** <br> Count up the total number of reads which have been assigned (mapped) in the sample. Divide this number by 1,000,000 (1 million) to get your per million scaling factor (N).
-	<li> **Normalise for sequencing depth** <br> Divide the number of reads which have been assigned to the gene or transcript (C) by the per million scaling factor you calculated in step 1. This will give you your reads per million (RPM).
-	<li> **Get your per kilobase scaling factor** <br> Divide the total length of the exons in your transcript or gene in base pairs by 1,000 (1 thou- sand) to get your per kilobase scaling factor (L).
-	<li> **Normalise for length** <br> Divide your RPM value from step 2 by your per kilobase scaling factor (length of the gene/- transcript in kilobases) from step 3. This will give you your reads per kilobase per million or RPKM.
+    <li> <b>Get your per million scaling factor</b> <br> Count up the total number of reads which have been assigned (mapped) in the sample. Divide this number by 1,000,000 (1 million) to get your per million scaling factor (N).
+	<li> <b>Normalise for sequencing depth</b> <br> Divide the number of reads which have been assigned to the gene or transcript (C) by the per million scaling factor you calculated in step 1. This will give you your reads per million (RPM).
+	<li> <b>Get your per kilobase scaling factor</b> <br> Divide the total length of the exons in your transcript or gene in base pairs by 1,000 (1 thou- sand) to get your per kilobase scaling factor (L).
+	<li> <b>Normalise for length</b> <br> Divide your RPM value from step 2 by your per kilobase scaling factor (length of the gene/- transcript in kilobases) from step 3. This will give you your reads per kilobase per million or RPKM.
 </ol>
 
 This can be simplified into the following equation:
@@ -1046,11 +1046,11 @@ In a paired-end RNA-Seq experiment, two reads may be assigned to a single fragme
 ### 8.2.3 Transcripts per million (TPM)
 Calculating the transcripts per million or TPM is a similar process to RPKM and FPKM. The main difference is that you will first normalise for length bias and then for sequencing depth bias. In a nut shell, we are swapping the order of normalisations.
 <ol>
-	<li> **Get your per kilobase scaling factor** <br> Divide the total length of the exons in your transcript in base pairs by 1,000 (1 thousand) to get your per kilobase scaling factor.
-	<li> **Normalise for length** <br> Divide the number of reads which have been assigned to the transcript by the per kilobase scaling factor you calculated in step 1. This will give you your reads per kilobase (RPK).
-	<li> **Get the sum of all RPK values in your sample** <br> Calculate the RPK value for all of the transcripts in your sample. Add all of these together to get your total RPK value.
-	<li> **Get your per million scaling factor** <br> Divide your total RPK value from step 3 by 1,000,000 (1 million) to get your per million scaling factor.
-	<li> **Normalise for sequencing depth** <br> Divide your RPK value calculated in step 2 by the per million scaling factor from step 4. You now have your transcripts per millions value or TPM.
+	<li> <b>Get your per kilobase scaling factor</b> <br> Divide the total length of the exons in your transcript in base pairs by 1,000 (1 thousand) to get your per kilobase scaling factor.
+	<li> <b>Normalise for length</b> <br> Divide the number of reads which have been assigned to the transcript by the per kilobase scaling factor you calculated in step 1. This will give you your reads per kilobase (RPK).
+	<li> <b>Get the sum of all RPK values in your sample</b> <br> Calculate the RPK value for all of the transcripts in your sample. Add all of these together to get your total RPK value.
+	<li> <b>Get your per million scaling factor</b> <br> Divide your total RPK value from step 3 by 1,000,000 (1 million) to get your per million scaling factor.
+	<li> <b>Normalise for sequencing depth</b> <br> Divide your RPK value calculated in step 2 by the per million scaling factor from step 4. You now have your transcripts per millions value or TPM.
 </ol>
 
 ## 8.3. Calculating RPKM and TPM values
