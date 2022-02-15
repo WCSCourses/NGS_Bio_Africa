@@ -543,7 +543,7 @@ ls outputs/PT6
 
 Running `kallisto quant` generated three output files in our **PT6** folder:
 <ul> 
-	<li> **abundance.h5** - HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length in- formation length.
+	<li> <font family="monospace">abundance.h5</font> - HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length in- formation length.
 	<li> **abundance.tsv** - Plain text file containing abundance estimates (doesn’t contain bootstrap estimates).
 	<li> **run_info.json** - JSON file containing information about the run.
 </ul>
