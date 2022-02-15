@@ -30,6 +30,7 @@ Focus on:
 </ul>
 
 ## 1.3. Practical Outline
+
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 		<b>Workflow Overview.</b> A schematic representation of each step in this practical exercise.
@@ -98,6 +99,89 @@ This tutorial assumes that you have the following software or packages and their
 		</tr>
 	</table>
 </div>
+
+## 1.6. Setup
+
+### 1.6.1. Create Practical Directory
+
+Navigate to the module folder on the Virtual Machine (VM) using the following command:
+
+```
+cd /home/manager/course_data/rna_seq_pathogen
+```
+
+Create a working directory for the practical:
+
+```
+mkdir practical
+```
+
+Create a copy of the practial dataset to maintain the data integrity of the original dataset:
+
+```
+ cp /home/manager/course_data/rna_seq_pathogen/data/bacterial/* /home/manager/course_data/rna_seq_pathogen/practical
+```
+
+Copy and paste the command above as a single line at your command line window.   
+>Note: if you make a mistake at any point during this tutorial, you can reset by deleting the practical folder and restarting from this section.
+
+Move to the practical directory:
+
+```
+cd practical
+```
+
+### 1.6.2. Download Supplemental Datasets
+
+**Internet Access Required**
+
+#### Reference Transcriptome File
+
+Download the GFF formatted version of the annotation file. Unfortunately due to the lack of standardization in bioinformatics, we need both the <a href="https://mblab.wustl.edu/GTF22.html">>GTF</a> file and the <a href="https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md">GFF</a> file for analysis (See the differences and similarities between these two file format specifications <a href="https://www.ensembl.org/info/website/upload/gff.html?redirect=no">here</a>). Salmon uses the GTF file and the GenomicFeatures library in R needs a GFF file. Both files contain the same annotation information, they are just formatted differently. No tools are able to reliably convert one to the other because even GFF files are not formatted consistently.
+
+```
+wget https://www.dropbox.com/s/4yjgbmy3dyhfoad/GCA_000195955.2_ASM19595v2_genomic.gff?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/GCA_000195955.2_ASM19595v2_genomic.gff
+```
+
+#### Study Design File Download the study design file
+
+The study design file is a tab separated file with 4 columns that encodes the phenotype and repeat information on the samples we will analyze in this practical. You will import this file into R to setup the differential expression analysis in the R Programming language. It is critical to keep track of the details of which samples are which etc. for downstream analysis purposes.
+
+```
+wget https://www.dropbox.com/s/6y3z9btz3bg20pn/practical_study_design.txt?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/practical_study_design.txt
+```
+
+>**Note:** In this practical, we will use the existing study design file provided. However, in your own work, you will have to create this file on your own. You can create this file in several ways some of which could include exporting an Excel spreadsheet as a "Tab delimited" text file. You can also use your favorite text editor.such as using the **Text Editor** app under the Applications menu on the virtual machine.
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+#### RData
+
+Download `DE_data.RData` for later use. These files will be used for differential expression analysis in a later section of this tutorial.
+
+```
+wget https://www.dropbox.com/s/6onagsnpp9wrkrv/DE_data.RData.zip?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/DE_data.RData.zip
+```
+
+Uncompress the `DE_data.RData.zip` file:
+
+```
+unzip DE_data.RData.zip
+```
+
+### 1.6.3 Setup R Analysis Environment
+
+**Internet Access Required**   
+In this section you will download additional `R` Libraries, packages of analysis tools to support differential expression analysis in `R`.   
+Start R by typing the following command:
+
+```
+R
+```
+
+The Bioconductor Project provides tools written in R for the ’analysis and comprehension of high- throughput genomic data’. Here we will install two additional software packages (GenomicFeatures and tximport) for our practical today (See additional guidelines for Bioconductor package installa- tion).
 
 
 
