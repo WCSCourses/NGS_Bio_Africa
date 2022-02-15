@@ -13,13 +13,14 @@ Ana Conesa, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra Cerve
 
 By the end of this tutorial you can expect to be able to:
 <ul>
-	<li> Align RNA-Seq reads to a reference genome and a transcriptome </li>
-	<li> Visualise transcription data using standard tools </li>
-	<li> Perform QC of NGS transcriptomic data </li>
-	<li> Quantify the expression values of your transcripts using standard tools </li>
+	<li> Align RNA-Seq reads to a reference genome and a transcriptome
+	<li> Visualise transcription data using standard tools
+	<li> Perform QC of NGS transcriptomic data
+	<li> Quantify the expression values of your transcripts using standard tools
 </ul>
 
 ### 1.3. Practical Outline
+
 This tutorial comprises the following sections:  
 <ol>
 	<li>Introducing the tutorial dataset  
@@ -29,6 +30,59 @@ This tutorial comprises the following sections:
 	<li>Identifying differentially expressed genes with Sleuth  
 	<li>Key aspects of differential expression analysis
 </ol>
+
+### 1.4. Authors
+
+This tutorial was developed by Victoria Offord and Adam Reid and adapted for use here by Nyasha Chambwe.
+
+### 1.5. Prerequisites
+
+This tutorial assumes that you have the following software or packages and their dependencies installed on your computer. The software or packages used in this tutorial may be updated from time to time, so we have given you the version which was used when writing the tutorial.
+
+<div alignment="center">
+	<table>
+		<tr>
+			<th> Package </th>
+			<th> Link for download/installation instructions </th>
+			<th> Version tested</th>
+		</tr>
+		<tr>
+			<td> HISAT2 </td>
+			<td> <a href="url">https://ccb.jhu.edu/software/hisat2/index.shtml</a> </td>
+			<td> 2.1.0 </td>
+		</tr>
+		<tr>
+			<td> samtools </td>
+			<td> <a href="url">https://github.com/samtools/samtools</a> </td>
+			<td> 1.10 </td>
+		</tr>
+		<tr>
+			<td> IGV </td>
+			<td> <a href="url">https://software.broadinstitute.org/software/igv/</a> </td>
+			<td> 2.7.2 </td>
+		</tr>
+		<tr>
+			<td> kallisto </td>
+			<td> <a href="url">https://pachterlab.github.io/kallisto/download</a> </td>
+			<td> 0.46.2 </td>
+		</tr>
+		<tr>
+			<td> R </td>
+			<td> <a href="url">https://www.r-project.org/</a> </td>
+			<td> 4.0.2 </td>
+		</tr>
+		<tr>
+			<td> sleuth </td>
+			<td> <a href="url">https://pachterlab.github.io/sleuth/download</a> </td>
+			<td> 0.30.0 </td>
+		</tr>
+		<tr>
+			<td> bedtools </td>
+			<td> <a href="url">http://bedtools.readthedocs.io/en/latest/content/installation.html</a> </td>
+			<td> 2.29.2</td>
+		</tr>
+	</table>
+</div>
 
 ## 2. Introducing The Tutorial Dataset
 
