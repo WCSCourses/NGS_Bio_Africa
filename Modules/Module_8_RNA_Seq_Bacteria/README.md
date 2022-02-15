@@ -1,5 +1,5 @@
 <h1 align="center"> NGS Bioinformatics 2022 </h1>
-<h2 align="center"> Module 7: RNA-Seq Human </h2>
+<h2 align="center"> Module 8: RNA-Seq Pathogens </h2>
 
 <h3> Trainers: </h3>
 
@@ -24,7 +24,7 @@
   		<td> <b>11:30 CAT</b> </td>
   		<td> Practical assignment
    			<ul>
-    			<li>Watch video: <b>Module 7_Introduction to Practical</b> </li>
+    			<li>Watch video: <b>Module 8_Introduction to Practical</b> </li>
    			</ul>
   		</td>
  	</tr>
