@@ -48,37 +48,37 @@ This tutorial assumes that you have the following software or packages and their
 		</tr>
 		<tr>
 			<td> HISAT2 </td>
-			<td> <a href="url">https://ccb.jhu.edu/software/hisat2/index.shtml</a> </td>
+			<td> <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">https://ccb.jhu.edu/software/hisat2/index.shtml</a> </td>
 			<td> 2.1.0 </td>
 		</tr>
 		<tr>
 			<td> samtools </td>
-			<td> <a href="url">https://github.com/samtools/samtools</a> </td>
+			<td> <a href="https://github.com/samtools/samtools">https://github.com/samtools/samtools</a> </td>
 			<td> 1.10 </td>
 		</tr>
 		<tr>
 			<td> IGV </td>
-			<td> <a href="url">https://software.broadinstitute.org/software/igv/</a> </td>
+			<td> <a href="https://software.broadinstitute.org/software/igv/">https://software.broadinstitute.org/software/igv/</a> </td>
 			<td> 2.7.2 </td>
 		</tr>
 		<tr>
 			<td> kallisto </td>
-			<td> <a href="url">https://pachterlab.github.io/kallisto/download</a> </td>
+			<td> <a href="https://pachterlab.github.io/kallisto/download">https://pachterlab.github.io/kallisto/download</a> </td>
 			<td> 0.46.2 </td>
 		</tr>
 		<tr>
 			<td> R </td>
-			<td> <a href="url">https://www.r-project.org/</a> </td>
+			<td> <a href="https://www.r-project.org/">https://www.r-project.org/</a> </td>
 			<td> 4.0.2 </td>
 		</tr>
 		<tr>
 			<td> sleuth </td>
-			<td> <a href="url">https://pachterlab.github.io/sleuth/download</a> </td>
+			<td> <a href="https://pachterlab.github.io/sleuth/download">https://pachterlab.github.io/sleuth/download</a> </td>
 			<td> 0.30.0 </td>
 		</tr>
 		<tr>
 			<td> bedtools </td>
-			<td> <a href="url">http://bedtools.readthedocs.io/en/latest/content/installation.html</a> </td>
+			<td> <a href="http://bedtools.readthedocs.io/en/latest/content/installation.html">http://bedtools.readthedocs.io/en/latest/content/installation.html</a> </td>
 			<td> 2.29.2</td>
 		</tr>
 	</table>
