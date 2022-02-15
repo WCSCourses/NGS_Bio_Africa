@@ -526,15 +526,13 @@ We can see that `kallisto quant` needs us to tell it where our sample reads are.
 >**Note:** Depending on the specifications of your machine, this step may take a long time. While the index is being built, spend time reading through the remaining sections of the tutorial.
 
 ```
-kallisto index -i outputs/GRCh38_ch21_kallisto \
-	data/hsapiens_chr21_transcripts.fa
+kallisto index -i outputs/GRCh38_ch21_kallisto	data/hsapiens_chr21_transcripts.fa
 ```
 
 **Quantify the transcript expression levels for the PT6 sample with 100 bootstrap samples and store the results in the output directory PT6.**
 
 ```
-kallisto quant -i outputs/GRCh38_ch21_kallisto \
-	-o outputs/PT6 -b 100 data/PT6_1.fastq.gz data/PT6_2.fastq.gz
+kallisto quant -i outputs/GRCh38_ch21_kallisto -o outputs/PT6 -b 100 data/PT6_1.fastq.gz data/PT6_2.fastq.gz
 ```
 
 You’ll find your `Kallisto` results in a new output directory which we called **PT6**. Let’s take a look:
@@ -545,9 +543,9 @@ ls outputs/PT6
 
 Running `kallisto quant` generated three output files in our **PT6** folder:
 <ul> 
-	<li> `abundance.h5` - HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length in- formation length.
-	<li> `abundance.tsv` - Plain text file containing abundance estimates (doesn’t contain bootstrap estimates).
-	<li> `run_info.json` - JSON file containing information about the run.
+	<li> **abundance.h5** - HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length in- formation length.
+	<li> **abundance.tsv** - Plain text file containing abundance estimates (doesn’t contain bootstrap estimates).
+	<li> **run_info.json** - JSON file containing information about the run.
 </ul>
 
 >**Note:** When the number of bootstrap values (-b) is very high, `Kallisto` will generate a large amount of data. To help, it outputs bootstrap results in HDF5 format (`abundance.h5`). This file can be read directly by `sleuth`.
@@ -1058,5 +1056,3 @@ There are two things to notice in our dataset:
 	<li> Gene B has twice number reads mapped than gene A, possibly as it’s twice the length
 	<li> Replicate 3 has more reads mapped than any of the other replicates, regardless of which gene we look at.
 <ul>
-
-
