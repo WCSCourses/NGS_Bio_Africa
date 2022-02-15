@@ -253,6 +253,12 @@ For more information, and to find the original version of _**Figure 2**_, please
 
 For the human genome, `HISAT2` will build a single global index and 48,000 local FM indexes. Each of the local indexes represents a 64kb genomic region. The majority of human introns are significantly shorter than 64kb, so >90% of human introns fall into a single local index. Moreover, each of the local indexes overlaps its neighbour by ~1kb which means that it also has the ability to detect reads spanning multiple indexes.
 
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<b>Figure 1.</b> Read types and their relative proportions from 20 million simulated 100-bp reads.<br>Reference: Kim D. et al. Nat Methods. 2015.
+		
+</p>
+
 There are five `HISAT2` RNA-seq read mapping categories:
 <ol type="i">
 	<li> M, exonic read; 
@@ -376,11 +382,11 @@ The <a href="https://software.broadinstitute.org/software/igv">Integrative Genom
 
 The objectives of this part of the tutorial are:
 <ul> 
-	<li> load an annotation file into IGV and explore gene structure
-	<li> load read alignments into IGV and inspect read alignments
+	<li> load an annotation file into `IGV` and explore gene structure
+	<li> load read alignments into `IGV` and inspect read alignments
 </ul>
 
-**Reference:** <a href="http://software.broadinstitute.org/software/igv/UserGuide">Online IGV User Guide</a> - see more information on all IGV features and functions.
+**Reference:** <a href="http://software.broadinstitute.org/software/igv/UserGuide">Online IGV User Guide</a> - see more information on all `IGV` features and functions.
 
 ### 4.1.1. Launch IGV and load data
 
@@ -388,19 +394,215 @@ The objectives of this part of the tutorial are:
 igv &
 ```
 
-This will open the IGV main window. Now, we need to tell IGV which genome we want to use. IGV has many pre-loaded genomes available so load Human (`hg38`).
+This will open the `IGV` main window. Now, we need to tell IGV which genome we want to use. `IGV` has many pre-loaded genomes available so load Human (`hg38`).
 
 ### 4.1.2 Load custom gene annotation file
 We not only want to see where our reads have mapped, but what genes they have mapped to. For this, we have an annotation file in GFF/GTF format. This contains a list of features, their co-ordinates and orientations which correspond to our reference genome.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" alt="" style="width:50%">
-		TEST
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		Example Human Genome Transcript Annotation File
 </p>
 
+Load your annotation file into `IGV`. Go to **“File -> Load from File...”**. Select **“hsapien_grch38.96_chr21.gtf”** and click **“Open”**.
 
+This will load a new track called **“hsapien_grch38.96_chr21.gtf”**. The track is currently shown as a density plot. You will need to zoom in to see individual genes.
+
+Search for the gene _**SI1K**_ by typing *“SI1K”* in the search box to zoom in and centre the view of this gene.
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+To get a clearer view of the gene structure, right click on the annotation track and click **“Expanded”**.
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+In the annotation track, genes are presented as blue boxes and lines. These boxes represent exons, while the lines represent intronic regions. Arrows indicate the direction (or strand) of transcription for each of the genes. Now we have our genome and its annotated features, we just need to read in alignments from our two samples.
+
+### 4.1.3. Load alignment files
+
+Load your alignment file for the **NP2** sample into `IGV`. Go to **”File -> Load from File...”**. Select **“NP2_sorted.bam”** and click **“Open”**.
+
+**Note:** BAM files and their corresponding index files must be in the same directory for `IGV` to load them properly.
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+This will load a new track called **“NP2_sorted.bam”** which contains the read alignments for the **NP2** sample. We can change how we visualise our data by altering the view options. By default, `IGV` will display reads individually so they are compactly arranged. If you were to hover over a read in the default view, you will only get the details for that read. However, if we change our view so that the reads are visualised as pairs, the read pairs will be joined together by line and when we hover over either of the reads, we will get information about both of the reads in that pair.
+
+To view our reads as pairs, right click on the **NP2_sorted.bam** alignment track and click **“View as pairs”**.
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+To condense the alignment, right click on the **NP2_sorted.bam** alignment track and click **“Squished”**.
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+For more information on sorting, grouping and visualising read alignments, see the <a href="http://software.broadinstitute.org/software/igv/UserGuide">IGV User Guide</a>.
+
+Load the alignment from the matched tumor sample **PT2**. Using the search box in the toolbar, go to gene locus: **SI1K**. Look at the coverage range for this viewing window on the left-hand side. While at first glance it may seem like this gene may be differentially expressed between the two conditions, this may not be the case when you consider sequencing depth etc. If a sample has been sequenced to a greater depth we would expect more reads to map there in general.
+
+Here to compare the reads on the same scale, we can use the **"Group Autoscale"** function. First, right click each coverage track and temporarily **"hide"** it. Now by clicking on both coverage tracks, select **"Group Autoscale"**. 
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+Now we compare the two samples:
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+## 4.2. Questions
+
+**Q1: How many CDS features are there in “SIK1B”?** _Hint: Jump to this gene or locus or use unix commands to look at the annotation file "data/hsapien_grch38.96_chr21.gtf"_
+
+**Q2: Does the RNA-seq mapping agree with the gene model in blue?** _Hint: Look at the coverage track and split read alignments._
+
+**Q3: Do you think this gene (SIK1B) is differentially expressed between prostate cancer and normal adjacent tissue? Is looking at the coverage plots alone a reliable way to assess differential expression?** _Hint: Look at the coverage similarities/differences between the normal and cancer sample._
 
 # 5. Transcript quantification with `Kallisto`
+
+## 5.1. Introduction
+
+After visually inspecting the genome alignment, the next step in a typical RNA-Seq analysis is to estimate transcript abundance. To do this, reads are assigned to the transcripts they came from. These assignments are then used to quantify gene or transcript abundance (expression level).
+
+For this tutorial, we are using <a href="https://pachterlab.github.io/kallisto">Kallisto</a> to assign reads to a set of transcript sequences and quantify transcript abundance. Kallisto does not assemble transcripts and cannot identify novel isoforms. So, when a reference transcriptome isn’t available, the transcripts will need to be assembled de novo from the reads. However, for this tutorial, we already have a reference transcriptome available.
+
+The objectives of this part of the tutorial are:
+<ul>
+	<li> use Kallisto to index a transcriptome 
+	<li> use Kallisto to estimate transcript abundance
+</ul>
+
+### 5.1.1. Quantify Transcript Expression with Kallisto
+
+Many of the existing methods used for estimating transcript abundance are alignment-based. This means they rely on mapping reads onto the reference genome. The gene expression levels are then calculated by counting the number of reads overlapping the transcripts. However, read alignment is a computationally and time intensive process. So, in this tutorial, we will be running Kallisto which uses a fast, alignment-free method for transcript quantification.
+
+>**Near-optimal probabilistic RNA-seq quantification.** Nicolas L Bray, Harold Pi- mentel, Páll Melsted and Lior Pachter Nat Biotechnol. 2016 May;34(5):525-7. <a href="doi:10.1038/nbt.3519">doi:10.1038/nbt.3519</a>
+
+Kallisto uses a process called pseudoalignment to make it efficient. Rather than looking at where the reads map, Kallisto uses the compatibility between the reads and transcripts to estimate transcript abundance. Thus, most transcript quantification with Kallisto can be done on a simple laptop (Figure 3).
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<b>Figure 3. Performance of `kallisto` and other methods.</b> (a) Accuracy of `kallisto`, `Cufflinks`, `Sailfish`, `EMSAR`, `eXpress` and `RSEM` on 20 `RSEM` simulations of 30 million 75-bp paired-end reads. (b) Total running time in minutes for processing the 20 simulated data sets of 30 million paired-end reads described in a. Please see the <a href="https://www.nature.com/articles/nbt.3519">Kallisto publication</a> for original figure and more information.
+</p>
+
+#### _Step 1: building a Kallisto index_
+As with alignment-based methods, Kallisto needs an index. To generate the index, Kallisto first builds a transcriptome de Bruijn Graph (TBDG) from all of the k-mers (short sequences of k nu- cleotides) that it finds in the transcriptome. Each node in the graph corresponds to a k-mer and each transcript is represented by its path through the graph. Using these paths, each k-mer is as- signed a k-compatibility class. Some k-mers will be redundant i.e. shared by the same transcripts. These are skipped to make the index compact and quicker to search. A great worked example of this process can be found <a href="https://bioinfo.iric.ca/understanding-how-kallisto-works">here</a>.
+
+The command `kallisto index` can be used to build a Kallisto index from transcript sequences:
+
+```
+kallisto index
+```
+Here we can see the version of `Kallisto` that we’re using (useful for publication methods) and the information that we’ll need to give kallisto index. The only information we need to give kallisto index is the location of our transcript sequences (`data/hsapien_grch38_transcripts.fa`). However, it’s useful to have a meaningful filename for the resulting index. We can add this by using the option `-i` which expects a value, our index prefix (`GRCh38_kallisto`).
+
+#### _Step 2: estimating transcript abundance_
+
+With this Kallisto index, you can use `kallisto quant` to estimate transcript abundances. You will need to run this command separately for each sample:
+
+```
+kallisto quant
+```
+
+We can see that `kallisto quant` needs us to tell it where our sample reads are. Although we don’t have to, it’s usually a good idea to keep the results of each quantification in a different directory. This is because the output filename are always the same (e.g. abundances.tsv). If we ran a second analysis, these could get overwritten. To use a different output directory, we can use the `-o` option. We will also be using the `-b` option for bootstrapping.
+
+**_Bootstrapping:_** Not all reads will be assigned unambiguously to a single transcript. This means there will be “noise” in our abundance estimates where reads can be assigned to multiple transcripts. `Kallisto` quantifies the uncertainty in its abundance estimates using random resampling and replace- ment. This process is called bootstrapping and indicates how reliable the expression estimates are from the observed pseudoalignment. Bootstrap values can be used downstream to distinguish the technical variability from the biological variability in your experiment.
+
+## 5.2. Exercise 4
+
+**Build an index called GRCh38_kallisto from transcript sequences**
+
+**Note:** Depending on the specifications of your machine, this step may take a long time. While the index is being built, spend time reading through the remaining sections of the tutorial.
+
+```
+kallisto index -i outputs/GRCh38_ch21_kallisto \
+	data/hsapiens_chr21_transcripts.fa
+```
+
+**Quantify the transcript expression levels for the PT6 sample with 100 bootstrap samples and store the results in the output directory PT6.**
+
+```
+kallisto quant -i outputs/GRCh38_ch21_kallisto \
+	-o outputs/PT6 -b 100 data/PT6_1.fastq.gz data/PT6_2.fastq.gz
+```
+
+You’ll find your `Kallisto` results in a new output directory which we called **PT6**. Let’s take a look:
+
+```
+ls outputs/PT6
+```
+
+Running `kallisto quant` generated three output files in our **PT6** folder:
+<ul> 
+	<li> `abundance.h5` - HDF5 binary file containing run info, abundance esimates, bootstrap estimates, and transcript length in- formation length.
+	<li> `abundance.tsv` - Plain text file containing abundance estimates (doesn’t contain bootstrap estimates).
+	<li> `run_info.json` - JSON file containing information about the run.
+</ul>
+
+**Note:** When the number of bootstrap values (-b) is very high, `Kallisto` will generate a large amount of data. To help, it outputs bootstrap results in HDF5 format (`abundance.h5`). This file can be read directly by `sleuth`.
+
+The file `PT6/abundance.tsv` will have the abundance estimates for each gene for the **PT6** sample. Let’s take a quick look.
+
+```
+head outputs/PT6/abundance.tsv
+```
+
+In `PT6/abundance.tsv` there are five columns which give us information about the transcript abun- dances for our PT6 sample. 
+<ul>
+	<li> target_id - Unique transcript identifier.
+	<li> length - Number of bases found in exons. 
+	<li> eff_length - Effective length. Uses fragment length distribution to determine the effective number of positions that can be sampled on each transcript.
+	<li> est_counts - Estimated counts. This may not always be an integer as reads which map to multiple transcripts are fractionally assigned to each of the corresponding transcripts. 
+	<li> tpm - Transcripts per million. Normalised value accounting for length and sequence depth bias.
+</li>
+In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.
+
+To get the result for a specific transcript, we can use `grep`:
+
+```
+grep ENST00000399975 outputs/PT6/abundance.tsv
+```
+If we wanted to get the TPM value for a particular transcript, we can use `awk`:
+
+```
+awk -F"\t" '$1=="ENST00000399975.7" {print $5}' outputs/PT6/abundance.tsv
+```
+Use `kallisto` to quantify the expression of the remaining samples. You can either use the command shown above for each individual sample. Alternatively, you can create a `bash` script to iterate through all the samples and quantify transcriptome expression using `Kallisto` (See commands below):
+
+```
+for r1 in data/*_1.fastq.gz
+do
+	echo $r1
+	sample=$(basename $r1)
+	sample=${sample%_1.fastq.gz}
+	echo "Processing sample: "$sample
+	kallisto quant -i outputs/GRCh38_ch21_kallisto \
+		-o outputs/${sample} -b 100 \
+		data/${sample}_1.fastq.gz data/${sample}_2.fastq.gz
+done
+```
+
+## Questions
+**Q1: What k-mer length was used to build the Kallisto index?** _Hint: look at the terminal output from `kallisto index`._
+
+**Q2: How many transcript sequences are there in hsapien_grch38_transcripts.fa?** _Hint: you can use grep or look at the terminal output from `kallisto quant` or in the `run_info.json` files._
+
+**Q3: What is the transcripts per million (TPM) value for ENST00000399975.7 (USP16) in each of the samples?** _Hint: use grep to look at the `abundance.tsv` files._
+
+**Q4: Do you think ENST00000399975.7 is differentially expressed?**
+
+
 
 # 6. Differential Expression Analysis With `Sleuth`
 
