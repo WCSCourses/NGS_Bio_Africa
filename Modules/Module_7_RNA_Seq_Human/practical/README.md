@@ -141,7 +141,7 @@ This dataset can be used to address two research questions namely:
 
 The hypothesis underlying this analysis is that ethnicity-based differences in disease outcomes are driven by genetics define ancestry groups and can be observed at the molecular level.
 
-<h2 style="color:red"> 2.2. Excercise 1 </h2>
+## 2.2. Excercise 1
 
 To illustrate the principles of RNA-seq analysis, you will analyse 12 RNA-seq samples that represent tumour-normal pairs (**prostate tumor PT; normal normal prostate NP**) from six individuals. Three individuals are African American (AA) and three are European American (EA).
 
@@ -212,9 +212,9 @@ zless data/PT6_1.fastq.gz | head
 
 Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FASTQ_format/">https://en.wikipedia.org/wiki/FASTQ_format/</a>.
 
-<h2 style="color:red"> 2.3 Questions </h2>
+## 2.3 Questions
 
-<font color="blue">**Q1: Why is there more than one FASTQ file per sample?**</font> *Hint: think about why there is a PT6_1.fastq.gz and a PT6_2.fastq.gz*
+**Q1: Why is there more than one FASTQ file per sample?** *Hint: think about why there is a PT6_1.fastq.gz and a PT6_2.fastq.gz*
 
 Now let’s move on to mapping these RNA-Seq reads to the genome using `HISAT2`.
 
@@ -263,7 +263,7 @@ There are five `HISAT2` RNA-seq read mapping categories:
 </ol>
 Exoninc reads span only a single exon and represent over 60% of the read mappings in the 20 million 100-bp simulated read dataset.
 
-<h2 style="color:red"> 3.2. Excercise 2 </h2>
+## 3.2. Excercise 2
 
 Be patient, each of the following steps will take a couple of minutes!
 
@@ -358,17 +358,49 @@ hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx \
 	samtools index outputs/NP2_sorted.bam
 ```
 
-<h2 style="color:red;"> 3.3. Questions </h2>
-<font color="blue">**Q1: How many index files were generated when you ran hisat2-build?**</font> *Hint: look for the files with the .ht2 extension*
+## 3.3. Questions
+**Q1: How many index files were generated when you ran hisat2-build?** *Hint: look for the files with the .ht2 extension*
 
-<font color="blue">**Q2: What was the overall alignment rate for the PT2 sample to the reference genome?**</font> *Hint: look at the the output from the HISAT2 commands*
+**Q2: What was the overall alignment rate for the PT2 sample to the reference genome?** *Hint: look at the the output from the HISAT2 commands*
 
-<font color="blue">**Q3: How does the alignment rate compare with that of the NP2 sample?**</font> *Hint: look at the the output from the hisat2 commands*
+**Q3: How does the alignment rate compare with that of the NP2 sample?** *Hint: look at the the output from the hisat2 commands*
 
+**Q4: How many NP2 reads were not aligned to the reference genome?** *Hint: look at the the output from the hisat2 commands, you’re looking for reads (not read pairs) which have aligned 0 times (remember that one read from a pair may map even if the other doesn’t)*
 
-
+The alignments generated here can be used for transcriptome quantification using tools such as feautureCounts or htseq-count and a reference transcriptome to quantify read counts at the gene or transcript level. Here we will use these alignments for visualization and then turn our attention to trancriptome alignments.
 
 # 4. Visualising transcriptomes with `IGV`
+
+## 4.1. Introduction
+The <a href="https://software.broadinstitute.org/software/igv">Integrative Genome Viewer (IGV)</a> allows us to visualise genomic datasets.
+
+The objectives of this part of the tutorial are:
+<ul> 
+	<li> load an annotation file into IGV and explore gene structure
+	<li> load read alignments into IGV and inspect read alignments
+</ul>
+
+**Reference:** <a href="http://software.broadinstitute.org/software/igv/UserGuide">Online IGV User Guide</a> - see more information on all IGV features and functions.
+
+### 4.1.1. Launch IGV and load data
+
+```
+igv &
+```
+
+This will open the IGV main window. Now, we need to tell IGV which genome we want to use. IGV has many pre-loaded genomes available so load Human (`hg38`).
+
+### 4.1.2 Load custom gene annotation file
+We not only want to see where our reads have mapped, but what genes they have mapped to. For this, we have an annotation file in GFF/GTF format. This contains a list of features, their co-ordinates and orientations which correspond to our reference genome.
+
+<p align="center">
+	<figure>
+		<img src="Phele_BW.png" alt="" style="width:100%">
+		<figcaption align="center"> TEST </figcaption>
+	</figure>
+</p>
+
+
 
 # 5. Transcript quantification with `Kallisto`
 
