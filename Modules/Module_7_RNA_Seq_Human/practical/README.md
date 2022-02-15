@@ -557,6 +557,7 @@ head outputs/PT6/abundance.tsv
 ```
 
 In `PT6/abundance.tsv` there are five columns which give us information about the transcript abundances for our PT6 sample. 
+
 <ul>
 	<li> <b>target_id</b> - Unique transcript identifier.
 	<li> <b>length</b> - Number of bases found in exons. 
