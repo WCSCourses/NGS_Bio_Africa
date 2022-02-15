@@ -571,6 +571,7 @@ To get the result for a specific transcript, we can use `grep`:
 ```
 grep ENST00000399975 outputs/PT6/abundance.tsv
 ```
+
 If we wanted to get the TPM value for a particular transcript, we can use `awk`:
 
 ```
