@@ -273,21 +273,21 @@ Be patient, each of the following steps will take a couple of minutes!
 ```
 hisat2-build -h
 ```
+
 This not only tells us the version of `HISAT2` we’re using (essential for publication methods):
 
 But, that we also need to give hisat2-build two pieces of information:
 
->
-```
+>```
 Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
 ```
 These are:
 <ul>
 	<li> `<reference_in>` location of our reference sequence file (PccAS_v3_genome.fa)
 	<li> `<ht2_index_base>` what we want to call our `HISAT2` index files (PccAS_v3_hisat2.idx)
-<ul>
+</ul>
 
-Build a `HISAT2` index for chromosome 21 of the human reference genome using `hisat2-build`:
+**Build a `HISAT2` index for chromosome 21 of the human reference genome using `hisat2-build`:**
 
 ```
 hisat2-build data/hsapien_grch38_chr21.fa outputs/hsapien_grch38_chr21_hisat2.idx
