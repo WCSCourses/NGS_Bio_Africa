@@ -394,10 +394,8 @@ This will open the IGV main window. Now, we need to tell IGV which genome we wan
 We not only want to see where our reads have mapped, but what genes they have mapped to. For this, we have an annotation file in GFF/GTF format. This contains a list of features, their co-ordinates and orientations which correspond to our reference genome.
 
 <p align="center">
-	<figure>
-		<img src="Phele_BW.png" alt="" style="width:100%">
-		<figcaption align="center"> TEST </figcaption>
-	</figure>
+		<img src="images/H3ABioNet_Logo\ \(1\).png" alt="" style="width:100%">
+		TEST
 </p>
 
 
