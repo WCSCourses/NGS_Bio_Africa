@@ -12,7 +12,7 @@ For an introduction to RNA-Seq principles and best practices see:
 
 By the end of this tutorial you can expect to be able to:
 <ul>
-	<li> Align RNA-Seq reads to a reference genome and a transcriptome
+    <li> Align RNA-Seq reads to a reference genome and a transcriptome
 	<li> Visualise transcription data using standard tools
 	<li> Perform QC of NGS transcriptomic data
 	<li> Quantify the expression values of your transcripts using standard tools
@@ -20,13 +20,13 @@ By the end of this tutorial you can expect to be able to:
 
 ## 1.3. Practical Outline
 
-This tutorial comprises the following sections:  
+This tutorial comprises the following sections:
 <ol>
-	<li>Introducing the tutorial dataset  
-	<li>Mapping RNA-Seq reads to the genome with HISAT2  
-	<li>Visualising transcriptomes with IGV  
-	<li>Transcript quantification with Kallisto  
-	<li>Identifying differentially expressed genes with Sleuth  
+    <li>Introducing the tutorial dataset
+	<li>Mapping RNA-Seq reads to the genome with HISAT2
+	<li>Visualising transcriptomes with IGV
+	<li>Transcript quantification with Kallisto
+	<li>Identifying differentially expressed genes with Sleuth
 	<li>Key aspects of differential expression analysis
 </ol>
 
@@ -39,9 +39,9 @@ This tutorial was developed by Victoria Offord and Adam Reid and adapted for use
 This tutorial assumes that you have the following software or packages and their dependencies installed on your computer. The software or packages used in this tutorial may be updated from time to time, so we have given you the version which was used when writing the tutorial.
 
 <div align="center">
-	<table>
-		<tr>
-			<th width="20%"> Package </th>
+    <table>
+        <tr>
+            <th width="20%"> Package </th>
 			<th width="60%"> Link for download/installation instructions </th>
 			<th width="20%"> Version tested</th>
 		</tr>
@@ -111,7 +111,7 @@ wget https://www.dropbox.com/s/8xt8q1o0aej1ry1/hsapiens_chr21_transcripts.fa?dl=
 
 Confirm that you have the following files in the data folder:
 <ul>
-	<li> `hsapiens_chr21_transcript_to_gene.csv`
+    <li> `hsapiens_chr21_transcript_to_gene.csv`
 	<li> `hsapiens_chr21_transcripts.fa`
 </ul>
 
@@ -135,7 +135,7 @@ This published dataset is publicly available from the Gene Expression Omnibus Da
 
 This dataset can be used to address two research questions namely:
 <ul>
-	<li> To what extent can we determine race-specific differential expression in prostate cancer?
+    <li> To what extent can we determine race-specific differential expression in prostate cancer?
 	<li>What genes are differentially expressed between tumour and normal prostate cancer samples, taking into account any race-specific effects?
 </ul>
 
@@ -154,7 +154,7 @@ To illustrate the principles of RNA-seq analysis, you will analyse 12 RNA-seq sa
 			<th> ethnicity </th>
 		</tr>
 		<tr>
-			<td> 487 </td>
+            <td> 487 </td>
 			<td> NP4 </td>
 			<td> PT4 </td>
 			<td> AA </td>
@@ -358,7 +358,7 @@ Now, repeat this process of mapping, converting (SAM to BAM), sorting and indexi
 
 ```
 hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx \
-	-1 data/NP2_1.fastq.gz -2 data/NP2_2.fastq.gz | \
+    -1 data/NP2_1.fastq.gz -2 data/NP2_2.fastq.gz | \
 	samtools view -S -b - | \
 	samtools sort -o outputs/NP2_sorted.bam - &&
 	samtools index outputs/NP2_sorted.bam
@@ -437,13 +437,13 @@ This will load a new track called **“NP2_sorted.bam”** which contains the re
 To view our reads as pairs, right click on the **NP2_sorted.bam** alignment track and click **“View as pairs”**.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 To condense the alignment, right click on the **NP2_sorted.bam** alignment track and click **“Squished”**.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 For more information on sorting, grouping and visualising read alignments, see the <a href="http://software.broadinstitute.org/software/igv/UserGuide">IGV User Guide</a>.
@@ -453,13 +453,13 @@ Load the alignment from the matched tumor sample **PT2**. Using the search box i
 Here to compare the reads on the same scale, we can use the **"Group Autoscale"** function. First, right click each coverage track and temporarily **"hide"** it. Now by clicking on both coverage tracks, select **"Group Autoscale"**. 
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 Now we compare the two samples:
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 ## 4.2. Questions
@@ -493,8 +493,8 @@ Many of the existing methods used for estimating transcript abundance are alignm
 Kallisto uses a process called pseudoalignment to make it efficient. Rather than looking at where the reads map, Kallisto uses the compatibility between the reads and transcripts to estimate transcript abundance. Thus, most transcript quantification with Kallisto can be done on a simple laptop (Figure 3).
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
-		<b>Figure 3.</b> Performance of `kallisto` and other methods. (a) Accuracy of `kallisto`, `Cufflinks`, `Sailfish`, `EMSAR`, `eXpress` and `RSEM` on 20 `RSEM` simulations of 30 million 75-bp paired-end reads. (b) Total running time in minutes for processing the 20 simulated data sets of 30 million paired-end reads described in a. Please see the <a href="https://www.nature.com/articles/nbt.3519">Kallisto publication</a> for original figure and more information.
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <b>Figure 3.</b> Performance of `kallisto` and other methods. (a) Accuracy of `kallisto`, `Cufflinks`, `Sailfish`, `EMSAR`, `eXpress` and `RSEM` on 20 `RSEM` simulations of 30 million 75-bp paired-end reads. (b) Total running time in minutes for processing the 20 simulated data sets of 30 million paired-end reads described in a. Please see the <a href="https://www.nature.com/articles/nbt.3519">Kallisto publication</a> for original figure and more information.
 </p>
 
 #### _Step 1: building a Kallisto index_
@@ -584,12 +584,12 @@ Use `kallisto` to quantify the expression of the remaining samples. You can eith
 ```
 for r1 in data/*_1.fastq.gz
 do
-	echo $r1
+    echo $r1
 	sample=$(basename $r1)
 	sample=${sample%_1.fastq.gz}
 	echo "Processing sample: "$sample
 	kallisto quant -i outputs/GRCh38_ch21_kallisto \
-		-o outputs/${sample} -b 100 \
+        -o outputs/${sample} -b 100 \
 		data/${sample}_1.fastq.gz data/${sample}_2.fastq.gz
 done
 ```
@@ -637,10 +637,9 @@ For DEA, sleuth essentially tests two models, one which assumes that the abundan
 
 We want to use sleuth to investigate transcript differential expresssion between high grade prostate cancer and matched noncancer adjacent tissue samples in the context of ethnicity differences between African American (AA) and European American (EA) individuals.
 
-**Before you begin:**
-
+**Before you begin**
+Configure the option for a web browser for R at the command line:
 ```
-# Configure the option for a web browser for R at the command line
 export R_BROWSER='firefox'
 ```
 
@@ -713,9 +712,9 @@ Here it is important to specify the model design where you enumerate the covaria
 
 Here we consider the following covariates:
 <ul>
-	<li> **individualID:** unique identifier for each individual
-	<li> **sample_type:** normal vs. cancer (tumor)
-	<li> **ethnicity:** African American (AA) vs/ European American (EA)
+	<li> <b>individualID:</b> unique identifier for each individual
+	<li> <b>sample_type:</b> normal vs. cancer (tumor)
+	<li> <b>ethnicity:</b> African American (AA) vs/ European American (EA)
 </ul>
 
 Create design matrix specification:
@@ -726,7 +725,8 @@ design <- ~ individualID + sample_type + ethnicity
 
 This statement is specifying how we want to model the variation in gene expression. This statement is loosely saying: we expect that the level of expression of a gene is dependent on:
 <ul>
-	<li> the individual in whom expression is measured * whether we are looking at a cancer or normal sample 
+	<li> the individual in whom expression is measured 
+    <li> whether we are looking at a cancer or normal sample 
 	<li> the ethnicity of the individual from whom the sample is collected
 </ul>
 
@@ -740,13 +740,13 @@ Create sleuth object (a group of kallistos) for analysis:
 
 ```
 so <- sleuth_prep(sample_to_covariates=s2c, # sample_to_covariates data frame
-			full_model=design, # model design matrix
-			target_mapping = t2g,  # transcript to gene annotations
-			aggregation_column = "ensembl_gene_id",
-			extra_bootstrap_summary = TRUE,
-			read_bootstrap_tpm = TRUE,
-			transformation_function = function(x) log2(x + 0.5),
-			num_cores=1)
+    full_model=design, # model design matrix
+    target_mapping = t2g,  # transcript to gene annotations
+    aggregation_column = "ensembl_gene_id",
+    extra_bootstrap_summary = TRUE,
+    read_bootstrap_tpm = TRUE,
+    transformation_function = function(x) log2(x + 0.5),
+    num_cores=1)
 ```
 
 >_**Getting Help In R**_<br>
@@ -774,19 +774,19 @@ Likelihood ratio test between the two models tests for ancestry-related differen
 ```
 so <- sleuth_lrt(so, 'reduced', 'full')
 sleuth_table_tx <- sleuth_results(obj = so,
-										 test = 'reduced:full',
-										 head(sleuth_table_tx, 5)
-										 test_type ='lrt',
-										 show_all = FALSE,
-										 pval_aggregate = FALSE)
+    test = 'reduced:full',
+    head(sleuth_table_tx, 5)
+	test_type ='lrt',
+	show_all = FALSE,
+	pval_aggregate = FALSE)
 head(sleuth_table_tx, 5)
 ```
 
 **What do the results mean?**
 Here we see a table with the top 5 transcripts in the differential expression analysis results table. The key columns are:
 <ul>
-	<li> **pval** - _p_-value of the chosen model 
-	<li> **qval** - false discovery rate adjusted p-value
+	<li> <b>pval</b> - _p_-value of the chosen model 
+	<li> <b>qval</b> - false discovery rate adjusted p-value
 </ul>
 
 A rule of thumb is to consider a gene significant if the _q_-value is less than a prespecified threshold (typically 5% or 0.05).
@@ -811,9 +811,9 @@ Paired sample view:
 library(ggplot2)
 df <- get_bootstrap_summary(so , topDE_hit)
 ggplot(data = df, aes(x = sample_type, ymin = min, lower = lower,
-		middle = mid, upper = upper, ymax = max)) +
-		geom_boxplot(stat="identity", aes(fill=ethnicity)) +
-		facet_wrap(~individualID)
+    middle = mid, upper = upper, ymax = max)) +
+    geom_boxplot(stat="identity", aes(fill=ethnicity)) +
+    facet_wrap(~individualID)
 ```
 
 Here we see visually that there is a difference in the expression between the cancer and normal sample for European American (EA) samples (3/3) but not for African American (AA) samples. In fact it seems this transcript is not expressed at all in 2/3 AA samples. Overall this observed difference is not statistically significant. There are a few possible explanations some of which could be: 
@@ -844,8 +844,8 @@ Summary table:
 
 ```
 de_sampletype <- sleuth_results(so, test='sample_typetumor',
-										test_type = "wt", which_model = "full", pval_aggregate = F)
-										head(de_sampletype, 5)
+    test_type = "wt", which_model = "full", pval_aggregate = F)
+    head(de_sampletype, 5)
 ```
 
 Visualize results:
@@ -853,9 +853,9 @@ Visualize results:
 ```
 df <- get_bootstrap_summary(so , de_sampletype[1,'target_id'])
 ggplot(data = df, aes(x = sample_type, ymin = min, lower = lower,
-		middle = mid, upper = upper, ymax = max)) +
-		geom_boxplot(stat="identity", aes(fill=ethnicity)) +
-		facet_wrap(~individualID)
+    middle = mid, upper = upper, ymax = max)) +
+    geom_boxplot(stat="identity", aes(fill=ethnicity)) +
+    facet_wrap(~individualID)
 ```
 
 In this comparison, we see strong statistically significant differences between sample types independent of ethnicity, suggesting that the normal-vs-disease differences in expression are more pronounced than ethnicity-related changes.
@@ -893,7 +893,7 @@ First, lets take a look at a summary of our dataset.
 In the Shiny App that has been launched, click on **“summaries -> processed data”**.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 Notice that the number of reads mapping differs quite a bit across samples? This is why we QC our data. >90% of the reads mapped to the genome, but only 15-25% are assigned to the transcriptome. This suggests that there may be some residual ribosomal RNA left over from the RNA preparation. It’s not a problem if we still have enough reads and replicates for our analysis.
@@ -905,7 +905,7 @@ In some cases, we can identify samples which don’t agree with other replicates
 In the Shiny App that has been launched, click on **“maps -> PCA”**.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 Here we do not see clear condition-related clusters as we might expect. Indeed samples PT4 and NP6 look like potential outliers. There is perhaps an unaccounted for technical batch effect in these data or those samples represent unmeasured biological signal. Further investigation will be needed included conversations with data generators where appropriate.
@@ -917,7 +917,7 @@ We used the output from `Kallisto` to identify DE transcripts using `sleuth`. Le
 To see the results of the `sleuth` DEA, go to **“analyses -> test table”**.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 The important column here is the **_q_-value**. By default, the table is sorted by the _q_-value. We can see that the top transcripts do not meet the _q_-value threshold for statistical significance for this comparison.
@@ -925,7 +925,7 @@ The important column here is the **_q_-value**. By default, the table is sorted 
 To visualize a particular transcript of interest, Go to **“analyses -> transcript view”**. Enter **<TranscriptID>** into the **“transcript”** search box. Click **“view”**.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 On the left you have the abundances for the normal and tumour replicates from AAs and on the right, the EA replicates. We can see that this transcript is differentially expressed between tumour and normal in the AAs but not the EAs. However, while we see a visual difference, the q-value (~0.4) is not statistically significant, suggesting that there may be subtle ancestry-specific effects but additional replicates would be required to test if this is the case.
@@ -995,8 +995,8 @@ Raw reads counts are the number of reads originating from each transcript which 
 </ul>
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
-		<b>Figure 4.</b> Effect of sequencing depth and gene length on raw read counts.
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <b>Figure 4.</b> Effect of sequencing depth and gene length on raw read counts.
 </p>
 
 >Look at the top part of Figure 4. In which sample, X or Y, is the gene more highly expressed?
@@ -1014,7 +1014,7 @@ Reads per kilobase (of exon) per million (reads mapped) or RPKM is a within samp
 
 To calculate RPKM, you first normalise by sequencing depth and then by gene/transcript length.
 <ol>
-	<li> **Get your per million scaling factor** <br> Count up the total number of reads which have been assigned (mapped) in the sample. Divide this number by 1,000,000 (1 million) to get your per million scaling factor (N).
+    <li> **Get your per million scaling factor** <br> Count up the total number of reads which have been assigned (mapped) in the sample. Divide this number by 1,000,000 (1 million) to get your per million scaling factor (N).
 	<li> **Normalise for sequencing depth** <br> Divide the number of reads which have been assigned to the gene or transcript (C) by the per million scaling factor you calculated in step 1. This will give you your reads per million (RPM).
 	<li> **Get your per kilobase scaling factor** <br> Divide the total length of the exons in your transcript or gene in base pairs by 1,000 (1 thou- sand) to get your per kilobase scaling factor (L).
 	<li> **Normalise for length** <br> Divide your RPM value from step 2 by your per kilobase scaling factor (length of the gene/- transcript in kilobases) from step 3. This will give you your reads per kilobase per million or RPKM.
@@ -1024,7 +1024,7 @@ This can be simplified into the following equation:
 
 <p align="center">
 	<img src="https://render.githubusercontent.com/render/math?math=RPKM = \frac{C}{LN}">
-
+</p>
 
 Where:
 <ul>
@@ -1036,8 +1036,10 @@ Where:
 ### 8.2.2 Fragments per kilobase per million (FPKM)
 
 Fragments per kilobase per million or FPKM is essentially the same as RPKM except that: 
-• RPKM is designed for single-end RNA-Seq experiments
-• FPKM is designed for paired-end RNA-Seq experiments
+<ul>
+    <li> RPKM is designed for single-end RNA-Seq experiments
+    <li> FPKM is designed for paired-end RNA-Seq experiments
+</ul>
 
 In a paired-end RNA-Seq experiment, two reads may be assigned to a single fragment (in any ori- entation). Also, in some cases, only one of those reads will be assigned to a fragment (singleton). The only difference between RPKM and FPKM is that FPKM takes into consideration that two reads may be assigned to the same fragment.
 
