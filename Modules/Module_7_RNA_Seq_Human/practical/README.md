@@ -821,6 +821,7 @@ Here we see visually that there is a difference in the expression between the ca
 	<li> we have not accounted for all the possible technical variation in the data (e.g. we did not model batch variables)
 	<li> there may be some sample QC issues that need to be double checked
 </ul>
+
 >Can you think of any other reasons?
 
 **Wald’s Test: testing for significant differences between conditions.**
