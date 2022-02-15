@@ -739,13 +739,13 @@ Create sleuth object (a group of kallistos) for analysis:
 
 ```
 so <- sleuth_prep(sample_to_covariates=s2c, # sample_to_covariates data frame
-						full_model=design, # model design matrix
-						target_mapping = t2g,  # transcript to gene annotations
-						aggregation_column = "ensembl_gene_id",
-						extra_bootstrap_summary = TRUE,
-						read_bootstrap_tpm = TRUE,
-						transformation_function = function(x) log2(x + 0.5),
-						num_cores=1)
+					full_model=design, # model design matrix
+					target_mapping = t2g,  # transcript to gene annotations
+					aggregation_column = "ensembl_gene_id",
+					extra_bootstrap_summary = TRUE,
+					read_bootstrap_tpm = TRUE,
+					transformation_function = function(x) log2(x + 0.5),
+					num_cores=1)
 ```
 
 >_**Getting Help In R**_<br>
