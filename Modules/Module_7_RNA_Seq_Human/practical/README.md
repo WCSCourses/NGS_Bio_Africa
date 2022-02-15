@@ -775,8 +775,7 @@ Likelihood ratio test between the two models tests for ancestry-related differen
 so <- sleuth_lrt(so, 'reduced', 'full')
 sleuth_table_tx <- sleuth_results(obj = so,
     test = 'reduced:full',
-    head(sleuth_table_tx, 5)
-	test_type ='lrt',
+    test_type ='lrt',
 	show_all = FALSE,
 	pval_aggregate = FALSE)
 head(sleuth_table_tx, 5)
