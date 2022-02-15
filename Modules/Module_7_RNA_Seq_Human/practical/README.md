@@ -2,11 +2,11 @@
 
 ## 1.1. Introduction
 
-RNA sequencing (RNA-Seq) is a high-throughput method used to profile the transcriptome, quan- tify gene expression and discover novel RNA molecules or splice variants. This tutorial uses RNA sequencing of human cancer samples to walk you through transcriptome alignment, visualisation, simple quality control checks and shows you how to profile transcriptomic differences by identifying differentially expressed genes.
+RNA sequencing (RNA-Seq) is a high-throughput method used to profile the transcriptome, quantify gene expression and discover novel RNA molecules or splice variants. This tutorial uses RNA sequencing of human cancer samples to walk you through transcriptome alignment, visualisation, simple quality control checks and shows you how to profile transcriptomic differences by identifying differentially expressed genes.
 
 For an introduction to RNA-Seq principles and best practices see:
 
-> **A survey of best practices for RNA-Seq data analysis.** Ana Conesa, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra Cervera, Andrew McPherson, Michał Wojciech Szcześniak, Daniel J. Gaffney, Laura L. Elo, Xue- gong Zhang and Ali Mortazavi Genome Biol. 2016 Jan 26;17:13 doi:10.1186/s13059-016-0881-8
+> **A survey of best practices for RNA-Seq data analysis.** Ana Conesa, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra Cervera, Andrew McPherson, Michał Wojciech Szcześniak, Daniel J. Gaffney, Laura L. Elo, Xuegong Zhang and Ali Mortazavi Genome Biol. 2016 Jan 26;17:13 doi:10.1186/s13059-016-0881-8
 
 ## 1.2. Learning Outcomes
 
@@ -125,9 +125,9 @@ You are ready to go. Now, let’s head to the first section of this tutorial whi
 
 Prostate cancer incidence and the risk of dying from the disease is higher in **African American (AA)** men compared to **European American (EA)** men (<a href="https://cancerprogressreport.aacr.org/disparities/">American Cancer Association for Cancer Research AACR Cancer Disparities Report 2020</a>). These disparities are thought to be caused by a complex interplay between environmental and lifestyle factors as well as biological factors related to ancestry genetics. The molecular basis for these disparities is not well understood.  
 
-Working through this tutorial, you will analyse RNA-sequencing data from high grade prostate can- cer and matched noncancer adjacent tissue samples from a cohort of ethnically diverse men (AAs and EAs) to investigate the molecular differences between these groups.
+Working through this tutorial, you will analyse RNA-sequencing data from high grade prostate cancer and matched noncancer adjacent tissue samples from a cohort of ethnically diverse men (AAs and EAs) to investigate the molecular differences between these groups.
 The dataset you will be using for this tutorial have been taken from the following publication:
-> **Exogenous IL-6 induces mRNA splice variant MBD2_v2 to promote stemness in TP53 wild-type, African American PCa cells.** Teslow, E. A., Bao, B., Dyson, G., Leg- endre, C., Mitrea, C., Sakr, W., Carpten, J. D., Powell, I., & Bollig-Fischer, A. (2018). Molecular oncology, 12(7), 1138–1152. <a href="https://doi.org/10.1002/1878-0261.12316">https://doi.org/10.1002/1878-0261.12316</a>
+> **Exogenous IL-6 induces mRNA splice variant MBD2_v2 to promote stemness in TP53 wild-type, African American PCa cells.** Teslow, E. A., Bao, B., Dyson, G., Legendre, C., Mitrea, C., Sakr, W., Carpten, J. D., Powell, I., & Bollig-Fischer, A. (2018). Molecular oncology, 12(7), 1138–1152. <a href="https://doi.org/10.1002/1878-0261.12316">https://doi.org/10.1002/1878-0261.12316</a>
 
 This published dataset is publicly available from the Gene Expression Omnibus Database (Accession Number: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE104131">GSE104131</a>) and has been modified and adapted for use in these education materials.
 
@@ -257,7 +257,6 @@ For the human genome, `HISAT2` will build a single global index and 48,000 local
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 		<b>Figure 2.</b> Read types and their relative proportions from 20 million simulated 100-bp reads.<br>Reference: Kim D. et al. Nat Methods. 2015.
-		
 </p>
 
 There are five `HISAT2` RNA-seq read mapping categories:
@@ -320,7 +319,7 @@ Here we can see that `HISAT2` needs several parameters so that it can do the map
 >hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r>} [-S <sam>]
 >```
 ><ul>
->	<li> -x <ht2-idx> the prefix that we chose for our index files with hisat2-build (Pc- cAS_v3_hisat2.idx)
+>	<li> -x <ht2-idx> the prefix that we chose for our index files with hisat2-build (PccAS_v3_hisat2.idx)
 >	<li> {-1 <m1> -2 <m2> | -U <r>} the left (-1) and right (-2) read files for the sample (MT1_1.fastq and MT1_2.fastq respectively
 >	<li> [-S <sam>] the name of the file we want to write the output alignment to (MT1.sam) as, by default, hisat2 will print the results to the terminal (stdout)
 
@@ -494,7 +493,7 @@ The objectives of this part of the tutorial are:
 
 Many of the existing methods used for estimating transcript abundance are alignment-based. This means they rely on mapping reads onto the reference genome. The gene expression levels are then calculated by counting the number of reads overlapping the transcripts. However, read alignment is a computationally and time intensive process. So, in this tutorial, we will be running Kallisto which uses a fast, alignment-free method for transcript quantification.
 
->**Near-optimal probabilistic RNA-seq quantification.** Nicolas L Bray, Harold Pi- mentel, Páll Melsted and Lior Pachter Nat Biotechnol. 2016 May;34(5):525-7. <a href="doi:10.1038/nbt.3519">doi:10.1038/nbt.3519</a>
+>**Near-optimal probabilistic RNA-seq quantification.** Nicolas L Bray, Harold Pimentel, Páll Melsted and Lior Pachter Nat Biotechnol. 2016 May;34(5):525-7. <a href="doi:10.1038/nbt.3519">doi:10.1038/nbt.3519</a>
 
 Kallisto uses a process called pseudoalignment to make it efficient. Rather than looking at where the reads map, Kallisto uses the compatibility between the reads and transcripts to estimate transcript abundance. Thus, most transcript quantification with Kallisto can be done on a simple laptop (Figure 3).
 
@@ -505,7 +504,7 @@ Kallisto uses a process called pseudoalignment to make it efficient. Rather than
 
 #### _Step 1: building a Kallisto index_
 
-As with alignment-based methods, Kallisto needs an index. To generate the index, Kallisto first builds a transcriptome de Bruijn Graph (TBDG) from all of the k-mers (short sequences of k nu- cleotides) that it finds in the transcriptome. Each node in the graph corresponds to a k-mer and each transcript is represented by its path through the graph. Using these paths, each k-mer is as- signed a k-compatibility class. Some k-mers will be redundant i.e. shared by the same transcripts. These are skipped to make the index compact and quicker to search. A great worked example of this process can be found <a href="https://bioinfo.iric.ca/understanding-how-kallisto-works">here</a>.
+As with alignment-based methods, Kallisto needs an index. To generate the index, Kallisto first builds a transcriptome de Bruijn Graph (TBDG) from all of the k-mers (short sequences of k nucleotides) that it finds in the transcriptome. Each node in the graph corresponds to a k-mer and each transcript is represented by its path through the graph. Using these paths, each k-mer is assigned a k-compatibility class. Some k-mers will be redundant i.e. shared by the same transcripts. These are skipped to make the index compact and quicker to search. A great worked example of this process can be found <a href="https://bioinfo.iric.ca/understanding-how-kallisto-works">here</a>.
 
 The command `kallisto index` can be used to build a Kallisto index from transcript sequences:
 
@@ -524,7 +523,7 @@ kallisto quant
 
 We can see that `kallisto quant` needs us to tell it where our sample reads are. Although we don’t have to, it’s usually a good idea to keep the results of each quantification in a different directory. This is because the output filename are always the same (e.g. abundances.tsv). If we ran a second analysis, these could get overwritten. To use a different output directory, we can use the `-o` option. We will also be using the `-b` option for bootstrapping.
 
-**_Bootstrapping:_** Not all reads will be assigned unambiguously to a single transcript. This means there will be “noise” in our abundance estimates where reads can be assigned to multiple transcripts. `Kallisto` quantifies the uncertainty in its abundance estimates using random resampling and replace- ment. This process is called bootstrapping and indicates how reliable the expression estimates are from the observed pseudoalignment. Bootstrap values can be used downstream to distinguish the technical variability from the biological variability in your experiment.
+**_Bootstrapping:_** Not all reads will be assigned unambiguously to a single transcript. This means there will be “noise” in our abundance estimates where reads can be assigned to multiple transcripts. `Kallisto` quantifies the uncertainty in its abundance estimates using random resampling and replacement. This process is called bootstrapping and indicates how reliable the expression estimates are from the observed pseudoalignment. Bootstrap values can be used downstream to distinguish the technical variability from the biological variability in your experiment.
 
 ## 5.2. Exercise 4
 
@@ -835,7 +834,7 @@ Here we see visually that there is a difference in the expression between the ca
 
 **Wald’s Test: testing for significant differences between conditions.**
 
-You can look at your sleuth object to see what models you have fit and their design matrix specifi- cation like this:
+You can look at your sleuth object to see what models you have fit and their design matrix specification like this:
 
 ```
 models(so)
@@ -950,7 +949,7 @@ On the left you have the abundances for the normal and tumour replicates from AA
 ## 7.1. Replicates and power
 **Biological replicates** are parallel measurements of biologically distinct samples that capture random biological variation, which may itself be a subject of study or a noise source.
 
-**Technical replicates** are repeated measurements of the same sample that represent in- dependent measures of the random noise associated with protocols or equipment
+**Technical replicates** are repeated measurements of the same sample that represent independent measures of the random noise associated with protocols or equipment
 
 >Blainey, Paul et al. **“Points of significance: replication.”** Nature methods vol. 11,9 (2014): 879-80. <a href="doi:10.1038/nmeth.3091">doi:10.1038/nmeth.3091</a>
 
@@ -1025,8 +1024,8 @@ To calculate RPKM, you first normalise by sequencing depth and then by gene/tran
 <ol>
     <li> <b>Get your per million scaling factor</b> <br> Count up the total number of reads which have been assigned (mapped) in the sample. Divide this number by 1,000,000 (1 million) to get your per million scaling factor (N).
 	<li> <b>Normalise for sequencing depth</b> <br> Divide the number of reads which have been assigned to the gene or transcript (C) by the per million scaling factor you calculated in step 1. This will give you your reads per million (RPM).
-	<li> <b>Get your per kilobase scaling factor</b> <br> Divide the total length of the exons in your transcript or gene in base pairs by 1,000 (1 thou- sand) to get your per kilobase scaling factor (L).
-	<li> <b>Normalise for length</b> <br> Divide your RPM value from step 2 by your per kilobase scaling factor (length of the gene/- transcript in kilobases) from step 3. This will give you your reads per kilobase per million or RPKM.
+	<li> <b>Get your per kilobase scaling factor</b> <br> Divide the total length of the exons in your transcript or gene in base pairs by 1,000 (1 thousand) to get your per kilobase scaling factor (L).
+	<li> <b>Normalise for length</b> <br> Divide your RPM value from step 2 by your per kilobase scaling factor (length of the gene/transcript in kilobases) from step 3. This will give you your reads per kilobase per million or RPKM.
 </ol>
 
 This can be simplified into the following equation:
@@ -1050,7 +1049,7 @@ Fragments per kilobase per million or FPKM is essentially the same as RPKM excep
     <li> FPKM is designed for paired-end RNA-Seq experiments
 </ul>
 
-In a paired-end RNA-Seq experiment, two reads may be assigned to a single fragment (in any ori- entation). Also, in some cases, only one of those reads will be assigned to a fragment (singleton). The only difference between RPKM and FPKM is that FPKM takes into consideration that two reads may be assigned to the same fragment.
+In a paired-end RNA-Seq experiment, two reads may be assigned to a single fragment (in any orientation). Also, in some cases, only one of those reads will be assigned to a fragment (singleton). The only difference between RPKM and FPKM is that FPKM takes into consideration that two reads may be assigned to the same fragment.
 
 ### 8.2.3 Transcripts per million (TPM)
 Calculating the transcripts per million or TPM is a similar process to RPKM and FPKM. The main difference is that you will first normalise for length bias and then for sequencing depth bias. In a nut shell, we are swapping the order of normalisations.
