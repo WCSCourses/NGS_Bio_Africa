@@ -604,18 +604,18 @@ Run all the following commands within the `R` console - copy and paste the comma
 </ul>
 
 Be sure to navigate to the correct working directory within `R`:  
-```
+```r
 setwd(“/home/manager/course_data/rna_seq_human”)
 ```
 
 Load sleuth package:  
-```
+```r
 library(sleuth)
 library(dplyr)
 ```
 
 Load sample metadata:  
-```
+```r
 sample_info <- read.table(file="data/sample_info.txt", header = T, sep = "\t")
 sample_inf
 ```
@@ -623,7 +623,7 @@ sample_inf
 >_**How many individual patients have been sequenced in this experiment?**_ Turn to your neighbor and discuss if you are unsure of the answer. _Hint: Look closely at the patientID column._
 
 Next, create a vector of file paths pointing to kallisto quantification results:  
-```
+```r
 kallisto_result_directory <-  sapply(X = sample_info$sample, function(id) file.path('outputs', id))
 kallisto_result_directory
 ```
