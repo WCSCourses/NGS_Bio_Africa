@@ -529,6 +529,46 @@ The PCA plot allow us to assess the similarities and differences between the stu
 plotPCA(rldTxi, intgroup = c("phenotype"))
 ```
 
+## 4.2. Result Generation and Exploration
+**Get summary of differentially expression results:**  
+The results function of `DESeq2` is used to get the the results of the `DESeq` function ranked by metrics to use to determine which genes are significantly differentially expressed.   
+```
+summary(results(ddsTxi))
+```
+
+**Apply LFC threshold and adjusted p-value cutoffs to get significantly differentially expressed genes:**   
+A significance threshold (`FDR`, or `alpha`) and `log2FC` threshold can be passed to the results function to filter non-signficant differentially expressed genes.   
+```
+resTxi <- results(ddsTxi, alpha=0.05, lfcThreshold=0.5,altHypothesis="greaterAbs")
+summary(resTxi)
+```
+
+**Get significantly differentially expressed genes:**   
+```
+sigTxi <- resTxi[!is.na(resTxi$padj) & resTxi$padj < 0.05 & abs(resTxi$log2FoldChange) >= 0.5,]
+sigTxi
+```
+
+**Visualize your differentially expressed genes:**  
+Extract the `rlog` transformed expression values for the significant gene to use for the heatmap.  
+```
+matrixTxi <- assay(rldTxi)[rownames(sigTxi), ]
+matrixTxi
+```
+
+**Plot heatmap:**  
+```
+pheatmap(matrixTxi, cluster_rows=FALSE, show_rownames=TRUE, cluster_cols=TRUE)
+```
+
+## 4.3. Questions
+**Q1. How many genes are up- and down-regulated between the resistant and sensitive isolates of the Mycobacterium tuberculosis?** _Hint:use the summary function on the DESeq results object._
+
+**Q2: How many genes are significantly differentially expressed (i.e., meet the LFC threshold and adjusted p-value cutoffs) between the resistant and sensitive isolates of the Mycobacterium tuberculosis? Name these genes.**
+
+**Q3. What are the _p_-values for the significantly differentially expressed genes?**
+
+
 # 5. Key Aspects of Differential Expression Analysis
 
 ## 5.1. Replicates and power
