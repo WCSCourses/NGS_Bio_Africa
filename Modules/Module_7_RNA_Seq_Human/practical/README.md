@@ -534,7 +534,7 @@ awk -F"\t" '$1=="ENST00000399975.7" {print $5}' outputs/PT6/abundance.tsv
 ```
 
 Use `kallisto` to quantify the expression of the remaining samples. You can either use the command shown above for each individual sample. Alternatively, you can create a `bash` script to iterate through all the samples and quantify transcriptome expression using `Kallisto` (See commands below):  
-```r
+```bash
 for r1 in data/*_1.fastq.gz
 do
     echo $r1
