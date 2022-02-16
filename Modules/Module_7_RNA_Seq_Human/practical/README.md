@@ -1,15 +1,11 @@
 # 1. RNA-Seq EAxpression Analysis
-
 ## 1.1. Introduction
-
 RNA sequencing (RNA-Seq) is a high-throughput method used to profile the transcriptome, quantify gene expression and discover novel RNA molecules or splice variants. This tutorial uses RNA sequencing of human cancer samples to walk you through transcriptome alignment, visualisation, simple quality control checks and shows you how to profile transcriptomic differences by identifying differentially expressed genes.
 
-For an introduction to RNA-Seq principles and best practices see:
-
+For an introduction to RNA-Seq principles and best practices see:  
 > **A survey of best practices for RNA-Seq data analysis.** Ana Conesa, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra Cervera, Andrew McPherson, Michał Wojciech Szcześniak, Daniel J. Gaffney, Laura L. Elo, Xuegong Zhang and Ali Mortazavi Genome Biol. 2016 Jan 26;17:13 doi:10.1186/s13059-016-0881-8
 
 ## 1.2. Learning Outcomes
-
 By the end of this tutorial you can expect to be able to:
 <ul>
     <li> Align RNA-Seq reads to a reference genome and a transcriptome
@@ -19,7 +15,6 @@ By the end of this tutorial you can expect to be able to:
 </ul>
 
 ## 1.3. Practical Outline
-
 This tutorial comprises the following sections:
 <ol>
     <li>Introducing the tutorial dataset
@@ -31,11 +26,9 @@ This tutorial comprises the following sections:
 </ol>
 
 ## 1.4. Authors
-
 This tutorial was developed by Victoria Offord and Adam Reid and adapted for use here by Nyasha Chambwe.
 
 ## 1.5. Prerequisites
-
 This tutorial assumes that you have the following software or packages and their dependencies installed on your computer. The software or packages used in this tutorial may be updated from time to time, so we have given you the version which was used when writing the tutorial.
 
 <div align="center">
@@ -84,26 +77,21 @@ This tutorial assumes that you have the following software or packages and their
 </div>
 
 ## 1.6. Where can I find the tutorial data?
-
-You can find the data for this tutorial by typing the following command in a new terminal window:
-
+You can find the data for this tutorial by typing the following command in a new terminal window:  
 ```
 cd /home/manager/course_data/rna_seq_human
 ```
 
-Within the module directory, create a directory to write the outputs you will generate during this practical using the following command:
-
+Within the module directory, create a directory to write the outputs you will generate during this practical using the following command:  
 ```
 mkdir -p outputs
 ```
 
 ### 1.6.1. Download Suppplemental Datasets
-
 **Internet Access Required**  
 We will need to download two additional annotation files for this tutorial. Follow these instructions:
 
 **Use wget to download supplemental data files:**  
-
 ```
 wget https://www.dropbox.com/s/nfuea7ik6wlidum/hsapiens_chr21_transcript_to_gene.csv?dl=1 -O data/hsapiens_chr21_transcript_to_gene.csv
 wget https://www.dropbox.com/s/8xt8q1o0aej1ry1/hsapiens_chr21_transcripts.fa?dl=1 -O data/hsapiens_chr21_transcripts.fa
@@ -122,17 +110,16 @@ ls -lhr data/hsapiens_chr21_transcript*
 You are ready to go. Now, let’s head to the first section of this tutorial which will be introducing the tutorial dataset.
 
 # 2. Introducing The Tutorial Dataset
-
-Prostate cancer incidence and the risk of dying from the disease is higher in **African American (AA)** men compared to **European American (EA)** men (<a href="https://cancerprogressreport.aacr.org/disparities/">American Cancer Association for Cancer Research AACR Cancer Disparities Report 2020</a>). These disparities are thought to be caused by a complex interplay between environmental and lifestyle factors as well as biological factors related to ancestry genetics. The molecular basis for these disparities is not well understood.  
+Prostate cancer incidence and the risk of dying from the disease is higher in **African American (AA)** men compared to **European American (EA)** men (<a href="https://cancerprogressreport.aacr.org/disparities/">American Cancer Association for Cancer Research AACR Cancer Disparities Report 2020</a>). These disparities are thought to be caused by a complex interplay between environmental and lifestyle factors as well as biological factors related to ancestry genetics. The molecular basis for these disparities is not well understood.
 
 Working through this tutorial, you will analyse RNA-sequencing data from high grade prostate cancer and matched noncancer adjacent tissue samples from a cohort of ethnically diverse men (AAs and EAs) to investigate the molecular differences between these groups.
-The dataset you will be using for this tutorial have been taken from the following publication:
+
+The dataset you will be using for this tutorial have been taken from the following publication:  
 > **Exogenous IL-6 induces mRNA splice variant MBD2_v2 to promote stemness in TP53 wild-type, African American PCa cells.** Teslow, E. A., Bao, B., Dyson, G., Legendre, C., Mitrea, C., Sakr, W., Carpten, J. D., Powell, I., & Bollig-Fischer, A. (2018). Molecular oncology, 12(7), 1138–1152. <a href="https://doi.org/10.1002/1878-0261.12316">https://doi.org/10.1002/1878-0261.12316</a>
 
 This published dataset is publicly available from the Gene Expression Omnibus Database (Accession Number: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE104131">GSE104131</a>) and has been modified and adapted for use in these education materials.
 
 ## 2.1. Research Question
-
 This dataset can be used to address two research questions namely:
 <ul>
     <li> To what extent can we determine race-specific differential expression in prostate cancer?
@@ -142,7 +129,6 @@ This dataset can be used to address two research questions namely:
 The hypothesis underlying this analysis is that ethnicity-based differences in disease outcomes are driven by genetics define ancestry groups and can be observed at the molecular level.
 
 ## 2.2. Excercise 1
-
 To illustrate the principles of RNA-seq analysis, you will analyse 12 RNA-seq samples that represent tumour-normal pairs (**prostate tumor PT; normal normal prostate NP**) from six individuals. Three individuals are African American (AA) and three are European American (EA).
 
 <div align="center">
@@ -204,8 +190,7 @@ The FASTQ files contain the raw sequence reads for each sample. There are four l
 	<li> Encoded quality value
 </ol>
 
-**Take a look at one of the FASTQ files.**
-
+**Take a look at one of the FASTQ files:**
 ```
 zless data/PT6_1.fastq.gz | head
 ```
@@ -213,15 +198,12 @@ zless data/PT6_1.fastq.gz | head
 Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FASTQ_format/">https://en.wikipedia.org/wiki/FASTQ_format/</a>.
 
 ## 2.3 Questions
-
 **Q1: Why is there more than one FASTQ file per sample?** *Hint: think about why there is a PT6_1.fastq.gz and a PT6_2.fastq.gz*
 
 Now let’s move on to mapping these RNA-Seq reads to the genome using `HISAT2`.
 
 # 3. Mapping RNA-Seq Reads to the Genome using `HISAT2`
-
 ## 3.1 Introduction
-
 For this exercise, we have restricted the number of reads in each sample to those mapping largely to a single chromosome to reduce the mapping time. This is sufficient to illustrate the principles of differential expression analysis. 
 
 The objectives of this part of the tutorial are to: 
@@ -231,14 +213,13 @@ The objectives of this part of the tutorial are to:
 </ul>
 
 ### 3.1.1 Mapping RNA-Seq reads to a genome
-
 By this stage, you should have already performed a standard NGS quality control check on your reads to see whether there were any issues with the sample preparation or sequencing. In the interest of time, we won’t be doing that as part of this tutorial, but feel free to use the tools from earlier modules to give that a go later if you have time.
 
 Next, we map our RNA-Seq reads to a reference genome to get context. This allows you to visually inspect your RNA-Seq data, identify contamination, novel exons and splice sites as well as giving you an overall feel for your transcriptome.
 
 To map the RNA-Seq reads from our five samples to the reference genome, we will be using <a href="https://daehwankimlab.github.io/hisat2/">`HISAT2`</a>, a fast and sensitive splice-aware aligner. `HISAT2` compresses the genome using an indexing scheme based on the <a href="https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform">Burrows-Wheeler transform (BWT)</a> and <a href="https://en.wikipedia.org/wiki/FM-index">Ferragina-Manzini (FM)</a> index to reduce the amount of space needed to store the genome. This also makes the genome quick to search, using a whole-genome FM index to anchor each alignment and then tens of thousands local FM indexes for very rapid extensions of these alignments.
 
-For more information, and to find the original version of _**Figure 2**_, please see the HISAT paper:
+For more information, and to find the original version of _**Figure 2**_, please see the HISAT paper:  
 > **HISAT: a fast spliced aligner with low memory requirements Daehwan Kim.** Ben Langmead and Steven L Salzberg Nat Methods. 2015 Apr;12(4):357-60. <a href="doi:10.1038/nmeth.3317">doi:10.1038/nmeth.3317</a>
 
 `HISAT2` is a splice-aware aligner which means it takes into account that when a read is mapped it may be split across multiple exons with (sometimes large) intronic gaps between aligned regions. As you can see in Figure 2, `HISAT2` splits read alignments into five classes based on the number of exons the read alignment is split across and the length of the anchor (longest continuously mapped portion of a split read):
@@ -267,26 +248,23 @@ There are five `HISAT2` RNA-seq read mapping categories:
 	<li> 2M_1_7, junction reads with short, 1- to 7-bp, anchors; and 
 	<li> gt_2M, junction reads spanning more than two exons (Figure 2A). 
 </ol>
+
 Exoninc reads span only a single exon and represent over 60% of the read mappings in the 20 million 100-bp simulated read dataset.
 
 ## 3.2. Excercise 2
-
 Be patient, each of the following steps will take a couple of minutes!
 
-**Look at the usage instructions for `hisat2-build`:**
-
+**Look at the usage instructions for `hisat2-build`:**  
 ```
 hisat2-build -h
 ```
 
-This not only tells us the version of `HISAT2` we’re using (essential for publication methods):
-
+This not only tells us the version of `HISAT2` we’re using (essential for publication methods):  
 >```
 >HISAT2 version 2.1.0 by Daehwan Kim (infphilo@gmail.com, http://www.ccb.jhu.edu/people/infphilo
 >```
 
-But, that we also need to give hisat2-build two pieces of information:
-
+But, that we also need to give hisat2-build two pieces of information:  
 >```
 >Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
 >```
@@ -296,25 +274,22 @@ But, that we also need to give hisat2-build two pieces of information:
 >	<li> <ht2_index_base> what we want to call our HISAT2 index files (PccAS_v3_hisat2.idx)
 ></ul>
 
-**Build a `HISAT2` index for chromosome 21 of the human reference genome using `hisat2-build`:**
-
+**Build a `HISAT2` index for chromosome 21 of the human reference genome using `hisat2-build`:**  
 ```
 hisat2-build data/hsapien_grch38_chr21.fa outputs/hsapien_grch38_chr21_hisat2.idx
 ```
 
-You can see the generated index files using:
-
+You can see the generated index files using:  
 ```
 ls outputs/hsapien_grch38_chr21_hisat2.idx*
 ```
 
-Look at the usage for `hisat2`
-
+Look at the usage for `hisat2`  
 ```
 hisat2 -h
 ```
 
-Here we can see that `HISAT2` needs several parameters so that it can do the mapping:
+Here we can see that `HISAT2` needs several parameters so that it can do the mapping:  
 >```
 >hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r>} [-S <sam>]
 >```
@@ -325,40 +300,35 @@ Here we can see that `HISAT2` needs several parameters so that it can do the map
 
 We will also be adding one more piece of information, the maximum intron length (default 500,000 bases). For this analysis, we want to set the maximum intron length to 10,000. We can do this by adding the option `--max-intronlen 10000`.
 
-**Map the reads for the PT2 sample using `HISAT2`:**
-
+**Map the reads for the PT2 sample using `HISAT2`:**  
 ```
  hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx -1 data/PT2_1.fastq.gz -2 data/PT2_2.fastq.gz -S outputs/PT2.sam
 ```
 
 `HISAT2` has written the alignment in SAM format. This is a format which allows humans to look at our alignments. However, we need to convert the SAM file to its binary version, a BAM file. We do this for several reasons. Mainly we do it because most downstream programs require our alignments to be in BAM format and not SAM format. However, we also do it because the BAM file is smaller and so takes up less (very precious!) storage space. For more information, see the format guide: <a href="http://samtools.github.io/hts-specs/SAMv1.pdf">http://samtools.github.io/hts-specs/SAMv1.pdf</a>.
 
-**Convert the SAM file to a BAM file:**
-
+**Convert the SAM file to a BAM file:**  
 ```
 samtools view -S -o outputs/PT2.bam -b outputs/PT2.sam
 ```
 
-Next we need to sort the BAM file ready for indexing. When we aligned our reads with `HISAT2`, alignments were produced in the same order as the sequences in our FASTQ files. To index the BAM file, we need the alignments ordered by their respective positions in the reference genome. We can do this using samtools sort to sort the alignments by their co-ordinates for each chromosome
+Next we need to sort the BAM file ready for indexing. When we aligned our reads with `HISAT2`, alignments were produced in the same order as the sequences in our FASTQ files. To index the BAM file, we need the alignments ordered by their respective positions in the reference genome. We can do this using samtools sort to sort the alignments by their co-ordinates for each chromosome.
 
-**Sort the BAM file:**
-
+**Sort the BAM file:**  
 ```
 samtools sort -o outputs/PT2_sorted.bam outputs/PT2.bam
 ```
 
 Next, we need to index our BAM file. This makes searching the alignments much more efficient. It allows programs like IGV (which we will be using to visualise the alignment) to quickly get the alignments that overlap the genomic regions you’re looking at. We can do this with samtools index which will generate an index file with the extension `.bai`.
 
-**Index the BAM file so that it can be read efficiently by `IGV`:**
-
+**Index the BAM file so that it can be read efficiently by `IGV`:**  
 ```
 samtools index outputs/PT2_sorted.bam
 ```
 
 Now, repeat this process of mapping, converting (SAM to BAM), sorting and indexing with the reads from the NP2 sample. 
 
-**You can run the previous steps as a single command:**
-
+**You can run the previous steps as a single command:**  
 ```
 hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx \
     -1 data/NP2_1.fastq.gz -2 data/NP2_2.fastq.gz | \
@@ -379,21 +349,16 @@ hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx \
 The alignments generated here can be used for transcriptome quantification using tools such as feautureCounts or htseq-count and a reference transcriptome to quantify read counts at the gene or transcript level. Here we will use these alignments for visualization and then turn our attention to trancriptome alignments.
 
 # 4. Visualising transcriptomes with `IGV`
-
 ## 4.1. Introduction
-
-The <a href="https://software.broadinstitute.org/software/igv">Integrative Genome Viewer (IGV)</a> allows us to visualise genomic datasets.
-
-The objectives of this part of the tutorial are:
+The <a href="https://software.broadinstitute.org/software/igv">Integrative Genome Viewer (IGV)</a> allows us to visualise genomic datasets. The objectives of this part of the tutorial are:
 <ul> 
 	<li> load an annotation file into `IGV` and explore gene structure
 	<li> load read alignments into `IGV` and inspect read alignments
 </ul>
 
-**Reference:** <a href="http://software.broadinstitute.org/software/igv/UserGuide">Online IGV User Guide</a> - see more information on all `IGV` features and functions.
+>**Reference:** <a href="http://software.broadinstitute.org/software/igv/UserGuide">Online IGV User Guide</a> - see more information on all `IGV` features and functions.
 
 ### 4.1.1. Launch IGV and load data
-
 ```
 igv &
 ```
@@ -401,7 +366,6 @@ igv &
 This will open the `IGV` main window. Now, we need to tell IGV which genome we want to use. `IGV` has many pre-loaded genomes available so load Human (`hg38`).
 
 ### 4.1.2 Load custom gene annotation file
-
 We not only want to see where our reads have mapped, but what genes they have mapped to. For this, we have an annotation file in GFF/GTF format. This contains a list of features, their co-ordinates and orientations which correspond to our reference genome.
 
 <p align="center">
@@ -428,7 +392,6 @@ To get a clearer view of the gene structure, right click on the annotation track
 In the annotation track, genes are presented as blue boxes and lines. These boxes represent exons, while the lines represent intronic regions. Arrows indicate the direction (or strand) of transcription for each of the genes. Now we have our genome and its annotated features, we just need to read in alignments from our two samples.
 
 ### 4.1.3. Load alignment files
-
 Load your alignment file for the **NP2** sample into `IGV`. Go to **”File -> Load from File...”**. Select **“NP2_sorted.bam”** and click **“Open”**.
 
 >**Note:** BAM files and their corresponding index files must be in the same directory for `IGV` to load them properly.
@@ -468,7 +431,6 @@ Now we compare the two samples:
 </p>
 
 ## 4.2. Questions
-
 **Q1: How many CDS features are there in “SIK1B”?** _Hint: Jump to this gene or locus or use unix commands to look at the annotation file "data/hsapien_grch38.96_chr21.gtf"_
 
 **Q2: Does the RNA-seq mapping agree with the gene model in blue?** _Hint: Look at the coverage track and split read alignments._
@@ -476,9 +438,7 @@ Now we compare the two samples:
 **Q3: Do you think this gene (SIK1B) is differentially expressed between prostate cancer and normal adjacent tissue? Is looking at the coverage plots alone a reliable way to assess differential expression?** _Hint: Look at the coverage similarities/differences between the normal and cancer sample._
 
 # 5. Transcript quantification with `Kallisto`
-
 ## 5.1. Introduction
-
 After visually inspecting the genome alignment, the next step in a typical RNA-Seq analysis is to estimate transcript abundance. To do this, reads are assigned to the transcripts they came from. These assignments are then used to quantify gene or transcript abundance (expression level).
 
 For this tutorial, we are using <a href="https://pachterlab.github.io/kallisto">Kallisto</a> to assign reads to a set of transcript sequences and quantify transcript abundance. Kallisto does not assemble transcripts and cannot identify novel isoforms. So, when a reference transcriptome isn’t available, the transcripts will need to be assembled de novo from the reads. However, for this tutorial, we already have a reference transcriptome available.
@@ -490,7 +450,6 @@ The objectives of this part of the tutorial are:
 </ul>
 
 ### 5.1.1. Quantify Transcript Expression with Kallisto
-
 Many of the existing methods used for estimating transcript abundance are alignment-based. This means they rely on mapping reads onto the reference genome. The gene expression levels are then calculated by counting the number of reads overlapping the transcripts. However, read alignment is a computationally and time intensive process. So, in this tutorial, we will be running Kallisto which uses a fast, alignment-free method for transcript quantification.
 
 >**Near-optimal probabilistic RNA-seq quantification.** Nicolas L Bray, Harold Pimentel, Páll Melsted and Lior Pachter Nat Biotechnol. 2016 May;34(5):525-7. <a href="doi:10.1038/nbt.3519">doi:10.1038/nbt.3519</a>
@@ -503,20 +462,17 @@ Kallisto uses a process called pseudoalignment to make it efficient. Rather than
 </p>
 
 #### _Step 1: building a Kallisto index_
-
 As with alignment-based methods, Kallisto needs an index. To generate the index, Kallisto first builds a transcriptome de Bruijn Graph (TBDG) from all of the k-mers (short sequences of k nucleotides) that it finds in the transcriptome. Each node in the graph corresponds to a k-mer and each transcript is represented by its path through the graph. Using these paths, each k-mer is assigned a k-compatibility class. Some k-mers will be redundant i.e. shared by the same transcripts. These are skipped to make the index compact and quicker to search. A great worked example of this process can be found <a href="https://bioinfo.iric.ca/understanding-how-kallisto-works">here</a>.
 
-The command `kallisto index` can be used to build a Kallisto index from transcript sequences:
-
+The command `kallisto index` can be used to build a Kallisto index from transcript sequences:  
 ```
 kallisto index
 ```
+
 Here we can see the version of `Kallisto` that we’re using (useful for publication methods) and the information that we’ll need to give kallisto index. The only information we need to give kallisto index is the location of our transcript sequences (`data/hsapien_grch38_transcripts.fa`). However, it’s useful to have a meaningful filename for the resulting index. We can add this by using the option `-i` which expects a value, our index prefix (`GRCh38_kallisto`).
 
 #### _Step 2: estimating transcript abundance_
-
-With this Kallisto index, you can use `kallisto quant` to estimate transcript abundances. You will need to run this command separately for each sample:
-
+With this Kallisto index, you can use `kallisto quant` to estimate transcript abundances. You will need to run this command separately for each sample:  
 ```
 kallisto quant
 ```
@@ -526,23 +482,18 @@ We can see that `kallisto quant` needs us to tell it where our sample reads are.
 **_Bootstrapping:_** Not all reads will be assigned unambiguously to a single transcript. This means there will be “noise” in our abundance estimates where reads can be assigned to multiple transcripts. `Kallisto` quantifies the uncertainty in its abundance estimates using random resampling and replacement. This process is called bootstrapping and indicates how reliable the expression estimates are from the observed pseudoalignment. Bootstrap values can be used downstream to distinguish the technical variability from the biological variability in your experiment.
 
 ## 5.2. Exercise 4
-
-**Build an index called GRCh38_kallisto from transcript sequences**
-
->**Note:** Depending on the specifications of your machine, this step may take a long time. While the index is being built, spend time reading through the remaining sections of the tutorial.
-
+**Build an index called GRCh38_kallisto from transcript sequences:**  
+>**Note:** Depending on the specifications of your machine, this step may take a long time. While the index is being built, spend time reading through the remaining sections of the tutorial.  
 ```
 kallisto index -i outputs/GRCh38_ch21_kallisto	data/hsapiens_chr21_transcripts.fa
 ```
 
-**Quantify the transcript expression levels for the PT6 sample with 100 bootstrap samples and store the results in the output directory PT6.**
-
+**Quantify the transcript expression levels for the PT6 sample with 100 bootstrap samples and store the results in the output directory PT6:**
 ```
 kallisto quant -i outputs/GRCh38_ch21_kallisto -o outputs/PT6 -b 100 data/PT6_1.fastq.gz data/PT6_2.fastq.gz
 ```
 
-You’ll find your `Kallisto` results in a new output directory which we called **PT6**. Let’s take a look:
-
+You’ll find your `Kallisto` results in a new output directory which we called **PT6**. Let’s take a look:  
 ```
 ls outputs/PT6
 ```
@@ -556,14 +507,12 @@ Running `kallisto quant` generated three output files in our **PT6** folder:
 
 >**Note:** When the number of bootstrap values (-b) is very high, `Kallisto` will generate a large amount of data. To help, it outputs bootstrap results in HDF5 format (`abundance.h5`). This file can be read directly by `sleuth`.
 
-The file `PT6/abundance.tsv` will have the abundance estimates for each gene for the **PT6** sample. Let’s take a quick look.
-
+The file `PT6/abundance.tsv` will have the abundance estimates for each gene for the **PT6** sample. Let’s take a quick look.  
 ```
 head outputs/PT6/abundance.tsv
 ```
 
-In `PT6/abundance.tsv` there are five columns which give us information about the transcript abundances for our PT6 sample. 
-
+In `PT6/abundance.tsv` there are five columns which give us information about the transcript abundances for our PT6 sample.
 <ul>
 	<li> <b>target_id</b> - Unique transcript identifier.
 	<li> <b>length</b> - Number of bases found in exons.
@@ -572,22 +521,19 @@ In `PT6/abundance.tsv` there are five columns which give us information about th
 	<li> <b>tpm</b> - Transcripts per million. Normalised value accounting for length and sequence depth bias.
 </ul>
 
-In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.  
+In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.
 
-To get the result for a specific transcript, we can use `grep`:
-
+To get the result for a specific transcript, we can use `grep`:  
 ```
 grep ENST00000399975 outputs/PT6/abundance.tsv
 ```
 
-If we wanted to get the TPM value for a particular transcript, we can use `awk`:
-
+If we wanted to get the TPM value for a particular transcript, we can use `awk`:  
 ```
 awk -F"\t" '$1=="ENST00000399975.7" {print $5}' outputs/PT6/abundance.tsv
 ```
 
-Use `kallisto` to quantify the expression of the remaining samples. You can either use the command shown above for each individual sample. Alternatively, you can create a `bash` script to iterate through all the samples and quantify transcriptome expression using `Kallisto` (See commands below):
-
+Use `kallisto` to quantify the expression of the remaining samples. You can either use the command shown above for each individual sample. Alternatively, you can create a `bash` script to iterate through all the samples and quantify transcriptome expression using `Kallisto` (See commands below):  
 ```
 for r1 in data/*_1.fastq.gz
 do
@@ -602,7 +548,6 @@ done
 ```
 
 ## 5.3. Questions
-
 **Q1: What k-mer length was used to build the Kallisto index?** _Hint: look at the terminal output from `kallisto index`._
 
 **Q2: How many transcript sequences are there in hsapien_grch38_transcripts.fa?** _Hint: you can use grep or look at the terminal output from `kallisto quant` or in the `run_info.json` files._
@@ -612,9 +557,7 @@ done
 **Q4: Do you think ENST00000399975.7 is differentially expressed?**
 
 # 6. Differential Expression Analysis With `Sleuth`
-
 ## 6.1. Introduction
-
 In the previous section, we quantified transcript abundance. In this section, you will be using `sleuth` to do some simple quality checks and get a first look at the results. The objectives of this part of the tutorial are: 
 <ul> 
 	<li> use sleuth to perform quality control checks 
@@ -623,7 +566,6 @@ In the previous section, we quantified transcript abundance. In this section, yo
 </ul>
 
 ## 6.1.1 Differential Expression Analysis (DEA)
-
 The goal of differential expression analysis is to identify genes whose expression levels differ between experimental conditions. We don’t normally have enough replicates to do traditional tests of significance for RNA-Seq data. So, most methods look for outliers in the relationship between average abundance and fold change. The underlying assumption of many approaches is most genes are not differentially expressed.
 
 Rather than just using a fold change threshold to determine which genes are differentially expressed, DEA tools use a variety of statistical tests to assess significant diffferences betweem experimental conditions. These tests give us a <a href="https://www.nature.com/articles/nmeth.2698">_p_-value</a> which is an estimate of how often your observations would occur by chance.
@@ -631,28 +573,23 @@ Rather than just using a fold change threshold to determine which genes are diff
 However, we perform these comparisons for each one of the thousands of genes/transcripts in our dataset. A _p_-value of 0.01 estimates a probability of 1% for seeing our observation just by chance. In an experiment like with 5,000 genes we would expect 5 genes to be significantly differentially expressed by chance (i.e. even if there were no difference between our conditions). Instead of using a _p_-value we use a q-value to account for multiple testing and adjusts the _p_-value accordingly.
 
 ### 6.1.2. `sleuth`
-
 `sleuth` is a companion tool for `Kallisto`. Unlike most other tools, `sleuth` can utilize the technical variation information generated by `Kallisto` so that you can look at both the technical and biological variation in your dataset.
 For DEA, sleuth essentially tests two models, one which assumes that the abundances are equal between the two conditions (reduced) and one that does not (full). To identify DE transcripts it identifies those with a significantly better fit to the “full” model. For more information on sleuth and how it works, see Lior Pachter’s blog post: <a href="https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/">A sleuth for RNA-Seq</a>.
 
 `sleuth` is written in the `R` statistical programming language, as is almost all RNA-Seq analysis software. Helpfully, it produces a web page (Shiny Application) that allows interactive graphical analysis of the data. However, we strongly recommend learning `R` for anyone doing a significant amount of RNA-seq analysis. It is nowhere near as hard to get started with as full-blown programming languages such as `Perl` or `Python`!
 
 ## 6.2. Exercise 5
-
 ### 6.2.1. Running `sleuth`
-
 #### _Analysis Objective:_
-
 We want to use sleuth to investigate transcript differential expresssion between high grade prostate cancer and matched noncancer adjacent tissue samples in the context of ethnicity differences between African American (AA) and European American (EA) individuals.
 
 **Before you begin**   
-Configure the option for a web browser for R at the command line:   
+Configure the option for a web browser for R at the command line:  
 ```
 export R_BROWSER='firefox'
 ```
 
-Navigate the the `R` programming environment by typing the following on the command line: 
-
+Navigate the the `R` programming environment by typing the following on the command line:  
 ```
 R
 ```
@@ -665,21 +602,18 @@ Run all the following commands within the `R` console - copy and paste the comma
 	<li> load pertinent datasets into the R environment
 </ul>
 
-Be sure to navigate to the correct working directory within `R`:
-
+Be sure to navigate to the correct working directory within `R`:  
 ```
 setwd(“/home/manager/course_data/rna_seq_human”)
 ```
 
-Load sleuth package:
-
+Load sleuth package:  
 ```
 library(sleuth)
 library(dplyr)
 ```
 
-Load sample metadata
-
+Load sample metadata:  
 ```
 sample_info <- read.table(file="data/sample_info.txt", header = T, sep = "\t")
 sample_inf
@@ -687,15 +621,13 @@ sample_inf
 
 >_**How many individual patients have been sequenced in this experiment?**_ Turn to your neighbor and discuss if you are unsure of the answer. _Hint: Look closely at the patientID column._
 
-Next, create a vector of file paths pointing to kallisto quantification results:
-
+Next, create a vector of file paths pointing to kallisto quantification results:  
 ```
 kallisto_result_directory <-  sapply(X = sample_info$sample, function(id) file.path('outputs', id))
 kallisto_result_directory
 ```
 
-Then configure `sample_to_covariates` data frame:
-
+Then configure `sample_to_covariates` data frame:  
 ```
 s2c <- dplyr::select(sample_info,sample = sample, sample_type, ethnicity, individualID=patientID)
 kallisto_result_directory <-  sapply(sample_info$sample, function(id), file.path('outputs', id)) # path to kallisto results
@@ -703,8 +635,7 @@ s2c <- dplyr::mutate(s2c, path = kallisto_result_directory)
 s2c
 ```
 
-Transcript to gene annotations:
-
+Transcript to gene annotations:  
 ```
 filename <-"data/hsapiens_chr21_transcript_to_gene.csv"
 t2g <- read.table(filename, header = T, sep = ',')
@@ -715,7 +646,6 @@ dim(t2g)
 ```
 
 #### Step 1: Create a sleuth object (`so`)
-
 Here it is important to specify the model design where you enumerate the covariates you want to model. These can include both technical and biological variables under study. For example, if the processing batch is known, this would be important to add to the model because we need to account for expression differences that are related to technical factors so that we can make sure we are modeling the biological variability that is our true variable of interest.
 
 Here we consider the following covariates:
@@ -725,8 +655,7 @@ Here we consider the following covariates:
 	<li> <b>ethnicity:</b> African American (AA) vs/ European American (EA)
 </ul>
 
-Create design matrix specification:
-
+Create design matrix specification:  
 ```
 design <- ~ individualID + sample_type + ethnicity
 ```
@@ -744,8 +673,7 @@ With this model specification, we can infer ethnicity-related differential expre
 
 For a more extensive treatment of how to setup design matrices for gene expression experiments read through <a href="https://f1000research.com/articles/9-1444">A guide to creating design matrices for gene expression experiments</a>.
 
-Create sleuth object (a group of kallistos) for analysis:
-
+Create sleuth object (a group of kallistos) for analysis:  
 ```
 so <- sleuth_prep(sample_to_covariates=s2c, # sample_to_covariates data frame
     full_model=design, # model design matrix
@@ -762,23 +690,18 @@ so <- sleuth_prep(sample_to_covariates=s2c, # sample_to_covariates data frame
 >To exit, simply type the letterq
 
 #### Step 2: Fit the sleuth model
-
-Now we fit `sleuth`’s ’measurement error model’ (full - consider all covariates simultaneoulsy):
-
+Now we fit `sleuth`’s ’measurement error model’ (full - consider all covariates simultaneoulsy):  
 ```
 so <- sleuth_fit(so, formula=design, fit_name="full")
 ```
 
-Fit a reduced model - fit a model without the final factor:
-
+Fit a reduced model - fit a model without the final factor:  
 ```
 so <- sleuth_fit(so, formula=~ individualID + sample_type , fit_name="reduced")
 ```
 
 #### Step 3: Statistical testing between conditions
-
-Likelihood ratio test between the two models tests for ancestry-related differences - difference between the full model with 3 coveriates versus the reduced model with 2 covariates:
-
+Likelihood ratio test between the two models tests for ancestry-related differences - difference between the full model with 3 coveriates versus the reduced model with 2 covariates:  
 ```
 so <- sleuth_lrt(so, 'reduced', 'full')
 sleuth_table_tx <- sleuth_results(obj = so,
@@ -800,20 +723,17 @@ A rule of thumb is to consider a gene significant if the _q_-value is less than 
 
 >How many genes are significantly differentially expressed due to ethnicity? Are the results in line with your expectations?
 
-Visualize transcript abundance for top hit from differential expression analysis:
-
+Visualize transcript abundance for top hit from differential expression analysis:  
 ```
 topDE_hit <- sleuth_table_tx[1,"target_id"]
 ```
 
-Group view:
-
+Group view:  
 ```
 plot_bootstrap(so, topDE_hit, units = "est_counts", color_by = "ethnicity")
 ```
 
-Paired sample view:
-
+Paired sample view:  
 ```
 library(ggplot2)
 df <- get_bootstrap_summary(so , topDE_hit)
@@ -834,30 +754,26 @@ Here we see visually that there is a difference in the expression between the ca
 
 **Wald’s Test: testing for significant differences between conditions.**
 
-You can look at your sleuth object to see what models you have fit and their design matrix specification like this:
-
+You can look at your sleuth object to see what models you have fit and their design matrix specification like this:  
 ```
 models(so)
 ```
 
 If you are interested in the effect of a particular covariate, you can use Wald’s test to e.g. test for significant expression differences between normal and disease samples (while controlling for **inter-individual** variation and ethnicity-specific diffences).
 
-Wald test for individual coefficients (betas) tumor vs. normal:
-
+Wald test for individual coefficients (betas) tumor vs. normal:  
 ```
 so <- sleuth_wt(obj = so, which_beta = "sample_typetumor", which_model = 'full')
 ```
 
-Summary table:
-
+Summary table:  
 ```
 de_sampletype <- sleuth_results(so, test='sample_typetumor',
     test_type = "wt", which_model = "full", pval_aggregate = F)
     head(de_sampletype, 5)
 ```
 
-Visualize results:
-
+Visualize results:  
 ```
 df <- get_bootstrap_summary(so , de_sampletype[1,'target_id'])
 ggplot(data = df, aes(x = sample_type, ymin = min, lower = lower,
@@ -868,18 +784,15 @@ ggplot(data = df, aes(x = sample_type, ymin = min, lower = lower,
 
 In this comparison, we see strong statistically significant differences between sample types independent of ethnicity, suggesting that the normal-vs-disease differences in expression are more pronounced than ethnicity-related changes.
 
-Save sleuth result object:
-
+Save sleuth result object:  
 ```
 save(so, file = "outputs/sleuthObj.RData")
 ```
 
 ### 6.2.2 Using Sleuth for Exploratory Data Analysis
-
 Our model above generated few ancestry-specific differentially expressed genes after false discovery rate correction (**Caveat:** tutorial data is limited to transcripts mapping to chr21). Fortunately, sleuth generates an interactive Shiny application we can use for further exploratory data analysis to better understand the factors driving differential expression in these samples.
 
-Launch interactive exploration of `sleuth` differential expression object:
-
+Launch interactive exploration of `sleuth` differential expression object:  
 ```
 sleuth_live(so)
 ```
@@ -890,8 +803,7 @@ sleuth_live(so)
 >sleuth_live(so, options=list(launch.broswer=FALSE))
 >```
 
-#### Using sleuth to quality check transcript quantification
-
+#### Using sleuth to quality check transcript quantification  
 Quality control checks are absolutely vital at every step of the experimental process. We can use `sleuth` to perform simple quality checks (QC) on our dataset.
 
 At the top of the page, `sleuth` provides several tabs which we can use to determine whether the data is of good quality and whether we should trust the results we get.
@@ -919,7 +831,6 @@ In the Shiny App that has been launched, click on **“maps -> PCA”**.
 Here we do not see clear condition-related clusters as we might expect. Indeed samples PT4 and NP6 look like potential outliers. There is perhaps an unaccounted for technical batch effect in these data or those samples represent unmeasured biological signal. Further investigation will be needed included conversations with data generators where appropriate.
 
 #### Using sleuth to look at differentially expressed transcripts
-
 We used the output from `Kallisto` to identify DE transcripts using `sleuth`. Let’s take a look and see if we found any.
 
 To see the results of the `sleuth` DEA, go to **“analyses -> test table”**.
@@ -940,12 +851,10 @@ On the left you have the abundances for the normal and tumour replicates from AA
 
 >**Optional:** As this data is publicly available, you can download the full dataset and rerun the analysis to check if some of these ideas hold true or the signal is improved by having additional samples and or more replicates.
 
-
 ## 6.3. Questions
 **Q1: What is the most abundantly expressed transcript in the PT6 sample?** _Hint: go to **“summaries -> kallisto table”**. Be sure to activate the covariates toggle._
 
 # 7. Key Aspects of Differential Expression Analysis
-
 ## 7.1. Replicates and power
 **Biological replicates** are parallel measurements of biologically distinct samples that capture random biological variation, which may itself be a subject of study or a noise source.
 
@@ -958,14 +867,12 @@ In order to accurately ascertain which genes are differentially expressed and by
 >**Note:** More replicates will help improve power for genes that are already detected at high levels, while deeper sequencing will improve power to detect differential expression for genes which are expressed at low levels.
 
 ## 7.2. _p_-values vs. _q_-values
-
 When asking whether a gene is differentially expressed we use statistical tests to assign a _p_-value. If a gene has a _p_-value of 0.05, we say that there is only a 5% chance that it is not really differentially expressed. However, if we are asking this question for every gene in the genome, then we would expect to see _p_-values less than 0.05 for many genes even though they are not really differentially expressed. Due to this statistical problem, we must correct the _p_-values so that we are not tricked into accepting a large number of erroneous results. _q_-values are _p_-values which have been corrected for what is known as multiple hypothesis testing. Therefore, it is a qvalue of less than 0.05 that we should be looking for when asking whether a gene is signficantly differentially expressed.
 
 ## 7.3. Altermate software
 If you have a good quality genome and genome annotation such as for model organisms e.g. human, mouse, _Plasmodium_ etc. map to the transcriptome to determine transcript abundance. This is even more relevant if you have variant transcripts per gene as you need a tool which will do its best to determine which transcript is really expressed. Kallisto (<a href="https://pachterlab.github.io/kallisto/">Bray et al. 2016; PMID: 27043002</a>) and eXpress (<a href="https://pubmed.ncbi.nlm.nih.gov/23160280/">Roberts & Pachter, 2012; PMID: 23160280</a>) are examples of these tools.
 
 ## 7.4. What do I do with a list of differentially expressed genes?
-
 Differential expression analysis results are a list of genes which show differences between conditions. It can be daunting trying to determine what the results mean. On one hand, you may find that there are no real differences in your experiment. Is this due to biological reality or noisy data? On the other hand, you may find several thousands of genes are differentially expressed.
 
 > What can you say about that?
@@ -975,7 +882,6 @@ Other than looking for genes you expect to be different or unchanged, one of the
 <h1 align="center">Congratulations, you have reached the end of this tutorial!</h1>
 
 # 8. Normalisation
-
 ## 8.1 Introduction
 In the previous section, we looked at estimating transcript abundance with `Kallisto`. The abundances are reported as transcripts per million (TPM), but what does TPM mean and how is it calculated?
 
@@ -995,7 +901,6 @@ There are many useful websites, publications and blog posts which go into much m
 </ul>
 
 ## 8.2. Why do we use normalisation units instead of raw counts?
-
 Raw reads counts are the number of reads originating from each transcript which can be affected by several factors:
 <ul>
 	<li> <b>Sequencing depth (total number of reads)</b><br>The more we sequence a sample, the more reads we expect to be assigned.
@@ -1042,7 +947,6 @@ Where:
 </ul>
 
 ### 8.2.2 Fragments per kilobase per million (FPKM)
-
 Fragments per kilobase per million or FPKM is essentially the same as RPKM except that: 
 <ul>
     <li> RPKM is designed for single-end RNA-Seq experiments
@@ -1071,13 +975,11 @@ There are two things to notice in our dataset:
 <ul>
 
 ### 8.3.1. Calculating RPKM
-
 #### Step 1: get your per million scaling factor
 
 In the table below is the total number of reads which mapped for each of the replicates. To get our per million scaling factor, we divide each of these values by 1,000,000 (1 million).
 
 #### Step 2: normalise for sequencing depth
-
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
 Before:
@@ -1123,7 +1025,6 @@ Before:
 After:
 
 ## 8.4. Which normalisation unit should I use?
-
 Well, there’s a lot of debate around this, so let’s look at our total normalised values for each replicate.
 
 ### 8.4.1. RPKM

@@ -2,8 +2,7 @@
 ## 1.1 Introduction
 RNA sequencing (RNA-Seq) is a high-throughput method used to profile the transcriptome, quantify gene expression and discover novel RNA molecules. This tutorial uses RNA sequencing of from two _**Mycobacterium tuberculosis**_ isolates (each with 3 replicates - 6 total samples) to walk you through transcriptome pseudo-alignment and quantification and how to profile transcriptomic differences between experimental conditions (**Sensitive** vs. **Resistant**) by identifying differentially expressed genes.
 
-For an introduction to RNA-Seq principles and best practices see:
-
+For an introduction to RNA-Seq principles and best practices see:  
 > **A survey of best practices for RNA-Seq data analysis.** Ana Conesa, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra Cervera, Andrew McPherson, Michał Wojciech Szcześniak, Daniel J. Gaffney, Laura L. Elo, Xuegong Zhang and Ali Mortazavi Genome Biol. 2016 Jan 26;17:13 doi:10.1186/s13059-016-0881-8
 
 ## 1.2. Learning Outcomes
@@ -236,7 +235,6 @@ Working through this tutorial, you will investigate the differences in expressio
 
 **Research Question:** what genes are differentially expressed between these two isolates that can explain the differences in their phenotypes?
 
-## 2.1. Exercise 1
 **Check that you can see the FASTQ files in the practical directory:**  
 ```
 ls N*.fq.gz
@@ -257,14 +255,14 @@ zless N2_sub_R1.fq.gz | head
 
 Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FASTQ_format/">https://en.wikipedia.org/wiki/FASTQ_format/</a>.
 
-## 2.2. Questions
+## 2.1. Questions
 **Q1: Why is there more than one FASTQ file per sample?** _Hint: think about why there is a `N2_sub_R1.fq.gz` and a `N2_sub_2.fq.gz`_
 
 **Q2: How many reads were generated for the N2 sample?** _Hint: we want the total number of reads from both files (`N2_sub_R1.fq.gz` and `N2_sub_2.fq.gz`) so perhaps think about the FASTQ format and the number of lines for each read or whether there’s anything you can use in the FASTQ header to search and count._
 
 **Q3: The three Resistant samples N2, N6 and N10 represent technical replicates. True or False? Comment on your answer.**
 
-# 3. Estimate Transcript Abundance With Salmon
+# 3. Estimate Transcript Abundance With `Salmon`
 In this section, you will use <a href="https://salmon.readthedocs.io/en/latest/salmon.html">Salmon</a>, a transcript quantification method to estimate the number of reads in each sample that map to reference transcripts. This count is an estimate of the abundance or expression level of these transcripts in our experiment. As `Salmon` is an alignment free method, read quantification does not require an input BAM file. `Salmon` using a selective mapping algorithm to align the reads directly to a set of target transcripts such as those from a reference database for your organism.
 
 Inputs include: 
@@ -305,7 +303,7 @@ trimmomatic PE N2_sub_R1.fq.gz N2_sub_R2.fq.gz \
 
 In a typically workflow, you would do `FastQC` analysis before and after to check the effects of the trimming, but as that is not the purpose of this section, we will skip that for now.
 
-## 3.2.2 Transcript Quantificaiton using salmon
+## 3.2.2 Transcript Quantificaiton using `salmon`
 Now we used the trimmed and paired reads to estimate transcript abundance:  
 ```
 salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
@@ -316,14 +314,14 @@ salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
 ```
 
 This creates a new folder named “N2” in the directory, which contains a number of files:
+
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
 The `quant` files are the files containing the read counts for the genes. These are what downstream tools like `DESeq2` or `edgeR` would use for the differential expression analysis.
 
-It is not always practical to run commands for each sample one at a time. So we can write small scripts to process multiple samples using the same set of commands as is shown here:
-
+It is not always practical to run commands for each sample one at a time. So we can write small scripts to process multiple samples using the same set of commands as is shown here:  
 ```
 for r1 in *_R1.fq.gz
 do
@@ -345,7 +343,6 @@ done
 ```
 
 ## 3.3. Questions
-
 In the `N2` folder, take a look at the `quant.sf` file and answer the following questions:
 
 **Q1: What does TPM stand for?**
@@ -357,11 +354,10 @@ In the `N2` folder, take a look at the `quant.sf` file and answer the following 
 Take a moment to discuss what the effect of large amounts of reads from tRNA and rRNA could have on normalisation. _Hint: For further help understanding the quant.sf* output files look at this salmon documentation page._
 
 # 4 Differential Expression Analysis with `DESeq2`
-
 In this section, you will use the `R` Package `DESeq2` to perform differential expression analysis using the salmon quantification files you generated in the previous section. For more information about `DESeq` can look at the manuscript describing the method:
 >Love MI, Huber W, Anders S (2014). **Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.** Genome Biology, 15, 550. doi: 10.1186/s13059-014-0550-8.
 
-We will now move to working in the `R` Programming environment. Start `R`:   
+We will now move to working in the `R` Programming environment. Start `R`:  
 ```
 R
 ```
@@ -432,7 +428,7 @@ head(tx2gene)
 
 Take a look at the output, you will see 2 columns. This will be used to map the gene names from the salmon files to the annotation files.
 
-**Rename the genes in the GENEID column** We do this to match the gene names found in the salmon `quant.sf` files with those found in the transcriptome and annotation files:   
+**Rename the genes in the GENEID column** - We do this to match the gene names found in the salmon `quant.sf` files with those found in the transcriptome and annotation files:  
 ```
 tx2gene[["GENEID"]] <- with(tx2gene, ifelse(!grepl("rna-", TXNAME),paste0("gene-", TXNAME), TXNAME))
 head(tx2gene[["GENEID"]])
@@ -442,16 +438,15 @@ The above command goes through the `tx2gene` object, and looks for where the gen
 
 When the annotation file is imported by `makeTxDbFromGFF`, it removes the "gene-" prefix that is present in the `quant` files. This is because of the way that the annotation and transcript files are formatted.
 
-You will see in the GFF and transcript files, that the gene ID is formatted like this: `ID=gene-Rv0005`   
+You will see in the GFF and transcript files, that the gene ID is formatted like this: `ID=gene-Rv0005`  
 Whereas in the GTF file it is formatted like this: `gene_id ”Rv0005”`
 
-Though salmon uses the GTF file, it adds on the gene- prefix where it is missing while `makeTxDbFromGFF` removes it where it is present.   
+Though salmon uses the GTF file, it adds on the gene- prefix where it is missing while `makeTxDbFromGFF` removes it where it is present.  
 ```
 txi <- tximport(files, type="salmon", tx2gene=tx2gene)
 ```
 
 ### 4.0.2 Create the DESeq data set object
-
 ```
 ddsTxi <- DESeqDataSetFromTximport(txi, colData = samples, design = ~ phenotype)
 ```
@@ -468,8 +463,8 @@ The design formula is a statement that specifies how we want to model the variat
 >**Note:** For a more extensive treatment of how to setup the design formula for more complex experi- mental designs, read through A guide to creating design matrices for gene expression experiments.
 
 ### 4.0.3 Perform DESeq Analysis
-
-**Normalisation and model fitting with DESeq2** - Next we used `DESeq2` to normalize the data and fit a model that relates the gene count information to the phenotype:   
+**Normalisation and model fitting with DESeq2:**  
+Next we used `DESeq2` to normalize the data and fit a model that relates the gene count information to the phenotype.  
 ```
 ddsTxi <- DESeq(ddsTxi)
 ```
@@ -482,28 +477,27 @@ load("DE_data.RData")
 ```
 
 ## 4.1. Exploratory Visualization
-
-**Transform data for visualization**   
-The `rlog` transformation provides functionality for visualization and clustering:   
+**Transform data for visualization:**   
+The `rlog` transformation provides functionality for visualization and clustering.  
 ```
 rldTxi <- rlog(ddsTxi, blind = FALSE)
 ```
 
-**Plot principal component analysis (PCA):**   
-The PCA plot allow us to assess the similarities and differences between the study samples in order to determine if the data fit our expectation compared to the experimental design. This is a good quality control check to use to ensure that we did not introduce any errors during sample processing, sequencing and primary data analysis steps.   
+**Plot principal component analysis (PCA):**  
+The PCA plot allow us to assess the similarities and differences between the study samples in order to determine if the data fit our expectation compared to the experimental design. This is a good quality control check to use to ensure that we did not introduce any errors during sample processing, sequencing and primary data analysis steps.  
 ```
 plotPCA(rldTxi, intgroup = c("phenotype"))
 ```
 
 ## 4.2. Result Generation and Exploration
 **Get summary of differentially expression results:**  
-The results function of `DESeq2` is used to get the the results of the `DESeq` function ranked by metrics to use to determine which genes are significantly differentially expressed.   
+The results function of `DESeq2` is used to get the the results of the `DESeq` function ranked by metrics to use to determine which genes are significantly differentially expressed.  
 ```
 summary(results(ddsTxi))
 ```
 
 **Apply LFC threshold and adjusted p-value cutoffs to get significantly differentially expressed genes:**   
-A significance threshold (`FDR`, or `alpha`) and `log2FC` threshold can be passed to the results function to filter non-signficant differentially expressed genes.   
+A significance threshold (`FDR`, or `alpha`) and `log2FC` threshold can be passed to the results function to filter non-signficant differentially expressed genes.  
 ```
 resTxi <- results(ddsTxi, alpha=0.05, lfcThreshold=0.5,altHypothesis="greaterAbs")
 summary(resTxi)
@@ -534,9 +528,7 @@ pheatmap(matrixTxi, cluster_rows=FALSE, show_rownames=TRUE, cluster_cols=TRUE)
 
 **Q3. What are the _p_-values for the significantly differentially expressed genes?**
 
-
 # 5. Key Aspects of Differential Expression Analysis
-
 ## 5.1. Replicates and power
 **Biological replicates** are parallel measurements of biologically distinct samples that capture random biological variation, which may itself be a subject of study or a noise source.
 
@@ -549,14 +541,12 @@ In order to accurately ascertain which genes are differentially expressed and by
 >**Note:** More replicates will help improve power for genes that are already detected at high levels, while deeper sequencing will improve power to detect differential expression for genes which are expressed at low levels.
 
 ## 5.2. _p_-values vs. _q_-values
-
 When asking whether a gene is differentially expressed we use statistical tests to assign a _p_-value. If a gene has a _p_-value of 0.05, we say that there is only a 5% chance that it is not really differentially expressed. However, if we are asking this question for every gene in the genome, then we would expect to see _p_-values less than 0.05 for many genes even though they are not really differentially expressed. Due to this statistical problem, we must correct the _p_-values so that we are not tricked into accepting a large number of erroneous results. _q_-values are _p_-values which have been corrected for what is known as multiple hypothesis testing. Therefore, it is a qvalue of less than 0.05 that we should be looking for when asking whether a gene is signficantly differentially expressed.
 
 ## 5.3. Altermate software
 If you have a good quality genome and genome annotation such as for model organisms e.g. human, mouse, _Plasmodium_ etc. map to the transcriptome to determine transcript abundance. This is even more relevant if you have variant transcripts per gene as you need a tool which will do its best to determine which transcript is really expressed. Kallisto (<a href="https://pachterlab.github.io/kallisto/">Bray et al. 2016; PMID: 27043002</a>) and eXpress (<a href="https://pubmed.ncbi.nlm.nih.gov/23160280/">Roberts & Pachter, 2012; PMID: 23160280</a>) are examples of these tools.
 
 ## 5.4. What do I do with a list of differentially expressed genes?
-
 Differential expression analysis results are a list of genes which show differences between conditions. It can be daunting trying to determine what the results mean. On one hand, you may find that there are no real differences in your experiment. Is this due to biological reality or noisy data? On the other hand, you may find several thousands of genes are differentially expressed.
 
 > What can you say about that?
@@ -566,7 +556,6 @@ Other than looking for genes you expect to be different or unchanged, one of the
 <h1 align="center">Congratulations, you have reached the end of this tutorial!</h1>
 
 # 6. Normalisation
-
 ## 6.1 Introduction
 In the previous section, we looked at estimating transcript abundance with `Kallisto`. The abundances are reported as transcripts per million (TPM), but what does TPM mean and how is it calculated?
 
@@ -586,7 +575,6 @@ There are many useful websites, publications and blog posts which go into much m
 </ul>
 
 ## 6.2. Why do we use normalisation units instead of raw counts?
-
 Raw reads counts are the number of reads originating from each transcript which can be affected by several factors:
 <ul>
 	<li> <b>Sequencing depth (total number of reads)</b><br>The more we sequence a sample, the more reads we expect to be assigned.
@@ -633,7 +621,6 @@ Where:
 </ul>
 
 ### 6.2.2 Fragments per kilobase per million (FPKM)
-
 Fragments per kilobase per million or FPKM is essentially the same as RPKM except that: 
 <ul>
     <li> RPKM is designed for single-end RNA-Seq experiments
