@@ -1012,7 +1012,7 @@ There are two things to notice in our dataset:
 
 In the table below is the total number of reads which mapped for each of the replicates. To get our per million scaling factor, we divide each of these values by 1,000,000 (1 million).
 
-<div align="center">
+<div align="left">
     <table>
         <tr>
             <th> Gene </th>
@@ -1038,7 +1038,7 @@ In the table below is the total number of reads which mapped for each of the rep
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
 **Before:**
-<div align="center">
+<div align="left">
     <table>
         <tr>
             <th> Gene </th>
@@ -1068,7 +1068,7 @@ We now divide our read counts by the per million scaling factor to get our reads
 </div>
 
 **After:**
-<div align="center">
+<div align="left">
     <table>
         <tr>
             <th> Gene </th>
@@ -1100,7 +1100,7 @@ We now divide our read counts by the per million scaling factor to get our reads
 #### Step 3: get your per kilobase scaling factor
 Here we have our gene length in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
 
-<div align="center">
+<div align="left">
     <table>
         <tr>
             <th> Gene </th>
@@ -1128,7 +1128,7 @@ Here we have our gene length in base pairs. For our per kilobase scaling factor 
 #### Step 4: normalise for length
 Finally, we divide our RPM values from step 2 by our per kilobase scaling factor from step 3 to get our reads per kilobase per million (RPKM).  
 **Before:**  
-<div align="center">
+<div align="left">
     <table>
         <tr>
             <th> Gene </th>
@@ -1158,7 +1158,7 @@ Finally, we divide our RPM values from step 2 by our per kilobase scaling factor
 </div>
 
 **After:**
-<div align="center">
+<div align="left">
     <table>
         <tr>
             <th> Gene </th>
