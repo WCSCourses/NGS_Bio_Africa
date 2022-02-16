@@ -1012,65 +1012,178 @@ There are two things to notice in our dataset:
 
 In the table below is the total number of reads which mapped for each of the replicates. To get our per million scaling factor, we divide each of these values by 1,000,000 (1 million).
 
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+			<th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> Total reads mapped  </td>
+			<td> 3 500 000 </td>
+			<td> 4 500 000 </td>
+            <td> 10 600 000</td>
+		<tr>
+			<td> Per million reads </td>
+			<td> 3.5 </td>
+			<td> 4.5 </td>
+            <td> 10.6 </td>
+        </tr>
+    </table>
+</div>
+
 #### Step 2: normalise for sequencing depth
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
-<!-- <div align="center"> -->
-<!--     <table border="0" style="display: inline-block;"> -->
-<!--         <tr> -->
-<!--             <td width="25%"> -->
-<!--                 <h5> Before: </h5> -->
-<!-- 			</td> -->
-<!-- 			<td width="25%"> -->
-<!-- 				<h5> After: </h5> -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
-<!-- 		<tr> -->
-<!-- 			<td> -->
-<!-- 	        </td> -->
-<!-- 			<td> -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
-<!-- 	</table> -->
-<!--     <table border="0" style="display: inline-block;"> -->
-<!--         <tr> -->
-<!--             <td width="25%"> -->
-<!--                 <h5> Before: </h5> -->
-<!-- 			</td> -->
-<!-- 			<td width="25%"> -->
-<!-- 				<h5> After: </h5> -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
-<!-- 		<tr> -->
-<!-- 			<td> -->
-<!-- 	        </td> -->
-<!-- 			<td> -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
-<!-- 	</table> -->
-<!-- </div> -->
-
-
-
-<div class="container">
-    <div style="width: 50%; float: left;">
-        TEST
-    </div>
-    <div style="width: 50%; float: right;">
-        TEST
-    </div>
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 10 </td>
+            <td> 12</td>
+            <td> 30 </td>
+		<tr>
+			<td> B </td>
+			<td> 20 </td>
+            <td> 25 </td>
+            <td> 60 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+        </tr>
+    </table>
 </div>
 
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 RPM </th>
+            <th> Replicate 2 RPM </th>
+            <th> Replicate 3 RPM </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 2.857 </td>
+            <td> 2.667 </td>
+            <td> 2.830 </td>
+		<tr>
+			<td> B </td>
+			<td> 5.714 </td>
+            <td> 5.556 </td>
+            <td> 5.660 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1.429 </td>
+            <td> 1.778 </td>
+            <td> 1.415 </td>
+        </tr>
+        </tr>
+    </table>
+</div>
 
 #### Step 3: get your per kilobase scaling factor
 Here we have our gene length in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
 
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Length (base pairs) </th>
+            <th> Length (kilobases) </th>
+		</tr>
+		<tr>
+			<td> A </td>
+            <td> 2,000 </td>
+            <td> 2 </td>
+		<tr>
+			<td> B </td>
+			<td> 4,000 </td>
+            <td> 4 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1,000 </td>
+            <td> 1 </td>
+        </tr>
+        </tr>
+    </table>
+</div>
+
 #### Step 4: normalise for length
-Finally, we divide our RPM values from step 2 by our per kilobase scaling factor from step 3 to get our reads per kilobase per million (RPKM).
+Finally, we divide our RPM values from step 2 by our per kilobase scaling factor from step 3 to get our reads per kilobase per million (RPKM).  
+**Before:**  
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 RPM </th>
+            <th> Replicate 2 RPM </th>
+            <th> Replicate 3 RPM </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 2.857 </td>
+            <td> 2.667 </td>
+            <td> 2.830 </td>
+		<tr>
+			<td> B </td>
+			<td> 5.714 </td>
+            <td> 5.556 </td>
+            <td> 5.660 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1.429 </td>
+            <td> 1.778 </td>
+            <td> 1.415 </td>
+        </tr>
+        </tr>
+    </table>
+</div>
 
-Before:
-
-After:
+**After:**
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 RKPM </th>
+            <th> Replicate 2 RKPM </th>
+            <th> Replicate 3 RKPM </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 1.43 </td>
+            <td> 1.33 </td>
+            <td> 1.42 </td>
+		<tr>
+			<td> B </td>
+			<td> 1.43 </td>
+            <td> 1.39 </td>
+            <td> 1.42 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1.43 </td>
+            <td> 1.78 </td>
+            <td> 1.42 </td>
+        </tr>
+        </tr>
+    </table>
+</div>
 
 Notice that even though replicate 3 had more reads assigned than the other samples and a greater sequencing depth, its RPKM is quite similar. And, that although gene B had twice the number of reads assigned than gene A, its RPKM is the same. This is because we have normalised by both length and sequencing depth.
 
