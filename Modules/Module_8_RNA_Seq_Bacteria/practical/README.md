@@ -181,7 +181,88 @@ Start R by typing the following command:
 R
 ```
 
-The Bioconductor Project provides tools written in R for the ’analysis and comprehension of high- throughput genomic data’. Here we will install two additional software packages (GenomicFeatures and tximport) for our practical today (See additional guidelines for Bioconductor package installa- tion).
+The Bioconductor Project provides tools written in R for the ’analysis and comprehension of high- throughput genomic data’. Here we will install two additional software packages (GenomicFeatures and tximport) for our practical today (See additional guidelines for Bioconductor package installation).
+
+**Bioconductor Packages:**
+
+```
+install.packages("BiocManager")
+BiocManager::install("GenomicFeatures", force = TRUE)
+BiocManager::install("tximport")
+```
+
+**CRAN Packages:**
+
+```
+install.packages("pheatmap")
+```
+
+**When asked whether to:**   
+Update all/some/none? [a/s/n] - select no (n)
+
+**Exit `R`:**
+
+```
+q()
+```
+
+# 2. Introducing The Tutorial Dataset
+
+Working through this tutorial, you will investigate the differences in expression between two Mycobacterium tuberculosis isolates with different phenotypes (**Sensitive** vs. **Resistant**). You will analyze 6 samples across the two conditions. The experiment is setup in the following way:
+
+<div align="center">
+	<table>
+		<tr>
+			<th> run </th>
+			<th> unique_id </th>
+			<th> phenotype </th>
+			<th> repeat </th>
+		</tr>
+		<tr>
+			<td> N2 </th>
+			<td> sample1 </th>
+			<td> Resistant </th>
+			<td> 1 </th>
+		</tr>
+		<tr>
+			<td> N6 </th>
+			<td> sample2 </th>
+			<td> Resistant </th>
+			<td> 2 </th>
+		</tr>
+		<tr>
+			<td> N10 </th>
+			<td> sample3 </th>
+			<td> Resistant </th>
+			<td> 3 </th>
+		</tr>
+		<tr>
+			<td> N14 </th>
+			<td> sample4 </th>
+			<td> Sensitive </th>
+			<td> 1 </th>
+		</tr>
+		<tr>
+			<td> N18 </th>
+			<td> sample5 </th>
+			<td> Sensitive </th>
+			<td> 2 </th>
+		</tr>
+		<tr>
+			<td> N22 </th>
+			<td> sample6 </th>
+			<td> Sensitive </th>
+			<td> 3 </th>
+		</tr>
+    </table>
+</div>
+
+**Research Question:** what genes are differentially expressed between these two isolates that can explain the differences in their phenotypes?
+
+Check that you can see the FASTQ files in the practical directory:   
+```
+ls N*.fq.gz
+```
 
 
 
