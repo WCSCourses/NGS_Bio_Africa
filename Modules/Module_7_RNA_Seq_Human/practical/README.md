@@ -1072,9 +1072,9 @@ We now divide our read counts by the per million scaling factor to get our reads
     <table>
         <tr>
             <th> Gene </th>
-			<th> Replicate 1 RPM </th>
-            <th> Replicate 2 RPM </th>
-            <th> Replicate 3 RPM </th>
+			<th> Replicate 1 (RPM) </th>
+            <th> Replicate 2 (RPM) </th>
+            <th> Replicate 3 (RPM) </th>
 		</tr>
 		<tr>
 			<td> A </td>
@@ -1132,9 +1132,9 @@ Finally, we divide our RPM values from step 2 by our per kilobase scaling factor
     <table>
         <tr>
             <th> Gene </th>
-			<th> Replicate 1 RPM </th>
-            <th> Replicate 2 RPM </th>
-            <th> Replicate 3 RPM </th>
+			<th> Replicate 1 (RPM) </th>
+            <th> Replicate 2 (RPM) </th>
+            <th> Replicate 3 (RPM) </th>
 		</tr>
 		<tr>
 			<td> A </td>
@@ -1162,9 +1162,9 @@ Finally, we divide our RPM values from step 2 by our per kilobase scaling factor
     <table>
         <tr>
             <th> Gene </th>
-			<th> Replicate 1 RKPM </th>
-            <th> Replicate 2 RKPM </th>
-            <th> Replicate 3 RKPM </th>
+			<th> Replicate 1 (RKPM) </th>
+            <th> Replicate 2 (RKPM) </th>
+            <th> Replicate 3 (RKPM) </th>
 		</tr>
 		<tr>
 			<td> A </td>
