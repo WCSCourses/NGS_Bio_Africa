@@ -1016,7 +1016,7 @@ In the table below is the total number of reads which mapped for each of the rep
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
 <div align="center">
-    <table border="0" style="float: left">
+    <table border="0" style="display: inline-block;">
         <tr>
             <td width="50%">
                 <h5> Before: </h5>
@@ -1032,7 +1032,7 @@ We now divide our read counts by the per million scaling factor to get our reads
 			</td>
 		</tr>
 	</table>
-    <table border="0" style="float: left">
+    <table border="0" style="display: inline-block;">
         <tr>
             <td width="50%">
                 <h5> Before: </h5>
