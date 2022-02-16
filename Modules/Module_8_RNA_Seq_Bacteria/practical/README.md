@@ -517,9 +517,8 @@ load("DE_data.RData")
 
 ## 4.1. Exploratory Visualization
 
-**Transform data for visualization**
-
-The `rlog` transformation provides functionality for visualization and clustering:
+**Transform data for visualization**   
+The `rlog` transformation provides functionality for visualization and clustering:   
 ```
 rldTxi <- rlog(ddsTxi, blind = FALSE)
 ```
