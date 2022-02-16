@@ -97,17 +97,17 @@ This tutorial assumes that you have the following software or packages and their
 ## 1.6. Setup
 ### 1.6.1. Create Practical Directory
 Navigate to the module folder on the Virtual Machine (VM) using the following command:  
-```
+```bash
 cd /home/manager/course_data/rna_seq_pathogen
 ```
 
 Create a working directory for the practical:  
-```
+```bash
 mkdir practical
 ```
 
 Create a copy of the practial dataset to maintain the data integrity of the original dataset:  
-```
+```bash
  cp /home/manager/course_data/rna_seq_pathogen/data/bacterial/* /home/manager/course_data/rna_seq_pathogen/practical
 ```
 
@@ -115,7 +115,7 @@ Copy and paste the command above as a single line at your command line window.
 >Note: if you make a mistake at any point during this tutorial, you can reset by deleting the practical folder and restarting from this section.
 
 Move to the practical directory:  
-```
+```bash
 cd practical
 ```
 
@@ -124,13 +124,13 @@ cd practical
 
 #### 1.6.2.1. Reference Transcriptome File
 Download the GFF formatted version of the annotation file. Unfortunately due to the lack of standardization in bioinformatics, we need both the <a href="https://mblab.wustl.edu/GTF22.html">>GTF</a> file and the <a href="https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md">GFF</a> file for analysis (See the differences and similarities between these two file format specifications <a href="https://www.ensembl.org/info/website/upload/gff.html?redirect=no">here</a>). Salmon uses the GTF file and the GenomicFeatures library in R needs a GFF file. Both files contain the same annotation information, they are just formatted differently. No tools are able to reliably convert one to the other because even GFF files are not formatted consistently.  
-```
+```bash
 wget https://www.dropbox.com/s/4yjgbmy3dyhfoad/GCA_000195955.2_ASM19595v2_genomic.gff?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/GCA_000195955.2_ASM19595v2_genomic.gff
 ```
 
 #### 1.6.2.2. Study Design File Download the study design file
 The study design file is a tab separated file with 4 columns that encodes the phenotype and repeat information on the samples we will analyze in this practical. You will import this file into R to setup the differential expression analysis in the R Programming language. It is critical to keep track of the details of which samples are which etc. for downstream analysis purposes.  
-```
+```bash
 wget https://www.dropbox.com/s/6y3z9btz3bg20pn/practical_study_design.txt?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/practical_study_design.txt
 ```
 
@@ -142,12 +142,12 @@ wget https://www.dropbox.com/s/6y3z9btz3bg20pn/practical_study_design.txt?dl=1 -
 
 #### 1.6.2.3. RData
 Download `DE_data.RData` for later use. These files will be used for differential expression analysis in a later section of this tutorial.  
-```
+```bash
 wget https://www.dropbox.com/s/6onagsnpp9wrkrv/DE_data.RData.zip?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/DE_data.RData.zip
 ```
 
 Uncompress the `DE_data.RData.zip` file:
-```
+```bash
 unzip DE_data.RData.zip
 ```
 
@@ -157,21 +157,21 @@ unzip DE_data.RData.zip
 In this section you will download additional `R` Libraries, packages of analysis tools to support differential expression analysis in `R`.
 
 Start R by typing the following command:  
-```
+```bash
 R
 ```
 
 The Bioconductor Project provides tools written in R for the ’analysis and comprehension of high- throughput genomic data’. Here we will install two additional software packages (GenomicFeatures and tximport) for our practical today (See additional guidelines for Bioconductor package installation).
 
 **Bioconductor Packages:**  
-```
+```r
 install.packages("BiocManager")
 BiocManager::install("GenomicFeatures", force = TRUE)
 BiocManager::install("tximport")
 ```
 
 **CRAN Packages:**  
-```
+```r
 install.packages("pheatmap")
 ```
 
@@ -179,7 +179,7 @@ install.packages("pheatmap")
 `Update all/some/none? [a/s/n]` - select `no (n)`
 
 **Exit `R`:**  
-```
+```r
 q()
 ```
 
@@ -236,7 +236,7 @@ Working through this tutorial, you will investigate the differences in expressio
 **Research Question:** what genes are differentially expressed between these two isolates that can explain the differences in their phenotypes?
 
 **Check that you can see the FASTQ files in the practical directory:**  
-```
+```bash
 ls N*.fq.gz
 ```
 
@@ -249,7 +249,7 @@ The FASTQ files contain the raw sequence reads for each sample. There are four l
 </ol>
 
 **Take a look at one of the FASTQ files:**  
-```
+```bash
 zless N2_sub_R1.fq.gz | head
 ```
 
@@ -276,7 +276,7 @@ See more details in:
 
 ## 3.1. Create Transcriptome Index
 First, we create the necessary index files for any alignment tools downstream. The salmon index is created from the transcripts file, and while it is named `transcripts_index` here, you can name it anything.  
-```
+```bash
 salmon index -t GCA_000195955.2_ASM19595v2_genomic.transcripts.fa -i transcripts_index -k 31
 ```
 
@@ -293,7 +293,7 @@ Here we demonstrate how to trim and filter the reads using `Trimmomatic`. Here w
     <li> read length - discard any ready with a length lower than 36
 </ul>
 
-```
+```bash
 trimmomatic PE N2_sub_R1.fq.gz N2_sub_R2.fq.gz \
     N2_trimmed_forward_paired.fq.gz N2_trimmed_forward_unpaired.fq.gz \
     N2_trimmed_reverse_paired.fq.gz N2_trimmed_reverse_unpaired.fq.gz \
@@ -305,7 +305,7 @@ In a typically workflow, you would do `FastQC` analysis before and after to chec
 
 ## 3.2.2 Transcript Quantificaiton using `salmon`
 Now we used the trimmed and paired reads to estimate transcript abundance:  
-```
+```bash
 salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
     --threads 2 -l A \
     -i transcripts_index GCA_000195955.2_ASM19595v2_genomic.fa \
@@ -322,7 +322,7 @@ This creates a new folder named “N2” in the directory, which contains a numb
 The `quant` files are the files containing the read counts for the genes. These are what downstream tools like `DESeq2` or `edgeR` would use for the differential expression analysis.
 
 It is not always practical to run commands for each sample one at a time. So we can write small scripts to process multiple samples using the same set of commands as is shown here:  
-```
+```bash
 for r1 in *_R1.fq.gz
 do
     echo $r1
@@ -358,14 +358,14 @@ In this section, you will use the `R` Package `DESeq2` to perform differential e
 >Love MI, Huber W, Anders S (2014). **Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.** Genome Biology, 15, 550. doi: 10.1186/s13059-014-0550-8.
 
 We will now move to working in the `R` Programming environment. Start `R`:  
-```
+```bash
 R
 ```
 
 **Load the required libraries:**
 >`R` has a base set of classes and methods and tools. The additional packages we installed are a set of functions and tools designed to handle specific biological data types and support analyses and visualization such as of RNA-seq data. Here, we load those software packages that are relevant to our analysis.
 
-```
+```r
 library("tximportData")
 library("tximport")
 library("GenomicFeatures")
@@ -374,20 +374,20 @@ library("pheatmap")
 ```
 
 **Load the study design table:**   
-```
+```r
 design_file <-"practical_study_design.txt"
 samples <- read.table(design_file, header=TRUE)
 ```
 
 **Set the row names as the samples names:**   
-```
+```r
 rownames(samples) <- samples$run
 samples
 ```
 If we look at the samples object, we can see the data from our study design file.
 
 **Link Salmon Output File Paths to Samples** - Create a files object pointing to the related `quant.sf` file for each sample:   
-```
+```r
 root_dir <- "/home/manager/course_data/rna_seq_pathogen/practical"
 files <- file.path(root_dir, samples$run, "quant.sf")
 files
@@ -396,7 +396,7 @@ files
 In the `files` object, we should now see the path to the `quant.sf` file in each sample’s folder. This is much simpler and less error-prone than typing out each file path manually.
 
 **Use the run column to map samples to their file paths:**   
-```
+```r
 names(files) <- samples$run
 ```
 
@@ -405,7 +405,7 @@ The files object now has the sample name linked to the file path and can be used
 ### 4.0.1 Make Annotation Database Object
 
 **Load the annotation information:**   
-```
+```r
 path_to_gff <- "GCA_000195955.2_ASM19595v2_genomic.gff"
 txdb <-makeTxDbFromGFF(path_to_gff, organism="Mycobacterium tuberculosis")
 ```
@@ -413,7 +413,7 @@ txdb <-makeTxDbFromGFF(path_to_gff, organism="Mycobacterium tuberculosis")
 The `makeTxDbFromGFF` function is part of the `GenomicFeatures` library and is used to create a Transcript Database (`txdb`) object from a GFF annotation file. The `TxDb` class is a container for storing transcript annotations.
 
 **Extract the GENEID key values from the tbdx object:**   
-```
+```r
 k <- keys(txdb, keytype = "GENEID")
 head(k)
 ```
@@ -421,7 +421,7 @@ head(k)
 The `k` object is a list of all the gene names based on the GENEID as extracted from the annotation file.
 
 **Create a mapping table based on the GENEID and TXNAME info:**   
-```
+```r
 tx2gene <- select(txdb, keys = k, keytype = "GENEID", columns = "TXNAME")
 head(tx2gene)
 ```
@@ -429,7 +429,7 @@ head(tx2gene)
 Take a look at the output, you will see 2 columns. This will be used to map the gene names from the salmon files to the annotation files.
 
 **Rename the genes in the GENEID column** - We do this to match the gene names found in the salmon `quant.sf` files with those found in the transcriptome and annotation files:  
-```
+```r
 tx2gene[["GENEID"]] <- with(tx2gene, ifelse(!grepl("rna-", TXNAME),paste0("gene-", TXNAME), TXNAME))
 head(tx2gene[["GENEID"]])
 ```
@@ -442,12 +442,12 @@ You will see in the GFF and transcript files, that the gene ID is formatted like
 Whereas in the GTF file it is formatted like this: `gene_id ”Rv0005”`
 
 Though salmon uses the GTF file, it adds on the gene- prefix where it is missing while `makeTxDbFromGFF` removes it where it is present.  
-```
+```r
 txi <- tximport(files, type="salmon", tx2gene=tx2gene)
 ```
 
 ### 4.0.2 Create the DESeq data set object
-```
+```r
 ddsTxi <- DESeqDataSetFromTximport(txi, colData = samples, design = ~ phenotype)
 ```
 
@@ -465,59 +465,59 @@ The design formula is a statement that specifies how we want to model the variat
 ### 4.0.3 Perform DESeq Analysis
 **Normalisation and model fitting with DESeq2:**  
 Next we used `DESeq2` to normalize the data and fit a model that relates the gene count information to the phenotype.  
-```
+```r
 ddsTxi <- DESeq(ddsTxi)
 ```
 
 This step does the actual normalisation and model fitting for the data, and results in a `deseq` data set.
 
 **Load provided `.RData` for differential expression analysis:**   
-```
+```r
 load("DE_data.RData")
 ```
 
 ## 4.1. Exploratory Visualization
 **Transform data for visualization:**   
 The `rlog` transformation provides functionality for visualization and clustering.  
-```
+```r
 rldTxi <- rlog(ddsTxi, blind = FALSE)
 ```
 
 **Plot principal component analysis (PCA):**  
 The PCA plot allow us to assess the similarities and differences between the study samples in order to determine if the data fit our expectation compared to the experimental design. This is a good quality control check to use to ensure that we did not introduce any errors during sample processing, sequencing and primary data analysis steps.  
-```
+```r
 plotPCA(rldTxi, intgroup = c("phenotype"))
 ```
 
 ## 4.2. Result Generation and Exploration
 **Get summary of differentially expression results:**  
 The results function of `DESeq2` is used to get the the results of the `DESeq` function ranked by metrics to use to determine which genes are significantly differentially expressed.  
-```
+```r
 summary(results(ddsTxi))
 ```
 
 **Apply LFC threshold and adjusted p-value cutoffs to get significantly differentially expressed genes:**   
 A significance threshold (`FDR`, or `alpha`) and `log2FC` threshold can be passed to the results function to filter non-signficant differentially expressed genes.  
-```
+```r
 resTxi <- results(ddsTxi, alpha=0.05, lfcThreshold=0.5,altHypothesis="greaterAbs")
 summary(resTxi)
 ```
 
 **Get significantly differentially expressed genes:**   
-```
+```r
 sigTxi <- resTxi[!is.na(resTxi$padj) & resTxi$padj < 0.05 & abs(resTxi$log2FoldChange) >= 0.5,]
 sigTxi
 ```
 
 **Visualize your differentially expressed genes:**  
 Extract the `rlog` transformed expression values for the significant gene to use for the heatmap.  
-```
+```r
 matrixTxi <- assay(rldTxi)[rownames(sigTxi), ]
 matrixTxi
 ```
 
 **Plot heatmap:**  
-```
+```r
 pheatmap(matrixTxi, cluster_rows=FALSE, show_rownames=TRUE, cluster_cols=TRUE)
 ```
 

@@ -629,7 +629,7 @@ kallisto_result_directory
 ```
 
 Then configure `sample_to_covariates` data frame:  
-```
+```r
 s2c <- dplyr::select(sample_info,sample = sample, sample_type, ethnicity, individualID=patientID)
 kallisto_result_directory <-  sapply(sample_info$sample, function(id), file.path('outputs', id)) # path to kallisto results
 s2c <- dplyr::mutate(s2c, path = kallisto_result_directory)
@@ -637,7 +637,7 @@ s2c
 ```
 
 Transcript to gene annotations:  
-```
+```r
 filename <-"data/hsapiens_chr21_transcript_to_gene.csv"
 t2g <- read.table(filename, header = T, sep = ',')
 names(t2g) <- c('target_id', 'ensembl_gene_id', 'gene_symbol', 'gene_biotype', 'gene_descrition')
@@ -657,7 +657,7 @@ Here we consider the following covariates:
 </ul>
 
 Create design matrix specification:  
-```
+```r
 design <- ~ individualID + sample_type + ethnicity
 ```
 
@@ -675,7 +675,7 @@ With this model specification, we can infer ethnicity-related differential expre
 For a more extensive treatment of how to setup design matrices for gene expression experiments read through <a href="https://f1000research.com/articles/9-1444">A guide to creating design matrices for gene expression experiments</a>.
 
 Create sleuth object (a group of kallistos) for analysis:  
-```
+```r
 so <- sleuth_prep(sample_to_covariates=s2c, # sample_to_covariates data frame
     full_model=design, # model design matrix
     target_mapping = t2g,  # transcript to gene annotations
@@ -692,18 +692,18 @@ so <- sleuth_prep(sample_to_covariates=s2c, # sample_to_covariates data frame
 
 #### Step 2: Fit the sleuth model
 Now we fit `sleuth`’s ’measurement error model’ (full - consider all covariates simultaneoulsy):  
-```
+```r
 so <- sleuth_fit(so, formula=design, fit_name="full")
 ```
 
 Fit a reduced model - fit a model without the final factor:  
-```
+```r
 so <- sleuth_fit(so, formula=~ individualID + sample_type , fit_name="reduced")
 ```
 
 #### Step 3: Statistical testing between conditions
 Likelihood ratio test between the two models tests for ancestry-related differences - difference between the full model with 3 coveriates versus the reduced model with 2 covariates:  
-```
+```r
 so <- sleuth_lrt(so, 'reduced', 'full')
 sleuth_table_tx <- sleuth_results(obj = so,
     test = 'reduced:full',
@@ -725,17 +725,17 @@ A rule of thumb is to consider a gene significant if the _q_-value is less than 
 >How many genes are significantly differentially expressed due to ethnicity? Are the results in line with your expectations?
 
 Visualize transcript abundance for top hit from differential expression analysis:  
-```
+```r
 topDE_hit <- sleuth_table_tx[1,"target_id"]
 ```
 
 Group view:  
-```
+```r
 plot_bootstrap(so, topDE_hit, units = "est_counts", color_by = "ethnicity")
 ```
 
 Paired sample view:  
-```
+```r
 library(ggplot2)
 df <- get_bootstrap_summary(so , topDE_hit)
 ggplot(data = df, aes(x = sample_type, ymin = min, lower = lower,
@@ -756,26 +756,26 @@ Here we see visually that there is a difference in the expression between the ca
 **Wald’s Test: testing for significant differences between conditions.**
 
 You can look at your sleuth object to see what models you have fit and their design matrix specification like this:  
-```
+```r
 models(so)
 ```
 
 If you are interested in the effect of a particular covariate, you can use Wald’s test to e.g. test for significant expression differences between normal and disease samples (while controlling for **inter-individual** variation and ethnicity-specific diffences).
 
 Wald test for individual coefficients (betas) tumor vs. normal:  
-```
+```r
 so <- sleuth_wt(obj = so, which_beta = "sample_typetumor", which_model = 'full')
 ```
 
 Summary table:  
-```
+```r
 de_sampletype <- sleuth_results(so, test='sample_typetumor',
     test_type = "wt", which_model = "full", pval_aggregate = F)
     head(de_sampletype, 5)
 ```
 
 Visualize results:  
-```
+```r
 df <- get_bootstrap_summary(so , de_sampletype[1,'target_id'])
 ggplot(data = df, aes(x = sample_type, ymin = min, lower = lower,
     middle = mid, upper = upper, ymax = max)) +
@@ -786,7 +786,7 @@ ggplot(data = df, aes(x = sample_type, ymin = min, lower = lower,
 In this comparison, we see strong statistically significant differences between sample types independent of ethnicity, suggesting that the normal-vs-disease differences in expression are more pronounced than ethnicity-related changes.
 
 Save sleuth result object:  
-```
+```r
 save(so, file = "outputs/sleuthObj.RData")
 ```
 
@@ -794,7 +794,7 @@ save(so, file = "outputs/sleuthObj.RData")
 Our model above generated few ancestry-specific differentially expressed genes after false discovery rate correction (**Caveat:** tutorial data is limited to transcripts mapping to chr21). Fortunately, sleuth generates an interactive Shiny application we can use for further exploratory data analysis to better understand the factors driving differential expression in these samples.
 
 Launch interactive exploration of `sleuth` differential expression object:  
-```
+```r
 sleuth_live(so)
 ```
 
