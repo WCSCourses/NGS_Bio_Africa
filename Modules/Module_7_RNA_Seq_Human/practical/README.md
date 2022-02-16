@@ -1018,10 +1018,10 @@ We now divide our read counts by the per million scaling factor to get our reads
 <div align="center">
     <table border="0" style="display: inline-block;">
         <tr>
-            <td width="50%">
+            <td width="25%">
                 <h5> Before: </h5>
 			</td>
-			<td width="50%">
+			<td width="25%">
 				<h5> After: </h5>
 			</td>
 		</tr>
@@ -1034,10 +1034,10 @@ We now divide our read counts by the per million scaling factor to get our reads
 	</table>
     <table border="0" style="display: inline-block;">
         <tr>
-            <td width="50%">
+            <td width="25%">
                 <h5> Before: </h5>
 			</td>
-			<td width="50%">
+			<td width="25%">
 				<h5> After: </h5>
 			</td>
 		</tr>
