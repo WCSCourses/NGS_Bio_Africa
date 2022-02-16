@@ -1034,11 +1034,11 @@ We now divide our read counts by the per million scaling factor to get our reads
 <!-- 	</table> -->
 <!-- </div> -->
 
-<div class="row">
-  <div class="column">
+<div class="row" align="left">
+  <div class="column" style="width:50%;">
   TEST
   </div>
-  <div class="column">
+  <div class="column" style="width:50%;">
   TEST
   </div>
 </div>
