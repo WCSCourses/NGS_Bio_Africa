@@ -34,7 +34,7 @@ This tutorial assumes that you have the following software or packages and their
 <div align="center">
     <table>
         <tr>
-            <th width="20%"> Package </th>
+          <th width="20%"> Package </th>
 			<th width="60%"> Link for download/installation instructions </th>
 			<th width="20%"> Version tested</th>
 		</tr>
@@ -968,6 +968,39 @@ Calculating the transcripts per million or TPM is a similar process to RPKM and 
 ## 8.3. Calculating RPKM and TPM values
 To try and answer this, let’s look at a worked example. Here, we have three genes (A-C) and three biological replicates (1-3).
 
+<div align="center">
+    <table>
+        <tr>
+            <th> </th>
+			<th> </th>
+			<th> </th>
+            <th> </th>
+            <th> </th>
+		</tr>
+		<tr>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+            <td> </td>
+            <td> </td>
+		<tr>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+		<tr>
+			<td> </td>
+			<td> </td>
+			<td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        </tr>
+    </table>
+</div>
+
 There are two things to notice in our dataset:
 <ul>
 	<li> Gene B has twice number reads mapped than gene A, possibly as it’s twice the length
@@ -982,9 +1015,26 @@ In the table below is the total number of reads which mapped for each of the rep
 #### Step 2: normalise for sequencing depth
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
-Before:
-
-After:
+<div align="center">
+	<table border="0">
+		<tr>
+			<td width="50%">
+				<h5> Before: </h5>
+			</td>
+			<td width="50%">
+				<h5> After: </h5>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			
+			</td>
+			<td>
+			
+			</td>
+		</tr>
+	</table>
+</div>
 
 #### Step 3: get your per kilobase scaling factor
 Here we have our gene length in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
