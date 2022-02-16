@@ -1034,13 +1034,15 @@ We now divide our read counts by the per million scaling factor to get our reads
 <!-- 	</table> -->
 <!-- </div> -->
 
-<div class="row" align="left">
-  <div class="column" style="width:50%;">
-  TEST
-  </div>
-  <div class="column" style="width:50%;">
-  TEST
-  </div>
+<div class="container">
+    <div class="row" align="left">
+        <div class="column" style="width:50%;">
+        TEST
+    </div>
+        <div class="column" style="width:50%;">
+        TEST
+        </div>
+    </div>
 </div>
 
 #### Step 3: get your per kilobase scaling factor
