@@ -78,12 +78,12 @@ This tutorial assumes that you have the following software or packages and their
 
 ## 1.6. Where can I find the tutorial data?
 You can find the data for this tutorial by typing the following command in a new terminal window:  
-```
+```bash
 cd /home/manager/course_data/rna_seq_human
 ```
 
 Within the module directory, create a directory to write the outputs you will generate during this practical using the following command:  
-```
+```bash
 mkdir -p outputs
 ```
 
@@ -92,7 +92,7 @@ mkdir -p outputs
 We will need to download two additional annotation files for this tutorial. Follow these instructions:
 
 **Use wget to download supplemental data files:**  
-```
+```bash
 wget https://www.dropbox.com/s/nfuea7ik6wlidum/hsapiens_chr21_transcript_to_gene.csv?dl=1 -O data/hsapiens_chr21_transcript_to_gene.csv
 wget https://www.dropbox.com/s/8xt8q1o0aej1ry1/hsapiens_chr21_transcripts.fa?dl=1 -O data/hsapiens_chr21_transcripts.fa
 ```
@@ -103,7 +103,7 @@ Confirm that you have the following files in the data folder:
 	<li> `hsapiens_chr21_transcripts.fa`
 </ul>
 
-```
+```bash
 ls -lhr data/hsapiens_chr21_transcript*
 ```
 
@@ -178,7 +178,7 @@ To illustrate the principles of RNA-seq analysis, you will analyse 12 RNA-seq sa
 	</table>
 </div>
 
-```
+```bash
 ls data/*.fastq.gz
 ```
 
@@ -191,7 +191,7 @@ The FASTQ files contain the raw sequence reads for each sample. There are four l
 </ol>
 
 **Take a look at one of the FASTQ files:**
-```
+```bash
 zless data/PT6_1.fastq.gz | head
 ```
 
@@ -255,17 +255,17 @@ Exoninc reads span only a single exon and represent over 60% of the read mapping
 Be patient, each of the following steps will take a couple of minutes!
 
 **Look at the usage instructions for `hisat2-build`:**  
-```
+```bash
 hisat2-build -h
 ```
 
 This not only tells us the version of `HISAT2` we’re using (essential for publication methods):  
->```
+>```bash
 >HISAT2 version 2.1.0 by Daehwan Kim (infphilo@gmail.com, http://www.ccb.jhu.edu/people/infphilo
 >```
 
 But, that we also need to give hisat2-build two pieces of information:  
->```
+>```bash
 >Usage: hisat2-build [options]* <reference_in> <ht2_index_base>
 >```
 >These are:
@@ -275,17 +275,17 @@ But, that we also need to give hisat2-build two pieces of information:
 ></ul>
 
 **Build a `HISAT2` index for chromosome 21 of the human reference genome using `hisat2-build`:**  
-```
+```bash
 hisat2-build data/hsapien_grch38_chr21.fa outputs/hsapien_grch38_chr21_hisat2.idx
 ```
 
 You can see the generated index files using:  
-```
+```bash
 ls outputs/hsapien_grch38_chr21_hisat2.idx*
 ```
 
 Look at the usage for `hisat2`  
-```
+```bash
 hisat2 -h
 ```
 
@@ -301,35 +301,35 @@ Here we can see that `HISAT2` needs several parameters so that it can do the map
 We will also be adding one more piece of information, the maximum intron length (default 500,000 bases). For this analysis, we want to set the maximum intron length to 10,000. We can do this by adding the option `--max-intronlen 10000`.
 
 **Map the reads for the PT2 sample using `HISAT2`:**  
-```
+```bash
  hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx -1 data/PT2_1.fastq.gz -2 data/PT2_2.fastq.gz -S outputs/PT2.sam
 ```
 
 `HISAT2` has written the alignment in SAM format. This is a format which allows humans to look at our alignments. However, we need to convert the SAM file to its binary version, a BAM file. We do this for several reasons. Mainly we do it because most downstream programs require our alignments to be in BAM format and not SAM format. However, we also do it because the BAM file is smaller and so takes up less (very precious!) storage space. For more information, see the format guide: <a href="http://samtools.github.io/hts-specs/SAMv1.pdf">http://samtools.github.io/hts-specs/SAMv1.pdf</a>.
 
 **Convert the SAM file to a BAM file:**  
-```
+```bash
 samtools view -S -o outputs/PT2.bam -b outputs/PT2.sam
 ```
 
 Next we need to sort the BAM file ready for indexing. When we aligned our reads with `HISAT2`, alignments were produced in the same order as the sequences in our FASTQ files. To index the BAM file, we need the alignments ordered by their respective positions in the reference genome. We can do this using samtools sort to sort the alignments by their co-ordinates for each chromosome.
 
 **Sort the BAM file:**  
-```
+```bash
 samtools sort -o outputs/PT2_sorted.bam outputs/PT2.bam
 ```
 
 Next, we need to index our BAM file. This makes searching the alignments much more efficient. It allows programs like IGV (which we will be using to visualise the alignment) to quickly get the alignments that overlap the genomic regions you’re looking at. We can do this with samtools index which will generate an index file with the extension `.bai`.
 
 **Index the BAM file so that it can be read efficiently by `IGV`:**  
-```
+```bash
 samtools index outputs/PT2_sorted.bam
 ```
 
 Now, repeat this process of mapping, converting (SAM to BAM), sorting and indexing with the reads from the NP2 sample. 
 
 **You can run the previous steps as a single command:**  
-```
+```bash
 hisat2 -x outputs/hsapien_grch38_chr21_hisat2.idx \
     -1 data/NP2_1.fastq.gz -2 data/NP2_2.fastq.gz | \
 	samtools view -S -b - | \
@@ -359,7 +359,7 @@ The <a href="https://software.broadinstitute.org/software/igv">Integrative Genom
 >**Reference:** <a href="http://software.broadinstitute.org/software/igv/UserGuide">Online IGV User Guide</a> - see more information on all `IGV` features and functions.
 
 ### 4.1.1. Launch IGV and load data
-```
+```bash
 igv &
 ```
 
@@ -465,7 +465,7 @@ Kallisto uses a process called pseudoalignment to make it efficient. Rather than
 As with alignment-based methods, Kallisto needs an index. To generate the index, Kallisto first builds a transcriptome de Bruijn Graph (TBDG) from all of the k-mers (short sequences of k nucleotides) that it finds in the transcriptome. Each node in the graph corresponds to a k-mer and each transcript is represented by its path through the graph. Using these paths, each k-mer is assigned a k-compatibility class. Some k-mers will be redundant i.e. shared by the same transcripts. These are skipped to make the index compact and quicker to search. A great worked example of this process can be found <a href="https://bioinfo.iric.ca/understanding-how-kallisto-works">here</a>.
 
 The command `kallisto index` can be used to build a Kallisto index from transcript sequences:  
-```
+```bash
 kallisto index
 ```
 
@@ -484,17 +484,17 @@ We can see that `kallisto quant` needs us to tell it where our sample reads are.
 ## 5.2. Exercise 4
 **Build an index called GRCh38_kallisto from transcript sequences:**  
 >**Note:** Depending on the specifications of your machine, this step may take a long time. While the index is being built, spend time reading through the remaining sections of the tutorial.  
-```
+```bash
 kallisto index -i outputs/GRCh38_ch21_kallisto	data/hsapiens_chr21_transcripts.fa
 ```
 
 **Quantify the transcript expression levels for the PT6 sample with 100 bootstrap samples and store the results in the output directory PT6:**
-```
+```bash
 kallisto quant -i outputs/GRCh38_ch21_kallisto -o outputs/PT6 -b 100 data/PT6_1.fastq.gz data/PT6_2.fastq.gz
 ```
 
 You’ll find your `Kallisto` results in a new output directory which we called **PT6**. Let’s take a look:  
-```
+```bash
 ls outputs/PT6
 ```
 
@@ -508,7 +508,7 @@ Running `kallisto quant` generated three output files in our **PT6** folder:
 >**Note:** When the number of bootstrap values (-b) is very high, `Kallisto` will generate a large amount of data. To help, it outputs bootstrap results in HDF5 format (`abundance.h5`). This file can be read directly by `sleuth`.
 
 The file `PT6/abundance.tsv` will have the abundance estimates for each gene for the **PT6** sample. Let’s take a quick look.  
-```
+```bash
 head outputs/PT6/abundance.tsv
 ```
 
@@ -524,12 +524,12 @@ In `PT6/abundance.tsv` there are five columns which give us information about th
 In the last column we have our normalised abundance value for each gene. These are our transcripts per million or TPM. If you have time at the end of this tutorial, see our normalisation guide which covers common normalisation methods and has a bonus exercise.
 
 To get the result for a specific transcript, we can use `grep`:  
-```
+```bash
 grep ENST00000399975 outputs/PT6/abundance.tsv
 ```
 
 If we wanted to get the TPM value for a particular transcript, we can use `awk`:  
-```
+```bash
 awk -F"\t" '$1=="ENST00000399975.7" {print $5}' outputs/PT6/abundance.tsv
 ```
 
@@ -586,12 +586,12 @@ We want to use sleuth to investigate transcript differential expresssion between
 
 **Before you begin**   
 Configure the option for a web browser for R at the command line:  
-```
+```bash
 export R_BROWSER='firefox'
 ```
 
 Navigate the the `R` programming environment by typing the following on the command line:  
-```
+```r
 R
 ```
 
