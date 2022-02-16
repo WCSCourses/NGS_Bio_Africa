@@ -541,9 +541,10 @@ do
 	sample=$(basename $r1)
 	sample=${sample%_1.fastq.gz}
 	echo "Processing sample: "$sample
-	kallisto quant -i outputs/GRCh38_ch21_kallisto \
+    
+    kallisto quant -i outputs/GRCh38_ch21_kallisto \
         -o outputs/${sample} -b 100 \
-		data/${sample}_1.fastq.gz data/${sample}_2.fastq.gz
+        data/${sample}_1.fastq.gz data/${sample}_2.fastq.gz
 done
 ```
 
@@ -1122,8 +1123,9 @@ Here we have our gene length in base pairs. For our per kilobase scaling factor 
 </div>
 
 #### Step 4: normalise for length
-Finally, we divide our RPM values from step 2 by our per kilobase scaling factor from step 3 to get our reads per kilobase per million (RPKM).  
-**Before:**  
+Finally, we divide our RPM values from step 2 by our per kilobase scaling factor from step 3 to get our reads per kilobase per million (RPKM).
+
+**Before:**
 <div align="left">
     <table>
         <tr>
