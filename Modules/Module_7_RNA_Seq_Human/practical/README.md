@@ -971,31 +971,31 @@ To try and answer this, let’s look at a worked example. Here, we have three ge
 <div align="center">
     <table>
         <tr>
-            <th> </th>
-			<th> </th>
-			<th> </th>
-            <th> </th>
-            <th> </th>
+            <th> Gene </th>
+			<th> Length </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
 		</tr>
 		<tr>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-            <td> </td>
-            <td> </td>
+			<td> A </td>
+			<td> 2000 bases </td>
+			<td> 10 </td>
+            <td> 12</td>
+            <td> 30 </td>
 		<tr>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-            <td> </td>
-            <td> </td>
+			<td> B </td>
+			<td> 4000 bases </td>
+			<td> 20 </td>
+            <td> 25 </td>
+            <td> 60 </td>
         </tr>
 		<tr>
-			<td> </td>
-			<td> </td>
-			<td> </td>
-            <td> </td>
-            <td> </td>
+			<td> C </td>
+			<td> 1000 bases </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
         </tr>
         </tr>
     </table>
@@ -1015,26 +1015,26 @@ In the table below is the total number of reads which mapped for each of the rep
 #### Step 2: normalise for sequencing depth
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
-<div align="center">
-	<table border="0">
-		<tr>
-			<td width="50%">
-				<h5> Before: </h5>
-			</td>
-			<td width="50%">
-				<h5> After: </h5>
-			</td>
-		</tr>
-		<tr>
-			<td>
+<!-- <div align="center"> -->
+<!-- 	<table border="0"> -->
+<!-- 		<tr> -->
+<!-- 			<td width="50%"> -->
+<!-- 				<h5> Before: </h5> -->
+<!-- 			</td> -->
+<!-- 			<td width="50%"> -->
+<!-- 				<h5> After: </h5> -->
+<!-- 			</td> -->
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<td> -->
 			
-			</td>
-			<td>
+<!-- 			</td> -->
+<!-- 			<td> -->
 			
-			</td>
-		</tr>
-	</table>
-</div>
+<!-- 			</td> -->
+<!-- 		</tr> -->
+<!-- 	</table> -->
+<!-- </div> -->
 
 #### Step 3: get your per kilobase scaling factor
 Here we have our gene length in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
