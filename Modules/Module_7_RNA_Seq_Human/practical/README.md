@@ -1,4 +1,4 @@
-# 1. RNA-Seq EAxpression Analysis
+# 1. RNA-Seq Expression Analysis: _Human_
 ## 1.1. Introduction
 RNA sequencing (RNA-Seq) is a high-throughput method used to profile the transcriptome, quantify gene expression and discover novel RNA molecules or splice variants. This tutorial uses RNA sequencing of human cancer samples to walk you through transcriptome alignment, visualisation, simple quality control checks and shows you how to profile transcriptomic differences by identifying differentially expressed genes.
 

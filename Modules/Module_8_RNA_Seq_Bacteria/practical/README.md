@@ -1,4 +1,4 @@
-# RNA-Seq Expression Analysis
+# RNA-Seq Expression Analysis: _Bacterita_
 ## 1.1 Introduction
 RNA sequencing (RNA-Seq) is a high-throughput method used to profile the transcriptome, quantify gene expression and discover novel RNA molecules. This tutorial uses RNA sequencing of from two _**Mycobacterium tuberculosis**_ isolates (each with 3 replicates - 6 total samples) to walk you through transcriptome pseudo-alignment and quantification and how to profile transcriptomic differences between experimental conditions (**Sensitive** vs. **Resistant**) by identifying differentially expressed genes.
 
