@@ -1037,6 +1037,7 @@ In the table below is the total number of reads which mapped for each of the rep
 #### Step 2: normalise for sequencing depth
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
+**Before:**
 <div align="center">
     <table>
         <tr>
@@ -1066,6 +1067,7 @@ We now divide our read counts by the per million scaling factor to get our reads
     </table>
 </div>
 
+**After:**
 <div align="center">
     <table>
         <tr>
