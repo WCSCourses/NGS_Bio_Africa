@@ -1015,23 +1015,32 @@ In the table below is the total number of reads which mapped for each of the rep
 #### Step 2: normalise for sequencing depth
 We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
 
-<div align="center">
-    <table border="0">
-        <tr>
-            <td width="50%">
-                <h5> Before: </h5>
-			</td>
-			<td width="50%">
-				<h5> After: </h5>
-			</td>
-		</tr>
-		<tr>
-			<td>
-	        </td>
-			<td>
-			</td>
-		</tr>
-	</table>
+<!-- <div align="center"> -->
+<!--     <table border="0"> -->
+<!--         <tr> -->
+<!--             <td width="50%"> -->
+<!--                 <h5> Before: </h5> -->
+<!-- 			</td> -->
+<!-- 			<td width="50%"> -->
+<!-- 				<h5> After: </h5> -->
+<!-- 			</td> -->
+<!-- 		</tr> -->
+<!-- 		<tr> -->
+<!-- 			<td> -->
+<!-- 	        </td> -->
+<!-- 			<td> -->
+<!-- 			</td> -->
+<!-- 		</tr> -->
+<!-- 	</table> -->
+<!-- </div> -->
+
+<div class="row">
+  <div class="column">
+  TEST
+  </div>
+  <div class="column">
+  TEST
+  </div>
 </div>
 
 #### Step 3: get your per kilobase scaling factor
