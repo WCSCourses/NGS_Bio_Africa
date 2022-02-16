@@ -259,12 +259,274 @@ Working through this tutorial, you will investigate the differences in expressio
 
 **Research Question:** what genes are differentially expressed between these two isolates that can explain the differences in their phenotypes?
 
-Check that you can see the FASTQ files in the practical directory:   
+## 2.1. Exercise 1
+
+**Check that you can see the FASTQ files in the practical directory:**   
 ```
 ls N*.fq.gz
 ```
 
+The FASTQ files contain the raw sequence reads for each sample. There are four lines per read: 
+<ol>
+	<li> Header
+	<li> Sequence
+	<li> Separator (usually a ‘+’)
+	<li> Encoded quality value
+</ol>
 
+**Take a look at one of the FASTQ files:**   
+```
+zless N2_sub_R1.fq.gz | head
+```
+
+Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FASTQ_format/">https://en.wikipedia.org/wiki/FASTQ_format/</a>.
+
+## 2.2. Questions
+
+**Q1: Why is there more than one FASTQ file per sample?** _Hint: think about why there is a `N2_sub_R1.fq.gz` and a `N2_sub_2.fq.gz`_
+
+**Q2: How many reads were generated for the N2 sample?** _Hint: we want the total number of reads from both files (`N2_sub_R1.fq.gz` and `N2_sub_2.fq.gz`) so perhaps think about the FASTQ format and the number of lines for each read or whether there’s anything you can use in the FASTQ header to search and count._
+
+**Q3: The three Resistant samples N2, N6 and N10 represent technical replicates. True or False? Comment on your answer.**
+
+# 3. Estimate Transcript Abundance With Salmon
+
+In this section, you will use <a href="https://salmon.readthedocs.io/en/latest/salmon.html">Salmon</a>, a transcript quantification method to estimate the number of reads in each sample that map to reference transcripts. This count is an estimate of the abundance or expression level of these transcripts in our experiment. As Salmon is an alignment free method, read quantification does not require an input BAM file. `Salmon` using a selective mapping algorithm to align the reads directly to a set of target transcripts such as those from a reference database for your organism.
+
+Inputs include: 
+<ul>
+    <li> A set of target transcripts - FASTA format Reference Transcriptome GCA_000195955.2_ASM19595v2_genomic.transcripts.fa
+    <li> Sample reads - FASTA/FASTQ files for your sample N2_sub_R1.fq.gz.....
+</ul>
+
+See more details in:
+>Patro R, Duggal G, Love MI, Irizarry RA, Kingsford C. **Salmon provides fast and bias-aware quantification of transcript expression.** Nat Methods. 2017 Apr;14(4):417- 419. <a href="doi:10.1038/nmeth.4197">doi:10.1038/nmeth.4197</a>. PMID: 28263959; PMCID: PMC5600148.
+
+## 3.1. Create Transcriptome Index
+First, we create the necessary index files for any alignment tools downstream. The salmon index is created from the transcripts file, and while it is named `transcripts_index` here, you can name it anything.
+
+```
+salmon index -t GCA_000195955.2_ASM19595v2_genomic.transcripts.fa -i transcripts_index -k 31
+```
+
+Take a look at the various files created in the transcripts_index folder created by salmon.
+
+## 3.2. Transcript Quantification
+
+Next we perform quantification with salmon using the transcript index folder we just created.
+
+However, it is important to perform key quality control analysis of your sample reads (`*.fq.gz`) files before proceeding with quantification.
+
+### 3.2.1 Read Quality Control Analysis
+
+Here we demonstrate how to trim and filter the reads using `Trimmomatic`. Here we clean the reads by looking at various quality metrics including:
+<ul>
+    <li> low quality reads - filter based on a min leading base quality of 3, and trailing base quality of 3. The scan with a sliding window that cuts when the average quality is lower than 15.
+    <li> Illumina adapter sequences - clip out these technical artifacts using TruSeq3-PE.fa
+    <li> read length - discard any ready with a length lower than 36
+</ul>
+
+```
+trimmomatic PE N2_sub_R1.fq.gz N2_sub_R2.fq.gz \
+    N2_trimmed_forward_paired.fq.gz N2_trimmed_forward_unpaired.fq.gz \
+    N2_trimmed_reverse_paired.fq.gz N2_trimmed_reverse_unpaired.fq.gz \
+    ILLUMINACLIP:/home/manager/miniconda/pkgs/trimmomatic-0.39-1/share/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:30:10:2:keepBothReads \
+    LEADING:3 TRAILING:3 MINLEN:36
+```
+
+In a typically workflow, you would do `FastQC` analysis before and after to check the effects of the trimming, but as that is not the purpose of this section, we will skip that for now.
+
+## 3.2.2 Transcript Quantificaiton using salmon
+
+Now we used the trimmed and paired reads to estimate transcript abundance:
+
+```
+salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
+    --threads 2 -l A \
+    -i transcripts_index GCA_000195955.2_ASM19595v2_genomic.fa \
+    -1 N2_trimmed_forward_paired.fq.gz \
+    -2 N2_trimmed_reverse_paired.fq.gz -o N2
+```
+
+This creates a new folder named “N2” in the directory, which contains a number of files:
+
+<p align="center">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+</p>
+
+The `quant` files are the files containing the read counts for the genes. These are what downstream tools like `DESeq2` or `edgeR` would use for the differential expression analysis.
+
+It is not always practical to run commands for each sample one at a time. So we can write small scripts to process multiple samples using the same set of commands as is shown here:
+
+```
+for r1 in *_R1.fq.gz
+do
+    echo $r1
+    sample=$(basename $r1)
+    sample=${sample%_sub_R1.fq.gz}
+    echo "Processing sample: "$sample
+    trimmomatic PE ${sample}_sub_R1.fq.gz ${sample}_sub_R2.fq.gz ${sample}_trimmed_forward_paired.fq.gz ${sample}_trimmed_forward_unpaired.fq.gz \
+    ${sample}_trimmed_reverse_paired.fq.gz ${sample}_trimmed_reverse_unpaired.fq.gz \
+    ILLUMINACLIP:/home/manager/miniconda/pkgs/trimmomatic-0.39-1/share/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:30:10:2:keepBothReads \
+    LEADING:3 TRAILING:3 MINLEN:36
+
+salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
+    --threads 2 -l A -i transcripts_index GCA_000195955.2_ASM19595v2_genomic.fa \
+    -1 ${sample}_trimmed_forward_paired.fq.gz \
+    -2 ${sample}_trimmed_reverse_paired.fq.gz \
+    -o ${sample}
+done
+```
+
+## 3.3. Questions
+
+In the `N2` folder, take a look at the `quant.sf` file and answer the following questions:
+
+**Q1: What does TPM stand for?**
+
+**Q2: How many reads in total are mapped to the tRNA genes?** _Hint: They start with “rna-”_
+
+**Q3: Do you think this level of tRNA is acceptable?**
+
+Take a moment to discuss what the effect of large amounts of reads from tRNA and rRNA could have on normalisation. _Hint: For further help understanding the quant.sf* output files look at this salmon documentation page._
+
+# 4 Differential Expression Analysis with `DESeq2`
+
+In this section, you will use the `R` Package `DESeq2` to perform differential expression analysis using the salmon quantification files you generated in the previous section. For more information about `DESeq` can look at the manuscript describing the method:
+>Love MI, Huber W, Anders S (2014). **Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.** Genome Biology, 15, 550. doi: 10.1186/s13059-014-0550-8.
+
+We will now move to working in the `R` Programming environment. Start `R`:   
+```
+R
+```
+
+**Load the required libraries:**
+>`R` has a base set of classes and methods and tools. The additional packages we installed are a set of functions and tools designed to handle specific biological data types and support analyses and visualization such as of RNA-seq data. Here, we load those software packages that are relevant to our analysis.
+
+```
+library("tximportData")
+library("tximport")
+library("GenomicFeatures")
+library("DESeq2")
+library("pheatmap")
+```
+
+**Load the study design table:**   
+```
+design_file <-"practical_study_design.txt"
+samples <- read.table(design_file, header=TRUE)
+```
+
+**Set the row names as the samples names:**   
+```
+rownames(samples) <- samples$run
+samples
+```
+If we look at the samples object, we can see the data from our study design file.
+
+**Link Salmon Output File Paths to Samples** - Create a files object pointing to the related `quant.sf` file for each sample:   
+```
+root_dir <- "/home/manager/course_data/rna_seq_pathogen/practical"
+files <- file.path(root_dir, samples$run, "quant.sf")
+files
+```
+
+In the `files` object, we should now see the path to the `quant.sf` file in each sample’s folder. This is much simpler and less error-prone than typing out each file path manually.
+
+**Use the run column to map samples to their file paths:**   
+```
+names(files) <- samples$run
+```
+
+The files object now has the sample name linked to the file path and can be used as a way to map the information.
+
+### 4.0.1 Make Annotation Database Object
+
+**Load the annotation information:**   
+```
+path_to_gff <- "GCA_000195955.2_ASM19595v2_genomic.gff"
+txdb <-makeTxDbFromGFF(path_to_gff, organism="Mycobacterium tuberculosis")
+```
+
+The `makeTxDbFromGFF` function is part of the `GenomicFeatures` library and is used to create a Transcript Database (`txdb`) object from a GFF annotation file. The `TxDb` class is a container for storing transcript annotations.
+
+**Extract the GENEID key values from the tbdx object:**   
+```
+k <- keys(txdb, keytype = "GENEID")
+head(k)
+```
+
+The `k` object is a list of all the gene names based on the GENEID as extracted from the annotation file.
+
+**Create a mapping table based on the GENEID and TXNAME info:**   
+```
+tx2gene <- select(txdb, keys = k, keytype = "GENEID", columns = "TXNAME")
+head(tx2gene)
+```
+
+Take a look at the output, you will see 2 columns. This will be used to map the gene names from the salmon files to the annotation files.
+
+**Rename the genes in the GENEID column** We do this to match the gene names found in the salmon `quant.sf` files with those found in the transcriptome and annotation files:   
+```
+tx2gene[["GENEID"]] <- with(tx2gene, ifelse(!grepl("rna-", TXNAME),paste0("gene-", TXNAME), TXNAME))
+head(tx2gene[["GENEID"]])
+```
+
+The above command goes through the `tx2gene` object, and looks for where the gene name in the **TXNAME** column DOES NOT have the prefix "rna-". In those rows, it adds the "gene-" prefix to the gene name in the **GENEID** column.
+
+When the annotation file is imported by `makeTxDbFromGFF`, it removes the "gene-" prefix that is present in the `quant` files. This is because of the way that the annotation and transcript files are formatted.
+
+You will see in the GFF and transcript files, that the gene ID is formatted like this: `ID=gene-Rv0005`   
+Whereas in the GTF file it is formatted like this: `gene_id ”Rv0005”`
+
+Though salmon uses the GTF file, it adds on the gene- prefix where it is missing while `makeTxDbFromGFF` removes it where it is present.   
+```
+txi <- tximport(files, type="salmon", tx2gene=tx2gene)
+```
+
+### 4.0.2 Create the DESeq data set object
+
+```
+ddsTxi <- DESeqDataSetFromTximport(txi, colData = samples, design = ~ phenotype)
+```
+
+The inputs to create a DESeq object are:
+<ul>
+    <li> txi - the summary of transcript level abundance estimates
+    <li> colData - information from the study design file loaded earlier
+    <li> design - formula that expresses the relationship between the gene counts and the variables in the study design. Here, we are using phenotype.
+</ul>
+
+The design formula is a statement that specifies how we want to model the variation in gene expression from the abundance estimates for each sample (counts). This statement is loosely saying that we expect that the level of expression of a gene is dependent on the phenotype of the bacterial isolate. If we have more than a single experimental factor to consider, we would change how we specify the design formula.
+
+>**Note:** For a more extensive treatment of how to setup the design formula for more complex experi- mental designs, read through A guide to creating design matrices for gene expression experiments.
+
+### 4.0.3 Perform DESeq Analysis
+
+**Normalisation and model fitting with DESeq2** - Next we used `DESeq2` to normalize the data and fit a model that relates the gene count information to the phenotype:   
+```
+ddsTxi <- DESeq(ddsTxi)
+```
+
+This step does the actual normalisation and model fitting for the data, and results in a `deseq` data set.
+
+**Load provided `.RData` for differential expression analysis:**   
+```
+load("DE_data.RData")
+```
+
+## 4.1. Exploratory Visualization
+
+**Transform data for visualization*** - The `rlog` transformation provides functionality for visualization and clustering:
+```
+rldTxi <- rlog(ddsTxi, blind = FALSE)
+```
+
+**Plot principal component analysis (PCA):**   
+The PCA plot allow us to assess the similarities and differences between the study samples in order to determine if the data fit our expectation compared to the experimental design. This is a good quality control check to use to ensure that we did not introduce any errors during sample processing, sequencing and primary data analysis steps.   
+```
+plotPCA(rldTxi, intgroup = c("phenotype"))
+```
 
 # 5. Key Aspects of Differential Expression Analysis
 
