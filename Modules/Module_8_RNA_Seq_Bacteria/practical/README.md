@@ -638,3 +638,550 @@ Calculating the transcripts per million or TPM is a similar process to RPKM and 
 	<li> <b>Get your per million scaling factor</b> <br> Divide your total RPK value from step 3 by 1,000,000 (1 million) to get your per million scaling factor.
 	<li> <b>Normalise for sequencing depth</b> <br> Divide your RPK value calculated in step 2 by the per million scaling factor from step 4. You now have your transcripts per millions value or TPM.
 </ol>
+
+## 6.3. Calculating RPKM and TPM values
+To try and answer this, let’s look at a worked example. Here, we have three genes (A-C) and three biological replicates (1-3).
+
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Length </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 2000 bases </td>
+			<td> 10 </td>
+            <td> 12</td>
+            <td> 30 </td>
+		<tr>
+			<td> B </td>
+			<td> 4000 bases </td>
+			<td> 20 </td>
+            <td> 25 </td>
+            <td> 60 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1000 bases </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+    </table>
+</div>
+
+There are two things to notice in our dataset:
+<ul>
+	<li> Gene B has twice number reads mapped than gene A, possibly as it’s twice the length
+	<li> Replicate 3 has more reads mapped than any of the other replicates, regardless of which gene we look at.
+</ul>
+
+### 6.3.1. Calculating RPKM
+#### Step 1: get your per million scaling factor
+
+In the table below is the total number of reads which mapped for each of the replicates. To get our per million scaling factor, we divide each of these values by 1,000,000 (1 million).
+
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+			<th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> Total reads mapped  </td>
+			<td> 3 500 000 </td>
+			<td> 4 500 000 </td>
+            <td> 10 600 000</td>
+		<tr>
+			<td> Per million reads </td>
+			<td> 3.5 </td>
+			<td> 4.5 </td>
+            <td> 10.6 </td>
+        </tr>
+    </table>
+</div>
+
+#### Step 2: normalise for sequencing depth
+We now divide our read counts by the per million scaling factor to get our reads per million (RPM).
+
+**Before:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 10 </td>
+            <td> 12</td>
+            <td> 30 </td>
+		<tr>
+			<td> B </td>
+			<td> 20 </td>
+            <td> 25 </td>
+            <td> 60 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+    </table>
+</div>
+
+**After:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 (RPM) </th>
+            <th> Replicate 2 (RPM) </th>
+            <th> Replicate 3 (RPM) </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 2.857 </td>
+            <td> 2.667 </td>
+            <td> 2.830 </td>
+		<tr>
+			<td> B </td>
+			<td> 5.714 </td>
+            <td> 5.556 </td>
+            <td> 5.660 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1.429 </td>
+            <td> 1.778 </td>
+            <td> 1.415 </td>
+        </tr>
+    </table>
+</div>
+
+#### Step 3: get your per kilobase scaling factor
+Here we have our gene length in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
+
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Length (base pairs) </th>
+            <th> Length (kilobases) </th>
+		</tr>
+		<tr>
+			<td> A </td>
+            <td> 2,000 </td>
+            <td> 2 </td>
+		<tr>
+			<td> B </td>
+			<td> 4,000 </td>
+            <td> 4 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1,000 </td>
+            <td> 1 </td>
+        </tr>
+    </table>
+</div>
+
+#### Step 4: normalise for length
+Finally, we divide our RPM values from step 2 by our per kilobase scaling factor from step 3 to get our reads per kilobase per million (RPKM).
+
+**Before:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 (RPM) </th>
+            <th> Replicate 2 (RPM) </th>
+            <th> Replicate 3 (RPM) </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 2.857 </td>
+            <td> 2.667 </td>
+            <td> 2.830 </td>
+		<tr>
+			<td> B </td>
+			<td> 5.714 </td>
+            <td> 5.556 </td>
+            <td> 5.660 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1.429 </td>
+            <td> 1.778 </td>
+            <td> 1.415 </td>
+        </tr>
+    </table>
+</div>
+
+**After:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 (RKPM) </th>
+            <th> Replicate 2 (RKPM) </th>
+            <th> Replicate 3 (RKPM) </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 1.43 </td>
+            <td> 1.33 </td>
+            <td> 1.42 </td>
+		<tr>
+			<td> B </td>
+			<td> 1.43 </td>
+            <td> 1.39 </td>
+            <td> 1.42 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1.43 </td>
+            <td> 1.78 </td>
+            <td> 1.42 </td>
+        </tr>
+    </table>
+</div>
+
+Notice that even though replicate 3 had more reads assigned than the other samples and a greater sequencing depth, its RPKM is quite similar. And, that although gene B had twice the number of reads assigned than gene A, its RPKM is the same. This is because we have normalised by both length and sequencing depth.
+
+### 6.3.2. Calculating TPM
+Now we’re going to calculate the TPM values for the same example data. As a reminder, here are our three genes (A-C) and three biological replicates (1-3).
+
+<div align="center">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Length </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 2000 bases </td>
+			<td> 10 </td>
+            <td> 12</td>
+            <td> 30 </td>
+		<tr>
+			<td> B </td>
+			<td> 4000 bases </td>
+			<td> 20 </td>
+            <td> 25 </td>
+            <td> 60 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1000 bases </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+    </table>
+</div>
+
+#### Step 1: get your per kilobase scaling factor
+Again, our gene lengths are in base pairs. For our per kilobase scaling factor we need to get our gene length in kilobases by dividing it by 1,000.
+
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Length (base pairs) </th>
+            <th> Length (kilobases) </th>
+		</tr>
+		<tr>
+			<td> A </td>
+            <td> 2,000 </td>
+            <td> 2 </td>
+		<tr>
+			<td> B </td>
+			<td> 4,000 </td>
+            <td> 4 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1,000 </td>
+            <td> 1 </td>
+        </tr>
+    </table>
+</div>
+
+
+#### Step 2: normalise for length
+Now we divide the number of reads which have been assigned to each gene by the per kilobase scaling factor we just calculated. This will give us our reads per kilobase (RPK).
+
+**Before:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 10 </td>
+            <td> 12</td>
+            <td> 30 </td>
+		<tr>
+			<td> B </td>
+			<td> 20 </td>
+            <td> 25 </td>
+            <td> 60 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+    </table>
+</div>
+
+**After:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 5 </td>
+            <td> 6 </td>
+            <td> 15 </td>
+		<tr>
+			<td> B </td>
+			<td> 5 </td>
+            <td> 6.25 </td>
+            <td> 15 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+    </table>
+</div>
+
+#### Step 3: get the sum of all RPK values in your sample
+Next, we sum the RPK values for each of our replices. This will give use our total RPK value for each replicate. To make this example scalable, we assume there are other genes so the total RPK is made up.
+
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 5 </td>
+            <td> 6 </td>
+            <td> 15 </td>
+		<tr>
+			<td> B </td>
+			<td> 5 </td>
+            <td> 6.25 </td>
+            <td> 15 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+        <tr>
+	        <td> ... </td>
+			<td> ... </td>
+			<td> ... </td>
+            <td> ... </td>
+        </tr>
+		<tr>
+			<th> Total RPK </th>
+			<th> 150 000 </th>
+			<th> 202 500 </th>
+            <th> 450 000 </th>
+        </tr>
+    </table>
+</div>
+
+#### Step 4: get your per million scaling factor
+Here, instead of dividing our total mapped reads by 1,000,000 (1 million) to get our per million scaling factor, we divide our total RPK values by 1,000,000 (1 million).
+
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> Total RPK </td>
+			<td> 150 000 </td>
+            <td> 202 500 </td>
+            <td> 450 000 </td>
+		<tr>
+			<td> Per million RPK </td>
+			<td> 0.1500 </td>
+            <td> 0.2025 </td>
+            <td> 0.4500 </td>
+        </tr>
+    </table>
+</div>
+
+#### Step 5: normalise for sequencing depth
+Finally, we divide our individual RPK values from step 2 by the per million scaling factor in step 4 to give us our TPM values. 
+
+**Before:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 5 </td>
+            <td> 6 </td>
+            <td> 15 </td>
+		<tr>
+			<td> B </td>
+			<td> 5 </td>
+            <td> 6.25 </td>
+            <td> 15 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 5 </td>
+            <td> 8 </td>
+            <td> 15 </td>
+        </tr>
+    </table>
+</div>
+
+**After:**
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 33.33 </td>
+            <td> 29.63 </td>
+            <td> 33.33 </td>
+		<tr>
+			<td> B </td>
+			<td> 33.33 </td>
+            <td> 30.86 </td>
+            <td> 33.33 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 33.33 </td>
+            <td> 39.51 </td>
+            <td> 33.33 </td>
+        </tr>
+    </table>
+</div>
+
+## 6.4. Which normalisation unit should I use?
+Well, there’s a lot of debate around this, so let’s look at our total normalised values for each replicate.
+
+### 6.4.1. RPKM
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 (RKPM) </th>
+            <th> Replicate 2 (RKPM) </th>
+            <th> Replicate 3 (RKPM) </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 1.43 </td>
+            <td> 1.33 </td>
+            <td> 1.42 </td>
+		<tr>
+			<td> B </td>
+			<td> 1.43 </td>
+            <td> 1.39 </td>
+            <td> 1.42 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 1.43 </td>
+            <td> 1.78 </td>
+            <td> 1.42 </td>
+        </tr>
+        <tr>
+            <th> Total RPKM </th>
+            <th> 4.29 </th>
+            <th> 4.50 </th>
+            <th> 4.25 </th>
+        </tr>
+    </table>
+</div>
+
+### 6.4.2. TPM
+<div align="left">
+    <table>
+        <tr>
+            <th> Gene </th>
+			<th> Replicate 1 </th>
+            <th> Replicate 2 </th>
+            <th> Replicate 3 </th>
+		</tr>
+		<tr>
+			<td> A </td>
+			<td> 33.33 </td>
+            <td> 29.63 </td>
+            <td> 33.33 </td>
+		<tr>
+			<td> B </td>
+			<td> 33.33 </td>
+            <td> 30.86 </td>
+            <td> 33.33 </td>
+        </tr>
+		<tr>
+			<td> C </td>
+			<td> 33.33 </td>
+            <td> 39.51 </td>
+            <td> 33.33 </td>
+        </tr>
+        <tr>
+            <th> Total TPM </th>
+            <th> 100 </th>
+            <th> 100 </th>
+            <th> 100 </th>
+        </tr>
+    </table>
+</div>
+
+Notice that that total TPM value for each of the replicates is the same. This is not true for RPKM and FPKM where the total values differ. With TPM, having the same total value for each replicate makes it easier to compare the proportion of reads mapping to each gene across replicates (although you shouldn’t really compare across experiments). With RPKM and FPKM, the differing total values make it much harder to compare replicates.
