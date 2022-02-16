@@ -1342,10 +1342,10 @@ Next, we sum the RPK values for each of our replices. This will give use our tot
             <td> ... </td>
         </tr>
 		<tr>
-			<td> Total RPK </td>
-			<td> 150 000 </td>
-			<td> 202 500 </td>
-            <td> 450 000 </td>
+			<th> Total RPK </th>
+			<th> 150 000 </th>
+			<th> 202 500 </th>
+            <th> 450 000 </th>
         </tr>
     </table>
 </div>
@@ -1453,7 +1453,6 @@ Well, there’s a lot of debate around this, so let’s look at our total normal
 			<td> 1.43 </td>
             <td> 1.33 </td>
             <td> 1.42 </td>
-            <th> 4.29 </th>
 		<tr>
 			<td> B </td>
 			<td> 1.43 </td>
@@ -1467,10 +1466,10 @@ Well, there’s a lot of debate around this, so let’s look at our total normal
             <td> 1.42 </td>
         </tr>
         <tr>
-            <td> Total RPKM </td>
-            <td> 4.29 </td>
-            <td> 4.50 </td>
-            <td> 4.25 </td>
+            <th> Total RPKM </th>
+            <th> 4.29 </th>
+            <th> 4.50 </th>
+            <th> 4.25 </th>
         </tr>
     </table>
 </div>
