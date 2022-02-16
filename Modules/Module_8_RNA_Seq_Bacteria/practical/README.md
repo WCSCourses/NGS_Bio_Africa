@@ -7,9 +7,9 @@ For an introduction to RNA-Seq principles and best practices see:
 > **A survey of best practices for RNA-Seq data analysis.** Ana Conesa, Pedro Madrigal, Sonia Tarazona, David Gomez-Cabrero, Alejandra Cervera, Andrew McPherson, Michał Wojciech Szcześniak, Daniel J. Gaffney, Laura L. Elo, Xuegong Zhang and Ali Mortazavi Genome Biol. 2016 Jan 26;17:13 doi:10.1186/s13059-016-0881-8
 
 ## 1.2. Learning Outcomes
-By the end of this practical, you should be familiar with:
+By the end of this practical, you should be familiar with:  
 <ul>
-    <li> Using \`salmon\` to quantify transcript abundance 
+    <li> Using <code>salmon</code> to quantify transcript abundance 
     <li> Knowing how to create a study design file
     <li> Loading the required files into R
     <li> Creating a DESeq2 data set
