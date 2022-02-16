@@ -11,16 +11,16 @@ By the end of this practical, you should be familiar with:
 <ul>
     <li> Using <code>salmon</code> to quantify transcript abundance 
     <li> Knowing how to create a study design file
-    <li> Loading the required files into R
-    <li> Creating a DESeq2 data set
-    <li> Running DESeq
+    <li> Loading the required files into <code>R</code>
+    <li> Creating a <code>DESeq2</code> data set
+    <li> Running <code>DESeq</code>
     <li> Visualising the relationship between samples 
-    <li> Creating a results object
+    <li> Creating a <code>results</code> object
     <li> Ranking genes by significance
     <li> Visualisation of differential expression results
 </ul>
 
-Focus on:
+Focus on:  
 <ul>
     <li> Looking at what is in the files you are given, and the files you create 
     <li> How the information from different files relates and comes together 
@@ -28,29 +28,26 @@ Focus on:
 </ul>
 
 ## 1.3. Practical Outline
-
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 		<b>Workflow Overview.</b> A schematic representation of each step in this practical exercise.
 </p>
 
-The main steps in all differential expression analyses are:
+The main steps in all differential expression analyses are:  
 <ul>
-    <li> Quantification - How many reads come from each gene? (<b>Salmon</b>) 
-    <li> Normalisation - Dealing with biases in the data (<b>DESeq2</b>)
-    <li> Differential expression analysis (<b>DESeq2</b>)
-    <li> Visualisation and reporting (<b>R libraries</b>)
+    <li> <b>Quantification</b> - How many reads come from each gene? (<code>Salmon</code>) 
+    <li> <b>Normalisation</b> - Dealing with biases in the data (<code>DESeq2</code>)
+    <li> <b>Differential expression analysis</b> (<code>DESeq2</code>)
+    <li> <b>Visualisation and reporting</b> (<code>R libraries</code>)
 </ul>
 
-**Additional Resources**   
-<a href="https://www.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html">RNA-seq workflow: gene-level exploratory analysis and differential expression</a>
+>**Additional Resources:**  
+><a href="https://www.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html">RNA-seq workflow: gene-level exploratory analysis and differential expression</a>
 
 ## 1.4. Authors
-
 This tutorial was developed by Jon Ambler, Phelelani Mpangase and Nyasha Chambwe, based in part, from materials from Victoria Offord and Adam Reid.
 
 ## 1.5. Prerequisites
-
 This tutorial assumes that you have the following software or packages and their dependencies installed on your computer. The software or packages used in this tutorial may be updated from time to time so, we have also given you the version which was used when writing the tutorial. Where necessary, instructions for how to download additional analysis tools are given in the relevant section.
 
 <div align="center">
@@ -99,52 +96,41 @@ This tutorial assumes that you have the following software or packages and their
 </div>
 
 ## 1.6. Setup
-
 ### 1.6.1. Create Practical Directory
-
-Navigate to the module folder on the Virtual Machine (VM) using the following command:
-
+Navigate to the module folder on the Virtual Machine (VM) using the following command:  
 ```
 cd /home/manager/course_data/rna_seq_pathogen
 ```
 
-Create a working directory for the practical:
-
+Create a working directory for the practical:  
 ```
 mkdir practical
 ```
 
-Create a copy of the practial dataset to maintain the data integrity of the original dataset:
-
+Create a copy of the practial dataset to maintain the data integrity of the original dataset:  
 ```
  cp /home/manager/course_data/rna_seq_pathogen/data/bacterial/* /home/manager/course_data/rna_seq_pathogen/practical
 ```
 
-Copy and paste the command above as a single line at your command line window.   
+Copy and paste the command above as a single line at your command line window.  
 >Note: if you make a mistake at any point during this tutorial, you can reset by deleting the practical folder and restarting from this section.
 
-Move to the practical directory:
-
+Move to the practical directory:  
 ```
 cd practical
 ```
 
 ### 1.6.2. Download Supplemental Datasets
-
 **Internet Access Required**
 
-#### Reference Transcriptome File
-
-Download the GFF formatted version of the annotation file. Unfortunately due to the lack of standardization in bioinformatics, we need both the <a href="https://mblab.wustl.edu/GTF22.html">>GTF</a> file and the <a href="https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md">GFF</a> file for analysis (See the differences and similarities between these two file format specifications <a href="https://www.ensembl.org/info/website/upload/gff.html?redirect=no">here</a>). Salmon uses the GTF file and the GenomicFeatures library in R needs a GFF file. Both files contain the same annotation information, they are just formatted differently. No tools are able to reliably convert one to the other because even GFF files are not formatted consistently.
-
+#### 1.6.2.1. Reference Transcriptome File
+Download the GFF formatted version of the annotation file. Unfortunately due to the lack of standardization in bioinformatics, we need both the <a href="https://mblab.wustl.edu/GTF22.html">>GTF</a> file and the <a href="https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md">GFF</a> file for analysis (See the differences and similarities between these two file format specifications <a href="https://www.ensembl.org/info/website/upload/gff.html?redirect=no">here</a>). Salmon uses the GTF file and the GenomicFeatures library in R needs a GFF file. Both files contain the same annotation information, they are just formatted differently. No tools are able to reliably convert one to the other because even GFF files are not formatted consistently.  
 ```
 wget https://www.dropbox.com/s/4yjgbmy3dyhfoad/GCA_000195955.2_ASM19595v2_genomic.gff?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/GCA_000195955.2_ASM19595v2_genomic.gff
 ```
 
-#### Study Design File Download the study design file
-
-The study design file is a tab separated file with 4 columns that encodes the phenotype and repeat information on the samples we will analyze in this practical. You will import this file into R to setup the differential expression analysis in the R Programming language. It is critical to keep track of the details of which samples are which etc. for downstream analysis purposes.
-
+#### 1.6.2.2. Study Design File Download the study design file
+The study design file is a tab separated file with 4 columns that encodes the phenotype and repeat information on the samples we will analyze in this practical. You will import this file into R to setup the differential expression analysis in the R Programming language. It is critical to keep track of the details of which samples are which etc. for downstream analysis purposes.  
 ```
 wget https://www.dropbox.com/s/6y3z9btz3bg20pn/practical_study_design.txt?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/practical_study_design.txt
 ```
@@ -155,57 +141,50 @@ wget https://www.dropbox.com/s/6y3z9btz3bg20pn/practical_study_design.txt?dl=1 -
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
-#### RData
-
-Download `DE_data.RData` for later use. These files will be used for differential expression analysis in a later section of this tutorial.
-
+#### 1.6.2.3. RData
+Download `DE_data.RData` for later use. These files will be used for differential expression analysis in a later section of this tutorial.  
 ```
 wget https://www.dropbox.com/s/6onagsnpp9wrkrv/DE_data.RData.zip?dl=1 -O /home/manager/course_data/rna_seq_pathogen/practical/DE_data.RData.zip
 ```
 
 Uncompress the `DE_data.RData.zip` file:
-
 ```
 unzip DE_data.RData.zip
 ```
 
 ### 1.6.3 Setup R Analysis Environment
-
 **Internet Access Required**   
-In this section you will download additional `R` Libraries, packages of analysis tools to support differential expression analysis in `R`.   
-Start R by typing the following command:
 
+In this section you will download additional `R` Libraries, packages of analysis tools to support differential expression analysis in `R`.
+
+Start R by typing the following command:  
 ```
 R
 ```
 
 The Bioconductor Project provides tools written in R for the ’analysis and comprehension of high- throughput genomic data’. Here we will install two additional software packages (GenomicFeatures and tximport) for our practical today (See additional guidelines for Bioconductor package installation).
 
-**Bioconductor Packages:**
-
+**Bioconductor Packages:**  
 ```
 install.packages("BiocManager")
 BiocManager::install("GenomicFeatures", force = TRUE)
 BiocManager::install("tximport")
 ```
 
-**CRAN Packages:**
-
+**CRAN Packages:**  
 ```
 install.packages("pheatmap")
 ```
 
-**When asked whether to:**   
-Update all/some/none? [a/s/n] - select no (n)
+**When asked whether to:**  
+`Update all/some/none? [a/s/n]` - select `no (n)`
 
-**Exit `R`:**
-
+**Exit `R`:**  
 ```
 q()
 ```
 
 # 2. Introducing The Tutorial Dataset
-
 Working through this tutorial, you will investigate the differences in expression between two Mycobacterium tuberculosis isolates with different phenotypes (**Sensitive** vs. **Resistant**). You will analyze 6 samples across the two conditions. The experiment is setup in the following way:
 
 <div align="center">
@@ -258,8 +237,7 @@ Working through this tutorial, you will investigate the differences in expressio
 **Research Question:** what genes are differentially expressed between these two isolates that can explain the differences in their phenotypes?
 
 ## 2.1. Exercise 1
-
-**Check that you can see the FASTQ files in the practical directory:**   
+**Check that you can see the FASTQ files in the practical directory:**  
 ```
 ls N*.fq.gz
 ```
@@ -272,7 +250,7 @@ The FASTQ files contain the raw sequence reads for each sample. There are four l
 	<li> Encoded quality value
 </ol>
 
-**Take a look at one of the FASTQ files:**   
+**Take a look at one of the FASTQ files:**  
 ```
 zless N2_sub_R1.fq.gz | head
 ```
@@ -280,7 +258,6 @@ zless N2_sub_R1.fq.gz | head
 Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FASTQ_format/">https://en.wikipedia.org/wiki/FASTQ_format/</a>.
 
 ## 2.2. Questions
-
 **Q1: Why is there more than one FASTQ file per sample?** _Hint: think about why there is a `N2_sub_R1.fq.gz` and a `N2_sub_2.fq.gz`_
 
 **Q2: How many reads were generated for the N2 sample?** _Hint: we want the total number of reads from both files (`N2_sub_R1.fq.gz` and `N2_sub_2.fq.gz`) so perhaps think about the FASTQ format and the number of lines for each read or whether there’s anything you can use in the FASTQ header to search and count._
@@ -288,8 +265,7 @@ Find out more about FASTQ formats at <a href="https://en.wikipedia.org/wiki/FAST
 **Q3: The three Resistant samples N2, N6 and N10 represent technical replicates. True or False? Comment on your answer.**
 
 # 3. Estimate Transcript Abundance With Salmon
-
-In this section, you will use <a href="https://salmon.readthedocs.io/en/latest/salmon.html">Salmon</a>, a transcript quantification method to estimate the number of reads in each sample that map to reference transcripts. This count is an estimate of the abundance or expression level of these transcripts in our experiment. As Salmon is an alignment free method, read quantification does not require an input BAM file. `Salmon` using a selective mapping algorithm to align the reads directly to a set of target transcripts such as those from a reference database for your organism.
+In this section, you will use <a href="https://salmon.readthedocs.io/en/latest/salmon.html">Salmon</a>, a transcript quantification method to estimate the number of reads in each sample that map to reference transcripts. This count is an estimate of the abundance or expression level of these transcripts in our experiment. As `Salmon` is an alignment free method, read quantification does not require an input BAM file. `Salmon` using a selective mapping algorithm to align the reads directly to a set of target transcripts such as those from a reference database for your organism.
 
 Inputs include: 
 <ul>
@@ -301,22 +277,17 @@ See more details in:
 >Patro R, Duggal G, Love MI, Irizarry RA, Kingsford C. **Salmon provides fast and bias-aware quantification of transcript expression.** Nat Methods. 2017 Apr;14(4):417- 419. <a href="doi:10.1038/nmeth.4197">doi:10.1038/nmeth.4197</a>. PMID: 28263959; PMCID: PMC5600148.
 
 ## 3.1. Create Transcriptome Index
-First, we create the necessary index files for any alignment tools downstream. The salmon index is created from the transcripts file, and while it is named `transcripts_index` here, you can name it anything.
-
+First, we create the necessary index files for any alignment tools downstream. The salmon index is created from the transcripts file, and while it is named `transcripts_index` here, you can name it anything.  
 ```
 salmon index -t GCA_000195955.2_ASM19595v2_genomic.transcripts.fa -i transcripts_index -k 31
 ```
 
-Take a look at the various files created in the transcripts_index folder created by salmon.
+Take a look at the various files created in the `transcripts_index` folder created by `salmon`:
 
 ## 3.2. Transcript Quantification
-
-Next we perform quantification with salmon using the transcript index folder we just created.
-
-However, it is important to perform key quality control analysis of your sample reads (`*.fq.gz`) files before proceeding with quantification.
+Next we perform quantification with salmon using the transcript index folder we just created. However, it is important to perform key quality control analysis of your sample reads (`*.fq.gz`) files before proceeding with quantification.
 
 ### 3.2.1 Read Quality Control Analysis
-
 Here we demonstrate how to trim and filter the reads using `Trimmomatic`. Here we clean the reads by looking at various quality metrics including:
 <ul>
     <li> low quality reads - filter based on a min leading base quality of 3, and trailing base quality of 3. The scan with a sliding window that cuts when the average quality is lower than 15.
@@ -335,9 +306,7 @@ trimmomatic PE N2_sub_R1.fq.gz N2_sub_R2.fq.gz \
 In a typically workflow, you would do `FastQC` analysis before and after to check the effects of the trimming, but as that is not the purpose of this section, we will skip that for now.
 
 ## 3.2.2 Transcript Quantificaiton using salmon
-
-Now we used the trimmed and paired reads to estimate transcript abundance:
-
+Now we used the trimmed and paired reads to estimate transcript abundance:  
 ```
 salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
     --threads 2 -l A \
@@ -347,7 +316,6 @@ salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
 ```
 
 This creates a new folder named “N2” in the directory, which contains a number of files:
-
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
