@@ -1,5 +1,5 @@
 # NGS_Bio_Africa
- ![](https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png)
+ ![](https://www.h3abionet.org/images/logos/LOGO-HEADER.png)
 
  ![](https://coursesandconferences.wellcomeconnectingscience.org/wp-content/themes/wcc_courses_and_conferences/dist/assets/svg/logo.svg) 
 
