@@ -67,7 +67,6 @@ This course runs between 22 March - 9 June 2022
 ## Course manual
 
 **Module 1: Intro to Unix/Linux**  
-     - [Day 1 Online manual](manuals/module_artemis/module_artemis.md)  
      - [Day 1 Manual PDF version](Modules/Module_1_Intro_to_linux/Linux_session_1/Assignment/Assignement_Linux_Practical_exercises.pdf)  
      - [Day 2 Manual PDF Version](Modules/Module_1_Intro_to_linux/Linux_Session_2/unix_session_2_files_student_practical_TA_practical_and_assessment/unix_session_2_students_practical_sheet.pdf)
      
