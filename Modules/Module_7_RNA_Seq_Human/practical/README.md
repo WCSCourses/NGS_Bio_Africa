@@ -87,25 +87,25 @@ Within the module directory, create a directory to write the outputs you will ge
 mkdir -p outputs
 ```
 
-### 1.6.1. Download Suppplemental Datasets
-**Internet Access Required**  
-We will need to download two additional annotation files for this tutorial. Follow these instructions:
+<!-- ### 1.6.1. Download Suppplemental Datasets -->
+<!-- **Internet Access Required**   -->
+<!-- We will need to download two additional annotation files for this tutorial. Follow these instructions: -->
 
-**Use wget to download supplemental data files:**  
-```bash
-wget https://www.dropbox.com/s/nfuea7ik6wlidum/hsapiens_chr21_transcript_to_gene.csv?dl=1 -O data/hsapiens_chr21_transcript_to_gene.csv
-wget https://www.dropbox.com/s/8xt8q1o0aej1ry1/hsapiens_chr21_transcripts.fa?dl=1 -O data/hsapiens_chr21_transcripts.fa
-```
+<!-- **Use wget to download supplemental data files:**   -->
+<!-- ```bash -->
+<!-- wget https://www.dropbox.com/s/nfuea7ik6wlidum/hsapiens_chr21_transcript_to_gene.csv?dl=1 -O data/hsapiens_chr21_transcript_to_gene.csv -->
+<!-- wget https://www.dropbox.com/s/8xt8q1o0aej1ry1/hsapiens_chr21_transcripts.fa?dl=1 -O data/hsapiens_chr21_transcripts.fa -->
+<!-- ``` -->
 
-Confirm that you have the following files in the data folder:
-<ul>
-    <li> `hsapiens_chr21_transcript_to_gene.csv`
-	<li> `hsapiens_chr21_transcripts.fa`
-</ul>
+<!-- Confirm that you have the following files in the data folder: -->
+<!-- <ul> -->
+<!--     <li> `hsapiens_chr21_transcript_to_gene.csv` -->
+<!-- 	<li> `hsapiens_chr21_transcripts.fa` -->
+<!-- </ul> -->
 
-```bash
-ls -lhr data/hsapiens_chr21_transcript*
-```
+<!-- ```bash -->
+<!-- ls -lhr data/hsapiens_chr21_transcript* -->
+<!-- ``` -->
 
 You are ready to go. Now, let’s head to the first section of this tutorial which will be introducing the tutorial dataset.
 
