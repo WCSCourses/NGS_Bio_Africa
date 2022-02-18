@@ -373,17 +373,17 @@ We not only want to see where our reads have mapped, but what genes they have ma
 		Example Human Genome Transcript Annotation File
 </p>
 
-Load your annotation file into `IGV`. Go to **“File -> Load from File...”**. Select **“hsapien_grch38.96_chr21.gtf”** and click **“Open”**.
+Load your annotation file into `IGV`. Go to **"File -> Load from File..."**. Select **"hsapien_grch38.96_chr21.gtf"** and click **"Open"**.
 
-This will load a new track called **“hsapien_grch38.96_chr21.gtf”**. The track is currently shown as a density plot. You will need to zoom in to see individual genes.
+This will load a new track called **"hsapien_grch38.96_chr21.gtf"**. The track is currently shown as a density plot. You will need to zoom in to see individual genes.
 
-Search for the gene _**SIK1B**_ by typing *“SIK1B”* in the search box to zoom in and centre the view of this gene.
+Search for the gene _**SIK1B**_ by typing *"SIK1B"* in the search box to zoom in and centre the view of this gene.
 
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
-To get a clearer view of the gene structure, right click on the annotation track and click **“Expanded”**.
+To get a clearer view of the gene structure, right click on the annotation track and click **"Expanded"**.
 
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -392,7 +392,7 @@ To get a clearer view of the gene structure, right click on the annotation track
 In the annotation track, genes are presented as blue boxes and lines. These boxes represent exons, while the lines represent intronic regions. Arrows indicate the direction (or strand) of transcription for each of the genes. Now we have our genome and its annotated features, we just need to read in alignments from our two samples.
 
 ### 4.1.3. Load alignment files
-Load your alignment file for the **NP2** sample into `IGV`. Go to **”File -> Load from File...”**. Select **“NP2_sorted.bam”** and click **“Open”**.
+Load your alignment file for the **NP2** sample into `IGV`. Go to **"File -> Load from File..."**. Select **"NP2_sorted.bam"** and click **"Open"**.
 
 >**Note:** BAM files and their corresponding index files must be in the same directory for `IGV` to load them properly.
 
@@ -400,15 +400,15 @@ Load your alignment file for the **NP2** sample into `IGV`. Go to **”File -> L
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
-This will load a new track called **“NP2_sorted.bam”** which contains the read alignments for the **NP2** sample. We can change how we visualise our data by altering the view options. By default, `IGV` will display reads individually so they are compactly arranged. If you were to hover over a read in the default view, you will only get the details for that read. However, if we change our view so that the reads are visualised as pairs, the read pairs will be joined together by line and when we hover over either of the reads, we will get information about both of the reads in that pair.
+This will load a new track called **"NP2_sorted.bam"** which contains the read alignments for the **NP2** sample. We can change how we visualise our data by altering the view options. By default, `IGV` will display reads individually so they are compactly arranged. If you were to hover over a read in the default view, you will only get the details for that read. However, if we change our view so that the reads are visualised as pairs, the read pairs will be joined together by line and when we hover over either of the reads, we will get information about both of the reads in that pair.
 
-To view our reads as pairs, right click on the **NP2_sorted.bam** alignment track and click **“View as pairs”**.
+To view our reads as pairs, right click on the **NP2_sorted.bam** alignment track and click **"View as pairs"**.
 
 <p align="center">
     <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
 </p>
 
-To condense the alignment, right click on the **NP2_sorted.bam** alignment track and click **“Squished”**.
+To condense the alignment, right click on the **NP2_sorted.bam** alignment track and click **"Squished"**.
 
 <p align="center">
     <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -431,7 +431,7 @@ Now we compare the two samples:
 </p>
 
 ## 4.2. Questions
-**Q1: How many CDS features are there in “SIK1B”?** _Hint: Jump to this gene or locus or use unix commands to look at the annotation file "data/hsapien_grch38.96_chr21.gtf"_
+**Q1: How many CDS features are there in "SIK1B"?** _Hint: Jump to this gene or locus or use unix commands to look at the annotation file "data/hsapien_grch38.96_chr21.gtf"_
 
 **Q2: Does the RNA-seq mapping agree with the gene model in blue?** _Hint: Look at the coverage track and split read alignments._
 
@@ -479,7 +479,7 @@ kallisto quant
 
 We can see that `kallisto quant` needs us to tell it where our sample reads are. Although we don’t have to, it’s usually a good idea to keep the results of each quantification in a different directory. This is because the output filename are always the same (e.g. abundances.tsv). If we ran a second analysis, these could get overwritten. To use a different output directory, we can use the `-o` option. We will also be using the `-b` option for bootstrapping.
 
-**_Bootstrapping:_** Not all reads will be assigned unambiguously to a single transcript. This means there will be “noise” in our abundance estimates where reads can be assigned to multiple transcripts. `Kallisto` quantifies the uncertainty in its abundance estimates using random resampling and replacement. This process is called bootstrapping and indicates how reliable the expression estimates are from the observed pseudoalignment. Bootstrap values can be used downstream to distinguish the technical variability from the biological variability in your experiment.
+**_Bootstrapping:_** Not all reads will be assigned unambiguously to a single transcript. This means there will be "noise" in our abundance estimates where reads can be assigned to multiple transcripts. `Kallisto` quantifies the uncertainty in its abundance estimates using random resampling and replacement. This process is called bootstrapping and indicates how reliable the expression estimates are from the observed pseudoalignment. Bootstrap values can be used downstream to distinguish the technical variability from the biological variability in your experiment.
 
 ## 5.2. Exercise 4
 **Build an index called GRCh38_kallisto from transcript sequences:**  
@@ -575,7 +575,7 @@ However, we perform these comparisons for each one of the thousands of genes/tra
 
 ### 6.1.2. `sleuth`
 `sleuth` is a companion tool for `Kallisto`. Unlike most other tools, `sleuth` can utilize the technical variation information generated by `Kallisto` so that you can look at both the technical and biological variation in your dataset.
-For DEA, sleuth essentially tests two models, one which assumes that the abundances are equal between the two conditions (reduced) and one that does not (full). To identify DE transcripts it identifies those with a significantly better fit to the “full” model. For more information on sleuth and how it works, see Lior Pachter’s blog post: <a href="https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/">A sleuth for RNA-Seq</a>.
+For DEA, sleuth essentially tests two models, one which assumes that the abundances are equal between the two conditions (reduced) and one that does not (full). To identify DE transcripts it identifies those with a significantly better fit to the "full" model. For more information on sleuth and how it works, see Lior Pachter’s blog post: <a href="https://liorpachter.wordpress.com/2015/08/17/a-sleuth-for-rna-seq/">A sleuth for RNA-Seq</a>.
 
 `sleuth` is written in the `R` statistical programming language, as is almost all RNA-Seq analysis software. Helpfully, it produces a web page (Shiny Application) that allows interactive graphical analysis of the data. However, we strongly recommend learning `R` for anyone doing a significant amount of RNA-seq analysis. It is nowhere near as hard to get started with as full-blown programming languages such as `Perl` or `Python`!
 
@@ -605,7 +605,7 @@ Run all the following commands within the `R` console - copy and paste the comma
 
 Be sure to navigate to the correct working directory within `R`:  
 ```r
-setwd(“/home/manager/course_data/rna_seq_human”)
+setwd("/home/manager/course_data/rna_seq_human")
 ```
 
 Load sleuth package:  
@@ -811,7 +811,7 @@ At the top of the page, `sleuth` provides several tabs which we can use to deter
 
 First, lets take a look at a summary of our dataset.
 
-In the Shiny App that has been launched, click on **“summaries -> processed data”**.
+In the Shiny App that has been launched, click on **"summaries -> processed data"**.
 
 <p align="center">
     <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -823,7 +823,7 @@ In some cases, we can identify samples which don’t agree with other replicates
 
 **Principal component analysis (PCA)** plots can be used to look at variation and strong patterns within the dataset. **Batch effects** and outliers often stand out quite clearly in the PCA plot and mean that you can account for them in any downstream analysis.
 
-In the Shiny App that has been launched, click on **“maps -> PCA”**.
+In the Shiny App that has been launched, click on **"maps -> PCA"**.
 
 <p align="center">
     <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -834,7 +834,7 @@ Here we do not see clear condition-related clusters as we might expect. Indeed s
 #### Using sleuth to look at differentially expressed transcripts
 We used the output from `Kallisto` to identify DE transcripts using `sleuth`. Let’s take a look and see if we found any.
 
-To see the results of the `sleuth` DEA, go to **“analyses -> test table”**.
+To see the results of the `sleuth` DEA, go to **"analyses -> test table"**.
 
 <p align="center">
     <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -842,7 +842,7 @@ To see the results of the `sleuth` DEA, go to **“analyses -> test table”**.
 
 The important column here is the **_q_-value**. By default, the table is sorted by the _q_-value. We can see that the top transcripts do not meet the _q_-value threshold for statistical significance for this comparison.
 
-To visualize a particular transcript of interest, Go to **“analyses -> transcript view”**. Enter **<TranscriptID>** into the **“transcript”** search box. Click **“view”**.
+To visualize a particular transcript of interest, Go to **"analyses -> transcript view"**. Enter **<TranscriptID>** into the **"transcript"** search box. Click **"view"**.
 
 <p align="center">
     <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -853,7 +853,7 @@ On the left you have the abundances for the normal and tumour replicates from AA
 >**Optional:** As this data is publicly available, you can download the full dataset and rerun the analysis to check if some of these ideas hold true or the signal is improved by having additional samples and or more replicates.
 
 ## 6.3. Questions
-**Q1: What is the most abundantly expressed transcript in the PT6 sample?** _Hint: go to **“summaries -> kallisto table”**. Be sure to activate the covariates toggle._
+**Q1: What is the most abundantly expressed transcript in the PT6 sample?** _Hint: go to **"summaries -> kallisto table"**. Be sure to activate the covariates toggle._
 
 # 7. Key Aspects of Differential Expression Analysis
 ## 7.1. Replicates and power
@@ -861,7 +861,7 @@ On the left you have the abundances for the normal and tumour replicates from AA
 
 **Technical replicates** are repeated measurements of the same sample that represent independent measures of the random noise associated with protocols or equipment
 
->Blainey, Paul et al. **“Points of significance: replication.”** Nature methods vol. 11,9 (2014): 879-80. <a href="doi:10.1038/nmeth.3091">doi:10.1038/nmeth.3091</a>
+>Blainey, Paul et al. **"Points of significance: replication."** Nature methods vol. 11,9 (2014): 879-80. <a href="doi:10.1038/nmeth.3091">doi:10.1038/nmeth.3091</a>
 
 In order to accurately ascertain which genes are differentially expressed and by how much it is necessary to use replicated data. As with all biological experiments doing it once is simply not enough. There is no simple way to decide how many replicates to do, it is usually a compromise between statistical power and cost. By determining how much variability there is in the sample preparation and sequencing reactions, we can better assess how highly genes are really expressed and more accurately determine any differences. The key to this is performing biological rather than technical replicates. This means, for instance, growing up three batches of parasites, treating them all identically, extracting RNA from each and sequencing the three samples separately. Technical replicates, whereby the same sample is sequenced three times do not account for the variability that really exists in biological systems or the experimental error between batches of parasites and RNA extractions.
 
