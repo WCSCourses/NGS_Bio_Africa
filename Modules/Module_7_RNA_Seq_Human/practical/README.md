@@ -485,7 +485,7 @@ We can see that `kallisto quant` needs us to tell it where our sample reads are.
 **Build an index called GRCh38_kallisto from transcript sequences:**  
 >**Note:** Depending on the specifications of your machine, this step may take a long time. While the index is being built, spend time reading through the remaining sections of the tutorial.  
 ```bash
-kallisto index -i outputs/GRCh38_ch21_kallisto	data/hsapiens_chr21_transcripts.fa
+kallisto index -i outputs/GRCh38_ch21_kallisto data/hsapiens_chr21_transcripts.fa
 ```
 
 **Quantify the transcript expression levels for the PT6 sample with 100 bootstrap samples and store the results in the output directory PT6:**
