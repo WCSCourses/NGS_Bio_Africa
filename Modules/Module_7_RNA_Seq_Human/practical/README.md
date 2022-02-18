@@ -377,7 +377,7 @@ Load your annotation file into `IGV`. Go to **“File -> Load from File...”**.
 
 This will load a new track called **“hsapien_grch38.96_chr21.gtf”**. The track is currently shown as a density plot. You will need to zoom in to see individual genes.
 
-Search for the gene _**SI1K**_ by typing *“SI1K”* in the search box to zoom in and centre the view of this gene.
+Search for the gene _**SIK1B**_ by typing *“SIK1B”* in the search box to zoom in and centre the view of this gene.
 
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -416,7 +416,7 @@ To condense the alignment, right click on the **NP2_sorted.bam** alignment track
 
 For more information on sorting, grouping and visualising read alignments, see the <a href="http://software.broadinstitute.org/software/igv/UserGuide">IGV User Guide</a>.
 
-Load the alignment from the matched tumor sample **PT2**. Using the search box in the toolbar, go to gene locus: **SI1K**. Look at the coverage range for this viewing window on the left-hand side. While at first glance it may seem like this gene may be differentially expressed between the two conditions, this may not be the case when you consider sequencing depth etc. If a sample has been sequenced to a greater depth we would expect more reads to map there in general.
+Load the alignment from the matched tumor sample **PT2**. Using the search box in the toolbar, go to gene locus: **SIK1B**. Look at the coverage range for this viewing window on the left-hand side. While at first glance it may seem like this gene may be differentially expressed between the two conditions, this may not be the case when you consider sequencing depth etc. If a sample has been sequenced to a greater depth we would expect more reads to map there in general.
 
 Here to compare the reads on the same scale, we can use the **"Group Autoscale"** function. First, right click each coverage track and temporarily **"hide"** it. Now by clicking on both coverage tracks, select **"Group Autoscale"**. 
 
