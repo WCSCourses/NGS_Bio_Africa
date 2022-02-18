@@ -313,7 +313,7 @@ salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
     -2 N2_trimmed_reverse_paired.fq.gz -o N2
 ```
 
-This creates a new folder named “N2” in the directory, which contains a number of files:
+This creates a new folder named "N2” in the directory, which contains a number of files:
 
 <p align="center">
 		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
@@ -347,7 +347,7 @@ In the `N2` folder, take a look at the `quant.sf` file and answer the following 
 
 **Q1: What does TPM stand for?**
 
-**Q2: How many reads in total are mapped to the tRNA genes?** _Hint: They start with “rna-”_
+**Q2: How many reads in total are mapped to the tRNA genes?** _Hint: They start with "rna-"_
 
 **Q3: Do you think this level of tRNA is acceptable?**
 
@@ -439,7 +439,7 @@ The above command goes through the `tx2gene` object, and looks for where the gen
 When the annotation file is imported by `makeTxDbFromGFF`, it removes the "gene-" prefix that is present in the `quant` files. This is because of the way that the annotation and transcript files are formatted.
 
 You will see in the GFF and transcript files, that the gene ID is formatted like this: `ID=gene-Rv0005`  
-Whereas in the GTF file it is formatted like this: `gene_id ”Rv0005”`
+Whereas in the GTF file it is formatted like this: `gene_id "Rv0005"`
 
 Though salmon uses the GTF file, it adds on the gene- prefix where it is missing while `makeTxDbFromGFF` removes it where it is present.  
 ```r
@@ -534,7 +534,7 @@ pheatmap(matrixTxi, cluster_rows=FALSE, show_rownames=TRUE, cluster_cols=TRUE)
 
 **Technical replicates** are repeated measurements of the same sample that represent independent measures of the random noise associated with protocols or equipment
 
->Blainey, Paul et al. **“Points of significance: replication.”** Nature methods vol. 11,9 (2014): 879-80. <a href="doi:10.1038/nmeth.3091">doi:10.1038/nmeth.3091</a>
+>Blainey, Paul et al. **"Points of significance: replication."** Nature methods vol. 11,9 (2014): 879-80. <a href="doi:10.1038/nmeth.3091">doi:10.1038/nmeth.3091</a>
 
 In order to accurately ascertain which genes are differentially expressed and by how much it is necessary to use replicated data. As with all biological experiments doing it once is simply not enough. There is no simple way to decide how many replicates to do, it is usually a compromise between statistical power and cost. By determining how much variability there is in the sample preparation and sequencing reactions, we can better assess how highly genes are really expressed and more accurately determine any differences. The key to this is performing biological rather than technical replicates. This means, for instance, growing up three batches of parasites, treating them all identically, extracting RNA from each and sequencing the three samples separately. Technical replicates, whereby the same sample is sequenced three times do not account for the variability that really exists in biological systems or the experimental error between batches of parasites and RNA extractions.
 
