@@ -31,18 +31,18 @@ This course runs between 22 March - 9 June 2022
 
 
 ## Instructors
-- [Sumir Panji](https://deeplearningindaba.com/speakers/sumir-panji%E2%80%8B/), University of Cape Town, South Africa
-- [Amel Ghouila](https://www.linkedin.com/in/amel-ghouila-5a032a19/),
-- [Narendar Kumar](), 
-- [Fatma Guerfali](),
-- [Shaun Aron](),
-- [Gerrit Botha](),
-- [Petr Danecek](),
-- [Eugene Gardner](),
-- [Jon Ambler](),
-- [Nyasha Chambwe](),
-- [Phelelani Mpangase](),
-- [Vivek Iyer](),
+- [Sumir Panji](), University of Cape Town, South Africa
+- [Amel Ghouila](),Bill and Melinda Gates Foundation, USA
+- [Narendar Kumar](), Wellcome Sanger Institute, UK
+- [Fatma Guerfali](), Institut Pasteur de Tunis, Tunisia
+- [Shaun Aron](), University of the Witwatersrand, South Africa
+- [Gerrit Botha](), University of Cape Town, South Africa
+- [Petr Danecek](), Wellcome Sanger Institute, UK
+- [Eugene Gardner](), Wellcome Sanger Institute, UK
+- [Jon Ambler](), University of Cape Town, South Africa
+- [Nyasha Chambwe](), St Jude Children's Research Hospital, USA
+- [Phelelani Mpangase](), University of the Witwatersrand, South Africa
+- [Vivek Iyer](), University of Cape Town, South Africa
 
 
 
@@ -67,41 +67,51 @@ This course runs between 22 March - 9 June 2022
 ## Course manual
 
 **Module 1: Intro to Unix/Linux**  
-     - [Day 1 Manual PDF version](Modules/Module_1_Intro_to_linux/Linux_session_1/Assignment/Assignement_Linux_Practical_exercises.pdf)  
-     - [Day 2 Manual PDF Version](Modules/Module_1_Intro_to_linux/Linux_Session_2/unix_session_2_files_student_practical_TA_practical_and_assessment/unix_session_2_students_practical_sheet.pdf)
+     - [Session 1 Practical PDF version](Modules/Module_1_Intro_to_linux/Linux_session_1/Assignment/Assignement_Linux_Practical_exercises.pdf)  
+     - [Session 2 Practical PDF Version](Modules/Module_1_Intro_to_linux/Linux_Session_2/unix_session_2_files_student_practical_TA_practical_and_assessment/unix_session_2_students_practical_sheet.pdf)
      
   
 **Module 2 - Introduction to NGS technologies**  
-  
-
+  - [Lecture Part 1 PDF version](Modules/Module_2_Introduction_to_NGS_Technologies/Module2_Part1_Intro_to_NGS_Sequencing_and_Technologies.pdf)
+  - [Lecture Part 2 PDF Version](Modules/Module_2_Introduction_to_NGS_Technologies/Module2_Part2_Introduction_to_NGS-IlluminaSequencing.pdf)
+  - [Lecture Part 3 PDF version](Modules/Module_2_Introduction_to_NGS_Technologies/Module2_Part3_Introduction_to_NGS-IlluminaSequencing.pdf)
+  - [Lecture Part 4 PDF version](Modules/Module_2_Introduction_to_NGS_Technologies/Module2_Part4_Experimental_Design.pdf)
 
 **Module 3 - NGS data formats and QC**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
 
 **Module 4 - Alignment to Reference**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
 
 **Module 5 - Variant Calling - Human**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
   
 **Module 6 - Variant Calling - Choose Pathogen or Human**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
 
 **Module 7 - RNA-seq Human  - Human**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
 **Module 8 - RNA-seq Pathogen**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
 **Module 9 - Chip-seq**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
 **Module 10 - Genome Assembly**  
-
+  - [Day 1 Manual PDF version]()
+  - [Day 2 Manual PDF Version]()
 
 Any reuse of the course materials, data or code is encouraged with due acknowledgement.
 
