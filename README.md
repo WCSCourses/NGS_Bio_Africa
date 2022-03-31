@@ -5,11 +5,8 @@
 
 
 ## Next Generation Sequencing Bioinformatics Africa
-[Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/next-generation-sequencing-bioinformatics-africa-20220322/)
 
 ### Course Overview
-Welcome to the WGC WCS/H3ABioNet NGS_2022 course!
-
 Next generation sequencing (NGS) has become an essential tool in genetic and genomic analysis. It is increasingly important for experimental scientists to gain the bioinformatics skills required to analyse the large volumes of data produced by next generation sequencers. This course will equip participants with the essential informatics skills required to begin analysing NGS data and apply some of the most commonly used tools and resources for sequence data analysis.
 
 The programme will cover prominent sequencing technologies, algorithmic theory and principles of bioinformatics, with a strong focus on practical computational sessions using sequence analysis techniques and tools applicable to any species or genome size. A variety of applications will be covered from post-sequencing analysis - QC, alignment, assembly, variant calling and RNA-Seq.
@@ -27,8 +24,9 @@ The programme will cover prominent sequencing technologies, algorithmic theory a
 
 
 ### Dates running
-This course runs between 22 March - 9 June 2022
+The current course runs between 22 March - 9 June 2022
 
+##NB - The module content on this git may not be up to date as the course runs, as it is based on the 2021 materials!
 
 ## Instructors
 - [Sumir Panji](), University of Cape Town, South Africa
