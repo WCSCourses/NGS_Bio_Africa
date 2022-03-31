@@ -26,7 +26,7 @@ The programme will cover prominent sequencing technologies, algorithmic theory a
 ### Dates running
 The current course runs between 22 March - 9 June 2022
 
-##NB - The module content on this git may not be up to date as the course runs, as it is based on the 2021 materials!
+## NB - The module content on this git may not be up to date as the course runs, as it is based on the 2021 materials!
 
 ## Instructors
 - [Sumir Panji](), University of Cape Town, South Africa
