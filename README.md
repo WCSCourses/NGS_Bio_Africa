@@ -67,7 +67,7 @@ The current course runs between 22 March - 9 June 2022
 **Module 1: Intro to Unix/Linux**  
    - [Session 1 Practical PDF version](Modules/Module_1_Intro_to_linux/Linux_session_1/Assignment/Assignement_Linux_Practical_exercises.pdf)  
    - [Session 2 Practical PDF Version](Modules/Module_1_Intro_to_linux/Linux_Session_2/unix_session_2_files_student_practical_TA_practical_and_assessment/unix_session_2_students_practical_sheet.pdf)
-   - [Session 1 Practical ](https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/Modules/Module_1_Intro_to_linux/Linux_session_1/Assignment/Assignment_Practical_excercises_MD.md)
+   - [Session 1 Practical ](Modules/Module_1_Intro_to_linux/Linux_session_1/Assignment/Assignment_Practical_excercises_MD.md)
      
   
 **Module 2 - Introduction to NGS technologies**  
