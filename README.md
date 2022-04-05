@@ -160,8 +160,10 @@ The current course runs between 22 March - 9 June 2022
 ### Software which must be added to the VM:
 * salmon
  #### To add:
+ ```
  conda create -n salmon salmon
  conda activate salmon 
+ ```
 
 Any reuse of the course materials, data or code is encouraged with due acknowledgement.
 
