@@ -112,6 +112,57 @@ The current course runs between 22 March - 9 June 2022
   - [Day 1 Manual PDF version]()
   - [Day 2 Manual PDF Version]()
 
+
+
+### List of Software used to create the virtual machine:
+bcftools
+bedtools
+igv
+picard
+bwa
+breakdancer
+lumpy-sv
+minimap2
+sniffles
+hisat2
+kallisto
+r-sleuth
+bowtie2
+macs2
+meme
+ucsc-bedgraphtobigwig
+ucsc-fetchchromsizes
+assembly-stats
+canu
+kmer-jellyfish
+seqtk
+velvet
+wtdbg
+freebayes
+gatk4
+pysam
+genomescope.R
+samtools
+fastqc
+multiqc
+trimmomatic
+vcftools
+iqtree
+snpeff
+snp-sites
+
+#### R Modules
+GenomicFeatures
+DESeq2
+tximport
+Pheatmap
+
+### Software which must be added:
+salmon
+ #### To add:
+ conda create -n salmon salmon
+ conda activate salmon 
+
 Any reuse of the course materials, data or code is encouraged with due acknowledgement.
 
 ******
