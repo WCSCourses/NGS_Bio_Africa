@@ -92,8 +92,10 @@ The current course runs between 22 March - 9 June 2022
 
   
 **Module 6 - Variant Calling - Choose Pathogen or Human**  
-  - [Day 1 Manual PDF version]()
-  - [Day 2 Manual PDF Version]()
+  - [Day 1 Practical Manual Online version](Modules/Module_6_Pathogen_Variant_Calling/Day1/Module6_Day1_practical_exercises.md)
+  - [Day 1 Practical Worksheet Online version](Modules/Module_6_Pathogen_Variant_Calling/Day1/Module6_Day1_practical_assignment_worksheet.md)
+  - [Day 2 Practical Manual Online version](Modules/Module_6_Pathogen_Variant_Calling/Day2/Module6_Day2_practical_assignment_exercises.md)
+  - [Day 2 Practical Worksheet Online version](Modules/Module_6_Pathogen_Variant_Calling/Day1/Module6_Day1_practical_assignment_worksheet.md)
 
 
 **Module 7 - RNA-seq Human  - Human**  
