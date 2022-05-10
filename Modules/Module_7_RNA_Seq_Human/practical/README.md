@@ -617,7 +617,7 @@ library(dplyr)
 Load sample metadata:  
 ```r
 sample_info <- read.table(file="data/sample_info.txt", header = T, sep = "\t")
-sample_inf
+sample_info
 ```
 
 >_**How many individual patients have been sequenced in this experiment?**_ Turn to your neighbor and discuss if you are unsure of the answer. _Hint: Look closely at the patientID column._
@@ -631,7 +631,7 @@ kallisto_result_directory
 Then configure `sample_to_covariates` data frame:  
 ```r
 s2c <- dplyr::select(sample_info,sample = sample, sample_type, ethnicity, individualID=patientID)
-kallisto_result_directory <-  sapply(sample_info$sample, function(id), file.path('outputs', id)) # path to kallisto results
+kallisto_result_directory <-  sapply(sample_info$sample, function(id) file.path('outputs', id)) # path to kallisto results
 s2c <- dplyr::mutate(s2c, path = kallisto_result_directory)
 s2c
 ```
