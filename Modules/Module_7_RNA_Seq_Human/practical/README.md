@@ -236,7 +236,7 @@ For more information, and to find the original version of _**Figure 2**_, please
 For the human genome, `HISAT2` will build a single global index and 48,000 local FM indexes. Each of the local indexes represents a 64kb genomic region. The majority of human introns are significantly shorter than 64kb, so >90% of human introns fall into a single local index. Moreover, each of the local indexes overlaps its neighbour by ~1kb which means that it also has the ability to detect reads spanning multiple indexes.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/split-reads.png" style="width:100%">
 		<b>Figure 2.</b> Read types and their relative proportions from 20 million simulated 100-bp reads.<br>Reference: Kim D. et al. Nat Methods. 2015.
 </p>
 
