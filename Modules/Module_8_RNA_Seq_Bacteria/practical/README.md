@@ -28,7 +28,7 @@ Focus on:
 
 ## 1.3. Practical Outline
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_8/module8_salmon_workflow.png" style="width:100%">
 		<b>Workflow Overview.</b> A schematic representation of each step in this practical exercise.
 </p>
 
@@ -137,7 +137,7 @@ wget https://www.dropbox.com/s/6y3z9btz3bg20pn/practical_study_design.txt?dl=1 -
 >**Note:** In this practical, we will use the existing study design file provided. However, in your own work, you will have to create this file on your own. You can create this file in several ways some of which could include exporting an Excel spreadsheet as a "Tab delimited" text file. You can also use your favorite text editor.such as using the **Text Editor** app under the Applications menu on the virtual machine.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_8/ubuntu_app_menu.png" style="width:100%">
 </p>
 
 #### 1.6.2.3. RData
@@ -316,7 +316,7 @@ salmon quant --geneMap GCA_000195955.2_ASM19595v2_genomic.gtf \
 This creates a new folder named "N2” in the directory, which contains a number of files:
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_8/salmon_output.png" style="width:100%">
 </p>
 
 The `quant` files are the files containing the read counts for the genes. These are what downstream tools like `DESeq2` or `edgeR` would use for the differential expression analysis.
@@ -582,7 +582,7 @@ Raw reads counts are the number of reads originating from each transcript which 
 </ul>
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/count-bias.png" style="width:100%">
     <b>Figure 4.</b> Effect of sequencing depth and gene length on raw read counts.
 </p>
 
