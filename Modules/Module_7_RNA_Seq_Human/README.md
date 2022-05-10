@@ -2,7 +2,7 @@
 
 <h3> Trainers: </h3>
 
-**Nyasha Chambwe**, _St. Jude Children’s Research Hospital, Memphis TN, USA_  
+**Nyasha Chambwe**, _The Feinstein Institutes for Medical Research, NY, USA_  
 **Jon Ambler**, _University of Cape Town, South Africa_  
 **Phelelani Mpangase**, _University of the Witwatersrand, South Africa_  
 
