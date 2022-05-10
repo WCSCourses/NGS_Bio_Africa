@@ -369,7 +369,7 @@ This will open the `IGV` main window. Now, we need to tell IGV which genome we w
 We not only want to see where our reads have mapped, but what genes they have mapped to. For this, we have an annotation file in GFF/GTF format. This contains a list of features, their co-ordinates and orientations which correspond to our reference genome.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/gtf_screenshot.png" style="width:100%">
 		Example Human Genome Transcript Annotation File
 </p>
 
@@ -380,13 +380,13 @@ This will load a new track called **"hsapien_grch38.96_chr21.gtf"**. The track i
 Search for the gene _**SIK1B**_ by typing *"SIK1B"* in the search box to zoom in and centre the view of this gene.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/1-sik1b.png" style="width:100%">
 </p>
 
 To get a clearer view of the gene structure, right click on the annotation track and click **"Expanded"**.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/2-sik1b-expanded.png" style="width:100%">
 </p>
 
 In the annotation track, genes are presented as blue boxes and lines. These boxes represent exons, while the lines represent intronic regions. Arrows indicate the direction (or strand) of transcription for each of the genes. Now we have our genome and its annotated features, we just need to read in alignments from our two samples.
@@ -397,7 +397,7 @@ Load your alignment file for the **NP2** sample into `IGV`. Go to **"File -> Loa
 >**Note:** BAM files and their corresponding index files must be in the same directory for `IGV` to load them properly.
 
 <p align="center">
-		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+		<img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/3-sik1b-aln.png" style="width:100%">
 </p>
 
 This will load a new track called **"NP2_sorted.bam"** which contains the read alignments for the **NP2** sample. We can change how we visualise our data by altering the view options. By default, `IGV` will display reads individually so they are compactly arranged. If you were to hover over a read in the default view, you will only get the details for that read. However, if we change our view so that the reads are visualised as pairs, the read pairs will be joined together by line and when we hover over either of the reads, we will get information about both of the reads in that pair.
@@ -405,13 +405,13 @@ This will load a new track called **"NP2_sorted.bam"** which contains the read a
 To view our reads as pairs, right click on the **NP2_sorted.bam** alignment track and click **"View as pairs"**.
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/4-sik1b-view-pairs.png" style="width:100%">
 </p>
 
 To condense the alignment, right click on the **NP2_sorted.bam** alignment track and click **"Squished"**.
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/5-sik1b-squished.png" style="width:100%">
 </p>
 
 For more information on sorting, grouping and visualising read alignments, see the <a href="http://software.broadinstitute.org/software/igv/UserGuide">IGV User Guide</a>.
@@ -421,13 +421,13 @@ Load the alignment from the matched tumor sample **PT2**. Using the search box i
 Here to compare the reads on the same scale, we can use the **"Group Autoscale"** function. First, right click each coverage track and temporarily **"hide"** it. Now by clicking on both coverage tracks, select **"Group Autoscale"**. 
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/5-5-sik1b-group-autoscale.png" style="width:100%">
 </p>
 
 Now we compare the two samples:
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/6-sik1b-two-samples.png" style="width:100%">
 </p>
 
 ## 4.2. Questions
@@ -457,7 +457,7 @@ Many of the existing methods used for estimating transcript abundance are alignm
 Kallisto uses a process called pseudoalignment to make it efficient. Rather than looking at where the reads map, Kallisto uses the compatibility between the reads and transcripts to estimate transcript abundance. Thus, most transcript quantification with Kallisto can be done on a simple laptop (Figure 3).
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/kallisto-performance.png" style="width:100%">
     <b>Figure 3.</b> Performance of `kallisto` and other methods. (a) Accuracy of `kallisto`, `Cufflinks`, `Sailfish`, `EMSAR`, `eXpress` and `RSEM` on 20 `RSEM` simulations of 30 million 75-bp paired-end reads. (b) Total running time in minutes for processing the 20 simulated data sets of 30 million paired-end reads described in a. Please see the <a href="https://www.nature.com/articles/nbt.3519">Kallisto publication</a> for original figure and more information.
 </p>
 
@@ -814,7 +814,7 @@ First, lets take a look at a summary of our dataset.
 In the Shiny App that has been launched, click on **"summaries -> processed data"**.
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/processed_data.png" style="width:100%">
 </p>
 
 Notice that the number of reads mapping differs quite a bit across samples? This is why we QC our data. >90% of the reads mapped to the genome, but only 15-25% are assigned to the transcriptome. This suggests that there may be some residual ribosomal RNA left over from the RNA preparation. It’s not a problem if we still have enough reads and replicates for our analysis.
@@ -826,7 +826,7 @@ In some cases, we can identify samples which don’t agree with other replicates
 In the Shiny App that has been launched, click on **"maps -> PCA"**.
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/pca_view.png" style="width:100%">
 </p>
 
 Here we do not see clear condition-related clusters as we might expect. Indeed samples PT4 and NP6 look like potential outliers. There is perhaps an unaccounted for technical batch effect in these data or those samples represent unmeasured biological signal. Further investigation will be needed included conversations with data generators where appropriate.
@@ -837,7 +837,7 @@ We used the output from `Kallisto` to identify DE transcripts using `sleuth`. Le
 To see the results of the `sleuth` DEA, go to **"analyses -> test table"**.
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/test_table_view.png" style="width:100%">
 </p>
 
 The important column here is the **_q_-value**. By default, the table is sorted by the _q_-value. We can see that the top transcripts do not meet the _q_-value threshold for statistical significance for this comparison.
@@ -845,7 +845,7 @@ The important column here is the **_q_-value**. By default, the table is sorted 
 To visualize a particular transcript of interest, Go to **"analyses -> transcript view"**. Enter **<TranscriptID>** into the **"transcript"** search box. Click **"view"**.
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/transcript_view.png" style="width:100%">
 </p>
 
 On the left you have the abundances for the normal and tumour replicates from AAs and on the right, the EA replicates. We can see that this transcript is differentially expressed between tumour and normal in the AAs but not the EAs. However, while we see a visual difference, the q-value (~0.4) is not statistically significant, suggesting that there may be subtle ancestry-specific effects but additional replicates would be required to test if this is the case.
@@ -909,7 +909,7 @@ Raw reads counts are the number of reads originating from each transcript which 
 </ul>
 
 <p align="center">
-    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/H3ABioNet_Logo%20(1).png" style="width:100%">
+    <img src="https://github.com/WCSCourses/NGS_Bio_Africa/blob/main/images/module_7/count-bias.png" style="width:100%">
     <b>Figure 4.</b> Effect of sequencing depth and gene length on raw read counts.
 </p>
 
