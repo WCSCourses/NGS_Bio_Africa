@@ -37,6 +37,27 @@ conda deactivate
 conda install snp-dists
 ```
 
+#### To resolve an iqtree error - big thanks to Gebremeskel Mamu Werid for posting this on Vula
+```
+#1. To uninstall the iqtree package, you can use:  
+sudo apt remove iqtree 
+# or 
+pip uninstall iqtree
+
+#2. update your system: 
+sudo apt-get update
+
+#3. install a specific version of iqtree package: 
+conda install -c bioconda -c defaults iqtree=1.6.12
+
+#4.  update your system: 
+sudo apt-get update
+
+#5. check if you installed the right version of iqtree 
+iqtree --version
+
+```
+
 #### To install figtree
 
 ```
