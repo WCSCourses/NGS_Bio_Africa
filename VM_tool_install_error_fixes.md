@@ -79,6 +79,20 @@ BiocManager::install(“pachterlab/sleuth”)
 
 # continue with the practical from here
 ```
+
+#### to install tximportData in R
+```
+# Begin by running R
+
+R
+
+BiocManager::install("tximportData")
+
+# continue with the practical from here
+```
+
+
+
 #### To install salmon for mod 8:
 ```
 conda create -n salmon salmon
